@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${postgres.host:localhost}:${postgres.port:5432}/${postgres.db:postgres}?autoReconnect=true&enabledTLSProtocols=TLSv1.2
+    username: ${postgres.user:postgres}
+    password: ${postgres.password:postgres}
+
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
