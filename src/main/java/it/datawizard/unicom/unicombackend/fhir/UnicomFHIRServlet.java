@@ -1,4 +1,4 @@
-package it.datawizard.unicom.unicombackend.api;
+package it.datawizard.unicom.unicombackend.fhir;
 
 
 import ca.uhn.fhir.rest.server.IResourceProvider;

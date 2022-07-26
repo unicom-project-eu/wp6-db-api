@@ -1,6 +1,6 @@
 package it.datawizard.unicom.unicombackend;
 
-import it.datawizard.unicom.unicombackend.api.UnicomFHIRServlet;
+import it.datawizard.unicom.unicombackend.fhir.UnicomFHIRServlet;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
