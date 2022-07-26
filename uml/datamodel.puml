@@ -1,0 +1,72 @@
+
+@startuml
+struct FinnishData {
+    authorization_country: String
+    substance_name: String
+    mpid: Integer
+    package_id: Integer
+    medicinal_product_name: String
+    MA_holder: String
+    MA_number: Integer
+    spc_fi: Url
+    spc_sv: Url
+    basis_substance: String
+    reference_substance: String
+    formname_fi: String
+    formname_sv: String
+    formname_en: String
+    spor_form_list: Integer
+    spor_form: Integer
+    manufactureddoseform: String
+    route_of_admin_fi: String
+    route_of_admin_sv: String
+    route_of_admin_en: String
+    route_of_admin_spor_id: Integer
+    edqm_roa_id: Integer
+    strength_with_unit: String
+    ingredient_quantity_operator: String
+    ingredient_base_strength: Float
+    ingredient_strength_min: Float
+    ingredient_strength_max: Float
+    strength_unit_fi: String
+    strength_unit_sv: String
+    strength_unit_en: String
+    reference_substance_strength: String
+    code: String
+    free_form_package_size: String
+    legal_status_for_supply: String
+}
+
+note left of FinnishData
+    **Fields that need explanations:**
+    * mpid
+    * package_id
+    * MA_holder: is this the organization that producend the MedicinalProduct?
+    * MA_number
+    * spc_fi
+    * spc_sv
+    * ingredient_quantity_operator: it's always null, purpose?
+    * free_form_package_size
+    * legal_status_for_supply
+
+    **Additional questions:**
+    * What is the difference between **basis_substance** and **reference_substance**?
+    * What kind of code is **code**? ATC maybe?
+end note
+
+entity Substance {
+    name: String
+}
+
+entity MedicinalProduct {
+    name: String
+    country: CountryCode
+}
+
+entity Organization {
+    name: String
+}
+
+MedicinalProduct o-- Organization
+MedicinalProduct o-- Substance
+@enduml
