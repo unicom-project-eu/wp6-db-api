@@ -2,43 +2,43 @@
 @startuml
 package "MS Data" <<frame>> {
     struct FinnishData {
-        authorization_country: String
-        substance_name: String
+        + authorization_country: String
+        + substance_name: String
         mpid: Integer
         package_id: Integer
-        medicinal_product_name: String
+        + medicinal_product_name: String
         MA_holder: String
         MA_number: Integer
         spc_fi: Url
         spc_sv: Url
-        basis_substance: String
-        reference_substance: String
-        formname_fi: String
-        formname_sv: String
-        formname_en: String
+        ~ basis_substance: String
+        ~ reference_substance: String
+        - formname_fi: String
+        - formname_sv: String
+        + formname_en: String
         spor_form_list: Integer
         spor_form: Integer
-        manufactureddoseform: String
-        route_of_admin_fi: String
-        route_of_admin_sv: String
-        route_of_admin_en: String
+        + manufactureddoseform: String
+        - route_of_admin_fi: String
+        - route_of_admin_sv: String
+        + route_of_admin_en: String
         route_of_admin_spor_id: Integer
         edqm_roa_id: Integer
-        strength_with_unit: String
+        - strength_with_unit: String
         ingredient_quantity_operator: String
-        ingredient_base_strength: Float
+        + ingredient_base_strength: Float
         ingredient_strength_min: Float
         ingredient_strength_max: Float
-        strength_unit_fi: String
-        strength_unit_sv: String
-        strength_unit_en: String
+        - strength_unit_fi: String
+        - strength_unit_sv: String
+        + strength_unit_en: String
         reference_substance_strength: String
         code: String
         free_form_package_size: String
         legal_status_for_supply: String
     }
 
-    note left of FinnishData
+    note right of FinnishData
         **Fields that need explanations:**
         * mpid
         * package_id
@@ -46,7 +46,11 @@ package "MS Data" <<frame>> {
         * MA_number
         * spc_fi
         * spc_sv
-        * ingredient_quantity_operator: it's always null, purpose?
+        * spor_form
+        * spor_form_list
+        * route_of_admin_spor_id
+        * edqm_roa_id
+        * ingredient_quantity_operator: is it always null. What is it's purpose?
         * free_form_package_size
         * legal_status_for_supply
 
@@ -56,21 +60,30 @@ package "MS Data" <<frame>> {
     end note
 }
 
-package DataModel <<frame>> {
-    entity Substance {
-        name: String
-    }
+package "Unicom Backend" <<frame>> {
+    enum DoseForm {}
 
-    entity MedicinalProduct {
-        name: String
-        country: CountryCode
-    }
+    package Entities {
+        entity Country {}
 
-    entity Organization {
-        name: String
-    }
+        entity Substance {
+            name: String
+        }
 
-    MedicinalProduct o-- Organization
-    MedicinalProduct o-- Substance
+        entity MedicinalProduct {
+            name: String
+            country: Country
+            doseForme: DoseForm
+        }
+
+        entity Organization {
+            name: String
+        }
+
+        MedicinalProduct --> DoseForm
+        MedicinalProduct "*" o-- "1" Country
+        MedicinalProduct "*" o-- "1" Organization
+        MedicinalProduct "*" o-- "1..*" Substance
+    }
 }
 @enduml
