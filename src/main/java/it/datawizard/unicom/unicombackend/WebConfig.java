@@ -1,11 +1,12 @@
-package it.datawizard.unicom.unicombackend.api;
+package it.datawizard.unicom.unicombackend;
 
+import it.datawizard.unicom.unicombackend.api.UnicomFHIRServlet;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class Config {
+public class WebConfig {
     @Bean
     public ServletRegistrationBean unicomServletBean() {
         ServletRegistrationBean bean = new ServletRegistrationBean(new UnicomFHIRServlet(), "/*");
