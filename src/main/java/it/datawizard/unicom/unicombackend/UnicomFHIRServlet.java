@@ -3,7 +3,6 @@ package it.datawizard.unicom.unicombackend;
 
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.RestfulServer;
-import org.springframework.context.ApplicationContext;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(value = "/*", displayName = "fhir")
-public class RestController extends RestfulServer {
+public class UnicomFHIRServlet extends RestfulServer {
     private static final long serialVersionUID = 1L;
 
     /**
