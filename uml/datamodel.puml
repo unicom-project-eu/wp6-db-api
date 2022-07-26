@@ -60,7 +60,7 @@ package "MS Data" <<frame>> {
     end note
 }
 
-package "Unicom Backend" <<frame>> {
+package "Data Model" <<frame>> {
     enum DoseForm {}
 
     package Entities {
