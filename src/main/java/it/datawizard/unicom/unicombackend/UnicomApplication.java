@@ -11,7 +11,7 @@ public class UnicomApplication {
 
 	@Bean
 	public ServletRegistrationBean unicomServletBean() {
-		ServletRegistrationBean bean = new ServletRegistrationBean(new UnicomFHIRServlet(), "/*");
+		ServletRegistrationBean bean = new ServletRegistrationBean(new UnicomFHIRServlet(), "/fhir/*");
 		bean.setLoadOnStartup(1);
 		return bean;
 	}

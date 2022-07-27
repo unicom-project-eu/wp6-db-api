@@ -3,6 +3,7 @@ package it.datawizard.unicom.unicombackend.fhir;
 
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.RestfulServer;
+import it.datawizard.unicom.unicombackend.fhir.resourceproviders.MedicationKnowledgeResourceProvider;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,6 +27,7 @@ public class UnicomFHIRServlet extends RestfulServer {
          * setResourceProviders()
          */
         List<IResourceProvider> resourceProviders = new ArrayList<IResourceProvider>();
+        resourceProviders.add(new MedicationKnowledgeResourceProvider());
         setResourceProviders(resourceProviders);
     }
 }
