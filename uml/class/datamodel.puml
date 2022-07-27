@@ -2,7 +2,7 @@
 'skinparam linetype ortho
 
 package "Data Model" as datamodel <<frame>> {
-    enum DoseForm {}
+    enum IDMPDoseForm {}
     enum Country {}
 
     entity IDMPSubstance {
@@ -11,57 +11,13 @@ package "Data Model" as datamodel <<frame>> {
 
     entity IDMPMedicinalProduct {
         name: String
-        doseForme: DoseForm
+        doseForme: IDMPDoseForm
         packageSize: Integer
     }
 
     entity Organization {
         name: String
     }
-
-    package "Approach 1" as approach1  <<frame>> {
-        entity LocalMedicinalProductProperty {
-            country: Country
-            key: String
-            value: String
-        }
-
-        entity LocalSubstanceProperty {
-            country: Country
-            key: String
-            value: String
-        }
-
-        LocalMedicinalProductProperty --> Country
-        LocalMedicinalProductProperty "*" --*  "1" IDMPMedicinalProduct
-
-        LocalSubstanceProperty --> Country
-        LocalSubstanceProperty "*" --* "1" IDMPSubstance
-    }
-
-    note left of approach1 {
-        **Pros:**
-        Same entities for all MS
-
-        **Cons:**
-        Harder to access data
-    }
-
-    package "Approach 2" as approach2 <<frame>> {
-        class FinnishMedicinalProduct {}
-        class FinnishSubstance {}
-
-        FinnishMedicinalProduct --|> IDMPMedicinalProduct
-        FinnishSubstance --|> IDMPSubstance
-    }
-
-'    note left of approach2 {
-'        **Pros:**
-'        ...
-'
-'        **Cons:**
-'        ...
-'    }
 
     package "Approach 3" as approach3 <<frame>> {
         class LocalMedicinalProductData {
@@ -81,13 +37,9 @@ package "Data Model" as datamodel <<frame>> {
         LocalSubstanceData "*" --* "1" IDMPSubstance
     }
 
-    approach1 -[hidden]-> approach2
-    approach2 -[hidden]-> approach3
-
-    IDMPMedicinalProduct --> DoseForm
+    IDMPMedicinalProduct --> IDMPDoseForm
     IDMPMedicinalProduct "*" --o "1" Organization : manufacturer
     IDMPMedicinalProduct "*" --o "1..*" IDMPSubstance
 }
-
 
 @enduml

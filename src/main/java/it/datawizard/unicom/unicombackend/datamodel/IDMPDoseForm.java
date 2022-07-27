@@ -1,4 +1,4 @@
 package it.datawizard.unicom.unicombackend.datamodel;
 
-public enum DoseForm {
+public enum IDMPDoseForm {
 }
