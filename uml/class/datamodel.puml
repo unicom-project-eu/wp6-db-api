@@ -1,0 +1,93 @@
+@startuml
+'skinparam linetype ortho
+
+package "Data Model" as datamodel <<frame>> {
+    enum DoseForm {}
+    enum Country {}
+
+    entity IDMPSubstance {
+        name: String
+    }
+
+    entity IDMPMedicinalProduct {
+        name: String
+        doseForme: DoseForm
+        packageSize: Integer
+    }
+
+    entity Organization {
+        name: String
+    }
+
+    package "Approach 1" as approach1  <<frame>> {
+        entity LocalMedicinalProductProperty {
+            country: Country
+            key: String
+            value: String
+        }
+
+        entity LocalSubstanceProperty {
+            country: Country
+            key: String
+            value: String
+        }
+
+        LocalMedicinalProductProperty --> Country
+        LocalMedicinalProductProperty "*" --*  "1" IDMPMedicinalProduct
+
+        LocalSubstanceProperty --> Country
+        LocalSubstanceProperty "*" --* "1" IDMPSubstance
+    }
+
+    note left of approach1 {
+        **Pros:**
+        Same entities for all MS
+
+        **Cons:**
+        Harder to access data
+    }
+
+    package "Approach 2" as approach2 <<frame>> {
+        class FinnishMedicinalProduct {}
+        class FinnishSubstance {}
+
+        FinnishMedicinalProduct --|> IDMPMedicinalProduct
+        FinnishSubstance --|> IDMPSubstance
+    }
+
+'    note left of approach2 {
+'        **Pros:**
+'        ...
+'
+'        **Cons:**
+'        ...
+'    }
+
+    package "Approach 3" as approach3 <<frame>> {
+        class LocalMedicinalProductData {
+            country: Country
+            data: JsonString
+        }
+
+        class LocalSubstanceData {
+            country: Country
+            data: JsonString
+        }
+
+        LocalMedicinalProductData --> Country
+        LocalMedicinalProductData "*" --* "1" IDMPMedicinalProduct
+
+        LocalSubstanceData --> Country
+        LocalSubstanceData "*" --* "1" IDMPSubstance
+    }
+
+    approach1 -[hidden]-> approach2
+    approach2 -[hidden]-> approach3
+
+    IDMPMedicinalProduct --> DoseForm
+    IDMPMedicinalProduct "*" --o "1" Organization : manufacturer
+    IDMPMedicinalProduct "*" --o "1..*" IDMPSubstance
+}
+
+
+@enduml
