@@ -1,9 +1,7 @@
 package it.datawizard.unicom.unicombackend.datamodel.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class IdmpSubstance {
@@ -12,4 +10,7 @@ public class IdmpSubstance {
     private Long id;
 
     private String name;
+
+    @ManyToMany(mappedBy = "ingredients")
+    private Set<IdmpMedicinalProduct> products;
 }
