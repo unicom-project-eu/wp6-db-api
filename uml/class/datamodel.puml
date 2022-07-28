@@ -20,12 +20,12 @@ package "Data Model" as datamodel <<frame>> {
     }
 
     package "Local Data" as local <<frame>> {
-        class LocalMedicinalProductData {
+        entity LocalMedicinalProductData {
             country: Country
             data: Json
         }
 
-        class LocalSubstanceData {
+        entity LocalSubstanceData {
             country: Country
             data: Json
         }
