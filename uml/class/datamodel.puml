@@ -5,11 +5,11 @@ package "Data Model" as datamodel <<frame>> {
     enum IDMPDoseForm {}
     enum Country {}
 
-    entity IDMPSubstance {
+    entity IdmpSubstance {
         name: String
     }
 
-    entity IDMPMedicinalProduct {
+    entity IdmpMedicinalProduct {
         name: String
         doseForm: IDMPDoseForm
         packageSize: Integer
@@ -31,15 +31,15 @@ package "Data Model" as datamodel <<frame>> {
         }
 
         LocalMedicinalProductData --> Country
-        LocalMedicinalProductData "*" --* "1" IDMPMedicinalProduct
+        LocalMedicinalProductData "*" --* "1" IdmpMedicinalProduct
 
         LocalSubstanceData --> Country
-        LocalSubstanceData "*" --* "1" IDMPSubstance
+        LocalSubstanceData "*" --* "1" IdmpSubstance
     }
 
-    IDMPMedicinalProduct --> IDMPDoseForm
-    IDMPMedicinalProduct "*" --o "1" Organization : manufacturer
-    IDMPMedicinalProduct "*" --o "1..*" IDMPSubstance : ingredients
+    IdmpMedicinalProduct --> IDMPDoseForm
+    IdmpMedicinalProduct "*" --o "1" Organization : manufacturer
+    IdmpMedicinalProduct "*" --o "1..*" IdmpSubstance : ingredients
 }
 
 @enduml
