@@ -2,7 +2,7 @@
 'skinparam linetype ortho
 
 package "Data Model" as datamodel <<frame>> {
-    enum IDMPDoseForm {}
+    enum IdmpDoseForm {}
     enum Country {}
 
     entity IdmpSubstance {
@@ -11,7 +11,7 @@ package "Data Model" as datamodel <<frame>> {
 
     entity IdmpMedicinalProduct {
         name: String
-        doseForm: IDMPDoseForm
+        doseForm: IdmpDoseForm
         packageSize: Integer
     }
 
@@ -37,7 +37,7 @@ package "Data Model" as datamodel <<frame>> {
         LocalSubstanceData "*" --* "1" IdmpSubstance
     }
 
-    IdmpMedicinalProduct --> IDMPDoseForm
+    IdmpMedicinalProduct --> IdmpDoseForm
     IdmpMedicinalProduct "*" --o "1" Organization : manufacturer
     IdmpMedicinalProduct "*" --o "1..*" IdmpSubstance : ingredients
 }
