@@ -3,6 +3,7 @@ package it.datawizard.unicom.unicombackend.datamodel.entities;
 import javax.persistence.*;
 import java.util.Set;
 
+@SuppressWarnings("unused")
 @Entity
 public class IdmpSubstance {
     @Id
