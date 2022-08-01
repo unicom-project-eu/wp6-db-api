@@ -1,0 +1,50 @@
+@startuml
+
+package "Data Model" as datamodel <<frame>> {
+    entity MedicinalProductDefinition {
+        mpId
+        fullName
+
+        pcId
+        description: String
+
+        packageSize: Float
+        unitOfPresentation
+        phpId
+        doseForm
+        atcCode: String
+        routeOfAdministration
+
+        code: EU-SMS
+        strengthPresentation
+        strengthConcentration
+        referenceSubstance: NONHOIDEA
+        referenceStrength: NONHOIDEA
+    }
+
+    entity Organization {
+        name: String
+    }
+
+    entity SubstanceDefinition {
+        name: String
+    }
+
+    MedicinalProductDefinition "*" -o "1" Organization : "Marketing Authorization Holder"
+    MedicinalProductDefinition "*" --o "1" SubstanceDefinition
+}
+
+
+note right of datamodel {
+    **Assumptions made:**
+    * One and only one manufactored item per per packaged product
+        => incorporate Contains and ManufactoredItemDefinition into PackagedProductDefinition
+    * One and only one Ingredient per PackagedProductDefinition
+        => incorporate Ingredient inside PackagedProductDefinition
+    
+    * in the end
+        => incorporate PackagedProductDefinition inside MedicinalProductDefinition
+}
+
+
+@enduml
