@@ -15,6 +15,13 @@ package "Data Model" as datamodel <<frame>> {
         atcCode: String
         routeOfAdministration
 
+    }
+
+    entity Organization {
+        name: String
+    }
+
+    entity Ingredient {
         code: EU-SMS
         strengthPresentation
         strengthConcentration
@@ -22,16 +29,14 @@ package "Data Model" as datamodel <<frame>> {
         referenceStrength: NONHOIDEA
     }
 
-    entity Organization {
-        name: String
-    }
-
     entity SubstanceDefinition {
         name: String
     }
 
     MedicinalProductDefinition "*" -o "1" Organization : "Marketing Authorization Holder"
-    MedicinalProductDefinition "*" --o "1" SubstanceDefinition
+
+    MedicinalProductDefinition "*" -- "*" SubstanceDefinition
+    (MedicinalProductDefinition, SubstanceDefinition) .. Ingredient
 }
 
 
@@ -39,8 +44,6 @@ note right of datamodel {
     **Assumptions made:**
     * One and only one manufactored item per per packaged product
         => incorporate Contains and ManufactoredItemDefinition into PackagedProductDefinition
-    * One and only one Ingredient per PackagedProductDefinition
-        => incorporate Ingredient inside PackagedProductDefinition
     
     * in the end
         => incorporate PackagedProductDefinition inside MedicinalProductDefinition
