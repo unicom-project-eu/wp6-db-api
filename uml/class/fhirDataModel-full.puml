@@ -1,0 +1,50 @@
+@startuml
+
+entity MedicinalProductDefinition {
+    mpId
+    fullName
+}
+
+entity Organization {
+    name: String
+}
+
+entity PackagedProductDefinition {
+    pcId
+    description: String
+}
+
+entity Contains {
+    packageSize: Float
+    unitOfPresentation
+}
+
+entity ManufactoredItemDefinition {
+    phpId
+    doseForm
+    atcCode: String
+    routeOfAdministration
+}
+
+entity Ingredient {
+    code: EU-SMS
+    strengthPresentation
+    strengthConcentration
+    referenceSubstance: NONHOIDEA
+    referenceStrength: NONHOIDEA
+}
+
+entity SubstanceDefinition {
+    name: String
+}
+
+MedicinalProductDefinition "1" -- "1" PackagedProductDefinition : package
+MedicinalProductDefinition "*" -o "1" Organization : "Marketing Authorization Holder"
+
+PackagedProductDefinition "*" -- "*" ManufactoredItemDefinition
+Contains . (PackagedProductDefinition, ManufactoredItemDefinition)
+
+ManufactoredItemDefinition "*" - "*" SubstanceDefinition
+(ManufactoredItemDefinition, SubstanceDefinition) .. Ingredient
+
+@enduml

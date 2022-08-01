@@ -1,0 +1,29 @@
+@startuml
+
+class MinimumAttributeList {
+    phpId
+    mpId
+    pcId
+
+    ingredient
+    ingredientCode
+
+    organization
+    fullName
+    atcCode
+
+    packageDescription
+    packageSize
+
+    strengthPresentation
+    strengthConcentration
+    referenceSubstance
+    referenceStrength
+    doseForm
+
+    ' https://www.fda.gov/industry/structured-product-labeling-resources/units-presentation
+    unitOfPresentation
+    routeOfAdministration
+}
+
+@enduml
