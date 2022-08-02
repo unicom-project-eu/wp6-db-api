@@ -1,9 +1,14 @@
 package it.datawizard.unicom.unicombackend.datamodel.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 public class MedicinalProductDefinition {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,14 +23,5 @@ public class MedicinalProductDefinition {
     private String description;
 
     @OneToMany(mappedBy = "medicinalProductDefinition")
-    Set<ProductContainsItem> contains;
-
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-
-    public String getMpId() { return mpId; }
-    public void setMpId(String mpId) { this.mpId = mpId; }
-
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
+    private Set<ProductContainsItem> contains;
 }

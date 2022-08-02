@@ -2,11 +2,15 @@ package it.datawizard.unicom.unicombackend.datamodel.entities;
 
 import it.datawizard.unicom.unicombackend.datamodel.DoseForm;
 import it.datawizard.unicom.unicombackend.datamodel.RouteOfAdministration;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 public class ManufactoredItemDefinition {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,5 +26,5 @@ public class ManufactoredItemDefinition {
     private RouteOfAdministration routeOfAdministration;
 
     @OneToMany(mappedBy = "manufactoredItemDefinition")
-    Set<ProductContainsItem> containedBy;
+    private Set<ProductContainsItem> containedBy;
 }
