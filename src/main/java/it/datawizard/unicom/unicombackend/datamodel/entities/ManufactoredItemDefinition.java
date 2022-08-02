@@ -27,4 +27,7 @@ public class ManufactoredItemDefinition {
 
     @OneToMany(mappedBy = "manufactoredItemDefinition")
     private Set<ProductContainsItem> containedBy;
+
+    @OneToMany(mappedBy = "manufactoredItemDefinition")
+    private Set<ItemIngredientSubstance> ingredients;
 }

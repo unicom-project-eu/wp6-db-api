@@ -27,7 +27,6 @@ entity ManufactoredItemDefinition {
 }
 
 entity Ingredient {
-    code: EU-SMS
     strengthPresentation
     strengthConcentration
     referenceSubstance: NONHOIDEA
@@ -35,6 +34,7 @@ entity Ingredient {
 }
 
 entity SubstanceDefinition {
+    code: EU-SMS
     name: String
 }
 
