@@ -21,6 +21,9 @@ public class MedicinalProductDefinition {
     private String pcId;
 
     private String description;
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Organization marketingAuthorizationOlder;
 
     @OneToMany(mappedBy = "medicinalProductDefinition")
     private Set<ProductContainsItem> contains;
