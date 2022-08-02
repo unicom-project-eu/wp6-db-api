@@ -15,7 +15,7 @@ entity PackagedProductDefinition {
 }
 
 entity Contains {
-    packageSize: Float
+    packageSize: Integer
     unitOfPresentation
 }
 
