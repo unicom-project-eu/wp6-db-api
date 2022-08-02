@@ -3,11 +3,18 @@ package it.datawizard.unicom.unicombackend.datamodel.entities;
 import it.datawizard.unicom.unicombackend.datamodel.UnitOfPresentation;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 public class ProductContainsItem {
+    @Embeddable
+    public static class Key implements Serializable {
+        private long medicinalProductDefinitionId;
+        private long manufactoredItemDefinitionId;
+    }
+
     @EmbeddedId
-    ProductContainsItemKey id;
+    ProductContainsItem.Key id;
 
     @ManyToOne
     @MapsId("medicinalProductDefinitionId")
