@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
-public class ProductContainsItem {
+public class Contains {
     @Embeddable
     @Getter
     @Setter
@@ -20,7 +20,7 @@ public class ProductContainsItem {
     }
 
     @EmbeddedId
-    private ProductContainsItem.Key id;
+    private Contains.Key id;
 
     @ManyToOne
     @MapsId("medicinalProductDefinitionId")

@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Entity
 @Getter
 @Setter
-public class ItemIngredientSubstance {
+public class Ingredient {
     @Embeddable
     @Getter
     @Setter
@@ -19,7 +19,7 @@ public class ItemIngredientSubstance {
     }
 
     @EmbeddedId
-    private ItemIngredientSubstance.Key id;
+    private Ingredient.Key id;
 
     @ManyToOne
     @MapsId("manufactoredItemDefinitionId")

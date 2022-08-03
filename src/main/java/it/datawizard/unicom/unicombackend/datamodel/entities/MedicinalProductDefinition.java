@@ -26,5 +26,5 @@ public class MedicinalProductDefinition {
     private Organization marketingAuthorizationOlder;
 
     @OneToMany(mappedBy = "medicinalProductDefinition")
-    private Set<ProductContainsItem> contains;
+    private Set<Contains> contains;
 }

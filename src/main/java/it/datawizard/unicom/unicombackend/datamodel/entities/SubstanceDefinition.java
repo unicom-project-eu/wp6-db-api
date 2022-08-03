@@ -17,5 +17,5 @@ public class SubstanceDefinition {
     private String name;
 
     @OneToMany(mappedBy = "substanceDefinition")
-    private Set<ItemIngredientSubstance> usedBy;
+    private Set<Ingredient> usedBy;
 }

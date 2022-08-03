@@ -26,8 +26,8 @@ public class ManufactoredItemDefinition {
     private RouteOfAdministration routeOfAdministration;
 
     @OneToMany(mappedBy = "manufactoredItemDefinition")
-    private Set<ProductContainsItem> containedBy;
+    private Set<Contains> containedBy;
 
     @OneToMany(mappedBy = "manufactoredItemDefinition")
-    private Set<ItemIngredientSubstance> ingredients;
+    private Set<Ingredient> ingredients;
 }
