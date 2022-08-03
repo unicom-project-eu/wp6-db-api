@@ -46,9 +46,19 @@ public class UnicomApplication implements CommandLineRunner {
 
 			ArrayList<Thread> threads = new ArrayList<>();
 			if (cmd.hasOption(importOption)) {
-				Thread thread = new Thread(new DataImport(cmd.getOptionValue(importOption)));
-				threads.add(thread);
-				thread.run();
+				String countryStr = cmd.getOptionValue(importOption);
+
+				try {
+					DataImport.ImportableCountries country = DataImport.ImportableCountries
+							.valueOf(countryStr);
+
+					Thread thread = new Thread(new DataImport(country));
+					threads.add(thread);
+					thread.run();
+				} catch (IllegalArgumentException e) {
+					LOG.error("Unknown country to import: " + countryStr);
+					System.exit(1);
+				}
 			}
 
 			for (Thread thread: threads) {
