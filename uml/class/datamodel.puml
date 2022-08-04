@@ -53,9 +53,9 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
 
     PharmaceuticalProduct "1" *-- "*" MedicinalProduct : pharmaceuticalProduct
 
-    MedicinalProduct "1" *-- "*" PackagedProduct
+    MedicinalProduct "1" *-- "*" PackagedProduct : medicinalProduct
     MedicinalProduct "*" --* "1" DoseForm : administrableDoseForm
-    RouteOfAdministration "*" - "*" MedicinalProduct
+    RouteOfAdministration "*" - "*" MedicinalProduct : routeOfAdministration
 
     MedicinalProduct "*" -* "1" Organization : marketingAuthorizationHolder
 }
