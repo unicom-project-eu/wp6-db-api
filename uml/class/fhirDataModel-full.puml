@@ -29,8 +29,8 @@ entity ManufactoredItemDefinition {
 entity Ingredient {
     strengthPresentation
     strengthConcentration
-    referenceSubstance: NONHOIDEA
-    referenceStrength: NONHOIDEA
+    referenceSubstance: HAVE_NO_IDEA
+    referenceStrength: HAVE_NO_IDEA
 }
 
 entity SubstanceDefinition {
