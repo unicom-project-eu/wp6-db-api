@@ -3,6 +3,11 @@
 
 package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     entity RouteOfAdministration {
+        name
+    }
+
+    entity UnitOfPresentation {
+        name
     }
 
     together {
@@ -33,7 +38,6 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         fullName
         packSize
         packDescription
-        unitOfPresentation
     }
 
     entity PackagedProduct {
@@ -48,15 +52,18 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
 
     Substance "1" ----* "*" PharmaceuticalProduct : activeIngredient
     Substance "0..1" ----* "*" PharmaceuticalProduct : modifier
-    DoseForm "1" *-- "*" PharmaceuticalProduct : doseForm
+    DoseForm "1" o-- "*" PharmaceuticalProduct : doseForm
     Strength "1" -- "1" PharmaceuticalProduct : strength
 
     PharmaceuticalProduct "1" *-- "*" MedicinalProduct : pharmaceuticalProduct
 
     MedicinalProduct "1" *-- "*" PackagedProduct : medicinalProduct
-    MedicinalProduct "*" --* "1" DoseForm : administrableDoseForm
+    MedicinalProduct "*" --o "1" DoseForm : administrableDoseForm
     RouteOfAdministration "*" - "*" MedicinalProduct : routeOfAdministration
+    UnitOfPresentation "1" -* "*" MedicinalProduct : unitOfPresentation
 
-    MedicinalProduct "*" -* "1" Organization : marketingAuthorizationHolder
+    MedicinalProduct "*" -o "1" Organization : marketingAuthorizationHolder
+
+    RouteOfAdministration -[hidden]-> UnitOfPresentation
 }
 @enduml
