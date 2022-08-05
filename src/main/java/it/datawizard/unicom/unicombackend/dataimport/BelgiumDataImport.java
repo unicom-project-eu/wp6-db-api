@@ -1,6 +1,5 @@
 package it.datawizard.unicom.unicombackend.dataimport;
 
-import com.opencsv.bean.CsvBindByName;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,9 +10,4 @@ public class BelgiumDataImport implements Runnable {
     public void run() {
 
     }
-}
-
-class BelgiumDataBean extends CsvBean {
-    @CsvBindByName
-
 }
