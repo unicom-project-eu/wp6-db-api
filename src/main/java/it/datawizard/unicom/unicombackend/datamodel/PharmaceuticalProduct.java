@@ -39,4 +39,8 @@ public class PharmaceuticalProduct {
     @ManyToOne
     @JoinColumn(nullable = true)
     private Substance modifier;
+
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private DoseForm doseForm;
 }
