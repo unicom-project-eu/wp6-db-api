@@ -50,8 +50,8 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         name: String
     }
 
-    Substance "1" ----* "*" PharmaceuticalProduct : activeIngredient
-    Substance "0..1" ----* "*" PharmaceuticalProduct : modifier
+    Substance "1" o---- "*" PharmaceuticalProduct : activeIngredient
+    Substance "0..1" o---- "*" PharmaceuticalProduct : modifier
     DoseForm "1" o-- "*" PharmaceuticalProduct : doseForm
     Strength "1" -- "1" PharmaceuticalProduct : strength
 
