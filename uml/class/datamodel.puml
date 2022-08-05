@@ -3,51 +3,51 @@
 
 package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     entity RouteOfAdministration {
-        name
+        name: String
     }
 
     entity UnitOfPresentation {
-        name
+        name: String
     }
 
     together {
         entity DoseForm {
-            name
+            name: String
         }
 
         entity Strength {
-            numeratorValue
-            denominatorValue
-            numeratorUnit
-            denominatorUnit
-            referenceSubstance
+            numeratorValue: Float
+            denominatorValue: Float
+            numeratorUnit: Unit
+            denominatorUnit: Float
+            referenceSubstance: ReferenceSubstance
         }
 
         entity Substance {
-            name
+            name: String
         }
     }
 
     entity PharmaceuticalProduct {
-        phpId
-        ingredientCode
+        phpId: String
+        ingredientCode: String
     }
 
     entity MedicinalProduct {
-        mpId
-        fullName
-        packSize
-        packDescription
+        mpId: String
+        fullName: String
+        packSize: Integer
+        packDescription: String
     }
 
     entity PackagedProduct {
-        pcId
-        atcCode
-        packageSize
+        pcId: String
+        atcCode: String
+        packageSize: Integer
     }
 
     entity Organization {
-        name
+        name: String
     }
 
     Substance "1" ----* "*" PharmaceuticalProduct : activeIngredient
@@ -59,7 +59,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
 
     MedicinalProduct "1" *-- "*" PackagedProduct : medicinalProduct
     MedicinalProduct "*" --o "1" DoseForm : administrableDoseForm
-    RouteOfAdministration "*" - "*" MedicinalProduct : routeOfAdministration
+    RouteOfAdministration "*" - "*" MedicinalProduct : routesOfAdministration
     UnitOfPresentation "1" -* "*" MedicinalProduct : unitOfPresentation
 
     MedicinalProduct "*" -o "1" Organization : marketingAuthorizationHolder
