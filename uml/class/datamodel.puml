@@ -19,7 +19,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
             numeratorValue: Float
             denominatorValue: Float
             numeratorUnit: Unit
-            denominatorUnit: Float
+            denominatorUnit: Unit
             referenceSubstance: ReferenceSubstance
         }
 
