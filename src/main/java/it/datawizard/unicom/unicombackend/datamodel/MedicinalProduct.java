@@ -21,4 +21,8 @@ public class MedicinalProduct {
     @ManyToOne
     @JoinColumn(nullable = false)
     private PharmaceuticalProduct pharmaceuticalProduct;
+
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private UnitOfPresentation unitOfPresentation;
 }
