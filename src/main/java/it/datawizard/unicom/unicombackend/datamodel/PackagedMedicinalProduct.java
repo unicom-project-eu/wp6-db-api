@@ -1,13 +1,11 @@
 package it.datawizard.unicom.unicombackend.datamodel;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 
 @Entity
-@Setter
-@Getter
+@Data
 public class PackagedMedicinalProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

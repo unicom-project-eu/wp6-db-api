@@ -1,14 +1,12 @@
 package it.datawizard.unicom.unicombackend.datamodel;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Setter
-@Getter
+@Data
 public class Substance {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
