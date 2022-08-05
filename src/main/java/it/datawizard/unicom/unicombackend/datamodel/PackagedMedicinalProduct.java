@@ -11,7 +11,7 @@ import javax.persistence.Id;
 @Entity
 @Setter
 @Getter
-public class PackagedProduct {
+public class PackagedMedicinalProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

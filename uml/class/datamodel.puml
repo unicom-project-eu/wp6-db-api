@@ -40,7 +40,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         packDescription: String
     }
 
-    entity PackagedProduct {
+    entity PackagedMedicinalProduct {
         pcId: String
         atcCode: String
         packageSize: Integer
@@ -57,7 +57,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
 
     PharmaceuticalProduct "1" o-- "*" MedicinalProduct : pharmaceuticalProduct
 
-    MedicinalProduct "1" o-- "*" PackagedProduct : medicinalProduct
+    MedicinalProduct "1" o-- "*" PackagedMedicinalProduct : medicinalProduct
     MedicinalProduct "*" --o "1" DoseForm : administrableDoseForm
     RouteOfAdministration "*" - "*" MedicinalProduct : routesOfAdministration
     UnitOfPresentation "1" o- "*" MedicinalProduct : unitOfPresentation
