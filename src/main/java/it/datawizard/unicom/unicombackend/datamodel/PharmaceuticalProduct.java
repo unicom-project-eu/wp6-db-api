@@ -24,10 +24,19 @@ public class PharmaceuticalProduct {
     private Float numeratorValue;
     private Float denominatorValue;
 
-    // TODO normalize unit decomposing it in unit and multiplier (eg: for ml separate "milli" from "liters")
+    // TODO normalize unit by decomposing it into unit and multiplier
+    //      (eg: for "ml" separate "milli" from "liters")
     private String numeratorUnit;
     private String denominatorUnit;
 
     @Enumerated(EnumType.STRING)
     private ReferenceSubstance referenceSubstance;
+
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Substance activeIngredient;
+
+    @ManyToOne
+    @JoinColumn(nullable = true)
+    private Substance modifier;
 }
