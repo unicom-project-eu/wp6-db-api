@@ -3,16 +3,16 @@
 
 package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     entity RouteOfAdministration {
-        name: String
+        display: String
     }
 
     entity UnitOfPresentation {
-        name: String
+        display: String
     }
 
     together {
         entity DoseForm {
-            name: String
+            display: String
         }
 
         entity Strength {
