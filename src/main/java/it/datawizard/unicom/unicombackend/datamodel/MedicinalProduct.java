@@ -33,4 +33,7 @@ public class MedicinalProduct {
 
     @OneToMany(mappedBy = "medicinalProduct")
     private Set<PackagedMedicinalProduct> packagedMedicinalProducts;
+
+    @ManyToMany
+    Set<RouteOfAdministration> routesOfAdministration;
 }
