@@ -25,4 +25,8 @@ public class MedicinalProduct {
     @ManyToOne
     @JoinColumn(nullable = false)
     private UnitOfPresentation unitOfPresentation;
+
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Organization marketingAuthorizationHolder;
 }

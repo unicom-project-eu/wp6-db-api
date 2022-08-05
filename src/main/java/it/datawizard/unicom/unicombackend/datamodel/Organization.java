@@ -3,10 +3,8 @@ package it.datawizard.unicom.unicombackend.datamodel;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Setter
@@ -17,5 +15,8 @@ public class Organization {
     private Long id;
 
     private String name;
+
+    @OneToMany(mappedBy = "marketingAuthorizationHolder")
+    private Set<MedicinalProduct> medicinalProducts;
 }
 
