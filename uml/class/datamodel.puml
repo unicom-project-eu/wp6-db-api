@@ -2,16 +2,16 @@
 'https://plantuml.com/class-diagram
 
 package "IDMP Datamodel" as idmpDatamodel <<frame>> {
-    entity RouteOfAdministration {
+    entity EdqmRouteOfAdministration {
         display: String
     }
 
-    entity UnitOfPresentation {
+    entity EdqmUnitOfPresentation {
         display: String
     }
 
     together {
-        entity EDQMDoseForm {
+        entity EdqmDoseForm {
             display: String
             isValidAdministrableDoseForm: Boolean
         }
@@ -26,6 +26,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
 
         entity SubstanceWithRolePAI {
             ingredientCode: String
+            display: String
         }
     }
 
@@ -54,16 +55,16 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
 
     SubstanceWithRolePAI "1" o---- "*" PharmaceuticalProduct : preciseActiveIngredient
     SubstanceWithRolePAI "1" o- "0..1" SubstanceWithRolePAI : moiety
-    EDQMDoseForm "1" o-- "*" PharmaceuticalProduct : administrableDoseForm
+    EdqmDoseForm "1" o-- "*" PharmaceuticalProduct : administrableDoseForm
     Strength "1" -- "1" PharmaceuticalProduct : normalizedStrength
 
     PharmaceuticalProduct "1" o-- "*" MedicinalProduct : pharmaceuticalProduct
 
     MedicinalProduct "1" o-- "*" PackagedMedicinalProduct : medicinalProduct
-    MedicinalProduct "*" --o "1" EDQMDoseForm : pharmaceuticalDoseForm
+    MedicinalProduct "*" --o "1" EdqmDoseForm : pharmaceuticalDoseForm
     MedicinalProduct "1" -- "1" Strength : authorizedStrength
-    RouteOfAdministration "*" - "*" MedicinalProduct : routesOfAdministration
-    UnitOfPresentation "1" o-- "*" Strength: unitOfPresentation
+    EdqmRouteOfAdministration "*" - "*" MedicinalProduct : routesOfAdministration
+    EdqmUnitOfPresentation "1" o-- "*" Strength: unitOfPresentation
 
     MedicinalProduct "*" -o "1" Organization : marketingAuthorizationHolder
 
