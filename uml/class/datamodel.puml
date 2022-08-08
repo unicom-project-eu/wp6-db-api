@@ -63,7 +63,6 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     MedicinalProduct "*" --o "1" EDQMDoseForm : pharmaceuticalDoseForm
     MedicinalProduct "1" -- "1" Strength : authorizedStrength
     RouteOfAdministration "*" - "*" MedicinalProduct : routesOfAdministration
-    ' UnitOfPresentation "1" o- "*" MedicinalProduct : unitOfPresentation
     UnitOfPresentation "1" o-- "*" Strength: unitOfPresentation
 
     MedicinalProduct "*" -o "1" Organization : marketingAuthorizationHolder
