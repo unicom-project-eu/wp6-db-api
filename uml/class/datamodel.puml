@@ -11,8 +11,9 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     }
 
     together {
-        entity DoseForm {
+        entity EDQMDoseForm {
             display: String
+            isValidAdministrableDoseForm: Boolean
         }
 
         entity Strength {
@@ -20,11 +21,11 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
             denominatorValue: Float
             numeratorUnit: Unit
             denominatorUnit: Unit
-            referenceSubstance: ReferenceSubstance
+            isPresentationStrength: Boolean
         }
 
-        entity Substance {
-            name: String
+        entity SubstanceWithRolePAI {
+            ingredientCode: String
         }
     }
 
@@ -34,6 +35,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     }
 
     entity MedicinalProduct {
+        country: Country
         mpId: String
         fullName: String
         packSize: Integer
@@ -50,20 +52,22 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         name: String
     }
 
-    Substance "1" o---- "*" PharmaceuticalProduct : activeIngredient
-    Substance "0..1" o---- "*" PharmaceuticalProduct : modifier
-    DoseForm "1" o-- "*" PharmaceuticalProduct : doseForm
-    Strength "1" -- "1" PharmaceuticalProduct : strength
+    SubstanceWithRolePAI "1" o---- "*" PharmaceuticalProduct : preciseActiveIngredient
+    SubstanceWithRolePAI "1" o- "0..1" SubstanceWithRolePAI : moiety
+    EDQMDoseForm "1" o-- "*" PharmaceuticalProduct : administrableDoseForm
+    Strength "1" -- "1" PharmaceuticalProduct : normalizedStrength
 
     PharmaceuticalProduct "1" o-- "*" MedicinalProduct : pharmaceuticalProduct
 
     MedicinalProduct "1" o-- "*" PackagedMedicinalProduct : medicinalProduct
-    MedicinalProduct "*" --o "1" DoseForm : administrableDoseForm
+    MedicinalProduct "*" --o "1" EDQMDoseForm : pharmaceuticalDoseForm
+    MedicinalProduct "1" -- "1" Strength : authorizedStrength
     RouteOfAdministration "*" - "*" MedicinalProduct : routesOfAdministration
-    UnitOfPresentation "1" o- "*" MedicinalProduct : unitOfPresentation
+    ' UnitOfPresentation "1" o- "*" MedicinalProduct : unitOfPresentation
+    UnitOfPresentation "1" o-- "*" Strength: unitOfPresentation
 
     MedicinalProduct "*" -o "1" Organization : marketingAuthorizationHolder
 
-    RouteOfAdministration -[hidden]-> UnitOfPresentation
+    Strength "*" -o "1" SubstanceWithRolePAI : referenceSubstance
 }
 @enduml
