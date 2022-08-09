@@ -57,7 +57,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         name: String
     }
 
-    Modifier "1" o-- "*" SubstanceWithRolePAI : modifier
+    Modifier "0..1" o-- "*" SubstanceWithRolePAI : modifier
 
     SubstanceWithRolePAI "1" o------ "*" PharmaceuticalProduct : preciseActiveIngredient
     EdqmDoseForm "1" o-- "*" PharmaceuticalProduct : administrableDoseForm
