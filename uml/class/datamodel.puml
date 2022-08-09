@@ -10,10 +10,6 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         display: String
     }
 
-    entity Modifier {
-        display: String
-    }
-
     together {
         entity EdqmDoseForm {
             display: String
@@ -56,8 +52,6 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     entity Organization {
         name: String
     }
-
-    Modifier "0..1" o-- "*" SubstanceWithRolePai : modifier
 
     SubstanceWithRolePai "1" o------ "*" PharmaceuticalProduct : preciseActiveIngredient
     EdqmDoseForm "1" o-- "*" PharmaceuticalProduct : administrableDoseForm
