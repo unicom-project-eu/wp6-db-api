@@ -28,10 +28,6 @@ public class MedicinalProduct {
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    private EdqmUnitOfPresentation edqmUnitOfPresentation;
-
-    @ManyToOne
-    @JoinColumn(nullable = false)
     private Organization marketingAuthorizationHolder;
 
     @OneToMany(mappedBy = "medicinalProduct")

@@ -1,14 +1,16 @@
 package it.datawizard.unicom.unicombackend.datamodel;
 
-import lombok.Data;
+import lombok.*;
+import org.hibernate.Hibernate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 public class Strength {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,4 +24,23 @@ public class Strength {
 
     private Float denominatorValue;
     private String denominatorUnit;
+
+    private Boolean isPresentationStrength;
+
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private EdqmUnitOfPresentation unitOfPresentation;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Strength strength = (Strength) o;
+        return id != null && Objects.equals(id, strength.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }
