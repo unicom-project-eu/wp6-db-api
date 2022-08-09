@@ -3,27 +3,27 @@
 
 package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     entity EdqmRouteOfAdministration {
-        * id: Long
+        * id: Long <<generated>>
         --
         * display: String
     }
 
     entity EdqmUnitOfPresentation {
-        * id: Long
+        * id: Long <<generated>>
         --
         * display: String
     }
 
     together {
         entity EdqmDoseForm {
-            * id: Long
+            * id: Long <<generated>>
             --
             * display: String
             * isValidAdministrableDoseForm: Boolean
         }
 
         entity Strength {
-            * id: Long
+            * id: Long <<generated>>
             --
             * numeratorValue: Float
             * numeratorUnit: Unit
@@ -33,24 +33,24 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         }
 
         entity SubstanceWithRolePai {
-            * id: Long
+            * id: Long <<generated>>
             --
-            * ingredientCode: String {unique}
+            * ingredientCode: String <<unique>>
             * moiety: String
             modifier: String
         }
     }
 
     entity PharmaceuticalProduct {
-        * id: Long
+        * id: Long <<generated>>
         --
-        * phpId: String {unique}
+        * phpId: String <<unique>>
     }
 
     entity MedicinalProduct {
-        * id: Long
+        * id: Long <<generated>>
         --
-        * mpId: String {unique}
+        * mpId: String <<unique>>
         * country: Country
         * fullName: String
         * packSize: Integer
@@ -59,14 +59,14 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     }
 
     entity PackagedMedicinalProduct {
-        * id: Long
+        * id: Long <<generated>>
         --
-        * pcId: String {unique}
+        * pcId: String <<unique>>
         * packageSize: Integer
     }
 
     entity Organization {
-        * id: Long
+        * id: Long <<generated>>
         --
         * name: String
     }
