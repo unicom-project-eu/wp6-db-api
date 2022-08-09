@@ -22,6 +22,10 @@ public class MedicinalProduct {
     private Integer packSize;
     private String packDescription;
 
+    @OneToOne
+    @JoinColumn()
+    private Strength authorizedStrength;
+
     @ManyToOne
     @JoinColumn(nullable = false)
     private PharmaceuticalProduct pharmaceuticalProduct;

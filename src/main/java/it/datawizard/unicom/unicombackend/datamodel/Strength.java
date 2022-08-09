@@ -30,6 +30,9 @@ public class Strength {
     @OneToOne(mappedBy = "normalizedStrength")
     private PharmaceuticalProduct pharmaceuticalProduct;
 
+    @OneToOne(mappedBy = "authorizedStrength")
+    private MedicinalProduct medicinalProduct;
+
     @ManyToOne
     @JoinColumn(nullable = false)
     private EdqmUnitOfPresentation unitOfPresentation;
