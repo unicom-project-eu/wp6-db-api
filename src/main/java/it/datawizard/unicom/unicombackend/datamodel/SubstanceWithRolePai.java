@@ -17,7 +17,9 @@ public class SubstanceWithRolePai {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String name;
+    private String ingredientCode;
+    private String moiety;
+    private String modifier;
 
     @OneToMany(mappedBy = "preciseActiveIngredient")
     @ToString.Exclude

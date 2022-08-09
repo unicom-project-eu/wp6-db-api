@@ -26,7 +26,8 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
 
         entity SubstanceWithRolePai {
             ingredientCode: String
-            display: String
+            moiety: String
+            modifier: String
         }
     }
 
