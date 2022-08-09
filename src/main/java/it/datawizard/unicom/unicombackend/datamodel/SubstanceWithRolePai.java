@@ -23,10 +23,6 @@ public class SubstanceWithRolePai {
     @ToString.Exclude
     private Set<PharmaceuticalProduct> usedAsActiveIngredientMedicinalProduct;
 
-    @OneToMany(mappedBy = "modifier")
-    @ToString.Exclude
-    private Set<PharmaceuticalProduct> usedAsModifierMedicinalProduct;
-
     @OneToMany(mappedBy = "referenceSubstance")
     @ToString.Exclude
     private Set<Strength> strengths;

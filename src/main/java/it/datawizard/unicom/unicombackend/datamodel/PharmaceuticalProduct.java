@@ -29,10 +29,6 @@ public class PharmaceuticalProduct {
     private SubstanceWithRolePai preciseActiveIngredient;
 
     @ManyToOne
-    @JoinColumn(nullable = true)
-    private SubstanceWithRolePai modifier;
-
-    @ManyToOne
     @JoinColumn(nullable = false)
     private EdqmDoseForm administrableDoseForm;
 
