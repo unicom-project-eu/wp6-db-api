@@ -3,55 +3,72 @@
 
 package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     entity EdqmRouteOfAdministration {
-        display: String
+        * id: Long
+        --
+        * display: String
     }
 
     entity EdqmUnitOfPresentation {
-        display: String
+        * id: Long
+        --
+        * display: String
     }
 
     together {
         entity EdqmDoseForm {
-            display: String
-            isValidAdministrableDoseForm: Boolean
+            * id: Long
+            --
+            * display: String
+            * isValidAdministrableDoseForm: Boolean
         }
 
         entity Strength {
-            numeratorValue: Float
+            * id: Long
+            --
+            * numeratorValue: Float
+            * numeratorUnit: Unit
             denominatorValue: Float
-            numeratorUnit: Unit
             denominatorUnit: Unit
-            isPresentationStrength: Boolean
+            * isPresentationStrength: Boolean
         }
 
         entity SubstanceWithRolePai {
-            ingredientCode: String
-            moiety: String
+            * id: Long
+            --
+            * ingredientCode: String {unique}
+            * moiety: String
             modifier: String
         }
     }
 
     entity PharmaceuticalProduct {
-        phpId: String
-        ingredientCode: String
+        * id: Long
+        --
+        * phpId: String {unique}
     }
 
     entity MedicinalProduct {
-        country: Country
-        mpId: String
-        fullName: String
-        packSize: Integer
+        * id: Long
+        --
+        * mpId: String {unique}
+        * country: Country
+        * fullName: String
+        * packSize: Integer
+        * atcCode: String
         packDescription: String
     }
 
     entity PackagedMedicinalProduct {
-        pcId: String
-        atcCode: String
-        packageSize: Integer
+        * id: Long
+        --
+        * pcId: String {unique}
+        * packageSize: Integer
     }
 
     entity Organization {
-        name: String
+        * id: Long
+        --
+        * name: String
     }
 
     SubstanceWithRolePai ||------o{ PharmaceuticalProduct : preciseActiveIngredient
