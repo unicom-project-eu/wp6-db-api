@@ -23,7 +23,7 @@ public class MedicinalProduct {
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    private UnitOfPresentation unitOfPresentation;
+    private EdqmUnitOfPresentation edqmUnitOfPresentation;
 
     @ManyToOne
     @JoinColumn(nullable = false)
@@ -33,5 +33,5 @@ public class MedicinalProduct {
     private Set<PackagedMedicinalProduct> packagedMedicinalProducts;
 
     @ManyToMany
-    Set<RouteOfAdministration> routesOfAdministration;
+    Set<EdqmRouteOfAdministration> routesOfAdministration;
 }

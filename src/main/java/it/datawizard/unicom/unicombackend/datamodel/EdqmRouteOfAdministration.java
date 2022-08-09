@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity
 @Data
-public class RouteOfAdministration {
+public class EdqmRouteOfAdministration {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity
 @Data
-public class DoseForm {
+public class EdqmDoseForm {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

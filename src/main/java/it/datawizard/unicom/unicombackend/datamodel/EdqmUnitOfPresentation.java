@@ -7,13 +7,13 @@ import java.util.Set;
 
 @Entity
 @Data
-public class UnitOfPresentation {
+public class EdqmUnitOfPresentation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String display;
 
-    @OneToMany(mappedBy = "unitOfPresentation")
+    @OneToMany(mappedBy = "edqmUnitOfPresentation")
     private Set<MedicinalProduct> medicinalProducts;
 }

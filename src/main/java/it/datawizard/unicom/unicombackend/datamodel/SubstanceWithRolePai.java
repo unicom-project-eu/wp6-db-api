@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity
 @Data
-public class SubstanceWithRolePAI {
+public class SubstanceWithRolePai {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

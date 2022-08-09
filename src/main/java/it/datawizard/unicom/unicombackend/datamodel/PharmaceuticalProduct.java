@@ -33,15 +33,15 @@ public class PharmaceuticalProduct {
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    private Substance activeIngredient;
+    private SubstanceWithRolePai activeIngredient;
 
     @ManyToOne
     @JoinColumn(nullable = true)
-    private Substance modifier;
+    private SubstanceWithRolePai modifier;
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    private DoseForm doseForm;
+    private EdqmDoseForm edqmDoseForm;
 
     @OneToMany(mappedBy = "pharmaceuticalProduct")
     private Set<MedicinalProduct> medicinalProducts;
