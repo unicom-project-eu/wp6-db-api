@@ -26,7 +26,7 @@ public class PharmaceuticalProduct {
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    private SubstanceWithRolePai activeIngredient;
+    private SubstanceWithRolePai preciseActiveIngredient;
 
     @ManyToOne
     @JoinColumn(nullable = true)

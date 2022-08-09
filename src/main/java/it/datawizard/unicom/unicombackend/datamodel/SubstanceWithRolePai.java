@@ -19,7 +19,7 @@ public class SubstanceWithRolePai {
 
     private String name;
 
-    @OneToMany(mappedBy = "activeIngredient")
+    @OneToMany(mappedBy = "preciseActiveIngredient")
     @ToString.Exclude
     private Set<PharmaceuticalProduct> usedAsActiveIngredientMedicinalProduct;
 
