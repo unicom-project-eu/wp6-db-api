@@ -27,6 +27,10 @@ public class SubstanceWithRolePai {
     @ToString.Exclude
     private Set<PharmaceuticalProduct> usedAsModifierMedicinalProduct;
 
+    @OneToMany(mappedBy = "referenceSubstance")
+    @ToString.Exclude
+    private Set<Strength> strengths;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
