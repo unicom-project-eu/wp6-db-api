@@ -28,7 +28,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
             isPresentationStrength: Boolean
         }
 
-        entity SubstanceWithRolePAI {
+        entity SubstanceWithRolePai {
             ingredientCode: String
             display: String
         }
@@ -57,9 +57,9 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         name: String
     }
 
-    Modifier "0..1" o-- "*" SubstanceWithRolePAI : modifier
+    Modifier "0..1" o-- "*" SubstanceWithRolePai : modifier
 
-    SubstanceWithRolePAI "1" o------ "*" PharmaceuticalProduct : preciseActiveIngredient
+    SubstanceWithRolePai "1" o------ "*" PharmaceuticalProduct : preciseActiveIngredient
     EdqmDoseForm "1" o-- "*" PharmaceuticalProduct : administrableDoseForm
     Strength "1" -- "1" PharmaceuticalProduct : normalizedStrength
 
@@ -73,6 +73,6 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
 
     MedicinalProduct "*" -o "1" Organization : marketingAuthorizationHolder
 
-    Strength "*" -o "1" SubstanceWithRolePAI : referenceSubstance
+    Strength "*" -o "1" SubstanceWithRolePai : referenceSubstance
 }
 @enduml
