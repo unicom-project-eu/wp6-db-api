@@ -19,9 +19,13 @@ public class EdqmDoseForm {
 
     private String display;
 
-    @OneToMany
+    @OneToMany(mappedBy = "edqmDoseForm")
     @ToString.Exclude
     private Set<PharmaceuticalProduct> pharmaceuticalProducts;
+
+    @OneToMany(mappedBy = "pharmaceuticalDoseForm")
+    @ToString.Exclude
+    private Set<MedicinalProduct> medicinalProducts;
 
     @Override
     public boolean equals(Object o) {

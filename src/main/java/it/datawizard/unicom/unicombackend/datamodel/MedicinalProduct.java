@@ -22,6 +22,8 @@ public class MedicinalProduct {
     private Integer packSize;
     private String packDescription;
 
+    private String country; // TODO make an entity
+
     @OneToOne
     @JoinColumn()
     private Strength authorizedStrength;
@@ -40,7 +42,11 @@ public class MedicinalProduct {
 
     @ManyToMany
     @ToString.Exclude
-    Set<EdqmRouteOfAdministration> routesOfAdministration;
+    private Set<EdqmRouteOfAdministration> routesOfAdministration;
+
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private EdqmDoseForm pharmaceuticalDoseForm;
 
     @Override
     public boolean equals(Object o) {
