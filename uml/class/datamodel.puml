@@ -54,20 +54,20 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         name: String
     }
 
-    SubstanceWithRolePai "1" o------ "*" PharmaceuticalProduct : preciseActiveIngredient
-    EdqmDoseForm "1" o-- "*" PharmaceuticalProduct : administrableDoseForm
-    Strength "1" -- "1" PharmaceuticalProduct : normalizedStrength
+    SubstanceWithRolePai ||------o{ PharmaceuticalProduct : preciseActiveIngredient
+    EdqmDoseForm ||--o{ PharmaceuticalProduct : administrableDoseForm
+    Strength ||--|| PharmaceuticalProduct : normalizedStrength
 
-    PharmaceuticalProduct "1" o-- "*" MedicinalProduct : pharmaceuticalProduct
+    PharmaceuticalProduct ||--o{ MedicinalProduct : pharmaceuticalProduct
 
-    MedicinalProduct "1" o-- "*" PackagedMedicinalProduct : medicinalProduct
-    MedicinalProduct "*" --o "1" EdqmDoseForm : pharmaceuticalDoseForm
-    MedicinalProduct "1" -- "1" Strength : authorizedStrength
-    EdqmRouteOfAdministration "*" - "*" MedicinalProduct : routesOfAdministration
-    EdqmUnitOfPresentation "1" o-- "*" Strength: unitOfPresentation
+    MedicinalProduct ||--o{ PackagedMedicinalProduct : medicinalProduct
+    MedicinalProduct }o--|| EdqmDoseForm : pharmaceuticalDoseForm
+    MedicinalProduct ||--|| Strength : authorizedStrength
+    EdqmRouteOfAdministration }o-o{ MedicinalProduct : routesOfAdministration
+    EdqmUnitOfPresentation ||--o{ Strength: unitOfPresentation
 
-    MedicinalProduct "*" -o "1" Organization : marketingAuthorizationHolder
+    MedicinalProduct }o-|| Organization : marketingAuthorizationHolder
 
-    Strength "*" -o "1" SubstanceWithRolePai : referenceSubstance
+    Strength }o-|| SubstanceWithRolePai : referenceSubstance
 }
 @enduml
