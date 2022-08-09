@@ -27,6 +27,9 @@ public class Strength {
 
     private Boolean isPresentationStrength;
 
+    @OneToOne(mappedBy = "normalizedStrength")
+    private PharmaceuticalProduct pharmaceuticalProduct;
+
     @ManyToOne
     @JoinColumn(nullable = false)
     private EdqmUnitOfPresentation unitOfPresentation;

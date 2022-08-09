@@ -13,11 +13,6 @@ import java.util.Set;
 @ToString
 @RequiredArgsConstructor
 public class PharmaceuticalProduct {
-    public enum ReferenceSubstance {
-        unitOfPresentationBased,
-        concentrationBased,
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -25,16 +20,9 @@ public class PharmaceuticalProduct {
     private String phpId;
     private String ingredientCode;
 
-    private Float numeratorValue;
-    private Float denominatorValue;
-
-    // TODO normalize unit by decomposing it into unit and multiplier
-    //      (eg: for "ml" separate "milli" from "liters")
-    private String numeratorUnit;
-    private String denominatorUnit;
-
-    @Enumerated(EnumType.STRING)
-    private ReferenceSubstance referenceSubstance;
+    @OneToOne
+    @JoinColumn()
+    private Strength normalizedStrength;
 
     @ManyToOne
     @JoinColumn(nullable = false)
