@@ -1,7 +1,9 @@
 package it.datawizard.unicom.unicombackend.dataimport.csvbeans;
 
 import com.opencsv.bean.CsvBindByName;
+import lombok.Data;
 
+@Data
 public class BelgiumCsvBean extends CsvBean {
     @CsvBindByName(column = "authorization_country")
     private String authorization_country;
