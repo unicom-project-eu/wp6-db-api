@@ -83,6 +83,24 @@
 			<version>${hapifhir_version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
+			<version>4.14.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-maven-plugin</artifactId>
+			<version>4.14.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.liquibase.ext</groupId>
+			<artifactId>liquibase-hibernate5</artifactId>
+			<version>4.14.0</version>
+		</dependency>
+
 		<!--
 		HAPI-FHIR uses Logback for logging support. The logback library is included
 		automatically by Maven as a part of the hapi-fhir-base dependency, but you
@@ -140,6 +158,15 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>4.14.0</version>
+				<configuration>
+					<propertyFile>src/main/resources/liquibase.properties</propertyFile>
+					<outputChangeLogFile>src/main/resources/liquibase-changeLog.yaml</outputChangeLogFile>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
