@@ -165,7 +165,6 @@
 				<version>4.14.0</version>
 				<configuration>
 					<propertyFile>src/main/resources/liquibase.properties</propertyFile>
-					<outputChangeLogFile>src/main/resources/liquibase-changeLog.yaml</outputChangeLogFile>
 				</configuration>
 			</plugin>
 		</plugins>

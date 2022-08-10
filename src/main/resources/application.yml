@@ -11,4 +11,4 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
   liquibase:
-    change-log: 'classpath:liquibase-changeLog.yaml'
+    change-log: 'classpath:liquibase-changeLog.yml'
