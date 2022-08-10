@@ -5,9 +5,6 @@ spring:
     password: ${postgres.password:postgres}
 
   jpa:
-    generate-ddl: true
-    hibernate:
-      ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
   liquibase:
