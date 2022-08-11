@@ -19,6 +19,8 @@ public class EdqmDoseForm {
 
     private String display;
 
+    private Boolean isValidAdministrableDoseForm;
+
     @OneToMany(mappedBy = "administrableDoseForm")
     @ToString.Exclude
     private Set<PharmaceuticalProduct> pharmaceuticalProducts;
