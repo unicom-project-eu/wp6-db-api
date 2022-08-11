@@ -1,16 +1,16 @@
 moiety,modifier,ingredient_code
-diclofenac,,100000092798
+diclofenac,NULL,100000092798
 diclofenac,sodium,100000092272
 diclofenac,potassium,100000092368
 diclofenac,diethylamine ,100000091074
 diclofenac,epolamine,100000085789
 amoxicillin,sodium,100000090113
 amoxicillin,trihydrate,100000092629
-carbamazepine,,100000092127
+carbamazepine,NULL,100000092127
 amlodipine,besilate,100000090079
 amlodipine,mesilate,100000089571
 amlodipine,maleate,100000089370
-simvastatin,,100000091786
+simvastatin,NULL,100000091786
 enalapril,maleate,100000091343
 omeprazole,sodium,100000090186
 omeprazole,magnesium,100000085918
@@ -21,9 +21,9 @@ potassium,clavinalate,100000093061
 insulin,glargine ,100000085460
 teriparatide,acetate,100000084795
 calcium,carbonate ,100000091518
-ergocalciferol,,100000090229
-paracetamol,,100000090270
-diazepam,,100000092362
+ergocalciferol,NULL,100000090229
+paracetamol,NULL,100000090270
+diazepam,NULL,100000092362
 morphine,hydrochloride,100000090494
 morphine,sulfate,100000076239
 morphine,tartrate,100000076257
@@ -47,16 +47,16 @@ perindopril,erbumine ,100000091602
 perindopril,erbumine monohydrate,100000130680
 perindopril,tosilate,100000141420
 tramadol,hydrochloride,100000093275
-ciclosporine,,100000092121
-itraconazole,,100000091697
+ciclosporine,NULL,100000092121
+itraconazole,NULL,100000091697
 goserelin,acetate,100000086673
 chloroquine,phosphate,100000092628
 chloroquine,sulfate,100000090551
 chloroquine,hydrochloride,100000084735
 chloroquine,diphosphate,100000129152
-clotrimazole,,100000092074
+clotrimazole,NULL,100000092074
 varencicline,tartrate,00109205001
 varenicline,dihydrochloride,00109202063
 ibuprofen,sodium,100000085009
 ibuprofen,lysine,100000090111
-tafluprost,,100000115886
+tafluprost,NULL,100000115886

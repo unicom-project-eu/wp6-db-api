@@ -40,6 +40,8 @@ if __name__ == '__main__':
     with open(OUTPUT_PATH, 'w') as csvout:
         csvwriter = csv.DictWriter(csvout, list((output_rows[0].keys())))
         csvwriter.writeheader()
-        csvwriter.writerows(output_rows)
+
+        for row in output_rows:
+            csvwriter.writerow({k: 'NULL' if v is None else v for k, v in row.items()})
     
     print('Done')
