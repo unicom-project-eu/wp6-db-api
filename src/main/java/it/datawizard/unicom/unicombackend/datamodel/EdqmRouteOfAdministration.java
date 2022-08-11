@@ -17,6 +17,7 @@ public class EdqmRouteOfAdministration {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false)
     private String display;
 
     @ManyToMany(mappedBy = "routesOfAdministration")

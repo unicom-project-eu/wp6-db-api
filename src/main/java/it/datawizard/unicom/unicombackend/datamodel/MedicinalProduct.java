@@ -17,11 +17,21 @@ public class MedicinalProduct {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String mpId;
+
+    @Column(nullable = false)
     private String fullName;
+
+    @Column(nullable = false)
     private Integer packSize;
+
+    @Column(nullable = false)
+    private String atcCode;
+
     private String packDescription;
 
+    @Column(nullable = false)
     private String country; // TODO make an entity
 
     @OneToOne

@@ -17,8 +17,10 @@ public class EdqmDoseForm {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false)
     private String display;
 
+    @Column(nullable = false)
     private Boolean isValidAdministrableDoseForm;
 
     @OneToMany(mappedBy = "administrableDoseForm")

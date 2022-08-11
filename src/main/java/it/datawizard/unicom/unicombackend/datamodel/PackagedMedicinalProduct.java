@@ -16,8 +16,10 @@ public class PackagedMedicinalProduct {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String pcId;
-    private String atcCode;
+
+    @Column(nullable = false)
     private Integer packageSize;
 
     @ManyToOne

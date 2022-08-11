@@ -19,12 +19,16 @@ public class Strength {
     private String display;
 
     // TODO normalize units
+    @Column(nullable = false)
     private Float numeratorValue;
+
+    @Column(nullable = false)
     private String numeratorUnit;
 
     private Float denominatorValue;
     private String denominatorUnit;
 
+    @Column(nullable = false)
     private Boolean isPresentationStrength;
 
     @OneToOne(mappedBy = "normalizedStrength")

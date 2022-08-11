@@ -17,8 +17,8 @@ public class PharmaceuticalProduct {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private String phpId;
-    private String ingredientCode;
 
     @OneToOne
     @JoinColumn()
