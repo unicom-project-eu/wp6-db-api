@@ -24,6 +24,9 @@ if __name__ == '__main__':
             ingredient_code = row['ingredient_code'].strip()
             if not re.match(r'^\d+$', ingredient_code):
                 ingredient_code = None
+            
+            if ingredient_code is None:
+                continue
 
             output_rows.append({
                 'moiety': moiety,
