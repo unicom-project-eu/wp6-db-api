@@ -1,0 +1,20 @@
+databaseChangeLog:
+- changeSet:
+    id: 1660214846088-1
+    author: francesco (generated)
+    changes:
+    - addNotNullConstraint:
+        columnDataType: varchar(255)
+        columnName: ingredient_code
+        tableName: substance_with_role_pai
+        validate: true
+- changeSet:
+    id: 1660214846088-2
+    author: francesco (generated)
+    changes:
+    - addNotNullConstraint:
+        columnDataType: varchar(255)
+        columnName: moiety
+        tableName: substance_with_role_pai
+        validate: true
+

@@ -17,8 +17,12 @@ public class SubstanceWithRolePai {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false)
     private String ingredientCode;
+
+    @Column(nullable = false)
     private String moiety;
+
     private String modifier;
 
     @OneToMany(mappedBy = "preciseActiveIngredient")
