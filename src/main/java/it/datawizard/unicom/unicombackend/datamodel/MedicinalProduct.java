@@ -41,6 +41,7 @@ public class MedicinalProduct {
     private Set<PackagedMedicinalProduct> packagedMedicinalProducts;
 
     @ManyToMany
+    @JoinTable()
     @ToString.Exclude
     private Set<EdqmRouteOfAdministration> routesOfAdministration;
 

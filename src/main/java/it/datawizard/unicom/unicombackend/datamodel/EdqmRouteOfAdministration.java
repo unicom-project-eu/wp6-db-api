@@ -19,7 +19,7 @@ public class EdqmRouteOfAdministration {
 
     private String display;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "routesOfAdministration")
     @ToString.Exclude
     private Set<MedicinalProduct> medicinalProducts;
 
