@@ -1,0 +1,10 @@
+databaseChangeLog:
+- changeSet:
+    id: 0003-load-substance-pai-data-1
+    author: francesco (generated)
+    changes:
+    - loadData:
+        file: 'data/substances_pai.csv'
+        relativeToChangelogFile: true
+        tableName: substance_with_role_pai
+
