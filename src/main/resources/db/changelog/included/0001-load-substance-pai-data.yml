@@ -1,6 +1,6 @@
 databaseChangeLog:
 - changeSet:
-    id: 0003-load-substance-pai-data-1
+    id: 0001-load-substance-pai-data-1
     author: francesco (generated)
     changes:
     - loadData:

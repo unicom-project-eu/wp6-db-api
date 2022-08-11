@@ -1,3 +1,4 @@
+from collections import defaultdict
 import csv
 import re
 
@@ -8,6 +9,7 @@ if __name__ == '__main__':
     print(f'Parsing "{ORIGINA_PATH}"...')
 
     output_rows = []
+    rows_by_ingredient = defaultdict(lambda: [])
 
     with open(ORIGINA_PATH, 'r') as csvin:
         csvreader = csv.DictReader(csvin, delimiter=',')
@@ -27,12 +29,16 @@ if __name__ == '__main__':
             
             if ingredient_code is None:
                 continue
-
-            output_rows.append({
+            
+            out_row = {
                 'moiety': moiety,
                 'modifier': modifier,
                 'ingredient_code': ingredient_code,
-            })
+            }
+
+            output_rows.append(out_row)
+            rows_by_ingredient[ingredient_code].append(out_row)
+
         pass
 
     print(f'Writing output to "{OUTPUT_PATH}"...')
@@ -44,4 +50,8 @@ if __name__ == '__main__':
         for row in output_rows:
             csvwriter.writerow({k: 'NULL' if v is None else v for k, v in row.items()})
     
+    for code, rows in rows_by_ingredient.items():
+        if len(rows) > 1:
+            print(f'WARN - Duplicates for ingredient_code {code}: {rows}')
+
     print('Done')
