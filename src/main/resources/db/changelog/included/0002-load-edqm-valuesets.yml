@@ -1,0 +1,10 @@
+databaseChangeLog:
+- changeSet:
+    id: 0002-load-edqm-unit-of-presentation-1
+    author: francesco (generated)
+    changes:
+    - loadData:
+        file: '../data/unit_of_presentation.csv'
+        relativeToChangelogFile: true
+        tableName: 'edqm_unit_of_presentation'
+
