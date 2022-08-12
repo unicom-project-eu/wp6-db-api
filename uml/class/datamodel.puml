@@ -5,12 +5,14 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     entity EdqmRouteOfAdministration {
         * id: Long <<generated>>
         --
+        * code: String <<unique>>
         * display: String
     }
 
     entity EdqmUnitOfPresentation {
         * id: Long <<generated>>
         --
+        * code: String <<unique>>
         * display: String
     }
 
@@ -18,6 +20,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         entity EdqmDoseForm {
             * id: Long <<generated>>
             --
+            * code: String <<unique>>
             * display: String
             * isValidAdministrableDoseForm: Boolean
         }

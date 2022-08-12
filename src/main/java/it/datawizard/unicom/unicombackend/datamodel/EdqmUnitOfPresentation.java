@@ -17,6 +17,9 @@ public class EdqmUnitOfPresentation {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false, unique = true)
+    private String code;
+
     @Column(nullable = false)
     private String display;
 
