@@ -16,3 +16,12 @@ databaseChangeLog:
                 file: '../data/dose_form.csv'
                 relativeToChangelogFile: true
                 tableName: 'edqm_dose_form'
+
+- changeSet:
+    id: 0003-load-edqm-routes-of-administration-1
+    author: francesco (generated)
+    changes:
+      - loadData:
+          file: '../data/routes_of_administration.csv'
+          relativeToChangelogFile: true
+          tableName: 'edqm_route_of_administration'
