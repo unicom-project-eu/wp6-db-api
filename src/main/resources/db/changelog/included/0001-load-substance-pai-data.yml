@@ -4,7 +4,7 @@ databaseChangeLog:
     author: francesco (generated)
     changes:
     - loadData:
-        file: 'data/substances_pai.csv'
+        file: '../data/substances_pai.csv'
         relativeToChangelogFile: true
         tableName: substance_with_role_pai
 
