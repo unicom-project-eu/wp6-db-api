@@ -22,7 +22,6 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
             --
             * code: String <<unique>>
             * display: String
-            * isValidAdministrableDoseForm: Boolean
         }
 
         entity Strength {
