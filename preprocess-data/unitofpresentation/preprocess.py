@@ -19,10 +19,16 @@ if __name__ == '__main__':
     input_rows = []
     for tr in table.find_all('tr')[1:]:
         tds = tr.find_all('td')
-        input_rows.append({
+
+        input_row = {
             headers_text[i]: tds[i].string
             for i in range(len(headers_text))
-        })
+        }
+
+        if input_row['status'] == 'Rejected':
+            continue
+
+        input_rows.append(input_row)
     
     print(f'Writing output to "{OUTPUT_PATH}"...')
 
