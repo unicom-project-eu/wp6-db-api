@@ -1,0 +1,50 @@
+@startuml
+
+node "Unicom Backend" as unicomBackend {
+    together {
+        interface " " as suggestInt
+        component "Suggest" as suggest
+        suggest - suggestInt
+
+        interface REST
+        component "FHIR Server" as fhir
+        fhir - REST
+    }
+
+    together {
+        component "Substitution" as substitution
+        interface "???" as substitutionInt
+        substitution - substitutionInt
+    }
+
+    database "IDMP Database" as idmpdb
+
+    idmpdb <.r. fhir
+    idmpdb <.r. suggest
+    suggest -[hidden]- fhir
+    REST <.. substitution
+}
+
+together {
+    node "Patient Facing App" as patientApp {
+    }
+    interface "QR Code" as qrCode
+    patientApp -- qrCode
+    suggestInt <.l. patientApp
+
+    note top of patientApp {
+        HealthPass
+        InfoSage
+        Pharmawizard Experimental App
+    }
+}
+
+together {
+    node "Pharmacist Facing App" as pharmacistApp
+    qrCode <.. pharmacistApp
+    substitutionInt <. pharmacistApp
+}
+
+unicomBackend -[hidden] patientApp
+
+@enduml
