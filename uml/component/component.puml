@@ -41,8 +41,8 @@ together {
 
 together {
     node "Pharmacist Facing App" as pharmacistApp
-    qrCode <.. pharmacistApp
-    substitutionInt <. pharmacistApp
+    qrCode <.d. pharmacistApp
+    substitutionInt <.l. pharmacistApp
 }
 
 unicomBackend -[hidden] patientApp
