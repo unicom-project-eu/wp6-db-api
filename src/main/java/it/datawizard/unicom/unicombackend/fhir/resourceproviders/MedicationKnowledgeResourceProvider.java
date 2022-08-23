@@ -6,10 +6,12 @@ import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import org.hl7.fhir.r4.model.IdType;
 import org.hl7.fhir.r4.model.MedicationKnowledge;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class MedicationKnowledgeResourceProvider implements IResourceProvider {
     @Override
     public Class<MedicationKnowledge> getResourceType() {

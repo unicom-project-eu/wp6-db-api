@@ -4,6 +4,10 @@ package it.datawizard.unicom.unicombackend.fhir;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.RestfulServer;
 import it.datawizard.unicom.unicombackend.fhir.resourceproviders.MedicationKnowledgeResourceProvider;
+import it.datawizard.unicom.unicombackend.fhir.resourceproviders.SubstanceResourceProvider;
+import it.datawizard.unicom.unicombackend.jpa.repository.SubstanceWithRolePaiRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,8 +15,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(value = "/*", displayName = "fhir")
+@Service
 public class UnicomFHIRServlet extends RestfulServer {
     private static final long serialVersionUID = 1L;
+
+    @Autowired
+    MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider;
+
+    @Autowired
+    SubstanceResourceProvider substanceResourceProvider;
 
     /**
      * The initialize method is automatically called when the servlet is starting up, so it can
@@ -27,7 +38,8 @@ public class UnicomFHIRServlet extends RestfulServer {
          * setResourceProviders()
          */
         List<IResourceProvider> resourceProviders = new ArrayList<IResourceProvider>();
-        resourceProviders.add(new MedicationKnowledgeResourceProvider());
+        resourceProviders.add(medicationKnowledgeResourceProvider);
+        resourceProviders.add(substanceResourceProvider);
         setResourceProviders(resourceProviders);
     }
 }

@@ -1,36 +1,43 @@
-package it.datawizard.unicom.unicombackend.datamodel;
+package it.datawizard.unicom.unicombackend.jpa.entity;
 
 import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class PackagedMedicinalProduct {
+public class SubstanceWithRolePai {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(nullable = false, unique = true)
-    private String pcId;
+    private String ingredientCode;
 
     @Column(nullable = false)
-    private Integer packageSize;
+    private String moiety;
 
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private MedicinalProduct medicinalProduct;
+    private String modifier;
+
+    @OneToMany(mappedBy = "preciseActiveIngredient")
+    @ToString.Exclude
+    private Set<PharmaceuticalProduct> pharmaceuticalProducts;
+
+    @OneToMany(mappedBy = "referenceSubstance")
+    @ToString.Exclude
+    private Set<Strength> strengths;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        PackagedMedicinalProduct that = (PackagedMedicinalProduct) o;
+        SubstanceWithRolePai that = (SubstanceWithRolePai) o;
         return id != null && Objects.equals(id, that.id);
     }
 

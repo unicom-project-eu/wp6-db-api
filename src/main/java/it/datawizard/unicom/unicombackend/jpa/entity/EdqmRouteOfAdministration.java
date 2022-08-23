@@ -1,4 +1,4 @@
-package it.datawizard.unicom.unicombackend.datamodel;
+package it.datawizard.unicom.unicombackend.jpa.entity;
 
 import lombok.*;
 import org.hibernate.Hibernate;
@@ -12,32 +12,26 @@ import java.util.Set;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class SubstanceWithRolePai {
+public class EdqmRouteOfAdministration {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(nullable = false, unique = true)
-    private String ingredientCode;
+    private String code;
 
     @Column(nullable = false)
-    private String moiety;
+    private String display;
 
-    private String modifier;
-
-    @OneToMany(mappedBy = "preciseActiveIngredient")
+    @ManyToMany(mappedBy = "routesOfAdministration")
     @ToString.Exclude
-    private Set<PharmaceuticalProduct> pharmaceuticalProducts;
-
-    @OneToMany(mappedBy = "referenceSubstance")
-    @ToString.Exclude
-    private Set<Strength> strengths;
+    private Set<MedicinalProduct> medicinalProducts;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        SubstanceWithRolePai that = (SubstanceWithRolePai) o;
+        EdqmRouteOfAdministration that = (EdqmRouteOfAdministration) o;
         return id != null && Objects.equals(id, that.id);
     }
 

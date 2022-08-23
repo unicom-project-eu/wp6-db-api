@@ -1,4 +1,4 @@
-package it.datawizard.unicom.unicombackend.datamodel;
+package it.datawizard.unicom.unicombackend.jpa.entity;
 
 import lombok.*;
 import org.hibernate.Hibernate;

@@ -1,4 +1,4 @@
-package it.datawizard.unicom.unicombackend.datamodel;
+package it.datawizard.unicom.unicombackend.jpa.entity;
 
 import lombok.*;
 import org.hibernate.Hibernate;
@@ -12,26 +12,23 @@ import java.util.Set;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class EdqmUnitOfPresentation {
+public class Organization {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    private String code;
-
     @Column(nullable = false)
-    private String display;
+    private String name;
 
-    @OneToMany(mappedBy = "unitOfPresentation")
+    @OneToMany(mappedBy = "marketingAuthorizationHolder")
     @ToString.Exclude
-    private Set<Strength> strengths;
+    private Set<MedicinalProduct> medicinalProducts;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        EdqmUnitOfPresentation that = (EdqmUnitOfPresentation) o;
+        Organization that = (Organization) o;
         return id != null && Objects.equals(id, that.id);
     }
 
@@ -40,3 +37,4 @@ public class EdqmUnitOfPresentation {
         return getClass().hashCode();
     }
 }
+
