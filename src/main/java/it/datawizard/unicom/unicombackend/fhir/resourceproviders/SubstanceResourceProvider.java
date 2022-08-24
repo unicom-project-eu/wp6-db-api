@@ -2,7 +2,9 @@ package it.datawizard.unicom.unicombackend.fhir.resourceproviders;
 
 import ca.uhn.fhir.rest.annotation.IdParam;
 import ca.uhn.fhir.rest.annotation.Read;
+import ca.uhn.fhir.rest.annotation.RequiredParam;
 import ca.uhn.fhir.rest.annotation.Search;
+import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.SubstanceWithRolePai;
 import it.datawizard.unicom.unicombackend.jpa.repository.SubstanceWithRolePaiRepository;
@@ -36,7 +38,7 @@ public class SubstanceResourceProvider implements IResourceProvider {
     }
 
     @Search
-    public List<Substance> getAllResources() {
+    public List<Substance> findAllResources() {
         ArrayList<Substance> substances = new ArrayList<>();
 
         for (SubstanceWithRolePai substanceWithRolePai: substanceWithRolePaiRepository.findAll()) {
@@ -44,6 +46,13 @@ public class SubstanceResourceProvider implements IResourceProvider {
         }
 
         return substances;
+    }
+
+    @Search
+    public Substance findByIngredientCode(@RequiredParam(name = Substance.SP_CODE) StringParam code) {
+        return substanceFromEntity(
+            substanceWithRolePaiRepository.findByIngredientCode(code.getValue())
+        );
     }
 
     @Read
