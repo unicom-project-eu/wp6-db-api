@@ -30,6 +30,10 @@ public class PharmaceuticalProduct {
 
     @ManyToOne
     @JoinColumn(nullable = false)
+    private EdqmUnitOfPresentation unitOfPresentation;
+
+    @ManyToOne
+    @JoinColumn(nullable = false)
     private EdqmDoseForm administrableDoseForm;
 
     @OneToMany(mappedBy = "pharmaceuticalProduct")

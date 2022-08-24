@@ -57,6 +57,10 @@ public class MedicinalProduct {
 
     @ManyToOne
     @JoinColumn(nullable = false)
+    private EdqmUnitOfPresentation unitOfPresentation;
+
+    @ManyToOne
+    @JoinColumn(nullable = false)
     private EdqmDoseForm pharmaceuticalDoseForm;
 
     @Override

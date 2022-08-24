@@ -25,7 +25,11 @@ public class EdqmUnitOfPresentation {
 
     @OneToMany(mappedBy = "unitOfPresentation")
     @ToString.Exclude
-    private Set<Strength> strengths;
+    private Set<PharmaceuticalProduct> pharmaceuticalProducts;
+
+    @OneToMany(mappedBy = "unitOfPresentation")
+    @ToString.Exclude
+    private Set<MedicinalProduct> medicinalProducts;
 
     @Override
     public boolean equals(Object o) {

@@ -44,10 +44,6 @@ public class Strength {
     @OneToOne(mappedBy = "authorizedStrength")
     private MedicinalProduct medicinalProduct;
 
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private EdqmUnitOfPresentation unitOfPresentation;
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
