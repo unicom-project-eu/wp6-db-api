@@ -82,8 +82,9 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         * name: String
     }
 
-    EdqmDoseForm ||--o{ PharmaceuticalProduct : administrableDoseForm
-    Strength ||--o| PharmaceuticalProduct : normalizedStrength
+    SubstanceWithRolePai ||---o{ PharmaceuticalProduct : preciseActiveIngredient
+    EdqmDoseForm ||---o{ PharmaceuticalProduct : administrableDoseForm
+    Strength ||---o| PharmaceuticalProduct : normalizedStrength
 
     PharmaceuticalProduct ||--o{ MedicinalProduct : pharmaceuticalProduct
 
@@ -94,7 +95,5 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     EdqmUnitOfPresentation ||--o{ Strength: unitOfPresentation
 
     MedicinalProduct }o-|| Organization : marketingAuthorizationHolder
-
-    Strength }o-|| SubstanceWithRolePai : referenceSubstance
 }
 @enduml

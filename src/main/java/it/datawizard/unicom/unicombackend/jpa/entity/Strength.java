@@ -48,10 +48,6 @@ public class Strength {
     @JoinColumn(nullable = false)
     private EdqmUnitOfPresentation unitOfPresentation;
 
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private SubstanceWithRolePai referenceSubstance;
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
