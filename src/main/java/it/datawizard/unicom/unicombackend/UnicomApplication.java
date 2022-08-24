@@ -22,8 +22,8 @@ public class UnicomApplication implements CommandLineRunner {
 	}
 
 	@Bean
-	public ServletRegistrationBean unicomServletBean() {
-		ServletRegistrationBean bean = new ServletRegistrationBean(unicomFHIRServlet, "/fhir/*");
+	public ServletRegistrationBean<UnicomFHIRServlet> unicomServletBean() {
+		ServletRegistrationBean<UnicomFHIRServlet> bean = new ServletRegistrationBean<>(unicomFHIRServlet, "/fhir/*");
 		bean.setLoadOnStartup(1);
 		return bean;
 	}
