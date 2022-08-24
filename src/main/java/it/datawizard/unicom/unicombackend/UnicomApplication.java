@@ -20,8 +20,12 @@ import java.lang.annotation.Target;
 public class UnicomApplication implements CommandLineRunner {
 	private static Logger LOG = LoggerFactory.getLogger(UnicomApplication.class);
 
+	final private UnicomFHIRServlet unicomFHIRServlet;
+
 	@Autowired
-	UnicomFHIRServlet unicomFHIRServlet;
+	public UnicomApplication(UnicomFHIRServlet unicomFHIRServlet) {
+		this.unicomFHIRServlet = unicomFHIRServlet;
+	}
 
 	@Bean
 	public ServletRegistrationBean unicomServletBean() {

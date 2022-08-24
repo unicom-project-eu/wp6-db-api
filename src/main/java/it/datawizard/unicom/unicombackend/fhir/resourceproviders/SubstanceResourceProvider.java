@@ -20,8 +20,12 @@ import java.util.List;
 public class SubstanceResourceProvider implements IResourceProvider {
     private final static Logger LOG = LoggerFactory.getLogger(SubstanceResourceProvider.class);
 
+    final private SubstanceWithRolePaiRepository substanceWithRolePaiRepository;
+
     @Autowired
-    SubstanceWithRolePaiRepository substanceWithRolePaiRepository;
+    public SubstanceResourceProvider(SubstanceWithRolePaiRepository substanceWithRolePaiRepository) {
+        this.substanceWithRolePaiRepository = substanceWithRolePaiRepository;
+    }
 
     @Override
     public Class<Substance> getResourceType() {

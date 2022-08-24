@@ -19,11 +19,15 @@ import java.util.List;
 public class UnicomFHIRServlet extends RestfulServer {
     private static final long serialVersionUID = 1L;
 
-    @Autowired
-    MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider;
+    final private MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider;
+
+    final private SubstanceResourceProvider substanceResourceProvider;
 
     @Autowired
-    SubstanceResourceProvider substanceResourceProvider;
+    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, SubstanceResourceProvider substanceResourceProvider) {
+        this.medicationKnowledgeResourceProvider = medicationKnowledgeResourceProvider;
+        this.substanceResourceProvider = substanceResourceProvider;
+    }
 
     /**
      * The initialize method is automatically called when the servlet is starting up, so it can
