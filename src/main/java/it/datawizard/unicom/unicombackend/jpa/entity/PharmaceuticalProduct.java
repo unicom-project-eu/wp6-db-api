@@ -26,10 +26,6 @@ public class PharmaceuticalProduct {
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    private SubstanceWithRolePai preciseActiveIngredient;
-
-    @ManyToOne
-    @JoinColumn(nullable = false)
     private EdqmDoseForm administrableDoseForm;
 
     @OneToMany(mappedBy = "pharmaceuticalProduct")

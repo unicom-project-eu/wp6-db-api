@@ -19,12 +19,19 @@ public class Strength {
     private String display;
 
     // TODO normalize units
+    // Reference Strength
     @Column(nullable = false)
+    private Float referenceNumeratorValue;
+
+    @Column(nullable = false)
+    private String referenceNumeratorUnit;
+
+    private Float referenceDenominatorValue;
+    private String referenceDenominatorUnit;
+
+    // Strength
     private Float numeratorValue;
-
-    @Column(nullable = false)
     private String numeratorUnit;
-
     private Float denominatorValue;
     private String denominatorUnit;
 

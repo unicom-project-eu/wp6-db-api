@@ -27,8 +27,12 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         entity Strength {
             * id: Long <<generated>>
             --
-            * numeratorValue: Float
-            * numeratorUnit: Unit
+            * referenceNumeratorValue: Float
+            * referenceNumeratorUnit: Unit
+            referenceDenominatorValue: Float
+            referenceDenominatorUnit: Unit
+            numeratorValue: Float
+            numeratorUnit: Unit
             denominatorValue: Float
             denominatorUnit: Unit
             * isPresentationStrength: Boolean
@@ -41,6 +45,11 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
             * moiety: String
             modifier: String
         }
+
+        note left of Strength {
+                    **Strength:** both moiety and modifier
+                    **Reference strength:** moiety only
+                }
     }
 
     entity PharmaceuticalProduct {
@@ -73,15 +82,14 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         * name: String
     }
 
-    SubstanceWithRolePai ||------o{ PharmaceuticalProduct : preciseActiveIngredient
     EdqmDoseForm ||--o{ PharmaceuticalProduct : administrableDoseForm
-    Strength ||--|| PharmaceuticalProduct : normalizedStrength
+    Strength ||--o| PharmaceuticalProduct : normalizedStrength
 
     PharmaceuticalProduct ||--o{ MedicinalProduct : pharmaceuticalProduct
 
     MedicinalProduct ||--o{ PackagedMedicinalProduct : medicinalProduct
     MedicinalProduct }o--|| EdqmDoseForm : pharmaceuticalDoseForm
-    MedicinalProduct ||--|| Strength : authorizedStrength
+    MedicinalProduct |o--|| Strength : authorizedStrength
     EdqmRouteOfAdministration }o-o{ MedicinalProduct : routesOfAdministration
     EdqmUnitOfPresentation ||--o{ Strength: unitOfPresentation
 
