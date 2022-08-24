@@ -11,6 +11,15 @@ services:
       - '5432:5432'
     volumes:
       - postgres:/var/lib/postgresql/data
+
+  unicom-backend:
+    image: unicom-backend
+    build: '.'
+    ports:
+      - '8080:8080'
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
 volumes:
   postgres:
     driver: local
