@@ -20,6 +20,8 @@ services:
     environment:
       - POSTGRES_HOST=postgres
       - POSTGRES_PORT=5432
+    depends_on:
+      - postgres
 volumes:
   postgres:
     driver: local
