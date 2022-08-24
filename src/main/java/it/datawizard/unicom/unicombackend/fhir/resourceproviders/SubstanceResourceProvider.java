@@ -50,9 +50,12 @@ public class SubstanceResourceProvider implements IResourceProvider {
 
     @Search
     public Substance findByIngredientCode(@RequiredParam(name = Substance.SP_CODE) StringParam code) {
-        return substanceFromEntity(
-            substanceWithRolePaiRepository.findByIngredientCode(code.getValue())
-        );
+        SubstanceWithRolePai substanceWithRolePai = substanceWithRolePaiRepository.findByIngredientCode(code.getValue());
+
+        if (substanceWithRolePai == null)
+            return null;
+
+        return substanceFromEntity(substanceWithRolePai);
     }
 
     @Read
