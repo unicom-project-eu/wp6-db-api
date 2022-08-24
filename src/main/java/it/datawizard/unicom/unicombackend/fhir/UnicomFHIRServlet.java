@@ -11,12 +11,14 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import java.io.Serial;
 import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(value = "/*", displayName = "fhir")
 @Service
 public class UnicomFHIRServlet extends RestfulServer {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     final private MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider;
