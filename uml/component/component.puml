@@ -13,7 +13,7 @@ node "Unicom Backend" as unicomBackend {
 
     together {
         component "Substitution" as substitution
-        interface "???" as substitutionInt
+        interface "REST" as substitutionInt
         substitution - substitutionInt
     }
 
