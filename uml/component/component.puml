@@ -45,7 +45,7 @@ together {
     }
 }
 
-node "eHDSI" {
+cloud "eHDSI" {
     together {
         component "Medication list" as medicationList
 
