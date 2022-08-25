@@ -55,6 +55,7 @@ cloud "eHDSI" {
 }
 
 patientApp .r.> medicationListInt
+patientApp .> REST
 
 together {
     node "Pharmacist Facing App" as pharmacistApp
@@ -65,5 +66,7 @@ together {
 }
 
 unicomBackend -[hidden] patientApp
+
+pharmacistApp .> REST
 
 @enduml
