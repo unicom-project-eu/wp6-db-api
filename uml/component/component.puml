@@ -17,19 +17,25 @@ node "Unicom Backend" as unicomBackend {
         substitution - substitutionInt
     }
 
-    database "IDMP Database" as idmpdb
+    database "IDMP Database" as idmpDb
 
-    idmpdb <.r. fhir
-    idmpdb <.r. suggest
+    idmpDb <.r. fhir
+    idmpDb <.r. suggest
     suggest -[hidden]- fhir
     REST <.. substitution
 }
 
 together {
+    interface "QR Code" as qrCodeUser
+    interface "QR Code" as qrCodePharmacist
+}
+
+together {
     node "Patient Facing App" as patientApp {
     }
-    interface "QR Code" as qrCode
-    patientApp -- qrCode
+
+    patientApp .d.> qrCodePharmacist
+    patientApp -d- qrCodeUser
     suggestInt <.l. patientApp
 
     note top of patientApp {
@@ -39,9 +45,22 @@ together {
     }
 }
 
+node "eHDSI" {
+    together {
+        component "Medication list" as medicationList
+
+        interface " " as medicationListInt
+        medicationListInt - medicationList
+    }
+}
+
+patientApp .r.> medicationListInt
+
 together {
     node "Pharmacist Facing App" as pharmacistApp
-    qrCode <.d. pharmacistApp
+
+    qrCodeUser <.d. pharmacistApp
+    qrCodePharmacist -d- pharmacistApp
     substitutionInt <.l. pharmacistApp
 }
 
