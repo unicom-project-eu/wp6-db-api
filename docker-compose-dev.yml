@@ -7,10 +7,10 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_HOST=localhost
       - POSTGRES_PORT=5432
-    ports:
-      - '5432:5432'
     volumes:
       - postgres:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
 
   unicom-backend:
     image: unicom-backend
