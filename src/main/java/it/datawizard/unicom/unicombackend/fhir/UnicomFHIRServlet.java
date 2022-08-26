@@ -1,6 +1,7 @@
 package it.datawizard.unicom.unicombackend.fhir;
 
 
+import ca.uhn.fhir.rest.openapi.OpenApiInterceptor;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.RestfulServer;
 import it.datawizard.unicom.unicombackend.fhir.resourceproviders.MedicationKnowledgeResourceProvider;
@@ -43,9 +44,15 @@ public class UnicomFHIRServlet extends RestfulServer {
          * configures itself to use them by calling
          * setResourceProviders()
          */
+
+        // register resource providers
         List<IResourceProvider> resourceProviders = new ArrayList<IResourceProvider>();
         resourceProviders.add(medicationKnowledgeResourceProvider);
         resourceProviders.add(substanceResourceProvider);
         setResourceProviders(resourceProviders);
+
+        // register swagger interceptor
+        OpenApiInterceptor openApiInterceptor = new OpenApiInterceptor();
+        registerInterceptor(openApiInterceptor);
     }
 }
