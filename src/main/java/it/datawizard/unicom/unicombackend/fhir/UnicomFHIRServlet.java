@@ -23,13 +23,14 @@ public class UnicomFHIRServlet extends RestfulServer {
     private static final long serialVersionUID = 1L;
 
     final private MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider;
-
     final private SubstanceResourceProvider substanceResourceProvider;
+    final private UnicomOpenApiInterceptor unicomOpenApiInterceptor;
 
     @Autowired
-    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, SubstanceResourceProvider substanceResourceProvider) {
+    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, SubstanceResourceProvider substanceResourceProvider, UnicomOpenApiInterceptor unicomOpenApiInterceptor) {
         this.medicationKnowledgeResourceProvider = medicationKnowledgeResourceProvider;
         this.substanceResourceProvider = substanceResourceProvider;
+        this.unicomOpenApiInterceptor = unicomOpenApiInterceptor;
     }
 
     /**
@@ -52,7 +53,6 @@ public class UnicomFHIRServlet extends RestfulServer {
         setResourceProviders(resourceProviders);
 
         // register swagger interceptor
-        OpenApiInterceptor openApiInterceptor = new OpenApiInterceptor();
-        registerInterceptor(openApiInterceptor);
+        registerInterceptor(unicomOpenApiInterceptor);
     }
 }
