@@ -31,14 +31,14 @@ together {
 }
 
 together {
-    node "Patient Facing App" as patientApp {
+    node "User Facing App" as userApp {
     }
 
-    patientApp .d.> qrCodePharmacist
-    patientApp -d- qrCodeUser
-    suggestInt <.l. patientApp
+    userApp .d.> qrCodePharmacist
+    userApp -d- qrCodeUser
+    suggestInt <.l. userApp
 
-    note top of patientApp {
+    note top of userApp {
         HealthPass
         InfoSage
         Pharmawizard Experimental App
@@ -54,8 +54,8 @@ cloud "eHDSI" {
     }
 }
 
-patientApp .r.> medicationListInt
-patientApp .> REST
+userApp .r.> medicationListInt
+userApp .> REST
 
 together {
     node "Healthcare Provider App" as pharmacistApp
@@ -65,7 +65,7 @@ together {
     substitutionInt <.l. pharmacistApp
 }
 
-unicomBackend -[hidden] patientApp
+unicomBackend -[hidden] userApp
 
 pharmacistApp .> REST
 
