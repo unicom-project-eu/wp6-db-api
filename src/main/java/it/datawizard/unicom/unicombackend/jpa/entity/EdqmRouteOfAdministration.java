@@ -14,10 +14,6 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class EdqmRouteOfAdministration {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-    @Column(nullable = false, unique = true)
     private String code;
 
     @Column(nullable = false)
@@ -32,7 +28,7 @@ public class EdqmRouteOfAdministration {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
         EdqmRouteOfAdministration that = (EdqmRouteOfAdministration) o;
-        return id != null && Objects.equals(id, that.id);
+        return code != null && Objects.equals(code, that.code);
     }
 
     @Override

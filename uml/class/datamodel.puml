@@ -3,24 +3,21 @@
 
 package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     entity EdqmRouteOfAdministration {
-        * id: Long <<generated>>
+        * code: String
         --
-        * code: String <<unique>>
         * display: String
     }
 
     entity EdqmUnitOfPresentation {
-        * id: Long <<generated>>
+        * code: String
         --
-        * code: String <<unique>>
         * display: String
     }
 
     together {
         entity EdqmDoseForm {
-            * id: Long <<generated>>
+            * code: String
             --
-            * code: String <<unique>>
             * display: String
         }
 
