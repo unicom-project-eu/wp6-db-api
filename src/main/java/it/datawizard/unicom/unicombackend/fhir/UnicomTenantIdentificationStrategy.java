@@ -20,6 +20,8 @@ public class UnicomTenantIdentificationStrategy extends UrlBaseTenantIdentificat
     @Override
     public void extractTenant(UrlPathTokenizer theUrlPathTokenizer, RequestDetails theRequestDetails) {
         super.extractTenant(theUrlPathTokenizer, theRequestDetails);
+
+        LOG.trace("Tenant: " + theRequestDetails.getTenantId());
     }
 
     @Bean
