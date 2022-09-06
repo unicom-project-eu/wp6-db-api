@@ -23,12 +23,6 @@ public class MedicinalProduct {
     @Column(nullable = false)
     private String fullName;
 
-    @Column(nullable = false)
-    private Integer packSize;
-
-    @Column(nullable = false)
-    private String atcCode;
-
     private String packDescription;
 
     @Column(nullable = false)

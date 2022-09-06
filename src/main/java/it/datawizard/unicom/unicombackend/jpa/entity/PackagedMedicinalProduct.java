@@ -22,6 +22,9 @@ public class PackagedMedicinalProduct {
     @Column(nullable = false)
     private Integer packageSize;
 
+    @Column(nullable = false)
+    private String atcCode;
+
     @ManyToOne
     @JoinColumn(nullable = false)
     private MedicinalProduct medicinalProduct;

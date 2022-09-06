@@ -61,8 +61,6 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         * mpId: String <<unique>>
         * country: Country
         * fullName: String
-        * packSize: Integer
-        * atcCode: String
         packDescription: String
     }
 
@@ -71,6 +69,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         --
         * pcId: String <<unique>>
         * packageSize: Integer
+        * atcCode: String
     }
 
     entity Organization {
