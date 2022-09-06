@@ -1,13 +1,12 @@
 package it.datawizard.unicom.unicombackend.fhir;
 
 
-import ca.uhn.fhir.rest.openapi.OpenApiInterceptor;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.RestfulServer;
 import it.datawizard.unicom.unicombackend.fhir.resourceproviders.MedicationKnowledgeResourceProvider;
 import it.datawizard.unicom.unicombackend.fhir.resourceproviders.SubstanceResourceProvider;
-import it.datawizard.unicom.unicombackend.jpa.repository.SubstanceWithRolePaiRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.ServletException;
@@ -22,15 +21,17 @@ public class UnicomFHIRServlet extends RestfulServer {
     @Serial
     private static final long serialVersionUID = 1L;
 
+    final UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy;
     final private MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider;
     final private SubstanceResourceProvider substanceResourceProvider;
     final private UnicomOpenApiInterceptor unicomOpenApiInterceptor;
 
     @Autowired
-    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, SubstanceResourceProvider substanceResourceProvider, UnicomOpenApiInterceptor unicomOpenApiInterceptor) {
+    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, SubstanceResourceProvider substanceResourceProvider, UnicomOpenApiInterceptor unicomOpenApiInterceptor, UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy) {
         this.medicationKnowledgeResourceProvider = medicationKnowledgeResourceProvider;
         this.substanceResourceProvider = substanceResourceProvider;
         this.unicomOpenApiInterceptor = unicomOpenApiInterceptor;
+        this.unicomTenantIdentificationStrategy = unicomTenantIdentificationStrategy;
     }
 
     /**
@@ -45,6 +46,9 @@ public class UnicomFHIRServlet extends RestfulServer {
          * configures itself to use them by calling
          * setResourceProviders()
          */
+
+        // set tenant identification strategy
+        setTenantIdentificationStrategy(unicomTenantIdentificationStrategy);
 
         // register resource providers
         List<IResourceProvider> resourceProviders = new ArrayList<IResourceProvider>();
