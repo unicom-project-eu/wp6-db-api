@@ -10,7 +10,8 @@ def mocked_value(val):
 ORIGINA_PATH = 'original.csv'
 
 @csv_mapping(
-    code=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['edqmformid'])),
+    code=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['__code'])),
+    display=AttributeInfo(set_value=lambda x: string_or_none(x['__display'])),
 )
 class DoseForm:
     pass
@@ -25,7 +26,8 @@ class SubstanceWithRolePai:
 
 @csv_mapping(
     phpId=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['PhPID_MD5'])),
-    preciseActiveIngredient=AttributeInfo(set_value=lambda x: SubstanceWithRolePai(x))
+    preciseActiveIngredient=AttributeInfo(set_value=lambda x: SubstanceWithRolePai(x)),
+    pharmaceuticalDoseForm=AttributeInfo(set_value=lambda x: DoseForm({'__code': x['pdf_code'], '__display': x['english_pdf_and_mdf']})),
 )
 class PharmaceuticalProduct:
     pass
@@ -35,6 +37,7 @@ class PharmaceuticalProduct:
     country=AttributeInfo(set_value=lambda x: 'bel'),
     fullName=AttributeInfo(set_value=lambda x: string_or_none(x['medicinal_product_name'])),
     pharmaceuticalProduct=AttributeInfo(set_value=lambda x: PharmaceuticalProduct(x)),
+    administrableDoseForm=AttributeInfo(set_value=lambda x: DoseForm({'__code': x['adf_code'], '__display': x['english_pdf_and_mdf']})),
 )
 class MedicinalProduct:
     pass
