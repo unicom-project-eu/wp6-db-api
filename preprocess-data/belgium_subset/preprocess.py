@@ -25,9 +25,34 @@ class SubstanceWithRolePai:
     pass
 
 @csv_mapping(
+    referenceNumeratorValue=AttributeInfo(set_value=lambda x: int_or_none(x['__referenceNumeratorValue'])),
+    referenceNumeratorUnit=AttributeInfo(set_value=lambda x: string_or_none(x['__referenceNumeratorUnit'])),
+    referenceDenominatorValue=AttributeInfo(set_value=lambda x: int_or_none(x['__referenceDenominatorValue'])),
+    referenceDenominatorUnit=AttributeInfo(set_value=lambda x: string_or_none(x['__referenceDenominatorUnit'])),
+    numeratorValue=AttributeInfo(set_value=lambda x: int_or_none(x['__numeratorValue'])),
+    numeratorUnit=AttributeInfo(set_value=lambda x: string_or_none(x['__numeratorUnit'])),
+    denominatorValue=AttributeInfo(set_value=lambda x: int_or_none(x['__denominatorValue'])),
+    denominatorUnit=AttributeInfo(set_value=lambda x: string_or_none(x['__denominatorUnit'])),
+    isPresentationStrength=AttributeInfo(set_value=lambda x: string_or_none(x['__isPresentationStrength'])),
+)
+class Strength:
+    pass
+
+@csv_mapping(
     phpId=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['PhPID_MD5'])),
     preciseActiveIngredient=AttributeInfo(set_value=lambda x: SubstanceWithRolePai(x)),
     pharmaceuticalDoseForm=AttributeInfo(set_value=lambda x: DoseForm({'__code': x['pdf_code'], '__display': x['english_pdf_and_mdf']})),
+    normalizedStrength=AttributeInfo(set_value=lambda x: Strength({
+        '__referenceNumeratorValue': x['strenght_nominator_value_low_limit'],    
+        '__referenceNumeratorUnit': x['strength_nominator_unit'],
+        '__referenceDenominatorValue': None,
+        '__referenceDenominatorUnit': None,
+        '__numeratorValue': None,
+        '__numeratorUnit': None,
+        '__denominatorValue': None,
+        '__denominatorUnit': None,
+        '__isPresentationStrength': True,
+    })),
 )
 class PharmaceuticalProduct:
     pass
