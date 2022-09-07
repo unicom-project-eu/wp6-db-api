@@ -10,10 +10,24 @@ def mocked_value(val):
 ORIGINA_PATH = 'original.csv'
 
 @csv_mapping(
-    code=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['__code'])),
-    display=AttributeInfo(set_value=lambda x: string_or_none(x['__display'])),
+    code=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['code'])),
+    display=AttributeInfo(set_value=lambda x: string_or_none(x['display'])),
 )
 class EdqmDoseForm:
+    pass
+
+@csv_mapping(
+    code=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['code'])),
+    display=AttributeInfo(set_value=lambda x: string_or_none(x['display'])),
+)
+class EdqmUnitOfPresentation:
+    pass
+
+@csv_mapping(
+    code=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['code'])),
+    display=AttributeInfo(set_value=lambda x: string_or_none(x['display'])),
+)
+class EdqmRouteOfAdministration:
     pass
 
 @csv_mapping(
@@ -25,15 +39,15 @@ class SubstanceWithRolePai:
     pass
 
 @csv_mapping(
-    referenceNumeratorValue=AttributeInfo(set_value=lambda x: int_or_none(x['__referenceNumeratorValue'])),
-    referenceNumeratorUnit=AttributeInfo(set_value=lambda x: string_or_none(x['__referenceNumeratorUnit'])),
-    referenceDenominatorValue=AttributeInfo(set_value=lambda x: int_or_none(x['__referenceDenominatorValue'])),
-    referenceDenominatorUnit=AttributeInfo(set_value=lambda x: string_or_none(x['__referenceDenominatorUnit'])),
-    numeratorValue=AttributeInfo(set_value=lambda x: int_or_none(x['__numeratorValue'])),
-    numeratorUnit=AttributeInfo(set_value=lambda x: string_or_none(x['__numeratorUnit'])),
-    denominatorValue=AttributeInfo(set_value=lambda x: int_or_none(x['__denominatorValue'])),
-    denominatorUnit=AttributeInfo(set_value=lambda x: string_or_none(x['__denominatorUnit'])),
-    isPresentationStrength=AttributeInfo(set_value=lambda x: string_or_none(x['__isPresentationStrength'])),
+    referenceNumeratorValue=AttributeInfo(set_value=lambda x: int_or_none(x['referenceNumeratorValue'])),
+    referenceNumeratorUnit=AttributeInfo(set_value=lambda x: string_or_none(x['referenceNumeratorUnit'])),
+    referenceDenominatorValue=AttributeInfo(set_value=lambda x: int_or_none(x['referenceDenominatorValue'])),
+    referenceDenominatorUnit=AttributeInfo(set_value=lambda x: string_or_none(x['referenceDenominatorUnit'])),
+    numeratorValue=AttributeInfo(set_value=lambda x: int_or_none(x['numeratorValue'])),
+    numeratorUnit=AttributeInfo(set_value=lambda x: string_or_none(x['numeratorUnit'])),
+    denominatorValue=AttributeInfo(set_value=lambda x: int_or_none(x['denominatorValue'])),
+    denominatorUnit=AttributeInfo(set_value=lambda x: string_or_none(x['denominatorUnit'])),
+    isPresentationStrength=AttributeInfo(set_value=lambda x: string_or_none(x['isPresentationStrength'])),
 )
 class Strength:
     pass
@@ -41,18 +55,19 @@ class Strength:
 @csv_mapping(
     phpId=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['PhPID_MD5'])),
     preciseActiveIngredient=AttributeInfo(set_value=lambda x: SubstanceWithRolePai(x)),
-    pharmaceuticalDoseForm=AttributeInfo(set_value=lambda x: EdqmDoseForm({'__code': x['pdf_code'], '__display': x['english_pdf_and_mdf']})),
+    pharmaceuticalDoseForm=AttributeInfo(set_value=lambda x: EdqmDoseForm({'code': x['pdf_code'], 'display': x['english_pdf_and_mdf']})),
     normalizedStrength=AttributeInfo(set_value=lambda x: Strength({
-        '__referenceNumeratorValue': x['strenght_nominator_value_low_limit'],    
-        '__referenceNumeratorUnit': x['strength_nominator_unit'],
-        '__referenceDenominatorValue': None,
-        '__referenceDenominatorUnit': None,
-        '__numeratorValue': None,
-        '__numeratorUnit': None,
-        '__denominatorValue': None,
-        '__denominatorUnit': None,
-        '__isPresentationStrength': True,
+        'referenceNumeratorValue': x['strenght_nominator_value_low_limit'],    
+        'referenceNumeratorUnit': x['strength_nominator_unit'],
+        'referenceDenominatorValue': None,
+        'referenceDenominatorUnit': None,
+        'numeratorValue': None,
+        'numeratorUnit': None,
+        'denominatorValue': None,
+        'denominatorUnit': None,
+        'isPresentationStrength': True,
     })),
+    unitOfPresentation=AttributeInfo(set_value=lambda x: EdqmUnitOfPresentation({'code': 'MISSING', 'display': 'MISSING'})),
 )
 class PharmaceuticalProduct:
     pass
@@ -62,7 +77,9 @@ class PharmaceuticalProduct:
     country=AttributeInfo(set_value=lambda x: 'bel'),
     fullName=AttributeInfo(set_value=lambda x: string_or_none(x['medicinal_product_name'])),
     pharmaceuticalProduct=AttributeInfo(set_value=lambda x: PharmaceuticalProduct(x)),
-    administrableDoseForm=AttributeInfo(set_value=lambda x: EdqmDoseForm({'__code': x['adf_code'], '__display': x['english_pdf_and_mdf']})),
+    administrableDoseForm=AttributeInfo(set_value=lambda x: EdqmDoseForm({'code': x['adf_code'], 'display': x['english_pdf_and_mdf']})),
+    unitOfPresentation=AttributeInfo(set_value=lambda x: EdqmUnitOfPresentation({'code': 'MISSING', 'display': 'MISSING'})),
+    routeOfAdminstration=AttributeInfo(set_value=lambda x: EdqmRouteOfAdministration({'code': 'MISSING', 'display': x['routename_en']})),
 )
 class MedicinalProduct:
     pass
