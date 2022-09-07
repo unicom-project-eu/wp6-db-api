@@ -34,7 +34,7 @@ public class PharmaceuticalProduct {
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    private EdqmDoseForm administrableDoseForm;
+    private EdqmDoseForm pharmaceuticalDoseForm;
 
     @OneToMany(mappedBy = "pharmaceuticalProduct")
     @ToString.Exclude

@@ -55,7 +55,7 @@ public class MedicinalProduct {
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    private EdqmDoseForm pharmaceuticalDoseForm;
+    private EdqmDoseForm administrableDoseForm;
 
     @Override
     public boolean equals(Object o) {

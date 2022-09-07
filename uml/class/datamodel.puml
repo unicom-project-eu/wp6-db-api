@@ -82,13 +82,13 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     EdqmUnitOfPresentation ||--o{ MedicinalProduct : unitOfPresentation
 
     SubstanceWithRolePai ||---o{ PharmaceuticalProduct : preciseActiveIngredient
-    EdqmDoseForm ||---o{ PharmaceuticalProduct : administrableDoseForm
+    EdqmDoseForm ||---o{ PharmaceuticalProduct : pharmaceuticalDoseForm
     Strength ||---o| PharmaceuticalProduct : normalizedStrength
 
     PharmaceuticalProduct ||--o{ MedicinalProduct : pharmaceuticalProduct
 
     MedicinalProduct ||--o{ PackagedMedicinalProduct : medicinalProduct
-    MedicinalProduct }o--|| EdqmDoseForm : pharmaceuticalDoseForm
+    MedicinalProduct }o--|| EdqmDoseForm : administrableDoseForm
     MedicinalProduct |o--|| Strength : authorizedStrength
     EdqmRouteOfAdministration }o-o{ MedicinalProduct : routesOfAdministration
 

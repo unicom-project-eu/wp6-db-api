@@ -19,11 +19,11 @@ public class EdqmDoseForm {
     @Column(nullable = false)
     private String display;
 
-    @OneToMany(mappedBy = "administrableDoseForm")
+    @OneToMany(mappedBy = "pharmaceuticalDoseForm")
     @ToString.Exclude
     private Set<PharmaceuticalProduct> pharmaceuticalProducts;
 
-    @OneToMany(mappedBy = "pharmaceuticalDoseForm")
+    @OneToMany(mappedBy = "administrableDoseForm")
     @ToString.Exclude
     private Set<MedicinalProduct> medicinalProducts;
 

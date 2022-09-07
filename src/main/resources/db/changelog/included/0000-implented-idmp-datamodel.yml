@@ -1,6 +1,6 @@
 databaseChangeLog:
 - changeSet:
-    id: 1662469675905-1
+    id: 1662561387360-1
     author: francesco (generated)
     changes:
     - createSequence:
@@ -8,7 +8,7 @@ databaseChangeLog:
         sequenceName: hibernate_sequence
         startValue: 1
 - changeSet:
-    id: 1662469675905-2
+    id: 1662561387360-2
     author: francesco (generated)
     changes:
     - createTable:
@@ -27,7 +27,7 @@ databaseChangeLog:
             type: VARCHAR(255)
         tableName: edqm_dose_form
 - changeSet:
-    id: 1662469675905-3
+    id: 1662561387360-3
     author: francesco (generated)
     changes:
     - createTable:
@@ -46,7 +46,7 @@ databaseChangeLog:
             type: VARCHAR(255)
         tableName: edqm_route_of_administration
 - changeSet:
-    id: 1662469675905-4
+    id: 1662561387360-4
     author: francesco (generated)
     changes:
     - createTable:
@@ -65,7 +65,7 @@ databaseChangeLog:
             type: VARCHAR(255)
         tableName: edqm_unit_of_presentation
 - changeSet:
-    id: 1662469675905-5
+    id: 1662561387360-5
     author: francesco (generated)
     changes:
     - createTable:
@@ -97,6 +97,11 @@ databaseChangeLog:
             name: pack_description
             type: VARCHAR(255)
         - column:
+            constraints:
+              nullable: false
+            name: administrable_dose_form_code
+            type: VARCHAR(255)
+        - column:
             name: authorized_strength_id
             type: BIGINT
         - column:
@@ -104,11 +109,6 @@ databaseChangeLog:
               nullable: false
             name: marketing_authorization_holder_id
             type: BIGINT
-        - column:
-            constraints:
-              nullable: false
-            name: pharmaceutical_dose_form_code
-            type: VARCHAR(255)
         - column:
             constraints:
               nullable: false
@@ -121,7 +121,7 @@ databaseChangeLog:
             type: VARCHAR(255)
         tableName: medicinal_product
 - changeSet:
-    id: 1662469675905-6
+    id: 1662561387360-6
     author: francesco (generated)
     changes:
     - createTable:
@@ -142,7 +142,7 @@ databaseChangeLog:
             type: VARCHAR(255)
         tableName: medicinal_product_routes_of_administration
 - changeSet:
-    id: 1662469675905-7
+    id: 1662561387360-7
     author: francesco (generated)
     changes:
     - createTable:
@@ -162,7 +162,7 @@ databaseChangeLog:
             type: VARCHAR(255)
         tableName: organization
 - changeSet:
-    id: 1662469675905-8
+    id: 1662561387360-8
     author: francesco (generated)
     changes:
     - createTable:
@@ -197,7 +197,7 @@ databaseChangeLog:
             type: BIGINT
         tableName: packaged_medicinal_product
 - changeSet:
-    id: 1662469675905-9
+    id: 1662561387360-9
     author: francesco (generated)
     changes:
     - createTable:
@@ -216,13 +216,13 @@ databaseChangeLog:
             name: php_id
             type: VARCHAR(255)
         - column:
-            constraints:
-              nullable: false
-            name: administrable_dose_form_code
-            type: VARCHAR(255)
-        - column:
             name: normalized_strength_id
             type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: pharmaceutical_dose_form_code
+            type: VARCHAR(255)
         - column:
             constraints:
               nullable: false
@@ -235,7 +235,7 @@ databaseChangeLog:
             type: VARCHAR(255)
         tableName: pharmaceutical_product
 - changeSet:
-    id: 1662469675905-10
+    id: 1662561387360-10
     author: francesco (generated)
     changes:
     - createTable:
@@ -286,7 +286,7 @@ databaseChangeLog:
             type: FLOAT4
         tableName: strength
 - changeSet:
-    id: 1662469675905-11
+    id: 1662561387360-11
     author: francesco (generated)
     changes:
     - createTable:
@@ -314,7 +314,7 @@ databaseChangeLog:
             type: VARCHAR(255)
         tableName: substance_with_role_pai
 - changeSet:
-    id: 1662469675905-12
+    id: 1662561387360-12
     author: francesco (generated)
     changes:
     - addUniqueConstraint:
@@ -322,7 +322,7 @@ databaseChangeLog:
         constraintName: UC_MEDICINAL_PRODUCTMP_ID_COL
         tableName: medicinal_product
 - changeSet:
-    id: 1662469675905-13
+    id: 1662561387360-13
     author: francesco (generated)
     changes:
     - addUniqueConstraint:
@@ -330,7 +330,7 @@ databaseChangeLog:
         constraintName: UC_PACKAGED_MEDICINAL_PRODUCTPC_ID_COL
         tableName: packaged_medicinal_product
 - changeSet:
-    id: 1662469675905-14
+    id: 1662561387360-14
     author: francesco (generated)
     changes:
     - addUniqueConstraint:
@@ -338,7 +338,7 @@ databaseChangeLog:
         constraintName: UC_PHARMACEUTICAL_PRODUCTPHP_ID_COL
         tableName: pharmaceutical_product
 - changeSet:
-    id: 1662469675905-15
+    id: 1662561387360-15
     author: francesco (generated)
     changes:
     - addUniqueConstraint:
@@ -346,7 +346,7 @@ databaseChangeLog:
         constraintName: UC_SUBSTANCE_WITH_ROLE_PAIINGREDIENT_CODE_COL
         tableName: substance_with_role_pai
 - changeSet:
-    id: 1662469675905-16
+    id: 1662561387360-16
     author: francesco (generated)
     changes:
     - addForeignKeyConstraint:
@@ -359,7 +359,7 @@ databaseChangeLog:
         referencedTableName: medicinal_product
         validate: true
 - changeSet:
-    id: 1662469675905-17
+    id: 1662561387360-17
     author: francesco (generated)
     changes:
     - addForeignKeyConstraint:
@@ -372,7 +372,7 @@ databaseChangeLog:
         referencedTableName: strength
         validate: true
 - changeSet:
-    id: 1662469675905-18
+    id: 1662561387360-18
     author: francesco (generated)
     changes:
     - addForeignKeyConstraint:
@@ -385,7 +385,20 @@ databaseChangeLog:
         referencedTableName: edqm_unit_of_presentation
         validate: true
 - changeSet:
-    id: 1662469675905-19
+    id: 1662561387360-19
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: administrable_dose_form_code
+        baseTableName: medicinal_product
+        constraintName: FK5vsoex4mnwm2jqnh26r33efas
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: code
+        referencedTableName: edqm_dose_form
+        validate: true
+- changeSet:
+    id: 1662561387360-20
     author: francesco (generated)
     changes:
     - addForeignKeyConstraint:
@@ -398,7 +411,20 @@ databaseChangeLog:
         referencedTableName: substance_with_role_pai
         validate: true
 - changeSet:
-    id: 1662469675905-20
+    id: 1662561387360-21
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: pharmaceutical_dose_form_code
+        baseTableName: pharmaceutical_product
+        constraintName: FK7v3vg75fnds63ootqbuowck1f
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: code
+        referencedTableName: edqm_dose_form
+        validate: true
+- changeSet:
+    id: 1662561387360-22
     author: francesco (generated)
     changes:
     - addForeignKeyConstraint:
@@ -411,7 +437,7 @@ databaseChangeLog:
         referencedTableName: edqm_route_of_administration
         validate: true
 - changeSet:
-    id: 1662469675905-21
+    id: 1662561387360-23
     author: francesco (generated)
     changes:
     - addForeignKeyConstraint:
@@ -424,7 +450,7 @@ databaseChangeLog:
         referencedTableName: strength
         validate: true
 - changeSet:
-    id: 1662469675905-22
+    id: 1662561387360-24
     author: francesco (generated)
     changes:
     - addForeignKeyConstraint:
@@ -437,7 +463,7 @@ databaseChangeLog:
         referencedTableName: medicinal_product
         validate: true
 - changeSet:
-    id: 1662469675905-23
+    id: 1662561387360-25
     author: francesco (generated)
     changes:
     - addForeignKeyConstraint:
@@ -450,7 +476,7 @@ databaseChangeLog:
         referencedTableName: pharmaceutical_product
         validate: true
 - changeSet:
-    id: 1662469675905-24
+    id: 1662561387360-26
     author: francesco (generated)
     changes:
     - addForeignKeyConstraint:
@@ -463,33 +489,7 @@ databaseChangeLog:
         referencedTableName: edqm_unit_of_presentation
         validate: true
 - changeSet:
-    id: 1662469675905-25
-    author: francesco (generated)
-    changes:
-    - addForeignKeyConstraint:
-        baseColumnNames: pharmaceutical_dose_form_code
-        baseTableName: medicinal_product
-        constraintName: FKryah7hqgahcdxqeusljuk05bm
-        deferrable: false
-        initiallyDeferred: false
-        referencedColumnNames: code
-        referencedTableName: edqm_dose_form
-        validate: true
-- changeSet:
-    id: 1662469675905-26
-    author: francesco (generated)
-    changes:
-    - addForeignKeyConstraint:
-        baseColumnNames: administrable_dose_form_code
-        baseTableName: pharmaceutical_product
-        constraintName: FKs4glwnvg2kf0ey21nmbmoorg1
-        deferrable: false
-        initiallyDeferred: false
-        referencedColumnNames: code
-        referencedTableName: edqm_dose_form
-        validate: true
-- changeSet:
-    id: 1662469675905-27
+    id: 1662561387360-27
     author: francesco (generated)
     changes:
     - addForeignKeyConstraint:
