@@ -13,7 +13,7 @@ ORIGINA_PATH = 'original.csv'
     code=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['__code'])),
     display=AttributeInfo(set_value=lambda x: string_or_none(x['__display'])),
 )
-class DoseForm:
+class EdqmDoseForm:
     pass
 
 @csv_mapping(
@@ -41,7 +41,7 @@ class Strength:
 @csv_mapping(
     phpId=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['PhPID_MD5'])),
     preciseActiveIngredient=AttributeInfo(set_value=lambda x: SubstanceWithRolePai(x)),
-    pharmaceuticalDoseForm=AttributeInfo(set_value=lambda x: DoseForm({'__code': x['pdf_code'], '__display': x['english_pdf_and_mdf']})),
+    pharmaceuticalDoseForm=AttributeInfo(set_value=lambda x: EdqmDoseForm({'__code': x['pdf_code'], '__display': x['english_pdf_and_mdf']})),
     normalizedStrength=AttributeInfo(set_value=lambda x: Strength({
         '__referenceNumeratorValue': x['strenght_nominator_value_low_limit'],    
         '__referenceNumeratorUnit': x['strength_nominator_unit'],
@@ -62,7 +62,7 @@ class PharmaceuticalProduct:
     country=AttributeInfo(set_value=lambda x: 'bel'),
     fullName=AttributeInfo(set_value=lambda x: string_or_none(x['medicinal_product_name'])),
     pharmaceuticalProduct=AttributeInfo(set_value=lambda x: PharmaceuticalProduct(x)),
-    administrableDoseForm=AttributeInfo(set_value=lambda x: DoseForm({'__code': x['adf_code'], '__display': x['english_pdf_and_mdf']})),
+    administrableDoseForm=AttributeInfo(set_value=lambda x: EdqmDoseForm({'__code': x['adf_code'], '__display': x['english_pdf_and_mdf']})),
 )
 class MedicinalProduct:
     pass
