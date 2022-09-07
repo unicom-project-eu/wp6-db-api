@@ -1,54 +1,49 @@
 from collections import defaultdict
 import csv
-import re
-import itertools
-from struct import pack
+import json
+
+from csvutils.csvutils import *
 
 def mocked_value(val):
     return f'MOCK-{val}'
 
-ORIGINA_PATH = "original.csv"
-
-
-class AttributeInfo:
-    def __init__(self, is_key=False, set_value=lambda x: None):
-        self.set_value = set_value
-        self.is_key = is_key
-    pass
-
-def csv_mapping(**attributes):
-    def decorator(cls):
-        old_init = cls.__init__
-        def new_init(self, x, *args, **kwargs):
-            old_init(self, *args, **kwargs)
-
-            for attr, info in attributes.items():
-                setattr(self, attr, info.set_value(x) if info.set_value else None)
-
-            pass
-        cls.__init__ = new_init
-
-        def get_key(self):
-            return tuple(getattr(self, attr) for attr, info in attributes.items() if info.is_key)
-        cls.get_key = get_key
-
-        cls.__repr__ = lambda self: str(self.__dict__) 
-
-        return cls
-    return decorator
-
-
+ORIGINA_PATH = 'original.csv'
 
 @csv_mapping(
-    mpId=AttributeInfo(is_key=True, set_value=lambda x: mocked_value())
+    code=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['edqmformid'])),
+)
+class DoseForm:
+    pass
+
+@csv_mapping(
+    ingredientCode=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['ingredient_code'])),
+    moiety=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['moiety'])),
+    modifier=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['d_modifier'])),
+)
+class SubstanceWithRolePai:
+    pass
+
+@csv_mapping(
+    phpId=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['PhPID_MD5'])),
+    preciseActiveIngredient=AttributeInfo(set_value=lambda x: SubstanceWithRolePai(x))
+)
+class PharmaceuticalProduct:
+    pass
+
+@csv_mapping(
+    mpId=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['cnk_pub'])),
+    country=AttributeInfo(set_value=lambda x: 'bel'),
+    fullName=AttributeInfo(set_value=lambda x: string_or_none(x['medicinal_product_name'])),
+    pharmaceuticalProduct=AttributeInfo(set_value=lambda x: PharmaceuticalProduct(x)),
 )
 class MedicinalProduct:
     pass
 
-
 @csv_mapping(
-    pcId=AttributeInfo(is_key=True, set_value=lambda x: mocked_value(hash(x['AmppName']))),
-    packageSize=AttributeInfo(set_value=lambda x: mocked_value(9999)),
+    pcId=AttributeInfo(is_key=True, set_value=lambda x: string_or_none(x['a_Id'])),
+    packageSize=AttributeInfo(set_value=lambda x: int_or_none(x['packdisplayvalue'])),
+    atcCode=AttributeInfo(set_value=lambda x: string_or_none(x['atc'])),
+    medicinalProduct=AttributeInfo(set_value=lambda x: MedicinalProduct(x))
 )
 class PackagedMedicinalProduct:
     pass
@@ -59,17 +54,30 @@ if __name__ == '__main__':
 
     packages = {}
     medicinal_products = {}
-    pharmaceutical_product = {}
+    pharmaceutical_products = {}
+    def print_results(dct, cls):
+        print(f'\n\nFound {len(dct)} instances of {cls.__name__}')
+        for key, val in dct.items():
+            print(f'{key}: {val}\n')
+        pass
 
     with open(ORIGINA_PATH, 'r') as csvin:
         csvreader = csv.DictReader(csvin, delimiter=',')
 
         for row in csvreader:
+            pharmaceutical_product = PharmaceuticalProduct(row)
+            pharmaceutical_products[pharmaceutical_product.get_key()] = pharmaceutical_product
+            
+            medicinal_product = MedicinalProduct(row)
+            medicinal_products[medicinal_product.get_key()] = medicinal_product
+
             packaged_medicinal_product = PackagedMedicinalProduct(row)
             packages[packaged_medicinal_product.get_key()] = packaged_medicinal_product
     
-    print(packages)
-            
+
+        print_results(pharmaceutical_products, PharmaceuticalProduct)
+        print_results(medicinal_products, MedicinalProduct)
+        print_results(packages, PackagedMedicinalProduct)
 
 
     # print(f'Writing output to "{OUTPUT_PATH}"...')
