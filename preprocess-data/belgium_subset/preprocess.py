@@ -77,7 +77,7 @@ class PharmaceuticalProduct:
     country=AttributeInfo(set_value=lambda x: 'bel'),
     fullName=AttributeInfo(set_value=lambda x: string_or_none(x['medicinal_product_name'])),
     pharmaceuticalProduct=AttributeInfo(set_value=lambda x: PharmaceuticalProduct(x)),
-    administrableDoseForm=AttributeInfo(set_value=lambda x: EdqmDoseForm({'code': x['adf_code'], 'display': x['english_pdf_and_mdf']})),
+    administrableDoseForm=AttributeInfo(set_value=lambda x: EdqmDoseForm({'code': x['adf_code'], 'display': x['adf_term']})),
     unitOfPresentation=AttributeInfo(set_value=lambda x: EdqmUnitOfPresentation({'code': None, 'display': None})),
     routeOfAdminstration=AttributeInfo(set_value=lambda x: EdqmRouteOfAdministration({'code': None, 'display': x['routename_en']})),
 )
