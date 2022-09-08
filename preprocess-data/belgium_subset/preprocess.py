@@ -67,7 +67,7 @@ class Strength:
         'denominatorUnit': None,
         'isPresentationStrength': True,
     })),
-    unitOfPresentation=AttributeInfo(set_value=lambda x: EdqmUnitOfPresentation({'code': 'MISSING', 'display': 'MISSING'})),
+    unitOfPresentation=AttributeInfo(set_value=lambda x: EdqmUnitOfPresentation({'code': None, 'display': None})),
 )
 class PharmaceuticalProduct:
     pass
@@ -78,8 +78,8 @@ class PharmaceuticalProduct:
     fullName=AttributeInfo(set_value=lambda x: string_or_none(x['medicinal_product_name'])),
     pharmaceuticalProduct=AttributeInfo(set_value=lambda x: PharmaceuticalProduct(x)),
     administrableDoseForm=AttributeInfo(set_value=lambda x: EdqmDoseForm({'code': x['adf_code'], 'display': x['english_pdf_and_mdf']})),
-    unitOfPresentation=AttributeInfo(set_value=lambda x: EdqmUnitOfPresentation({'code': 'MISSING', 'display': 'MISSING'})),
-    routeOfAdminstration=AttributeInfo(set_value=lambda x: EdqmRouteOfAdministration({'code': 'MISSING', 'display': x['routename_en']})),
+    unitOfPresentation=AttributeInfo(set_value=lambda x: EdqmUnitOfPresentation({'code': None, 'display': None})),
+    routeOfAdminstration=AttributeInfo(set_value=lambda x: EdqmRouteOfAdministration({'code': None, 'display': x['routename_en']})),
 )
 class MedicinalProduct:
     pass
@@ -119,9 +119,6 @@ if __name__ == '__main__':
             packaged_medicinal_product = PackagedMedicinalProduct(row)
             packages[packaged_medicinal_product.get_key()] = packaged_medicinal_product
     
-
-        print_results(pharmaceutical_products, PharmaceuticalProduct)
-        print_results(medicinal_products, MedicinalProduct)
         print_results(packages, PackagedMedicinalProduct)
 
 
