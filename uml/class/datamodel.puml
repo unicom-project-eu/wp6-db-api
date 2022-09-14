@@ -18,6 +18,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         entity EdqmDoseForm {
             * code: String
             --
+            * doseFormType: String
             * display: String
         }
 
@@ -43,10 +44,16 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
             modifier: String
         }
 
-        note left of Strength {
-                    **Strength:** both moiety and modifier
-                    **Reference strength:** moiety only
-                }
+        entity VirtualMedicinalProductGroup {
+            * code: String
+            --
+            * label: String
+        }
+
+        note right of Strength {
+            **Strength:** both moiety and modifier
+            **Reference strength:** moiety only
+        }
     }
 
     entity PharmaceuticalProduct {
@@ -79,19 +86,24 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     }
 
     EdqmUnitOfPresentation ||-o{ PharmaceuticalProduct : unitOfPresentation
-    EdqmUnitOfPresentation ||--o{ MedicinalProduct : unitOfPresentation
 
     SubstanceWithRolePai ||---o{ PharmaceuticalProduct : preciseActiveIngredient
     EdqmDoseForm ||---o{ PharmaceuticalProduct : pharmaceuticalDoseForm
     Strength ||---o| PharmaceuticalProduct : normalizedStrength
+    VirtualMedicinalProductGroup ||---o| PharmaceuticalProduct : virtualMedicnalProductGroup
 
     PharmaceuticalProduct ||--o{ MedicinalProduct : pharmaceuticalProduct
 
     MedicinalProduct ||--o{ PackagedMedicinalProduct : medicinalProduct
     MedicinalProduct }o--|| EdqmDoseForm : administrableDoseForm
-    MedicinalProduct |o--|| Strength : authorizedStrength
     EdqmRouteOfAdministration }o-o{ MedicinalProduct : routesOfAdministration
 
     MedicinalProduct }o-|| Organization : marketingAuthorizationHolder
+
+
+}
+
+note top of idmpDatamodel {
+    Not in sync with spring entities
 }
 @enduml

@@ -98,28 +98,66 @@ if __name__ == '__main__':
     print(f'Parsing "{ORIGINA_PATH}"...')
 
     packages = {}
+    packages_conflicts = []
+
     medicinal_products = {}
+    medicinal_products_conflicts = []
+    
     pharmaceutical_products = {}
+    pharmaceutical_products_conflicts = []
+
     def print_results(dct, cls):
         print(f'\n\nFound {len(dct)} instances of {cls.__name__}')
         for key, val in dct.items():
             print(f'{key}: {val}\n')
         pass
+    
+    def dict_insert_eq_check(my_dict, entry, line_number):
+        key = entry.get_key()
+        if key in my_dict:
+            if my_dict[key] != entry:
+                raise ValueError(
+                    f'-------------------\
+                    \nConflicting values for key {key}:\
+                    \nnew entry: {entry}\
+                    \nold entry: {my_dict[key]}\
+                    \n----------------\n'
+                )
+            return
+        my_dict[key] = entry
 
     with open(ORIGINA_PATH, 'r') as csvin:
         csvreader = csv.DictReader(csvin, delimiter=',')
 
+        line_number = 0
         for row in csvreader:
-            pharmaceutical_product = PharmaceuticalProduct(row)
-            pharmaceutical_products[pharmaceutical_product.get_key()] = pharmaceutical_product
-            
-            medicinal_product = MedicinalProduct(row)
-            medicinal_products[medicinal_product.get_key()] = medicinal_product
+            line_number += 1
 
-            packaged_medicinal_product = PackagedMedicinalProduct(row)
-            packages[packaged_medicinal_product.get_key()] = packaged_medicinal_product
+            try:
+                dict_insert_eq_check(pharmaceutical_products, PharmaceuticalProduct(row), line_number)
+            except Exception as e:
+                print(e)
+                pharmaceutical_products_conflicts.append(line_number)
+
+            try:
+                dict_insert_eq_check(medicinal_products, MedicinalProduct(row), line_number)
+            except Exception as e:
+                print(e)
+                medicinal_products_conflicts.append(line_number)
+
+            try:              
+                dict_insert_eq_check(packages, PackagedMedicinalProduct(row), line_number)
+            except Exception as e:
+                print(e)
+                packages_conflicts.append(line_number)
     
         print_results(packages, PackagedMedicinalProduct)
+
+        print(
+            f'PackagedMedicinalProducts conflicts ({len(packages_conflicts)}): {packages_conflicts}'\
+            f'\nMedicinalProducts conflicts ({len(medicinal_products_conflicts)}): {medicinal_products_conflicts}'\
+            f'\nPharmaceuticalProducts conflicts ({len(pharmaceutical_products_conflicts)}): {pharmaceutical_products_conflicts}'
+        )
 
 
     # print(f'Writing output to "{OUTPUT_PATH}"...')

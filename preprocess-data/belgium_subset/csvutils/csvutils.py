@@ -25,6 +25,8 @@ def csv_mapping(**attributes):
 
         cls.__repr__ = lambda self: json.dumps(self.__dict__, indent=2, default=lambda o: o.__dict__)
 
+        cls.__eq__ = lambda self, other: self.__dict__ == other.__dict__
+
         return cls
     return decorator
 
