@@ -19,22 +19,23 @@ import java.util.List;
 
 @WebServlet(value = "/*", displayName = "fhir")
 @Service
-@Configuration
 public class UnicomFHIRServlet extends RestfulServer {
     @Serial
     private static final long serialVersionUID = 1L;
 
+    final private FhirContext fhirContext;
     final UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy;
     final private MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider;
     final private SubstanceResourceProvider substanceResourceProvider;
     final private UnicomOpenApiInterceptor unicomOpenApiInterceptor;
 
     @Autowired
-    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, SubstanceResourceProvider substanceResourceProvider, UnicomOpenApiInterceptor unicomOpenApiInterceptor, UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy) {
+    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, SubstanceResourceProvider substanceResourceProvider, UnicomOpenApiInterceptor unicomOpenApiInterceptor, UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy, FhirContext fhirContext) {
         this.medicationKnowledgeResourceProvider = medicationKnowledgeResourceProvider;
         this.substanceResourceProvider = substanceResourceProvider;
         this.unicomOpenApiInterceptor = unicomOpenApiInterceptor;
         this.unicomTenantIdentificationStrategy = unicomTenantIdentificationStrategy;
+        this.fhirContext = fhirContext;
     }
 
     /**
@@ -45,10 +46,10 @@ public class UnicomFHIRServlet extends RestfulServer {
     @Override
     protected void initialize() {
         // FHIR Version
-        setFhirContext(FhirContext.forR5());
+        setFhirContext(fhirContext);
 
         // set tenant identification strategy
-        setTenantIdentificationStrategy(unicomTenantIdentificationStrategy);
+        // setTenantIdentificationStrategy(unicomTenantIdentificationStrategy);
 
         // register resource providers
         List<IResourceProvider> resourceProviders = new ArrayList<IResourceProvider>();

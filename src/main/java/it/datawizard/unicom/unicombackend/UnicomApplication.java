@@ -1,5 +1,6 @@
 package it.datawizard.unicom.unicombackend;
 
+import ca.uhn.fhir.context.FhirContext;
 import it.datawizard.unicom.unicombackend.fhir.UnicomFHIRServlet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
