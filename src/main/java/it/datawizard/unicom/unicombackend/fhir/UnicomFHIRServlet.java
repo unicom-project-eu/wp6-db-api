@@ -43,7 +43,7 @@ public class UnicomFHIRServlet extends RestfulServer {
      * configuration, interceptors, etc.
      */
     @Override
-    protected void initialize() throws ServletException {
+    protected void initialize() {
         // FHIR Version
         setFhirContext(FhirContext.forR5());
 
