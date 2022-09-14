@@ -8,6 +8,7 @@ import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.SubstanceWithRolePai;
 import it.datawizard.unicom.unicombackend.jpa.repository.SubstanceWithRolePaiRepository;
+import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,40 +20,38 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-public class SubstanceResourceProvider implements IResourceProvider {
-    private final static Logger LOG = LoggerFactory.getLogger(SubstanceResourceProvider.class);
+public class IngredientResourceProvider implements IResourceProvider {
+    private static Logger LOG = LoggerFactory.getLogger(IngredientResourceProvider.class);
+
+    @Override
+    public Class<? extends IBaseResource> getResourceType() { return Ingredient.class; }
 
     final private SubstanceWithRolePaiRepository substanceWithRolePaiRepository;
 
     @Autowired
-    public SubstanceResourceProvider(SubstanceWithRolePaiRepository substanceWithRolePaiRepository) {
+    public IngredientResourceProvider(SubstanceWithRolePaiRepository substanceWithRolePaiRepository) {
         this.substanceWithRolePaiRepository = substanceWithRolePaiRepository;
     }
 
-    @Override
-    public Class<Substance> getResourceType() {
-        return Substance.class;
-    }
-
     @Search
-    public List<Substance> findAllResources() {
-        ArrayList<Substance> substances = new ArrayList<>();
+    public List<Ingredient> findAllResources() {
+        ArrayList<Ingredient> substances = new ArrayList<>();
 
         for (SubstanceWithRolePai substanceWithRolePai: substanceWithRolePaiRepository.findAll()) {
-            substances.add(substanceFromEntity(substanceWithRolePai));
+            substances.add(ingredientFromEntity(substanceWithRolePai));
         }
 
         return substances;
     }
 
     @Search
-    public Substance findByIngredientCode(@RequiredParam(name = Substance.SP_CODE) StringParam code) {
+    public Ingredient findByIngredientCode(@RequiredParam(name = Substance.SP_CODE) StringParam code) {
         SubstanceWithRolePai substanceWithRolePai = substanceWithRolePaiRepository.findByIngredientCode(code.getValue());
 
         if (substanceWithRolePai == null)
             return null;
 
-        return substanceFromEntity(substanceWithRolePai);
+        return ingredientFromEntity(substanceWithRolePai);
     }
 
     @Read
@@ -61,12 +60,22 @@ public class SubstanceResourceProvider implements IResourceProvider {
         return result.map(SubstanceResourceProvider::substanceFromEntity).orElse(null);
     }
 
-    public static Substance substanceFromEntity(SubstanceWithRolePai substanceWithRolePai) {
-        Substance substance = new Substance();
+    public static Ingredient ingredientFromEntity(SubstanceWithRolePai substanceWithRolePai) {
+        Ingredient ingredient = new Ingredient();
 
-        // id
-        substance.setId(substanceWithRolePai.getId().toString());
+        ingredient.setId(substanceWithRolePai.getId().toString());
 
+        // Role: we only deal with substances with the role of precise active ingredient
+        CodeableConcept roleCodeableConcept = new CodeableConcept();
+        roleCodeableConcept.addCoding(
+                "https://spor.ema.europa.eu/v1/lists/100000072050",
+                "100000072072",
+                "active"
+        );
+        ingredient.setRole(roleCodeableConcept);
+
+        // Substance
+        Ingredient.IngredientSubstanceComponent ingredientSubstanceComponent = new Ingredient.IngredientSubstanceComponent();
         CodeableReference codeableReference = new CodeableReference();
         CodeableConcept substanceCodeableConcept = new CodeableConcept();
         substanceCodeableConcept.addCoding(
@@ -75,8 +84,9 @@ public class SubstanceResourceProvider implements IResourceProvider {
                 substanceWithRolePai.getSubstanceName()
         );
         codeableReference.setConcept(substanceCodeableConcept);
-        substance.setCode(codeableReference);
+        ingredientSubstanceComponent.setCode(codeableReference);
+        ingredient.setSubstance(ingredientSubstanceComponent);
 
-        return substance;
+        return ingredient;
     }
 }

@@ -4,6 +4,7 @@ package it.datawizard.unicom.unicombackend.fhir;
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.RestfulServer;
+import it.datawizard.unicom.unicombackend.fhir.resourceproviders.IngredientResourceProvider;
 import it.datawizard.unicom.unicombackend.fhir.resourceproviders.MedicationKnowledgeResourceProvider;
 import it.datawizard.unicom.unicombackend.fhir.resourceproviders.SubstanceResourceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,15 +28,17 @@ public class UnicomFHIRServlet extends RestfulServer {
     final UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy;
     final private MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider;
     final private SubstanceResourceProvider substanceResourceProvider;
+    final private IngredientResourceProvider ingredientResourceProvider;
     final private UnicomOpenApiInterceptor unicomOpenApiInterceptor;
 
     @Autowired
-    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, SubstanceResourceProvider substanceResourceProvider, UnicomOpenApiInterceptor unicomOpenApiInterceptor, UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy, FhirContext fhirContext) {
+    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, SubstanceResourceProvider substanceResourceProvider, UnicomOpenApiInterceptor unicomOpenApiInterceptor, UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy, FhirContext fhirContext, IngredientResourceProvider ingredientResourceProvider) {
         this.medicationKnowledgeResourceProvider = medicationKnowledgeResourceProvider;
         this.substanceResourceProvider = substanceResourceProvider;
         this.unicomOpenApiInterceptor = unicomOpenApiInterceptor;
         this.unicomTenantIdentificationStrategy = unicomTenantIdentificationStrategy;
         this.fhirContext = fhirContext;
+        this.ingredientResourceProvider = ingredientResourceProvider;
     }
 
     /**
@@ -55,6 +58,7 @@ public class UnicomFHIRServlet extends RestfulServer {
         List<IResourceProvider> resourceProviders = new ArrayList<IResourceProvider>();
         resourceProviders.add(medicationKnowledgeResourceProvider);
         resourceProviders.add(substanceResourceProvider);
+        resourceProviders.add(ingredientResourceProvider);
         setResourceProviders(resourceProviders);
 
         // register swagger interceptor

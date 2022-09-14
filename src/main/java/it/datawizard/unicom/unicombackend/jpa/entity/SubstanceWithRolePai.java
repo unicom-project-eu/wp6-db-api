@@ -41,5 +41,9 @@ public class SubstanceWithRolePai {
     public int hashCode() {
         return getClass().hashCode();
     }
+
+    public String getSubstanceName() {
+        return moiety + (modifier != null ? " " + modifier : "");
+    }
 }
 
