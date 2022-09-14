@@ -1,11 +1,13 @@
 package it.datawizard.unicom.unicombackend.fhir;
 
 
+import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.RestfulServer;
 import it.datawizard.unicom.unicombackend.fhir.resourceproviders.MedicationKnowledgeResourceProvider;
 import it.datawizard.unicom.unicombackend.fhir.resourceproviders.SubstanceResourceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,7 @@ import java.util.List;
 
 @WebServlet(value = "/*", displayName = "fhir")
 @Service
+@Configuration
 public class UnicomFHIRServlet extends RestfulServer {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -41,11 +44,8 @@ public class UnicomFHIRServlet extends RestfulServer {
      */
     @Override
     protected void initialize() throws ServletException {
-        /*
-         * The servlet defines any number of resource providers, and
-         * configures itself to use them by calling
-         * setResourceProviders()
-         */
+        // FHIR Version
+        setFhirContext(FhirContext.forR5());
 
         // set tenant identification strategy
         setTenantIdentificationStrategy(unicomTenantIdentificationStrategy);

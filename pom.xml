@@ -73,7 +73,7 @@
 		<!-- At least one "structures" JAR must also be included -->
 		<dependency>
 			<groupId>ca.uhn.hapi.fhir</groupId>
-			<artifactId>hapi-fhir-structures-r4</artifactId>
+			<artifactId>hapi-fhir-structures-r5</artifactId>
 			<version>${hapifhir_version}</version>
 		</dependency>
 

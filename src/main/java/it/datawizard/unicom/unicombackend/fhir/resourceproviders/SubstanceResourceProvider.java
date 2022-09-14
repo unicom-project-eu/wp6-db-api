@@ -8,10 +8,7 @@ import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.SubstanceWithRolePai;
 import it.datawizard.unicom.unicombackend.jpa.repository.SubstanceWithRolePaiRepository;
-import org.hl7.fhir.r4.model.CodeableConcept;
-import org.hl7.fhir.r4.model.Coding;
-import org.hl7.fhir.r4.model.IdType;
-import org.hl7.fhir.r4.model.Substance;
+import org.hl7.fhir.r5.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,6 +68,7 @@ public class SubstanceResourceProvider implements IResourceProvider {
         substance.setId(substanceWithRolePai.getId().toString());
 
         // ingredientCode
+        CodeableReference codeableReference = new CodeableReference();
         CodeableConcept ingredientCode = new CodeableConcept();
         ArrayList<Coding> codings = new ArrayList<>();
         Coding coding = new Coding();
@@ -78,7 +76,8 @@ public class SubstanceResourceProvider implements IResourceProvider {
         coding.setCode(substanceWithRolePai.getIngredientCode());
         codings.add(coding);
         ingredientCode.setCoding(codings);
-        substance.setCode(ingredientCode);
+        codeableReference.setConcept(ingredientCode);
+        substance.setCode(codeableReference);
 
         // description
         substance.setDescription(substanceWithRolePai.getMoiety() + (
