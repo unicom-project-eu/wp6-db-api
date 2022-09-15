@@ -7,12 +7,10 @@ import ca.uhn.fhir.rest.server.RestfulServer;
 import it.datawizard.unicom.unicombackend.fhir.resourceproviders.IngredientResourceProvider;
 import it.datawizard.unicom.unicombackend.fhir.resourceproviders.MedicationKnowledgeResourceProvider;
 import it.datawizard.unicom.unicombackend.fhir.resourceproviders.SubstanceResourceProvider;
+import it.datawizard.unicom.unicombackend.fhir.tenants.UnicomTenantIdentificationStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Service;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import java.io.Serial;
 import java.util.ArrayList;
