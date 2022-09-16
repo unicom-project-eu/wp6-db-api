@@ -115,7 +115,7 @@ public class UnicomOpenApiInterceptor {
     public static final String PAGE_ALL = "All";
     public static final FhirContext FHIR_CONTEXT_CANONICAL = FhirContext.forR4();
     public static final String REQUEST_DETAILS = "REQUEST_DETAILS";
-    public static final String RACCOON_PNG = "raccoon.png";
+    public static final String BANNER_IMAGE_NAME = "UNICOM-logo.svg";
     private final String mySwaggerUiVersion;
     private final TemplateEngine myTemplateEngine;
     private final Parser myFlexmarkParser;
@@ -151,13 +151,14 @@ public class UnicomOpenApiInterceptor {
     }
 
     private void initResources() {
-        setBannerImage(RACCOON_PNG);
+        setBannerImage(BANNER_IMAGE_NAME);
 
         addResourcePathToClasspath("/swagger-ui/index.html", "/ca/uhn/fhir/rest/openapi/index.html");
-        addResourcePathToClasspath("/swagger-ui/" + RACCOON_PNG, "/ca/uhn/fhir/rest/openapi/raccoon.png");
+        addResourcePathToClasspath("/swagger-ui/" + BANNER_IMAGE_NAME, "/images/" + BANNER_IMAGE_NAME);
         addResourcePathToClasspath("/swagger-ui/index.css", "/ca/uhn/fhir/rest/openapi/index.css");
 
         myExtensionToContentType.put(".png", "image/png");
+        myExtensionToContentType.put(".svg", "image/svg+xml");
         myExtensionToContentType.put(".css", "text/css; charset=UTF-8");
     }
 
@@ -224,6 +225,15 @@ public class UnicomOpenApiInterceptor {
         return true;
     }
 
+    private InputStream getResourceAsStream(String resourceClasspath) {
+        if (resourceClasspath.equals(myResourcePathToClasspath.get("/swagger-ui/" + BANNER_IMAGE_NAME))) {
+            ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+            return classloader.getResourceAsStream("openapi/images/" + BANNER_IMAGE_NAME);
+        }
+
+        return ClasspathUtil.loadResourceAsStream(resourceClasspath);
+    }
+
     protected boolean handleResourceRequest(HttpServletResponse theResponse, ServletRequestDetails theRequestDetails, String requestPath) throws IOException {
         if (requestPath.equals("/swagger-ui/") || requestPath.equals("/swagger-ui/index.html")) {
             serveSwaggerUiHtml(theRequestDetails, theResponse);
@@ -238,7 +248,7 @@ public class UnicomOpenApiInterceptor {
             String contentType = myExtensionToContentType.get(extension);
             assert contentType != null;
             theResponse.setContentType(contentType);
-            try (InputStream resource = ClasspathUtil.loadResourceAsStream(resourceClasspath)) {
+            try (InputStream resource = getResourceAsStream(resourceClasspath)) {
                 IOUtils.copy(resource, theResponse.getOutputStream());
                 theResponse.getOutputStream().close();
             }
@@ -294,7 +304,7 @@ public class UnicomOpenApiInterceptor {
         ServletContext servletContext = servletRequest.getServletContext();
         WebContext context = new WebContext(servletRequest, theResponse, servletContext);
         context.setVariable(REQUEST_DETAILS, theRequestDetails);
-        context.setVariable("DESCRIPTION", cs.getImplementation().getDescription());
+        context.setVariable("DESCRIPTION", "UNICOM FHIR Server");
         context.setVariable("SERVER_NAME", cs.getSoftware().getName());
         context.setVariable("SERVER_VERSION", cs.getSoftware().getVersion());
         context.setVariable("BASE_URL", cs.getImplementation().getUrl());
