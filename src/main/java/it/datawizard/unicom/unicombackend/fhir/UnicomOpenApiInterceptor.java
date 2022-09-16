@@ -57,6 +57,8 @@ import io.swagger.v3.oas.models.responses.ApiResponse;
 import io.swagger.v3.oas.models.responses.ApiResponses;
 import io.swagger.v3.oas.models.servers.Server;
 import io.swagger.v3.oas.models.tags.Tag;
+import it.datawizard.unicom.unicombackend.fhir.tenants.TenantDescriptor;
+import it.datawizard.unicom.unicombackend.fhir.tenants.TenantEnum;
 import org.apache.commons.io.IOUtils;
 import org.hl7.fhir.convertors.factory.VersionConvertorFactory_30_40;
 import org.hl7.fhir.convertors.factory.VersionConvertorFactory_40_50;
@@ -64,6 +66,9 @@ import org.hl7.fhir.instance.model.api.IBaseConformance;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.instance.model.api.IPrimitiveType;
 import org.hl7.fhir.r4.model.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.thymeleaf.IEngineConfiguration;
 import org.thymeleaf.TemplateEngine;
@@ -103,7 +108,7 @@ import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 @Component
 public class UnicomOpenApiInterceptor {
-
+    final static Logger LOG = LoggerFactory.getLogger(UnicomOpenApiInterceptor.class);
     public static final String FHIR_JSON_RESOURCE = "FHIR-JSON-RESOURCE";
     public static final String FHIR_XML_RESOURCE = "FHIR-XML-RESOURCE";
     public static final String PAGE_SYSTEM = "System Level Operations";
@@ -118,6 +123,12 @@ public class UnicomOpenApiInterceptor {
     private final Map<String, String> myResourcePathToClasspath = new HashMap<>();
     private final Map<String, String> myExtensionToContentType = new HashMap<>();
     private String myBannerImage;
+
+    private static LinkedHashMap<TenantEnum, TenantDescriptor> tenantDescriptors;
+    @Autowired
+    public void setTenantDescriptors(LinkedHashMap<TenantEnum, TenantDescriptor> tenantDescriptors) {
+        UnicomOpenApiInterceptor.tenantDescriptors = tenantDescriptors;
+    }
 
     /**
      * Constructor
@@ -382,10 +393,16 @@ public class UnicomOpenApiInterceptor {
         openApi.getInfo().getContact().setName(cs.getContactFirstRep().getName());
         openApi.getInfo().getContact().setEmail(cs.getContactFirstRep().getTelecomFirstRep().getValue());
 
-        Server server = new Server();
-        openApi.addServersItem(server);
-        server.setUrl(cs.getImplementation().getUrl());
-        server.setDescription(cs.getSoftware().getName());
+        // Servers
+        String baseUrl = cs.getImplementation().getUrl();
+        String baseDescription = "UNICOM FHIR Server";
+        for (Map.Entry<TenantEnum, TenantDescriptor> entry: tenantDescriptors.entrySet()) {
+            Server server = new Server();
+            server.setUrl(baseUrl + "/" + entry.getValue().getSlug());
+            server.setDescription(entry.getValue().getName() + " - " + baseDescription);
+            openApi.addServersItem(server);
+        }
+
 
         Paths paths = new Paths();
         openApi.setPaths(paths);

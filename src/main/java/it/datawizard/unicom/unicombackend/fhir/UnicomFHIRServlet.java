@@ -50,7 +50,7 @@ public class UnicomFHIRServlet extends RestfulServer {
         setFhirContext(fhirContext);
 
         // set tenant identification strategy
-        // setTenantIdentificationStrategy(unicomTenantIdentificationStrategy);
+        setTenantIdentificationStrategy(unicomTenantIdentificationStrategy);
 
         // register resource providers
         List<IResourceProvider> resourceProviders = new ArrayList<IResourceProvider>();
