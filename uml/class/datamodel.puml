@@ -59,13 +59,13 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     entity PharmaceuticalProduct {
         * id: Long <<generated>>
         --
-        * phpId: String <<unique>>
+        phpId: String <<unique>>
     }
 
     entity MedicinalProduct {
         * id: Long <<generated>>
         --
-        * mpId: String <<unique>>
+        mpId: String <<unique>>
         * country: Country
         * fullName: String
         packDescription: String
@@ -74,7 +74,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     entity PackagedMedicinalProduct {
         * id: Long <<generated>>
         --
-        * pcId: String <<unique>>
+        pcId: String <<unique>>
         * packageSize: Integer
         * atcCode: String
     }
