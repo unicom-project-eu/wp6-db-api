@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   postgres:
+    container_name: unicom-postgres
     image: postgres:14.1-alpine
     environment:
       - POSTGRES_USER=postgres
@@ -11,6 +12,7 @@ services:
       - postgres:/var/lib/postgresql/data
 
   unicom-backend:
+    container_name: unicom-backend
     image: unicom-backend
     build: '.'
     ports:
@@ -20,6 +22,22 @@ services:
       - POSTGRES_PORT=5432
     depends_on:
       - postgres
+
+  elasticsearch:
+    container_name: unicom-elasticsearch
+    image: elasticsearch:8.2.2
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+      - xpack.security.enabled=false
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    ports:
+      - target: 9200
+        published: 9200
+
 volumes:
   postgres:
+    driver: local
+  es_data:
     driver: local
