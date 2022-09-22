@@ -1,0 +1,65 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package "IDMP Datamodel" as idmpDatamodel <<frame>> {
+    entity Strength {
+        numeratorValue: Float
+        numeratorUnit: UcumUnit
+        denominatorValue: Float
+        denominatorUnit: UcumUnit
+    }
+
+    entity Ingredient {
+        ReferenceSubstance: EmaSporSms
+        Substance: EmaSporSms
+    }
+
+    together {
+        entity RoutesOfAdministration {
+            routeOfAdministration: EdqmRouteOfAdministration
+        }
+
+        entity PharmaceuticalProduct {
+            phpId: IdmpPhpId
+            administrableDoseForm: EdqmDoseForm
+            unitOfPresentation: EdqmUnitOfPresentation
+        }
+    }
+
+    entity MedicinalProduct {
+        * pmsId: Integer <<generated>>
+        --
+        mpId: IdmpMpId
+        pharmaceuticalDoseForm: EdqmDoseForm
+        marketingAuthorizationHolder: String
+    }
+
+    entity PackagedMedicinalProduct {
+        pcId: IdmpPcId
+    }
+
+    entity PackageItem {
+        type: EdqmPackageItemType
+    }
+
+    entity ManufactoredItem {
+        manufactoredDoseForm: EdqmDoseForm
+        unitOfPresentation: EdqmUnitOfPresentation
+        manufactoredItemQuantity: Integer
+    }
+
+    Strength ||--o| Ingredient : "referenceStrength"
+    Strength |o--o| Ingredient : "strength"
+
+    Ingredient }|-o{ ManufactoredItem : "ingredients <<redundant>>"
+    Ingredient }|--o{ PharmaceuticalProduct : "ingredients"
+
+    RoutesOfAdministration }|-r-|| PharmaceuticalProduct : "routesOfAdministration"
+    PharmaceuticalProduct ||--o{ MedicinalProduct : "pharmaceuticalProduct"
+    MedicinalProduct ||-o{ PackagedMedicinalProduct : "medicinalProduct"
+    PackagedMedicinalProduct |o-|{ PackageItem : "packagedMedicinalProduct"
+    PackageItem |o-o{ PackageItem : "packageItem"
+    ManufactoredItem ||--o{ PackageItem : "packageItem"
+}
+
+@enduml
