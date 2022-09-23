@@ -3,15 +3,20 @@
 
 package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     entity Strength {
-        numeratorValue: Float
-        numeratorUnit: UcumUnit
-        denominatorValue: Float
-        denominatorUnit: UcumUnit
+        concentrationNumeratorValue: Float
+        concentrationNnumeratorUnit: UcumUnit
+        concentrationDenominatorValue: Float
+        concentrationDdenominatorUnit: UcumUnit
+        presentationNumeratorValue: Float
+        presentationNnumeratorUnit: UcumUnit
+        presentationDenominatorValue: Float
+        presentationDdenominatorUnit: UcumUnit
     }
 
     entity Ingredient {
         ReferenceSubstance: EmaSporSms
         Substance: EmaSporSms
+        Role: SporRms
     }
 
     together {
@@ -30,16 +35,23 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         * pmsId: Integer <<generated>>
         --
         mpId: IdmpMpId
-        pharmaceuticalDoseForm: EdqmDoseForm
-        marketingAuthorizationHolder: String
+        fullName: String
+        authorizedPharmaceuticalDoseForm: EdqmDoseForm
+        marketingAuthorizationHolder: SporOms
+    }
+
+    entity AtcCode {
+        atcCode: String
     }
 
     entity PackagedMedicinalProduct {
         pcId: IdmpPcId
+        packSize: Integer
     }
 
     entity PackageItem {
         type: EdqmPackageItemType
+        packageItemQuantity: Integer
     }
 
     entity ManufactoredItem {
@@ -47,6 +59,8 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         unitOfPresentation: EdqmUnitOfPresentation
         manufactoredItemQuantity: Integer
     }
+
+    MedicinalProduct ||--|{ AtcCode
 
     Strength ||--o| Ingredient : "referenceStrength"
     Strength |o--o| Ingredient : "strength"
