@@ -3,6 +3,8 @@
 
 package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     entity Strength {
+        * id: Integer <<generated>>
+        --
         concentrationNumeratorValue: Float
         concentrationNnumeratorUnit: UcumUnit
         concentrationDenominatorValue: Float
@@ -14,6 +16,8 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     }
 
     entity Ingredient {
+        * id: Integer <<generated>>
+        --
         ReferenceSubstance: EmaSporSms
         Substance: EmaSporSms
         Role: SporRms
@@ -21,10 +25,14 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
 
     together {
         entity RoutesOfAdministration {
+            * id: Integer <<generated>>
+            --
             routeOfAdministration: EdqmRouteOfAdministration
         }
 
         entity PharmaceuticalProduct {
+            * id: Integer <<generated>>
+            --
             phpId: IdmpPhpId
             administrableDoseForm: EdqmDoseForm
             unitOfPresentation: EdqmUnitOfPresentation
@@ -32,7 +40,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     }
 
     entity MedicinalProduct {
-        * pmsId: Integer <<generated>>
+        * id: Integer <<generated>>
         --
         mpId: IdmpMpId
         fullName: String
@@ -41,26 +49,34 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     }
 
     entity AtcCode {
+        * id: Integer <<generated>>
+        --
         atcCode: String
     }
 
     entity PackagedMedicinalProduct {
+        * id: Integer <<generated>>
+        --
         pcId: IdmpPcId
         packSize: Integer
     }
 
     entity PackageItem {
+        * id: Integer <<generated>>
+        --
         type: EdqmPackageItemType
         packageItemQuantity: Integer
     }
 
     entity ManufactoredItem {
+        * id: Integer <<generated>>
+        --
         manufactoredDoseForm: EdqmDoseForm
         unitOfPresentation: EdqmUnitOfPresentation
         manufactoredItemQuantity: Integer
     }
 
-    MedicinalProduct ||--|{ AtcCode
+    MedicinalProduct ||--|{ AtcCode : "atcCodes"
 
     Strength ||--o| Ingredient : "referenceStrength"
     Strength |o--o| Ingredient : "strength"
