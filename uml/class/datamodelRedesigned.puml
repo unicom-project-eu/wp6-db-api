@@ -69,12 +69,12 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         packageItemQuantity: Integer
     }
 
-    entity ManufactoredItem {
+    entity ManufacturedItem {
         * id: Integer <<generated>>
         --
-        manufactoredDoseForm: EdqmDoseForm
+        manufacturedDoseForm: EdqmDoseForm
         unitOfPresentation: EdqmUnitOfPresentation
-        manufactoredItemQuantity: Integer
+        manufacturedItemQuantity: Integer
     }
 
     MedicinalProduct ||--|{ AtcCode : "atcCodes"
@@ -82,7 +82,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     Strength ||--o| Ingredient : "referenceStrength"
     Strength |o--o| Ingredient : "strength"
 
-    Ingredient }|-o{ ManufactoredItem : "ingredients <<redundant>>"
+    Ingredient }|-o{ ManufacturedItem : "ingredients <<redundant>>"
     Ingredient }|--o{ PharmaceuticalProduct : "ingredients"
 
     RouteOfAdministration }|-r-|| PharmaceuticalProduct : "routesOfAdministration"
@@ -90,7 +90,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     MedicinalProduct ||-o{ PackagedMedicinalProduct : "medicinalProduct"
     PackagedMedicinalProduct |o-|{ PackageItem : "packagedMedicinalProduct"
     PackageItem |o-o{ PackageItem : "packageItem"
-    ManufactoredItem ||--o{ PackageItem : "packageItem"
+    ManufacturedItem ||--o{ PackageItem : "packageItem"
 }
 
 @enduml

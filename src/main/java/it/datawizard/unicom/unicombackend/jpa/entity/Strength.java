@@ -16,33 +16,28 @@ public class Strength {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String display;
-
-    // TODO normalize units
     // Reference Strength
-    @Column(nullable = false)
-    private Float referenceNumeratorValue;
+    private Float concentrationNumeratorValue;
+    private String concentrationNumeratorUnit;
 
-    @Column(nullable = false)
-    private String referenceNumeratorUnit;
-
-    private Float referenceDenominatorValue;
-    private String referenceDenominatorUnit;
+    private Float concentrationDenominatorValue;
+    private String concentrationDenominatorUnit;
 
     // Strength
-    private Float numeratorValue;
-    private String numeratorUnit;
-    private Float denominatorValue;
-    private String denominatorUnit;
+    private Float presentationNumeratorValue;
+    private String presentationNumeratorUnit;
 
-    @Column(nullable = false)
-    private Boolean isPresentationStrength;
+    private Float presentationDenominatorValue;
+    private String presentationDenominatorUnit;
 
-    @OneToOne(mappedBy = "normalizedStrength")
-    private PharmaceuticalProduct pharmaceuticalProduct;
+    @OneToOne(mappedBy = "referenceStrength")
+    private Ingredient ingredientWithReferenceStrength;
 
-    @OneToOne(mappedBy = "authorizedStrength")
-    private MedicinalProduct medicinalProduct;
+    @OneToOne(mappedBy = "strength")
+    private Ingredient ingredientWithStrength;
+
+
+
 
     @Override
     public boolean equals(Object o) {
