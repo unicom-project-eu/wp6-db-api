@@ -21,13 +21,7 @@ public class PharmaceuticalProduct {
 
     //@Column(nullable = false, unique = true)
     private String idmpPhpId;
-
-    //@ManyToOne
-    //@JoinColumn(nullable = false)
     private EdqmDoseForm administrableDoseForm;
-
-    //@ManyToOne
-    //JoinColumn(nullable = false)
     private EdqmUnitOfPresentation unitOfPresentation;
 
     @ManyToMany(mappedBy = "pharmaceuticalProducts")
