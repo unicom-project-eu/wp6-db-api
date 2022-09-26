@@ -6,13 +6,13 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         * id: Integer <<generated>>
         --
         concentrationNumeratorValue: Float
-        concentrationNnumeratorUnit: UcumUnit
+        concentrationNumeratorUnit: UcumUnit
         concentrationDenominatorValue: Float
-        concentrationDdenominatorUnit: UcumUnit
+        concentrationDenominatorUnit: UcumUnit
         presentationNumeratorValue: Float
-        presentationNnumeratorUnit: UcumUnit
+        presentationNumeratorUnit: UcumUnit
         presentationDenominatorValue: Float
-        presentationDdenominatorUnit: UcumUnit
+        presentationDenominatorUnit: UcumUnit
     }
 
     entity Ingredient {
