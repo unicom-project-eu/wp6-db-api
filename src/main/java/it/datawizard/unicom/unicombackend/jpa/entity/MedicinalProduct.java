@@ -34,8 +34,7 @@ public class MedicinalProduct {
     private String marketingAuthorizationHolder;
 
     @ManyToOne
-    @JoinColumn()
-    @Column(nullable = false)
+    @JoinColumn(nullable = false)
     private PharmaceuticalProduct pharmaceuticalProduct;
 
     @OneToMany(mappedBy = "medicinalProduct")

@@ -26,8 +26,7 @@ public class Ingredient {
 
     private String role;
 
-    @Column(nullable = false)
-    @OneToOne
+    @OneToOne(optional = false)
     private Strength referenceStrength;
 
     @OneToOne
