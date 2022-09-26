@@ -6,7 +6,7 @@ import ca.uhn.fhir.rest.annotation.RequiredParam;
 import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
-import it.datawizard.unicom.unicombackend.jpa.repository.SubstanceWithRolePaiRepository;
+import it.datawizard.unicom.unicombackend.jpa.repository.IngredientRepository;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
 import org.slf4j.Logger;
@@ -25,18 +25,18 @@ public class IngredientResourceProvider implements IResourceProvider {
     @Override
     public Class<? extends IBaseResource> getResourceType() { return Ingredient.class; }
 
-    final private SubstanceWithRolePaiRepository substanceWithRolePaiRepository;
+    final private IngredientRepository ingredientRepository;
 
     @Autowired
-    public IngredientResourceProvider(SubstanceWithRolePaiRepository substanceWithRolePaiRepository) {
-        this.substanceWithRolePaiRepository = substanceWithRolePaiRepository;
+    public IngredientResourceProvider(IngredientRepository ingredientRepository) {
+        this.ingredientRepository = ingredientRepository;
     }
 
     @Search
     public List<Ingredient> findAllResources() {
         ArrayList<Ingredient> substances = new ArrayList<>();
 
-        for (SubstanceWithRolePai substanceWithRolePai: substanceWithRolePaiRepository.findAll()) {
+        for (it.datawizard.unicom.unicombackend.jpa.entity.Ingredient substanceWithRolePai: ingredientRepository.findAll()) {
             substances.add(ingredientFromEntity(substanceWithRolePai));
         }
 
@@ -45,7 +45,7 @@ public class IngredientResourceProvider implements IResourceProvider {
 
     @Search
     public Ingredient findByIngredientCode(@RequiredParam(name = Substance.SP_CODE) StringParam code) {
-        SubstanceWithRolePai substanceWithRolePai = substanceWithRolePaiRepository.findByIngredientCode(code.getValue());
+        it.datawizard.unicom.unicombackend.jpa.entity.Ingredient substanceWithRolePai = ingredientRepository.findByReferenceSubstance(code.getValue());
 
         if (substanceWithRolePai == null)
             return null;
@@ -54,9 +54,9 @@ public class IngredientResourceProvider implements IResourceProvider {
     }
 
     @Read
-    public Substance getResourceById(@IdParam IdType id) {
-        Optional<SubstanceWithRolePai> result = substanceWithRolePaiRepository.findById(id.getIdPartAsLong());
-        return result.map(SubstanceResourceProvider::substanceFromEntity).orElse(null);
+    public Ingredient getResourceById(@IdParam IdType id) {
+        Optional<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> result = ingredientRepository.findById(id.getIdPartAsLong());
+        return result.map(IngredientResourceProvider::ingredientFromEntity).orElse(null);
     }
 
     public static Ingredient ingredientFromEntity(it.datawizard.unicom.unicombackend.jpa.entity.Ingredient entityIngredient) {
