@@ -1,5 +1,6 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
+import it.datawizard.unicom.unicombackend.jpa.enums.EdqmDoseForm;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -17,45 +18,35 @@ public class MedicinalProduct {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false, unique = true)
     private String mpId;
 
-    @Column(nullable = false)
+
+    private String country;
+
+
     private String fullName;
 
-    private String packDescription;
 
-    @Column(nullable = false)
-    private String country; // TODO make an entity
+    private EdqmDoseForm authorizedPharmaceuticalDoseForm;
 
-    @OneToOne
+
+    //TODO Decide for Organization entity usage
+    private String marketingAuthorizationHolder;
+
+    @ManyToOne
     @JoinColumn()
-    private Strength authorizedStrength;
-
-    @ManyToOne
-    @JoinColumn(nullable = false)
+    @Column(nullable = false)
     private PharmaceuticalProduct pharmaceuticalProduct;
-
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private Organization marketingAuthorizationHolder;
 
     @OneToMany(mappedBy = "medicinalProduct")
     @ToString.Exclude
     private Set<PackagedMedicinalProduct> packagedMedicinalProducts;
 
-    @ManyToMany
-    @JoinTable()
+    @OneToMany (mappedBy = "medicinalProduct")
     @ToString.Exclude
-    private Set<EdqmRouteOfAdministration> routesOfAdministration;
+    private Set<AtcCode> atcCodes;
 
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private EdqmUnitOfPresentation unitOfPresentation;
 
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private EdqmDoseForm administrableDoseForm;
 
     @Override
     public boolean equals(Object o) {

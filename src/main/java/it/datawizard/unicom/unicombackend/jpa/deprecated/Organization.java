@@ -1,5 +1,6 @@
-package it.datawizard.unicom.unicombackend.jpa.entity;
+package it.datawizard.unicom.unicombackend.jpa.deprecated;
 
+import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -12,14 +13,15 @@ import java.util.Set;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class EdqmRouteOfAdministration {
+public class Organization {
     @Id
-    private String code;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @Column(nullable = false)
-    private String display;
+    private String name;
 
-    @ManyToMany(mappedBy = "routesOfAdministration")
+    @OneToMany(mappedBy = "marketingAuthorizationHolder")
     @ToString.Exclude
     private Set<MedicinalProduct> medicinalProducts;
 
@@ -27,8 +29,8 @@ public class EdqmRouteOfAdministration {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        EdqmRouteOfAdministration that = (EdqmRouteOfAdministration) o;
-        return code != null && Objects.equals(code, that.code);
+        Organization that = (Organization) o;
+        return id != null && Objects.equals(id, that.id);
     }
 
     @Override

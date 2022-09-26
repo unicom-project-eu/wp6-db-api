@@ -6,7 +6,7 @@ import ca.uhn.fhir.rest.annotation.RequiredParam;
 import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
-import it.datawizard.unicom.unicombackend.jpa.entity.SubstanceWithRolePai;
+import it.datawizard.unicom.unicombackend.jpa.deprecated.SubstanceWithRolePai;
 import it.datawizard.unicom.unicombackend.jpa.repository.SubstanceWithRolePaiRepository;
 import org.hl7.fhir.r5.model.*;
 import org.slf4j.Logger;
