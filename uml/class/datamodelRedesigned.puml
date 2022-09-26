@@ -24,7 +24,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     }
 
     together {
-        entity RoutesOfAdministration {
+        entity RouteOfAdministration {
             * id: Integer <<generated>>
             --
             routeOfAdministration: EdqmRouteOfAdministration
@@ -85,7 +85,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     Ingredient }|-o{ ManufactoredItem : "ingredients <<redundant>>"
     Ingredient }|--o{ PharmaceuticalProduct : "ingredients"
 
-    RoutesOfAdministration }|-r-|| PharmaceuticalProduct : "routesOfAdministration"
+    RouteOfAdministration }|-r-|| PharmaceuticalProduct : "routesOfAdministration"
     PharmaceuticalProduct ||--o{ MedicinalProduct : "pharmaceuticalProduct"
     MedicinalProduct ||-o{ PackagedMedicinalProduct : "medicinalProduct"
     PackagedMedicinalProduct |o-|{ PackageItem : "packagedMedicinalProduct"
