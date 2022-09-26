@@ -6,7 +6,6 @@ import ca.uhn.fhir.rest.annotation.RequiredParam;
 import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
-import it.datawizard.unicom.unicombackend.jpa.deprecated.SubstanceWithRolePai;
 import it.datawizard.unicom.unicombackend.jpa.repository.SubstanceWithRolePaiRepository;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
@@ -60,10 +59,10 @@ public class IngredientResourceProvider implements IResourceProvider {
         return result.map(SubstanceResourceProvider::substanceFromEntity).orElse(null);
     }
 
-    public static Ingredient ingredientFromEntity(SubstanceWithRolePai substanceWithRolePai) {
+    public static Ingredient ingredientFromEntity(it.datawizard.unicom.unicombackend.jpa.entity.Ingredient entityIngredient) {
         Ingredient ingredient = new Ingredient();
 
-        ingredient.setId(substanceWithRolePai.getId().toString());
+        ingredient.setId(entityIngredient.getId().toString());
 
         // Role: we only deal with substances with the role of precise active ingredient
         CodeableConcept roleCodeableConcept = new CodeableConcept();
@@ -80,8 +79,8 @@ public class IngredientResourceProvider implements IResourceProvider {
         CodeableConcept substanceCodeableConcept = new CodeableConcept();
         substanceCodeableConcept.addCoding(
                 "https://spor.ema.europa.eu/v2/SubstanceDefinition",
-                substanceWithRolePai.getIngredientCode(),
-                substanceWithRolePai.getSubstanceName()
+                entityIngredient.getReferenceSubstance(),
+                entityIngredient.getSubstance()
         );
         codeableReference.setConcept(substanceCodeableConcept);
         ingredientSubstanceComponent.setCode(codeableReference);
