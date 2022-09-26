@@ -43,6 +43,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         * id: Integer <<generated>>
         --
         mpId: IdmpMpId
+        country: IsoCountryCode
         fullName: String
         authorizedPharmaceuticalDoseForm: EdqmDoseForm
         marketingAuthorizationHolder: SporOms
