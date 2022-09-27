@@ -32,10 +32,6 @@ public class ManufacturedItem {
     @OneToMany(mappedBy = "manufacturedItem")
     private Set<PackageItem> packageItems;
 
-    @ManyToMany(mappedBy = "manufacturedItems")
-    @ToString.Exclude
-    private Set<Ingredient> ingredients;
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

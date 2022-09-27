@@ -92,7 +92,6 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     Strength ||--o| Ingredient : "referenceStrength"
     Strength |o--o| Ingredient : "strength"
 
-    Ingredient }|-o{ ManufacturedItem : "ingredients <<redundant>>"
     Ingredient }|---o{ PharmaceuticalProduct : "ingredients"
 
     RouteOfAdministration }|-r-|| PharmaceuticalProduct : "routesOfAdministration"

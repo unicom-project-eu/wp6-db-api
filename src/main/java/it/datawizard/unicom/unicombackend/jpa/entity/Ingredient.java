@@ -38,12 +38,6 @@ public class Ingredient {
     @ToString.Exclude
     private Set<PharmaceuticalProduct> pharmaceuticalProducts;
 
-    @ManyToMany
-    @Column(nullable = false)
-    @JoinTable()
-    @ToString.Exclude
-    private Set<ManufacturedItem> manufacturedItems;
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
