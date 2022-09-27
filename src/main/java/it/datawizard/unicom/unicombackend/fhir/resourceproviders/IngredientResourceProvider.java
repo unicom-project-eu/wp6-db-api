@@ -45,7 +45,7 @@ public class IngredientResourceProvider implements IResourceProvider {
 
     @Search
     public Ingredient findByIngredientCode(@RequiredParam(name = Substance.SP_CODE) StringParam code) {
-        it.datawizard.unicom.unicombackend.jpa.entity.Ingredient substanceWithRolePai = ingredientRepository.findByReferenceSubstance(code.getValue());
+        it.datawizard.unicom.unicombackend.jpa.entity.Ingredient substanceWithRolePai = ingredientRepository.findBySubstance_Code(code.getValue());
 
         if (substanceWithRolePai == null)
             return null;
@@ -79,8 +79,8 @@ public class IngredientResourceProvider implements IResourceProvider {
         CodeableConcept substanceCodeableConcept = new CodeableConcept();
         substanceCodeableConcept.addCoding(
                 "https://spor.ema.europa.eu/v2/SubstanceDefinition",
-                entityIngredient.getReferenceSubstance(),
-                entityIngredient.getSubstance()
+                entityIngredient.getSubstance().getCode(),
+                entityIngredient.getSubstance().getName()
         );
         codeableReference.setConcept(substanceCodeableConcept);
         ingredientSubstanceComponent.setCode(codeableReference);

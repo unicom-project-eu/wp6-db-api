@@ -20,10 +20,6 @@ public class Ingredient {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String referenceSubstance;
-
-    private String substance;
-
     private String role;
 
     @OneToOne(optional = false)
@@ -32,17 +28,15 @@ public class Ingredient {
     @OneToOne
     private Strength strength;
 
-    @ManyToMany
-    @Column(nullable = false)
-    @JoinTable()
-    @ToString.Exclude
-    private Set<PharmaceuticalProduct> pharmaceuticalProducts;
+    @ManyToOne
+    @JoinColumn()
+    private Substance substance;
 
     @ManyToMany
     @Column(nullable = false)
     @JoinTable()
     @ToString.Exclude
-    private Set<ManufacturedItem> manufacturedItems;
+    private Set<PharmaceuticalProduct> pharmaceuticalProducts;
 
     @Override
     public boolean equals(Object o) {
@@ -56,5 +50,4 @@ public class Ingredient {
     public int hashCode() {
         return getClass().hashCode();
     }
-
 }

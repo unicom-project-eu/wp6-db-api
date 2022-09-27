@@ -1,0 +1,63 @@
+databaseChangeLog:
+- changeSet:
+    id: 1664274758271-1
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: substancePK
+            name: id
+            type: BIGINT
+        - column:
+            name: code
+            type: VARCHAR(255)
+        - column:
+            name: moiety
+            type: VARCHAR(255)
+        - column:
+            name: name
+            type: VARCHAR(255)
+        tableName: substance
+- changeSet:
+    id: 1664274758271-2
+    author: francesco (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: substance_id
+            type: int8
+        tableName: ingredient
+- changeSet:
+    id: 1664274758271-3
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: substance_id
+        baseTableName: ingredient
+        constraintName: FKpq1fuoyi44gsm7bmr2r4drq5x
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: substance
+        validate: true
+- changeSet:
+    id: 1664274758271-4
+    author: francesco (generated)
+    changes:
+    - dropColumn:
+        columnName: reference_substance
+        tableName: ingredient
+- changeSet:
+    id: 1664274758271-5
+    author: francesco (generated)
+    changes:
+    - dropColumn:
+        columnName: substance
+        tableName: ingredient
+

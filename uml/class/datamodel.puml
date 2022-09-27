@@ -2,108 +2,104 @@
 'https://plantuml.com/class-diagram
 
 package "IDMP Datamodel" as idmpDatamodel <<frame>> {
-    entity EdqmRouteOfAdministration {
-        * code: String
+    entity Strength {
+        * id: Integer <<generated>>
         --
-        * display: String
-    }
-
-    entity EdqmUnitOfPresentation {
-        * code: String
-        --
-        * display: String
+        concentrationNumeratorValue: Float
+        concentrationNumeratorUnit: UcumUnit
+        concentrationDenominatorValue: Float
+        concentrationDenominatorUnit: UcumUnit
+        presentationNumeratorValue: Float
+        presentationNumeratorUnit: UcumUnit
+        presentationDenominatorValue: Float
+        presentationDenominatorUnit: UcumUnit
     }
 
     together {
-        entity EdqmDoseForm {
-            * code: String
+        entity Substance {
+            * id: Integer <<generated>>
             --
-            * doseFormType: String
-            * display: String
+            code: EmaSporSms <<unique>>
+            name: String
+            moiety: String
         }
 
-        entity Strength {
-            * id: Long <<generated>>
+        entity Ingredient {
+            * id: Integer <<generated>>
             --
-            * referenceNumeratorValue: Float
-            * referenceNumeratorUnit: Unit
-            referenceDenominatorValue: Float
-            referenceDenominatorUnit: Unit
-            numeratorValue: Float
-            numeratorUnit: Unit
-            denominatorValue: Float
-            denominatorUnit: Unit
-            * isPresentationStrength: Boolean
+            role: SporRms
         }
 
-        entity SubstanceWithRolePai {
-            * id: Long <<generated>>
-            --
-            * ingredientCode: String <<unique>>
-            * moiety: String
-            modifier: String
-        }
-
-        entity VirtualMedicinalProductGroup {
-            * code: String
-            --
-            * label: String
-        }
-
-        note right of Strength {
-            **Strength:** both moiety and modifier
-            **Reference strength:** moiety only
-        }
+        Substance ||-r-o{ Ingredient : "substance"
     }
 
-    entity PharmaceuticalProduct {
-        * id: Long <<generated>>
-        --
-        phpId: String <<unique>>
+    together {
+        entity RouteOfAdministration {
+            * id: Integer <<generated>>
+            --
+            routeOfAdministration: EdqmRouteOfAdministration
+        }
+
+        entity PharmaceuticalProduct {
+            * id: Integer <<generated>>
+            --
+            phpId: IdmpPhpId <<unique>>
+            administrableDoseForm: EdqmDoseForm
+            unitOfPresentation: EdqmUnitOfPresentation
+        }
     }
 
     entity MedicinalProduct {
-        * id: Long <<generated>>
+        * id: Integer <<generated>>
         --
-        mpId: String <<unique>>
-        * country: Country
-        * fullName: String
-        packDescription: String
+        mpId: IdmpMpId <<unique>>
+        country: IsoCountryCode
+        fullName: String
+        authorizedPharmaceuticalDoseForm: EdqmDoseForm
+        marketingAuthorizationHolder: SporOms
+    }
+
+    entity AtcCode {
+        * id: Integer <<generated>>
+        --
+        atcCode: String
     }
 
     entity PackagedMedicinalProduct {
-        * id: Long <<generated>>
+        * id: Integer <<generated>>
         --
-        pcId: String <<unique>>
-        * packageSize: Integer
-        * atcCode: String
+        pcId: IdmpPcId <<unique>>
+        packSize: Integer
     }
 
-    entity Organization {
-        * id: Long <<generated>>
+    entity PackageItem {
+        * id: Integer <<generated>>
         --
-        * name: String
+        type: EdqmPackageItemType
+        packageItemQuantity: Integer
     }
 
-    EdqmUnitOfPresentation ||-o{ PharmaceuticalProduct : unitOfPresentation
+    entity ManufacturedItem {
+        * id: Integer <<generated>>
+        --
+        manufacturedDoseForm: EdqmDoseForm
+        unitOfPresentation: EdqmUnitOfPresentation
+        manufacturedItemQuantity: Integer
+    }
 
-    SubstanceWithRolePai ||---o{ PharmaceuticalProduct : preciseActiveIngredient
-    EdqmDoseForm ||---o{ PharmaceuticalProduct : pharmaceuticalDoseForm
-    Strength ||---o| PharmaceuticalProduct : normalizedStrength
-    VirtualMedicinalProductGroup ||---o| PharmaceuticalProduct : virtualMedicnalProductGroup
+    MedicinalProduct ||--|{ AtcCode : "atcCodes"
 
-    PharmaceuticalProduct ||--o{ MedicinalProduct : pharmaceuticalProduct
+    Strength ||--o| Ingredient : "referenceStrength"
+    Strength |o--o| Ingredient : "strength"
 
-    MedicinalProduct ||--o{ PackagedMedicinalProduct : medicinalProduct
-    MedicinalProduct }o--|| EdqmDoseForm : administrableDoseForm
-    EdqmRouteOfAdministration }o-o{ MedicinalProduct : routesOfAdministration
+    Ingredient }|---o{ PharmaceuticalProduct : "ingredients"
 
-    MedicinalProduct }o-|| Organization : marketingAuthorizationHolder
-
-
+    RouteOfAdministration }|-r-|| PharmaceuticalProduct : "routesOfAdministration"
+    PharmaceuticalProduct ||--o{ MedicinalProduct : "pharmaceuticalProduct"
+    MedicinalProduct ||-o{ PackagedMedicinalProduct : "medicinalProduct"
+    PackagedMedicinalProduct |o-|{ PackageItem : "packagedMedicinalProduct"
+    PackageItem |o-o{ PackageItem : "packageItem"
+    ManufacturedItem ||--o{ PackageItem : "packageItem"
 }
 
-note top of idmpDatamodel {
-    Not in sync with spring entities
-}
 @enduml

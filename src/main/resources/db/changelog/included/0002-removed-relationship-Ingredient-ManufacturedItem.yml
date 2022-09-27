@@ -1,0 +1,22 @@
+databaseChangeLog:
+- changeSet:
+    id: 1664282021482-1
+    author: francesco (generated)
+    changes:
+    - dropForeignKeyConstraint:
+        baseTableName: ingredient_manufactured_items
+        constraintName: FKqjedrqbo201khv8o8s5q35vwl
+- changeSet:
+    id: 1664282021482-2
+    author: francesco (generated)
+    changes:
+    - dropForeignKeyConstraint:
+        baseTableName: ingredient_manufactured_items
+        constraintName: FKqpoc5lutxfnjjotn0d6k3asbc
+- changeSet:
+    id: 1664282021482-3
+    author: francesco (generated)
+    changes:
+    - dropTable:
+        tableName: ingredient_manufactured_items
+
