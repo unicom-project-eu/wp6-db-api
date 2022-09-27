@@ -45,7 +45,7 @@ public class IngredientResourceProvider implements IResourceProvider {
 
     @Search
     public Ingredient findByIngredientCode(@RequiredParam(name = Substance.SP_CODE) StringParam code) {
-        it.datawizard.unicom.unicombackend.jpa.entity.Ingredient substanceWithRolePai = ingredientRepository.findByReferenceSubstance(code.getValue());
+        it.datawizard.unicom.unicombackend.jpa.entity.Ingredient substanceWithRolePai = ingredientRepository.findBySubstance_Code(code.getValue());
 
         if (substanceWithRolePai == null)
             return null;
