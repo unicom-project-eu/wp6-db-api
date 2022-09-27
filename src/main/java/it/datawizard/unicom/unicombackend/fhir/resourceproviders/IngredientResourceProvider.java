@@ -79,8 +79,8 @@ public class IngredientResourceProvider implements IResourceProvider {
         CodeableConcept substanceCodeableConcept = new CodeableConcept();
         substanceCodeableConcept.addCoding(
                 "https://spor.ema.europa.eu/v2/SubstanceDefinition",
-                entityIngredient.getReferenceSubstance(),
-                entityIngredient.getSubstance()
+                entityIngredient.getSubstance().getCode(),
+                entityIngredient.getSubstance().getName()
         );
         codeableReference.setConcept(substanceCodeableConcept);
         ingredientSubstanceComponent.setCode(codeableReference);
