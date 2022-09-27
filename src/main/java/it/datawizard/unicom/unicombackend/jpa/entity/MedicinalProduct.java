@@ -3,12 +3,15 @@ package it.datawizard.unicom.unicombackend.jpa.entity;
 import it.datawizard.unicom.unicombackend.jpa.enums.EdqmDoseForm;
 import lombok.*;
 import org.hibernate.Hibernate;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
 
 import javax.persistence.*;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
+@Document(indexName = "medicinal_product")
 @Getter
 @Setter
 @ToString
@@ -23,7 +26,7 @@ public class MedicinalProduct {
 
     private String country;
 
-
+    @Field
     private String fullName;
 
 
