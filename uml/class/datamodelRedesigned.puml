@@ -30,7 +30,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
             role: SporRms
         }
 
-        Substance ||-r-|{ Ingredient : "substance"
+        Substance ||-r-o{ Ingredient : "substance"
     }
 
     together {
