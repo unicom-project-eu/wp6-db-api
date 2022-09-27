@@ -15,12 +15,22 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         presentationDenominatorUnit: UcumUnit
     }
 
-    entity Ingredient {
-        * id: Integer <<generated>>
-        --
-        referenceSubstance: EmaSporSms <<unique>>
-        substance: EmaSporSms
-        role: SporRms
+    together {
+        entity Substance {
+            * id: Integer <<generated>>
+            --
+            code: EmaSporSms <<unique>>
+            name: String
+            moiety: String
+        }
+
+        entity Ingredient {
+            * id: Integer <<generated>>
+            --
+            role: SporRms
+        }
+
+        Substance ||-r-|{ Ingredient : "substance"
     }
 
     together {
@@ -83,7 +93,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     Strength |o--o| Ingredient : "strength"
 
     Ingredient }|-o{ ManufacturedItem : "ingredients <<redundant>>"
-    Ingredient }|--o{ PharmaceuticalProduct : "ingredients"
+    Ingredient }|---o{ PharmaceuticalProduct : "ingredients"
 
     RouteOfAdministration }|-r-|| PharmaceuticalProduct : "routesOfAdministration"
     PharmaceuticalProduct ||--o{ MedicinalProduct : "pharmaceuticalProduct"
