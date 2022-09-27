@@ -33,7 +33,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         entity PharmaceuticalProduct {
             * id: Integer <<generated>>
             --
-            phpId: IdmpPhpId
+            phpId: IdmpPhpId <<unique>>
             administrableDoseForm: EdqmDoseForm
             unitOfPresentation: EdqmUnitOfPresentation
         }
@@ -42,7 +42,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     entity MedicinalProduct {
         * id: Integer <<generated>>
         --
-        mpId: IdmpMpId
+        mpId: IdmpMpId <<unique>>
         country: IsoCountryCode
         fullName: String
         authorizedPharmaceuticalDoseForm: EdqmDoseForm
@@ -58,7 +58,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     entity PackagedMedicinalProduct {
         * id: Integer <<generated>>
         --
-        pcId: IdmpPcId
+        pcId: IdmpPcId <<unique>>
         packSize: Integer
     }
 
