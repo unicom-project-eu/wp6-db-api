@@ -18,7 +18,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     entity Ingredient {
         * id: Integer <<generated>>
         --
-        referenceSubstance: EmaSporSms
+        referenceSubstance: EmaSporSms <<unique>>
         substance: EmaSporSms
         role: SporRms
     }
