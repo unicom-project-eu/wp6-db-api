@@ -1,5 +1,7 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
+import it.datawizard.unicom.unicombackend.jpa.enums.EdqmDoseForm;
+import it.datawizard.unicom.unicombackend.jpa.enums.EdqmUnitOfPresentation;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -17,27 +19,19 @@ public class PharmaceuticalProduct {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    private String phpId;
-
-    @OneToOne
-    @JoinColumn()
-    private Strength normalizedStrength;
-
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private SubstanceWithRolePai preciseActiveIngredient;
-
-    @ManyToOne
-    @JoinColumn(nullable = false)
+    //@Column(nullable = false, unique = true)
+    private String idmpPhpId;
+    private EdqmDoseForm administrableDoseForm;
     private EdqmUnitOfPresentation unitOfPresentation;
 
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private EdqmDoseForm pharmaceuticalDoseForm;
-
-    @OneToMany(mappedBy = "pharmaceuticalProduct")
+    @ManyToMany(mappedBy = "pharmaceuticalProducts")
     @ToString.Exclude
+    private Set<Ingredient> ingredients;
+
+    @OneToMany (mappedBy = "pharmaceuticalProduct")
+    private Set<RouteOfAdministration> routesOfAdministration;
+
+    @OneToMany (mappedBy = "pharmaceuticalProduct")
     private Set<MedicinalProduct> medicinalProducts;
 
     @Override

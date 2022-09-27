@@ -1,39 +1,45 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class EdqmRouteOfAdministration {
+public class AtcCode {
+
     @Id
-    private String code;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    @Column(nullable = false)
-    private String display;
+    private String atcCode;
 
-    @ManyToMany(mappedBy = "routesOfAdministration")
-    @ToString.Exclude
-    private Set<MedicinalProduct> medicinalProducts;
+    @ManyToOne
+    @JoinColumn()
+    private MedicinalProduct medicinalProduct;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        EdqmRouteOfAdministration that = (EdqmRouteOfAdministration) o;
-        return code != null && Objects.equals(code, that.code);
+        AtcCode atcCode = (AtcCode) o;
+        return id != null && Objects.equals(id, atcCode.id);
     }
 
     @Override
     public int hashCode() {
         return getClass().hashCode();
     }
-}
 
+
+
+
+}

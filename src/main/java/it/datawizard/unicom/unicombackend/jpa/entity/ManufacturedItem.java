@@ -1,6 +1,11 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
-import lombok.*;
+import it.datawizard.unicom.unicombackend.jpa.enums.EdqmDoseForm;
+import it.datawizard.unicom.unicombackend.jpa.enums.EdqmUnitOfPresentation;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -12,28 +17,30 @@ import java.util.Set;
 @Setter
 @ToString
 @RequiredArgsConstructor
-public class SubstanceWithRolePai {
+public class ManufacturedItem {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    private String ingredientCode;
+    private EdqmDoseForm manufacturedDoseForm;
 
-    @Column(nullable = false)
-    private String moiety;
+    private EdqmUnitOfPresentation unitOfPresentation;
 
-    private String modifier;
+    private Integer manufacturedItemQuantity;
 
-    @OneToMany(mappedBy = "preciseActiveIngredient")
+    @OneToMany(mappedBy = "manufacturedItem")
+    private Set<PackageItem> packageItems;
+
+    @ManyToMany(mappedBy = "manufacturedItems")
     @ToString.Exclude
-    private Set<PharmaceuticalProduct> pharmaceuticalProducts;
+    private Set<Ingredient> ingredients;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        SubstanceWithRolePai that = (SubstanceWithRolePai) o;
+        ManufacturedItem that = (ManufacturedItem) o;
         return id != null && Objects.equals(id, that.id);
     }
 
@@ -42,8 +49,4 @@ public class SubstanceWithRolePai {
         return getClass().hashCode();
     }
 
-    public String getSubstanceName() {
-        return moiety + (modifier != null ? " " + modifier : "");
-    }
 }
-

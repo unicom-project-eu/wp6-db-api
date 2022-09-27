@@ -5,6 +5,7 @@ import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -16,18 +17,17 @@ public class PackagedMedicinalProduct {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false, unique = true)
     private String pcId;
 
-    @Column(nullable = false)
-    private Integer packageSize;
-
-    @Column(nullable = false)
-    private String atcCode;
+    private Integer packSize;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn()
     private MedicinalProduct medicinalProduct;
+
+    @OneToMany (mappedBy = "packagedMedicinalProduct")
+    @Column(nullable = false)
+    private Set<PackageItem> packageItems;
 
     @Override
     public boolean equals(Object o) {
