@@ -28,7 +28,7 @@ services:
 
   elasticsearch:
     container_name: unicom-elasticsearch
-    image: elasticsearch:8.2.2
+    image: elasticsearch:7.17.6
     environment:
       - discovery.type=single-node
       - ES_JAVA_OPTS=-Xms1g -Xmx1g
