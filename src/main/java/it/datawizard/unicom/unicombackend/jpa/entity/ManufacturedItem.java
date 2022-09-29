@@ -1,7 +1,7 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmDoseForm;
-import it.datawizard.unicom.unicombackend.jpa.enums.EdqmUnitOfPresentation;
+import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmUnitOfPresentation;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -28,7 +28,9 @@ public class ManufacturedItem {
     @ToString.Exclude
     private EdqmDoseForm manufacturedDoseForm;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn()
+    @ToString.Exclude
     private EdqmUnitOfPresentation unitOfPresentation;
 
     private Integer manufacturedItemQuantity;

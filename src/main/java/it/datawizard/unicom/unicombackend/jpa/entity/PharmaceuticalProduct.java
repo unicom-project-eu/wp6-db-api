@@ -1,7 +1,7 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmDoseForm;
-import it.datawizard.unicom.unicombackend.jpa.enums.EdqmUnitOfPresentation;
+import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmUnitOfPresentation;
 import lombok.*;
 import org.hibernate.Hibernate;
 
@@ -26,7 +26,9 @@ public class PharmaceuticalProduct {
     @ToString.Exclude
     private EdqmDoseForm administrableDoseForm;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn()
+    @ToString.Exclude
     private EdqmUnitOfPresentation unitOfPresentation;
 
     @ManyToMany(mappedBy = "pharmaceuticalProducts")

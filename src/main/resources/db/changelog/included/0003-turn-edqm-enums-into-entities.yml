@@ -214,3 +214,83 @@ databaseChangeLog:
           columnName: type
           tableName: package_item
 
+  - changeSet:
+      id: 1664448571982-1
+      author: francesco (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: edqm_unit_of_presentationPK
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: term
+                  type: VARCHAR(255)
+            tableName: edqm_unit_of_presentation
+  - changeSet:
+      id: 1664448571982-2
+      author: francesco (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: unit_of_presentation_code
+                  type: varchar(255)
+            tableName: manufactured_item
+  - changeSet:
+      id: 1664448571982-3
+      author: francesco (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: unit_of_presentation_code
+                  type: varchar(255)
+            tableName: pharmaceutical_product
+  - changeSet:
+      id: 1664448571982-4
+      author: francesco (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: unit_of_presentation_code
+            baseTableName: pharmaceutical_product
+            constraintName: FK3cesrxyglmnhaajwwawnu94au
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: code
+            referencedTableName: edqm_unit_of_presentation
+            validate: true
+  - changeSet:
+      id: 1664448571982-5
+      author: francesco (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: unit_of_presentation_code
+            baseTableName: manufactured_item
+            constraintName: FK4ntdt36qodgpayujmbtskg8e2
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: code
+            referencedTableName: edqm_unit_of_presentation
+            validate: true
+  - changeSet:
+      id: 1664448571982-6
+      author: francesco (generated)
+      changes:
+        - dropColumn:
+            columnName: unit_of_presentation
+            tableName: manufactured_item
+  - changeSet:
+      id: 1664448571982-7
+      author: francesco (generated)
+      changes:
+        - dropColumn:
+            columnName: unit_of_presentation
+            tableName: pharmaceutical_product
+
