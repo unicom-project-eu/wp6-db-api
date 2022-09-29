@@ -1,6 +1,6 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
-import it.datawizard.unicom.unicombackend.jpa.enums.EdqmDoseForm;
+import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmDoseForm;
 import it.datawizard.unicom.unicombackend.jpa.enums.EdqmUnitOfPresentation;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +23,9 @@ public class ManufacturedItem {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn()
+    @ToString.Exclude
     private EdqmDoseForm manufacturedDoseForm;
 
     @Enumerated(EnumType.STRING)

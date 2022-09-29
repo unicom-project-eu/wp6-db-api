@@ -1,6 +1,6 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
-import it.datawizard.unicom.unicombackend.jpa.enums.EdqmDoseForm;
+import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmDoseForm;
 import it.datawizard.unicom.unicombackend.jpa.enums.EdqmUnitOfPresentation;
 import lombok.*;
 import org.hibernate.Hibernate;
@@ -21,7 +21,9 @@ public class PharmaceuticalProduct {
 
     private String idmpPhpId;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn()
+    @ToString.Exclude
     private EdqmDoseForm administrableDoseForm;
 
     @Enumerated(EnumType.STRING)

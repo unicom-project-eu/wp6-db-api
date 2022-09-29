@@ -1,6 +1,6 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
-import it.datawizard.unicom.unicombackend.jpa.enums.EdqmDoseForm;
+import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmDoseForm;
 import lombok.*;
 import org.hibernate.Hibernate;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -29,7 +29,9 @@ public class MedicinalProduct {
     @Field(type = FieldType.Text)
     private String fullName;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn()
+    @ToString.Exclude
     private EdqmDoseForm authorizedPharmaceuticalDoseForm;
 
     //TODO Decide for Organization entity usage

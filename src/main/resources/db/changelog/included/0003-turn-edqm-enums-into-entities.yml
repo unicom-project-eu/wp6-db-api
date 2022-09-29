@@ -1,0 +1,111 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1664444831456-1
+      author: francesco (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: edqm_dose_formPK
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: term
+                  type: VARCHAR(255)
+            tableName: edqm_dose_form
+  - changeSet:
+      id: 1664444831456-2
+      author: francesco (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: administrable_dose_form_code
+                  type: varchar(255)
+            tableName: pharmaceutical_product
+  - changeSet:
+      id: 1664444831456-3
+      author: francesco (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: authorized_pharmaceutical_dose_form_code
+                  type: varchar(255)
+            tableName: medicinal_product
+  - changeSet:
+      id: 1664444831456-4
+      author: francesco (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: manufactured_dose_form_code
+                  type: varchar(255)
+            tableName: manufactured_item
+  - changeSet:
+      id: 1664444831456-5
+      author: francesco (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: authorized_pharmaceutical_dose_form_code
+            baseTableName: medicinal_product
+            constraintName: FK2kvpfpkmqexwiq5ph303s1vne
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: code
+            referencedTableName: edqm_dose_form
+            validate: true
+  - changeSet:
+      id: 1664444831456-6
+      author: francesco (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: manufactured_dose_form_code
+            baseTableName: manufactured_item
+            constraintName: FKkdxd920r012lvejmb8yxjumcl
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: code
+            referencedTableName: edqm_dose_form
+            validate: true
+  - changeSet:
+      id: 1664444831456-7
+      author: francesco (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: administrable_dose_form_code
+            baseTableName: pharmaceutical_product
+            constraintName: FKs4glwnvg2kf0ey21nmbmoorg1
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: code
+            referencedTableName: edqm_dose_form
+            validate: true
+  - changeSet:
+      id: 1664444831456-8
+      author: francesco (generated)
+      changes:
+        - dropColumn:
+            columnName: administrable_dose_form
+            tableName: pharmaceutical_product
+  - changeSet:
+      id: 1664444831456-9
+      author: francesco (generated)
+      changes:
+        - dropColumn:
+            columnName: authorized_pharmaceutical_dose_form
+            tableName: medicinal_product
+  - changeSet:
+      id: 1664444831456-10
+      author: francesco (generated)
+      changes:
+        - dropColumn:
+            columnName: manufactured_dose_form
+            tableName: manufactured_item
+
