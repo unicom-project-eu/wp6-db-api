@@ -1,6 +1,7 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmDoseForm;
+import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmRouteOfAdministration;
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmUnitOfPresentation;
 import lombok.*;
 import org.hibernate.Hibernate;
@@ -35,8 +36,10 @@ public class PharmaceuticalProduct {
     @ToString.Exclude
     private Set<Ingredient> ingredients;
 
-    @OneToMany (mappedBy = "pharmaceuticalProduct")
-    private Set<RouteOfAdministration> routesOfAdministration;
+    @ManyToMany
+    @JoinTable()
+    @ToString.Exclude
+    private Set<EdqmRouteOfAdministration> edqmRoutesOfAdministration;
 
     @OneToMany (mappedBy = "pharmaceuticalProduct")
     private Set<MedicinalProduct> medicinalProducts;

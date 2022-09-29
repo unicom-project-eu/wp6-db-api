@@ -1,7 +1,6 @@
 package it.datawizard.unicom.unicombackend.jpa.entity.edqm;
 
 import it.datawizard.unicom.unicombackend.jpa.entity.PackageItem;
-import it.datawizard.unicom.unicombackend.jpa.enums.IEdqmEnum;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;

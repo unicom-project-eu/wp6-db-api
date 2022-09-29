@@ -294,3 +294,131 @@ databaseChangeLog:
             columnName: unit_of_presentation
             tableName: pharmaceutical_product
 
+
+  - changeSet:
+      id: 1664460970554-1
+      author: francesco (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: edqm_route_of_administrationPK
+                  name: code
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: term
+                  type: VARCHAR(255)
+            tableName: edqm_route_of_administration
+  - changeSet:
+      id: 1664460970554-2
+      author: francesco (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: edqm_route_of_administration_pharmaceutical_productsPK
+                  name: edqm_route_of_administration_code
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: edqm_route_of_administration_pharmaceutical_productsPK
+                  name: pharmaceutical_products_id
+                  type: BIGINT
+            tableName: edqm_route_of_administration_pharmaceutical_products
+  - changeSet:
+      id: 1664460970554-3
+      author: francesco (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pharmaceutical_product_edqm_routes_of_administrationPK
+                  name: pharmaceutical_product_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pharmaceutical_product_edqm_routes_of_administrationPK
+                  name: edqm_routes_of_administration_code
+                  type: VARCHAR(255)
+            tableName: pharmaceutical_product_edqm_routes_of_administration
+  - changeSet:
+      id: 1664460970554-4
+      author: francesco (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: pharmaceutical_product_id
+            baseTableName: pharmaceutical_product_edqm_routes_of_administration
+            constraintName: FK2yg6cpoerc8iclhyw3lycotk9
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: pharmaceutical_product
+            validate: true
+  - changeSet:
+      id: 1664460970554-5
+      author: francesco (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: pharmaceutical_products_id
+            baseTableName: edqm_route_of_administration_pharmaceutical_products
+            constraintName: FKli6pccwtyouv87r2pbs3nifti
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: pharmaceutical_product
+            validate: true
+  - changeSet:
+      id: 1664460970554-6
+      author: francesco (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: edqm_route_of_administration_code
+            baseTableName: edqm_route_of_administration_pharmaceutical_products
+            constraintName: FKoblsb9yxmxauiw0whgvofaogg
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: code
+            referencedTableName: edqm_route_of_administration
+            validate: true
+  - changeSet:
+      id: 1664460970554-7
+      author: francesco (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: edqm_routes_of_administration_code
+            baseTableName: pharmaceutical_product_edqm_routes_of_administration
+            constraintName: FKt6mb2i357ypxbkxnx4yriglj1
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: code
+            referencedTableName: edqm_route_of_administration
+            validate: true
+  - changeSet:
+      id: 1664460970554-8
+      author: francesco (generated)
+      changes:
+        - dropForeignKeyConstraint:
+            baseTableName: route_of_administration
+            constraintName: FKojv482mfnarvqxsnw411pg8x1
+  - changeSet:
+      id: 1664460970554-9
+      author: francesco (generated)
+      changes:
+        - dropTable:
+            tableName: route_of_administration
+
