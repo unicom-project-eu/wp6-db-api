@@ -16,11 +16,14 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class EdqmDoseForm extends EdqmConcept {
     @OneToMany(mappedBy = "manufacturedDoseForm")
+    @ToString.Exclude
     private Set<ManufacturedItem> manufacturedItems;
 
     @OneToMany(mappedBy = "authorizedPharmaceuticalDoseForm")
+    @ToString.Exclude
     private Set<MedicinalProduct> medicinalProducts;
 
     @OneToMany(mappedBy = "administrableDoseForm")
+    @ToString.Exclude
     private Set<PharmaceuticalProduct> pharmaceuticalProducts;
 }

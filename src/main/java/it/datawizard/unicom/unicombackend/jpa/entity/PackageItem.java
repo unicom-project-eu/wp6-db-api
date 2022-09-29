@@ -1,6 +1,6 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
-import it.datawizard.unicom.unicombackend.jpa.enums.EdqmPackageItemType;
+import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmPackageItemType;
 import lombok.*;
 
 import javax.persistence.*;
@@ -16,7 +16,9 @@ public class PackageItem {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
+    @JoinColumn()
+    @ToString.Exclude
     private EdqmPackageItemType type;
 
     private Integer packageItemQuantity;

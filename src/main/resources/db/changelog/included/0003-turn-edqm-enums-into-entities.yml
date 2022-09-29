@@ -109,3 +109,108 @@ databaseChangeLog:
             columnName: manufactured_dose_form
             tableName: manufactured_item
 
+  - changeSet:
+      id: 1664445505296-1
+      author: francesco (generated)
+      changes:
+      - createTable:
+          columns:
+          - column:
+              constraints:
+                nullable: false
+                primaryKey: true
+                primaryKeyName: edqm_package_item_typePK
+              name: code
+              type: VARCHAR(255)
+          - column:
+              constraints:
+                nullable: false
+              name: term
+              type: VARCHAR(255)
+          tableName: edqm_package_item_type
+  - changeSet:
+      id: 1664445505296-2
+      author: francesco (generated)
+      changes:
+      - createTable:
+          columns:
+          - column:
+              constraints:
+                nullable: false
+                primaryKey: true
+                primaryKeyName: edqm_package_item_type_package_itemsPK
+              name: edqm_package_item_type_code
+              type: VARCHAR(255)
+          - column:
+              constraints:
+                nullable: false
+                primaryKey: true
+                primaryKeyName: edqm_package_item_type_package_itemsPK
+              name: package_items_id
+              type: BIGINT
+          tableName: edqm_package_item_type_package_items
+  - changeSet:
+      id: 1664445505296-3
+      author: francesco (generated)
+      changes:
+      - addColumn:
+          columns:
+          - column:
+              name: type_code
+              type: varchar(255)
+          tableName: package_item
+  - changeSet:
+      id: 1664445505296-4
+      author: francesco (generated)
+      changes:
+      - addUniqueConstraint:
+          columnNames: package_items_id
+          constraintName: UK_tb4foijmst911o65eyscgixmc
+          tableName: edqm_package_item_type_package_items
+  - changeSet:
+      id: 1664445505296-5
+      author: francesco (generated)
+      changes:
+      - addForeignKeyConstraint:
+          baseColumnNames: package_items_id
+          baseTableName: edqm_package_item_type_package_items
+          constraintName: FK2neboli9ocfo11dvg87g99c0m
+          deferrable: false
+          initiallyDeferred: false
+          referencedColumnNames: id
+          referencedTableName: package_item
+          validate: true
+  - changeSet:
+      id: 1664445505296-6
+      author: francesco (generated)
+      changes:
+      - addForeignKeyConstraint:
+          baseColumnNames: edqm_package_item_type_code
+          baseTableName: edqm_package_item_type_package_items
+          constraintName: FK5u3it0u1xpggwn8shlsqwvrtv
+          deferrable: false
+          initiallyDeferred: false
+          referencedColumnNames: code
+          referencedTableName: edqm_package_item_type
+          validate: true
+  - changeSet:
+      id: 1664445505296-7
+      author: francesco (generated)
+      changes:
+      - addForeignKeyConstraint:
+          baseColumnNames: type_code
+          baseTableName: package_item
+          constraintName: FK8e19k2adtfist4q24a5ftb1es
+          deferrable: false
+          initiallyDeferred: false
+          referencedColumnNames: code
+          referencedTableName: edqm_package_item_type
+          validate: true
+  - changeSet:
+      id: 1664445505296-8
+      author: francesco (generated)
+      changes:
+      - dropColumn:
+          columnName: type
+          tableName: package_item
+
