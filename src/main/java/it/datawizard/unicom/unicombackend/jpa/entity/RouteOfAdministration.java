@@ -21,6 +21,7 @@ public class RouteOfAdministration {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
     private EdqmRouteOfAdministration routeOfAdministration;
 
     @ManyToOne

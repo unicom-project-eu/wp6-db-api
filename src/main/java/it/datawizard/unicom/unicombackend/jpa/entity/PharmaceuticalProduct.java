@@ -19,9 +19,12 @@ public class PharmaceuticalProduct {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    //@Column(nullable = false, unique = true)
     private String idmpPhpId;
+
+    @Enumerated(EnumType.STRING)
     private EdqmDoseForm administrableDoseForm;
+
+    @Enumerated(EnumType.STRING)
     private EdqmUnitOfPresentation unitOfPresentation;
 
     @ManyToMany(mappedBy = "pharmaceuticalProducts")

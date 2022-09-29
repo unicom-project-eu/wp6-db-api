@@ -24,15 +24,13 @@ public class MedicinalProduct {
 
     private String mpId;
 
-
     private String country;
 
     @Field(type = FieldType.Text)
     private String fullName;
 
-
+    @Enumerated(EnumType.STRING)
     private EdqmDoseForm authorizedPharmaceuticalDoseForm;
-
 
     //TODO Decide for Organization entity usage
     private String marketingAuthorizationHolder;
@@ -48,8 +46,6 @@ public class MedicinalProduct {
     @OneToMany (mappedBy = "medicinalProduct")
     @ToString.Exclude
     private Set<AtcCode> atcCodes;
-
-
 
     @Override
     public boolean equals(Object o) {

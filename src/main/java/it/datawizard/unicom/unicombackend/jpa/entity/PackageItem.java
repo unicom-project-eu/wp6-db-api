@@ -16,6 +16,7 @@ public class PackageItem {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
     private EdqmPackageItemType type;
 
     private Integer packageItemQuantity;

@@ -23,8 +23,10 @@ public class ManufacturedItem {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Enumerated(EnumType.STRING)
     private EdqmDoseForm manufacturedDoseForm;
 
+    @Enumerated(EnumType.STRING)
     private EdqmUnitOfPresentation unitOfPresentation;
 
     private Integer manufacturedItemQuantity;
