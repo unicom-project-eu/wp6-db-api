@@ -1,0 +1,572 @@
+[
+    {
+        "isocode": "UOP-15001000-EN-GB-1",
+        "term": "Actuation",
+        "definition": "A unit of presentation used to represent the quantity of product that is administered following a single operation of a metered-dose pump, valve or other equivalent dosing mechanism.",
+        "comment": "For example, to describe the strength of a pressurised inhalation solution (e.g. via an inhaler): \"contains 100 micrograms per actuation\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-08-10 14:57:46",
+        "creation_date": "2016-08-10 14:57:46"
+    },
+    {
+        "isocode": "UOP-15002000-EN-GB-1",
+        "term": "Ampoule",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single ampoule container.",
+        "comment": "For example, to describe the quantity of a solution for injection in a single ampoule: \"contains 1 mL per ampoule\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 09:43:10",
+        "creation_date": "2016-05-20 09:43:10"
+    },
+    {
+        "isocode": "UOP-15004000-EN-GB-1",
+        "term": "Applicator",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single applicator.",
+        "comment": "For example, to describe the quantity of a cream in a single applicator: \"contains 1 mL per applicator\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-06-29 11:31:02",
+        "creation_date": "2016-06-29 11:31:02"
+    },
+    {
+        "isocode": "UOP-15005000-EN-GB-1",
+        "term": "Bag",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single bag container.",
+        "comment": "For example, to describe the quantity of a solution for infusion in a single bag: \"contains 1000 mL per bag\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 09:44:02",
+        "creation_date": "2016-05-20 09:44:02"
+    },
+    {
+        "isocode": "UOP-15006000-EN-GB-1",
+        "term": "Barrel",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single barrel container.",
+        "comment": "For example, to describe the quantity of a solution for injection in a single barrel: \"contains 10 L per barrel\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 09:45:06",
+        "creation_date": "2016-05-20 09:45:06"
+    },
+    {
+        "isocode": "UOP-15007000-EN-GB-1",
+        "term": "Blister",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single blister or unit-dose blister container.",
+        "comment": "For example, to describe the quantity of tablets in a blister: \"contains 28 tablets per blister\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-06-29 11:31:43",
+        "creation_date": "2016-06-29 11:31:43"
+    },
+    {
+        "isocode": "UOP-15008000-EN-GB-1",
+        "term": "Block",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of block.",
+        "comment": "For example, to describe the strength of a lick block: \"contains 1000 mg per block\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 09:47:38",
+        "creation_date": "2016-05-20 09:47:38"
+    },
+    {
+        "isocode": "UOP-15009000-EN-GB-1",
+        "term": "Bottle",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single bottle container.",
+        "comment": "For example, to describe the quantity of an oral solution in a single bottle: \"contains 100 mL per bottle\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 09:48:33",
+        "creation_date": "2016-05-20 09:48:33"
+    },
+    {
+        "isocode": "UOP-15011000-EN-GB-1",
+        "term": "Cachet",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of cachet.",
+        "comment": "For example, to describe the strength of a cachet: \"contains 100 mg per cachet\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 09:49:14",
+        "creation_date": "2016-05-20 09:49:14"
+    },
+    {
+        "isocode": "UOP-15012000-EN-GB-1",
+        "term": "Capsule",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of capsule.",
+        "comment": "For example, to describe the strength of a hard capsule: \"contains 100 mg per capsule\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 09:50:21",
+        "creation_date": "2016-05-20 09:50:21"
+    },
+    {
+        "isocode": "UOP-15013000-EN-GB-1",
+        "term": "Cartridge",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single cartridge container.",
+        "comment": "For example, to describe the quantity of a solution for injection in a single cartridge: \"contains 5 mL per cartridge\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 09:51:14",
+        "creation_date": "2016-05-20 09:51:14"
+    },
+    {
+        "isocode": "UOP-15015000-EN-GB-1",
+        "term": "Collar",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of collar.",
+        "comment": "For example, to describe the strength of a medicated collar: \"contains 10 mg per collar\".",
+        "status": "Current",
+        "domain": "Veterinary only",
+        "modification_date": "2016-05-20 09:54:01",
+        "creation_date": "2016-05-20 09:54:01"
+    },
+    {
+        "isocode": "UOP-15016000-EN-GB-1",
+        "term": "Container",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single container, where a more-specific container term is not applicable.",
+        "comment": "For example, to describe the quantity of a dispersion for injection in a single container: \"contains 1 mL per container\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 09:55:16",
+        "creation_date": "2016-05-20 09:55:16"
+    },
+    {
+        "isocode": "UOP-15017000-EN-GB-1",
+        "term": "Cup",
+        "definition": "A unit of presentation used to represent the quantity of product that is administered by filling a single cup administration device.",
+        "comment": "For example, to describe the quantity of granules that would fit in a single cup when administered as directed: \"contains approximately 20 g per cup\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 09:56:38",
+        "creation_date": "2016-05-20 09:56:38"
+    },
+    {
+        "isocode": "UOP-15018000-EN-GB-1",
+        "term": "Cylinder",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single cylinder-type container.",
+        "comment": "For example, to describe the quantity of a compressed medicinal gas in a single gas cylinder: \"supplies 1500 L per cylinder\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 09:57:38",
+        "creation_date": "2016-05-20 09:57:38"
+    },
+    {
+        "isocode": "UOP-15019000-EN-GB-1",
+        "term": "Dart",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single dart container.",
+        "comment": "For example, to describe the quantity of a solution for injection in a single dart: \"contains 5 mL per dart\".",
+        "status": "Current",
+        "domain": "Veterinary only",
+        "modification_date": "2016-05-20 09:58:19",
+        "creation_date": "2016-05-20 09:58:19"
+    },
+    {
+        "isocode": "UOP-15021000-EN-GB-1",
+        "term": "Dressing",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of dressing.",
+        "comment": "For example, to describe the strength of an impregnated dressing: \"contains 500 mg per dressing\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 09:59:02",
+        "creation_date": "2016-05-20 09:59:02"
+    },
+    {
+        "isocode": "UOP-15022000-EN-GB-1",
+        "term": "Drop",
+        "definition": "A unit of presentation used to represent the quantity of product that is administered in a single drop dispensed from a dropper or equivalent administration device.",
+        "comment": "For example, to describe the strength of oral drops, solution: \"contains approximately 5 mg per drop\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 09:59:58",
+        "creation_date": "2016-05-20 09:59:58"
+    },
+    {
+        "isocode": "UOP-15023000-EN-GB-1",
+        "term": "Film",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of film.",
+        "comment": "For example, to describe the strength of an orodispersible film: \"contains 4 mg per film\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:00:48",
+        "creation_date": "2016-05-20 10:00:48"
+    },
+    {
+        "isocode": "UOP-15024000-EN-GB-1",
+        "term": "Chewing gum",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of medicated chewing gum.",
+        "comment": "For example, to describe the strength of a medicated chewing gum: \"contains 4 mg per chewing gum\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-06-29 11:33:05",
+        "creation_date": "2016-06-29 11:33:05"
+    },
+    {
+        "isocode": "UOP-15025000-EN-GB-1",
+        "term": "Implant",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of implant.",
+        "comment": "For example, to describe the strength of an implant: \"contains 10 mg per implant\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:01:33",
+        "creation_date": "2016-05-20 10:01:33"
+    },
+    {
+        "isocode": "UOP-15026000-EN-GB-1",
+        "term": "Inhaler",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single inhaler container.",
+        "comment": "For example, to describe the quantity of a powder for inhalation in a single-use inhaler: \"contains 10 mg per inhaler\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:02:17",
+        "creation_date": "2016-05-20 10:02:17"
+    },
+    {
+        "isocode": "UOP-15027000-EN-GB-1",
+        "term": "Insert",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of insert.",
+        "comment": "For example, to describe the strength of an ophthalmic insert: \"contains 0.28 mg per insert\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:03:02",
+        "creation_date": "2016-05-20 10:03:02"
+    },
+    {
+        "isocode": "UOP-15028000-EN-GB-1",
+        "term": "Jar",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single jar container.",
+        "comment": "For example, to describe the quantity of a cream in a single jar: \"contains 500 g per jar\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:03:42",
+        "creation_date": "2016-05-20 10:03:42"
+    },
+    {
+        "isocode": "UOP-15029000-EN-GB-1",
+        "term": "Lozenge",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of lozenge.",
+        "comment": "For example, to describe the strength of a compressed lozenge: \"contains 2 mg per lozenge\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:04:21",
+        "creation_date": "2016-05-20 10:04:21"
+    },
+    {
+        "isocode": "UOP-15030000-EN-GB-1",
+        "term": "Lyophilisate",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of lyophilisate.",
+        "comment": "For example, to describe the strength of an oral lyophilisate: \"contains 10 mg per lyophilisate\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:07:44",
+        "creation_date": "2016-05-20 10:07:44"
+    },
+    {
+        "isocode": "UOP-15031000-EN-GB-1",
+        "term": "Matrix",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of matrix.",
+        "comment": "For example, to describe the strength of an implantation matrix: \"contains 12 mg per matrix\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:10:17",
+        "creation_date": "2016-05-20 10:10:17"
+    },
+    {
+        "isocode": "UOP-15033000-EN-GB-1",
+        "term": "Pad",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of pad.",
+        "comment": "For example, to describe the strength of an impregnated pad: \"contains 10 mg per pad\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:10:53",
+        "creation_date": "2016-05-20 10:10:53"
+    },
+    {
+        "isocode": "UOP-15034000-EN-GB-1",
+        "term": "Paper",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of paper.",
+        "comment": "For example, to describe the strength of a bee smoke paper: \"contains 10 mg per paper\".",
+        "status": "Current",
+        "domain": "Veterinary only",
+        "modification_date": "2016-05-20 10:12:20",
+        "creation_date": "2016-05-20 10:12:20"
+    },
+    {
+        "isocode": "UOP-15035000-EN-GB-1",
+        "term": "Pastille",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of pastille.",
+        "comment": "For example, to describe the strength of a pastille: \"contains 2 mg per pastille\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:12:53",
+        "creation_date": "2016-05-20 10:12:53"
+    },
+    {
+        "isocode": "UOP-15036000-EN-GB-1",
+        "term": "Patch",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of patch.",
+        "comment": "For example, to describe the strength of a transdermal patch: \"contains 12 mg per patch\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:13:33",
+        "creation_date": "2016-05-20 10:13:33"
+    },
+    {
+        "isocode": "UOP-15037000-EN-GB-1",
+        "term": "Pen",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single pen container.",
+        "comment": "For example, to describe the quantity of a solution for injection in a single pre-filled pen: \"contains 3 mL per pen\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:14:10",
+        "creation_date": "2016-05-20 10:14:10"
+    },
+    {
+        "isocode": "UOP-15038000-EN-GB-1",
+        "term": "Pendant",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of pendant.",
+        "comment": "For example, to describe the strength of a medicated pendant: \"contains 200 mg per pendant\".",
+        "status": "Current",
+        "domain": "Veterinary only",
+        "modification_date": "2016-05-20 10:14:45",
+        "creation_date": "2016-05-20 10:14:45"
+    },
+    {
+        "isocode": "UOP-15039000-EN-GB-1",
+        "term": "Pessary",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of pessary.",
+        "comment": "For example, to describe the strength of a pessary: \"contains 100 mg per pessary\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:15:22",
+        "creation_date": "2016-05-20 10:15:22"
+    },
+    {
+        "isocode": "UOP-15040000-EN-GB-1",
+        "term": "Pillule",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of pillule.",
+        "comment": "For example, to describe the strength of a pillule: \"contains 30C per pillule\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:22:03",
+        "creation_date": "2016-05-20 10:22:03"
+    },
+    {
+        "isocode": "UOP-15041000-EN-GB-1",
+        "term": "Pipette",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single pipette administration device.",
+        "comment": "For example, to describe the quantity of a spot-on solution in a single pipette: \"contains 1 mL per pipette\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:23:13",
+        "creation_date": "2016-05-20 10:23:13"
+    },
+    {
+        "isocode": "UOP-15042000-EN-GB-1",
+        "term": "Plaster",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of plaster.",
+        "comment": "For example, to describe the strength of a medicated plaster: \"contains 100 mg per plaster\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:23:45",
+        "creation_date": "2016-05-20 10:23:45"
+    },
+    {
+        "isocode": "UOP-15043000-EN-GB-1",
+        "term": "Plug",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of plug.",
+        "comment": "For example, to describe the strength of an impregnated plug: \"contains 10 mg per plug\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:24:34",
+        "creation_date": "2016-05-20 10:24:34"
+    },
+    {
+        "isocode": "UOP-15044000-EN-GB-1",
+        "term": "Pouch",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form or container is a type of pouch.",
+        "comment": "For example, to describe the strength of a pouch: \"contains 10 mg per pouch\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:28:27",
+        "creation_date": "2016-05-20 10:28:27"
+    },
+    {
+        "isocode": "UOP-15045000-EN-GB-1",
+        "term": "Sachet",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single sachet container.",
+        "comment": "For example, to describe the quantity of a powder for oral suspension in a single sachet: \"contains 3 g per sachet\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:29:05",
+        "creation_date": "2016-05-20 10:29:05"
+    },
+    {
+        "isocode": "UOP-15046000-EN-GB-1",
+        "term": "Sponge",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of sponge.",
+        "comment": "For example, to describe the strength of a medicated sponge: \"contains 200 mg per sponge\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:29:44",
+        "creation_date": "2016-05-20 10:29:44"
+    },
+    {
+        "isocode": "UOP-15047000-EN-GB-1",
+        "term": "Spoonful",
+        "definition": "A unit of presentation used to represent the quantity of product that is administered by filling a single spoon administration device.",
+        "comment": "For example, to describe the quantity of oral solution that would fit in a single spoon when administered as directed: \"contains 5 mL per spoonful\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-06-29 11:33:51",
+        "creation_date": "2016-06-29 11:33:51"
+    },
+    {
+        "isocode": "UOP-15048000-EN-GB-1",
+        "term": "Stick",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of stick.",
+        "comment": "For example, to describe the strength of a urethral stick: \"contains 1000 mcg per stick\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:30:17",
+        "creation_date": "2016-05-20 10:30:17"
+    },
+    {
+        "isocode": "UOP-15049000-EN-GB-1",
+        "term": "Straw",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single straw container.",
+        "comment": "For example, to describe the quantity of an oral suspension in a single straw: \"contains 5 mL per straw\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:31:00",
+        "creation_date": "2016-05-20 10:31:00"
+    },
+    {
+        "isocode": "UOP-15050000-EN-GB-1",
+        "term": "Strip",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of strip.",
+        "comment": "For example, to describe the strength of an ophthalmic strip: \"contains 1 mg per strip\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:31:36",
+        "creation_date": "2016-05-20 10:31:36"
+    },
+    {
+        "isocode": "UOP-15051000-EN-GB-1",
+        "term": "Suppository",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of suppository.",
+        "comment": "For example, to describe the strength of a suppository: \"contains 500 mg per suppository\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:32:05",
+        "creation_date": "2016-05-20 10:32:05"
+    },
+    {
+        "isocode": "UOP-15052000-EN-GB-1",
+        "term": "Syringe",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single syringe container.",
+        "comment": "For example, to describe the quantity of a solution for injection in a single pre-filled syringe: \"contains 10 mL per syringe\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:33:12",
+        "creation_date": "2016-05-20 10:33:12"
+    },
+    {
+        "isocode": "UOP-15053000-EN-GB-1",
+        "term": "System",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of system.",
+        "comment": "For example, to describe the strength of an intrauterine delivery system: \"contains 15 mg per system\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:33:51",
+        "creation_date": "2016-05-20 10:33:51"
+    },
+    {
+        "isocode": "UOP-15054000-EN-GB-1",
+        "term": "Tablet",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of tablet.",
+        "comment": "For example, to describe the strength of a prolonged-release tablet: \"contains 20 mg per tablet\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:34:49",
+        "creation_date": "2016-05-20 10:34:49"
+    },
+    {
+        "isocode": "UOP-15055000-EN-GB-1",
+        "term": "Tag",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of tag.",
+        "comment": "For example, to describe the strength of an ear tag: \"contains 1000 mg per tag\".",
+        "status": "Current",
+        "domain": "Veterinary only",
+        "modification_date": "2016-05-20 10:35:25",
+        "creation_date": "2016-05-20 10:35:25"
+    },
+    {
+        "isocode": "UOP-15056000-EN-GB-1",
+        "term": "Tampon",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of tampon.",
+        "comment": "For example, to describe the strength of a rectal tampon: \"contains 100 mg per tampon\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:36:04",
+        "creation_date": "2016-05-20 10:36:04"
+    },
+    {
+        "isocode": "UOP-15057000-EN-GB-1",
+        "term": "Thread",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of thread.",
+        "comment": "For example, to describe the strength of a medicated thread: \"contains 2 mg per thread\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:36:35",
+        "creation_date": "2016-05-20 10:36:35"
+    },
+    {
+        "isocode": "UOP-15058000-EN-GB-1",
+        "term": "Tube",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single tube container.",
+        "comment": "For example, to describe the quantity of a gastroenteral solution in a single pre-filled gastroenteral tube: \"contains 100 mL per tube\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:37:09",
+        "creation_date": "2016-05-20 10:37:09"
+    },
+    {
+        "isocode": "UOP-15059000-EN-GB-1",
+        "term": "Vessel",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single vessel-type container.",
+        "comment": "For example, to describe the quantity of a cryogenic medicinal gas in a single mobile cryogenic vessel: \"contains 25 L per vessel\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:37:50",
+        "creation_date": "2016-05-20 10:37:50"
+    },
+    {
+        "isocode": "UOP-15060000-EN-GB-1",
+        "term": "Vial",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single vial container.",
+        "comment": "For example, to describe the quantity of a solution for injection in a single vial: \"contains 1.2 mL per vial\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-05-20 10:38:25",
+        "creation_date": "2016-05-20 10:38:25"
+    },
+    {
+        "isocode": "UOP-15061000-EN-GB-1",
+        "term": "Puff",
+        "definition": "",
+        "comment": "Term rejected. This unit of presentation, specific to inhalers, is covered by the existing term 'Actuation'.",
+        "status": "Rejected",
+        "domain": "Human and Veterinary",
+        "modification_date": "2016-08-10 15:00:38",
+        "creation_date": "2016-08-10 15:00:38"
+    },
+    {
+        "isocode": "UOP-15062000-EN-GB-1",
+        "term": "Swab",
+        "definition": "A unit of presentation used to represent the quantity of product that is found in a single discrete entity where the pharmaceutical dose form is a type of swab.",
+        "comment": "For example, to describe the strength of an impregnated cutaneous swab: \"contains 10 mg per swab\".",
+        "status": "Current",
+        "domain": "Human and Veterinary",
+        "modification_date": "2021-08-02 08:46:50",
+        "creation_date": "2021-08-02 08:46:50"
+    }
+]
