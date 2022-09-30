@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0004-00-load-edqm-unit-of-presentation
+      author: francesco (generated)
+      changes:
+        - loadData:
+            file: '../data/0004-insert-edqm-data/unit_of_presentation.csv'
+            relativeToChangelogFile: true
+            tableName: 'edqm_unit_of_presentation'
+
+  - changeSet:
+      id: 0004-01-load-edqm-dose-form
+      author: francesco (generated)
+      changes:
+        - loadData:
+            file: '../data/0004-insert-edqm-data/dose_form.csv'
+            relativeToChangelogFile: true
+            tableName: 'edqm_dose_form'
+
+  - changeSet:
+      id: 0004-02-load-edqm-routes-of-administration
+      author: francesco (generated)
+      changes:
+        - loadData:
+            file: '../data/0004-insert-edqm-data/routes_of_administration.csv'
+            relativeToChangelogFile: true
+            tableName: 'edqm_route_of_administration'
