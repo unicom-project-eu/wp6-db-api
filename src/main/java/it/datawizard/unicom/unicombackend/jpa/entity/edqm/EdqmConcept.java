@@ -19,9 +19,9 @@ public class EdqmConcept {
     @Column(nullable = false)
     private String term;
 
-    @Lob
+    @Column(columnDefinition = "varchar(4096)")
     private String definition;
 
-    @Lob
+    @Column(columnDefinition = "varchar(4096)")
     private String comment;
 }

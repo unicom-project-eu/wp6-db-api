@@ -7,7 +7,7 @@ databaseChangeLog:
         columns:
         - column:
             name: comment
-            type: oid
+            type: VARCHAR(4096)
         tableName: edqm_dose_form
 - changeSet:
     id: 1664532692525-2
@@ -17,7 +17,7 @@ databaseChangeLog:
         columns:
         - column:
             name: comment
-            type: oid
+            type: VARCHAR(4096)
         tableName: edqm_package_item_type
 - changeSet:
     id: 1664532692525-3
@@ -27,7 +27,7 @@ databaseChangeLog:
         columns:
         - column:
             name: comment
-            type: oid
+            type: VARCHAR(4096)
         tableName: edqm_route_of_administration
 - changeSet:
     id: 1664532692525-4
@@ -37,7 +37,7 @@ databaseChangeLog:
         columns:
         - column:
             name: comment
-            type: oid
+            type: VARCHAR(4096)
         tableName: edqm_unit_of_presentation
 - changeSet:
     id: 1664532692525-5
@@ -47,7 +47,7 @@ databaseChangeLog:
         columns:
         - column:
             name: definition
-            type: oid
+            type: VARCHAR(4096)
         tableName: edqm_dose_form
 - changeSet:
     id: 1664532692525-6
@@ -57,7 +57,7 @@ databaseChangeLog:
         columns:
         - column:
             name: definition
-            type: oid
+            type: VARCHAR(4096)
         tableName: edqm_package_item_type
 - changeSet:
     id: 1664532692525-7
@@ -67,7 +67,7 @@ databaseChangeLog:
         columns:
         - column:
             name: definition
-            type: oid
+            type: VARCHAR(4096)
         tableName: edqm_route_of_administration
 - changeSet:
     id: 1664532692525-8
@@ -77,6 +77,6 @@ databaseChangeLog:
         columns:
         - column:
             name: definition
-            type: oid
+            type: VARCHAR(4096)
         tableName: edqm_unit_of_presentation
 

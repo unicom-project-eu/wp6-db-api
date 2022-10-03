@@ -31,3 +31,14 @@ databaseChangeLog:
             file: '../data/0007-reimport-edqm-data/route_of_administration.csv'
             relativeToChangelogFile: true
             tableName: 'edqm_route_of_administration'
+
+  - changeSet:
+      id: 0007-reimport-package-item-type
+      author: francesco
+      changes:
+        - delete:
+            tableName: 'edqm_route_of_administration'
+        - loadData:
+            file: '../data/0007-reimport-edqm-data/container.csv'
+            relativeToChangelogFile: true
+            tableName: 'edqm_package_item_type'
