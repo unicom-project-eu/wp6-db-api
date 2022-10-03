@@ -304,7 +304,7 @@ public class UnicomOpenApiInterceptor {
         ServletContext servletContext = servletRequest.getServletContext();
         WebContext context = new WebContext(servletRequest, theResponse, servletContext);
         context.setVariable(REQUEST_DETAILS, theRequestDetails);
-        context.setVariable("DESCRIPTION", "UNICOM FHIR Server");
+        context.setVariable("DESCRIPTION", "UNICOM - T6.1 FHIR Server");
         context.setVariable("SERVER_NAME", cs.getSoftware().getName());
         context.setVariable("SERVER_VERSION", cs.getSoftware().getVersion());
         context.setVariable("BASE_URL", cs.getImplementation().getUrl());
