@@ -37,9 +37,7 @@ public class PackageItem {
     @OneToMany(mappedBy = "parentPackageItem")
     private Set<PackageItem> childrenPackageItems;
 
-    @ManyToOne
-    @JoinColumn()
-    @ToString.Exclude
-    private ManufacturedItem manufacturedItem;
+    @OneToMany(mappedBy = "packageItem")
+    private Set<ManufacturedItem> manufacturedItems;
 
 }

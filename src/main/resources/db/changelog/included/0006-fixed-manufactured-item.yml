@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1664800906178-1
+      author: francesco (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: package_item_id
+                  type: int8
+            tableName: manufactured_item
+  - changeSet:
+      id: 1664800906178-2
+      author: francesco (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: volume_unit
+                  type: varchar(255)
+            tableName: manufactured_item
+  - changeSet:
+      id: 1664800906178-3
+      author: francesco (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: package_item_id
+            baseTableName: manufactured_item
+            constraintName: FKrr238w3b30kqgqowrjwjimo3j
+            deferrable: false
+            initiallyDeferred: false
+            referencedColumnNames: id
+            referencedTableName: package_item
+            validate: true
+  - changeSet:
+      id: 1664800906178-4
+      author: francesco (generated)
+      changes:
+        - dropForeignKeyConstraint:
+            baseTableName: package_item
+            constraintName: FK26j48tfjjqwx6hvfoda17xold
+  - changeSet:
+      id: 1664800906178-5
+      author: francesco (generated)
+      changes:
+        - dropColumn:
+            columnName: manufactured_item_id
+            tableName: package_item
+

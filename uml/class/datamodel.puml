@@ -84,7 +84,8 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
         --
         manufacturedDoseForm: EdqmDoseForm
         unitOfPresentation: EdqmUnitOfPresentation
-        manufacturedItemQuantity: Integer
+        manufacturedItemQuantity: Float
+        manufacturedItemQuantityVolumeUnit: UcumUnit
     }
 
     MedicinalProduct ||--|{ AtcCode : "atcCodes"
@@ -99,7 +100,7 @@ package "IDMP Datamodel" as idmpDatamodel <<frame>> {
     MedicinalProduct ||-o{ PackagedMedicinalProduct : "medicinalProduct"
     PackagedMedicinalProduct |o-|{ PackageItem : "packagedMedicinalProduct"
     PackageItem |o-o{ PackageItem : "packageItem"
-    ManufacturedItem ||--o{ PackageItem : "packageItem"
+    ManufacturedItem }o--|| PackageItem : "packageItem"
 }
 
 @enduml

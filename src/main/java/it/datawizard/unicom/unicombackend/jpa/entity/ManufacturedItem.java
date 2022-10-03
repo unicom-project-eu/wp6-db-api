@@ -35,8 +35,12 @@ public class ManufacturedItem {
 
     private Integer manufacturedItemQuantity;
 
-    @OneToMany(mappedBy = "manufacturedItem")
-    private Set<PackageItem> packageItems;
+    private String volumeUnit;
+
+    @ManyToOne
+    @JoinColumn()
+    @ToString.Exclude
+    private PackageItem packageItem;
 
     @Override
     public boolean equals(Object o) {
