@@ -4,6 +4,7 @@ import ca.uhn.fhir.rest.annotation.IdParam;
 import ca.uhn.fhir.rest.annotation.Read;
 import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.rest.server.IResourceProvider;
+import org.apache.commons.lang3.NotImplementedException;
 import org.hl7.fhir.r5.model.IdType;
 import org.hl7.fhir.r5.model.MedicationKnowledge;
 import org.springframework.stereotype.Component;
@@ -20,12 +21,11 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
 
     @Read()
     public MedicationKnowledge getResourceById(@IdParam IdType id) {
-        return null;
+        throw new NotImplementedException();
     }
 
     @Search()
     public List<MedicationKnowledge> getAllResources() {
-        ArrayList<MedicationKnowledge> result = new ArrayList<>();
-        return result;
+        throw new NotImplementedException();
     }
 }
