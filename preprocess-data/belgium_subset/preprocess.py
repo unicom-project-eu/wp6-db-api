@@ -11,8 +11,12 @@ ORIGINA_PATH = 'original.csv'
 @csv_mapping(
     medicinalProductPrimaryKey=AttributeInfo(is_key=True, set_value=lambda x: x['medicinalProductPrimaryKey']),
     mpId=AttributeInfo(set_value=lambda x: x['mpId']),
-    fullName=AttributeInfo(set_value=lambda x: x['mpId']),
-    atcCodes=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(str(x['mpId']))),
+    fullName=AttributeInfo(set_value=lambda x: x['fullName']),
+    atcCodes=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(x['atcCodes'])),
+    authorizedPharmaceuticalDoseForm=AttributeInfo(set_value=lambda x: x['authorizedPharmaceuticalDoseForm']),
+    marketingAuthorizationHolder=AttributeInfo(set_value=lambda x: x['marketingAuthorizationHolder']),
+    marketingAuthorizationHolderLabel=AttributeInfo(set_value=lambda x: x['marketingAuthorizationHolderLabel']),
+    country=AttributeInfo(set_value=lambda x: x['country']),
 )
 class MedicinalProduct:
     pass

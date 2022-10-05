@@ -39,4 +39,6 @@ def int_or_none(s):
     return int(s) if s else None
 
 def comma_separated_str_to_list(s: string):
+    if s is None:
+        return []
     return list(map(lambda i: i.strip(), s.split()))
