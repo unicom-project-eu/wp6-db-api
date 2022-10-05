@@ -3,9 +3,10 @@ import string
 
 
 class AttributeInfo:
-    def __init__(self, is_key=False, set_value=lambda x: None):
+    def __init__(self, is_key=False, set_value=lambda x: None, is_hidden=False):
         self.set_value = set_value
         self.is_key = is_key
+        self.is_hidden = is_hidden
     pass
 
 def csv_mapping(**attributes):
@@ -24,7 +25,20 @@ def csv_mapping(**attributes):
             return tuple(getattr(self, attr) for attr, info in attributes.items() if info.is_key)
         cls.get_key = get_key
 
-        cls.__repr__ = lambda self: json.dumps(self.__dict__, indent=2, default=lambda o: o.__dict__)
+        def non_hidden_dict(self):
+            hidden = {
+                attr
+                for attr, info in attributes.items()
+                if info.is_hidden
+            }
+            return {
+                k: v
+                for k, v in self.__dict__.items() 
+                if k not in hidden
+            }
+        cls.non_hidden_dict = non_hidden_dict
+
+        cls.__repr__ = lambda self: json.dumps(self.non_hidden_dict(), indent=2, default=lambda o: o.non_hidden_dict())
 
         cls.__eq__ = lambda self, other: self.__dict__ == other.__dict__
 

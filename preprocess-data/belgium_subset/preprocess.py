@@ -23,7 +23,7 @@ class Strength:
     pass
 
 @csv_mapping(
-    substancePrimaryKey=AttributeInfo(is_key=True, set_value=lambda x: x['substancePrimaryKey']),
+    substancePrimaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['substancePrimaryKey']),
     substanceCode=AttributeInfo(set_value=lambda x: x['substanceCode']),
     substanceName=AttributeInfo(set_value=lambda x: x['substanceName']),
     moietyCode=AttributeInfo(set_value=lambda x: x['moietyCode']),
@@ -54,7 +54,7 @@ class Substance:
 
 
 @csv_mapping(
-    pharmaceuticalProductPrimaryKey=AttributeInfo(is_key=True, set_value=lambda x: x['pharmaceuticalProductPrimaryKey']),
+    pharmaceuticalProductPrimaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['pharmaceuticalProductPrimaryKey']),
     administrableDoseForm=AttributeInfo(set_value=lambda x: x['administrableDoseForm']),
     pharmaceuticalProductUnitOfPresentation=AttributeInfo(set_value=lambda x: x['pharmaceuticalProductUnitOfPresentation']),
     routesOfAdministration=AttributeInfo(set_value=lambda x: x['routesOfAdministration']),
@@ -65,7 +65,7 @@ class PharmaceuticalProduct:
     pass
 
 @csv_mapping(
-    medicinalProductPrimaryKey=AttributeInfo(is_key=True, set_value=lambda x: x['medicinalProductPrimaryKey']),
+    medicinalProductPrimaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['medicinalProductPrimaryKey']),
     mpId=AttributeInfo(set_value=lambda x: x['mpId']),
     fullName=AttributeInfo(set_value=lambda x: x['fullName']),
     atcCodes=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(x['atcCodes'])),
@@ -80,7 +80,7 @@ class MedicinalProduct:
 
 
 @csv_mapping(
-    packagedMedicinalProductPrimaryKey=AttributeInfo(is_key=True, set_value=lambda x: x['packagedMedicinalProductPrimaryKey']),
+    packagedMedicinalProductPrimaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['packagedMedicinalProductPrimaryKey']),
     pcId=AttributeInfo(set_value=lambda x: x['pcId']),
     packSize=AttributeInfo(set_value=lambda x: x['packSize']),
     packageItemType=AttributeInfo(set_value=lambda x: x['packageItemType']),
