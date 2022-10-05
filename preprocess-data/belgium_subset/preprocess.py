@@ -4,9 +4,6 @@ import pandas as pd
 
 from csvutils.csvutils import *
 
-def mocked_value(val):
-    return f'MOCK-{val}'
-
 ORIGINA_PATH = 'original.csv'
 
 @csv_mapping(
@@ -57,7 +54,7 @@ class Substance:
     pharmaceuticalProductPrimaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['pharmaceuticalProductPrimaryKey']),
     administrableDoseForm=AttributeInfo(set_value=lambda x: x['administrableDoseForm']),
     pharmaceuticalProductUnitOfPresentation=AttributeInfo(set_value=lambda x: x['pharmaceuticalProductUnitOfPresentation']),
-    routesOfAdministration=AttributeInfo(set_value=lambda x: x['routesOfAdministration']),
+    routesOfAdministration=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(x['routesOfAdministration'])),
     ingredientRole=AttributeInfo(set_value=lambda x: x['ingredientRole']),
     substance=AttributeInfo(set_value=lambda x: Substance(x)),
 )
