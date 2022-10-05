@@ -38,7 +38,7 @@ def csv_mapping(**attributes):
             }
         cls.non_hidden_dict = non_hidden_dict
 
-        cls.__repr__ = lambda self: json.dumps(self.non_hidden_dict(), indent=2, default=lambda o: o.non_hidden_dict())
+        cls.__repr__ = lambda self: json.dumps(self.non_hidden_dict(), indent=2, default=lambda o: o.non_hidden_dict() if hasattr(o, 'non_hidden_dict') else o.__dict__)
 
         cls.__eq__ = lambda self, other: self.__dict__ == other.__dict__
 

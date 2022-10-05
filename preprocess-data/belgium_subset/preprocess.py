@@ -20,7 +20,7 @@ class Strength:
     pass
 
 @csv_mapping(
-    substancePrimaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['substancePrimaryKey']),
+    sprimaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['substancePrimaryKey']),
     substanceCode=AttributeInfo(set_value=lambda x: x['substanceCode']),
     substanceName=AttributeInfo(set_value=lambda x: x['substanceName']),
     moietyCode=AttributeInfo(set_value=lambda x: x['moietyCode']),
@@ -51,7 +51,7 @@ class Substance:
 
 
 @csv_mapping(
-    pharmaceuticalProductPrimaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['pharmaceuticalProductPrimaryKey']),
+    primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['pharmaceuticalProductPrimaryKey']),
     administrableDoseForm=AttributeInfo(set_value=lambda x: x['administrableDoseForm']),
     pharmaceuticalProductUnitOfPresentation=AttributeInfo(set_value=lambda x: x['pharmaceuticalProductUnitOfPresentation']),
     routesOfAdministration=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(x['routesOfAdministration'])),
@@ -62,7 +62,7 @@ class PharmaceuticalProduct:
     pass
 
 @csv_mapping(
-    medicinalProductPrimaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['medicinalProductPrimaryKey']),
+    primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['medicinalProductPrimaryKey']),
     mpId=AttributeInfo(set_value=lambda x: x['mpId']),
     fullName=AttributeInfo(set_value=lambda x: x['fullName']),
     atcCodes=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(x['atcCodes'])),
@@ -76,15 +76,41 @@ class MedicinalProduct:
     pass
 
 
+
 @csv_mapping(
-    packagedMedicinalProductPrimaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['packagedMedicinalProductPrimaryKey']),
-    pcId=AttributeInfo(set_value=lambda x: x['pcId']),
-    packSize=AttributeInfo(set_value=lambda x: x['packSize']),
-    packageItemType=AttributeInfo(set_value=lambda x: x['packageItemType']),
+    # in this case we use the same primary key as packagedMedicinalProuct 
+    # (we assume only one PackageItem per MedicinalProdctPacakge, and only one ManufacturedItem per PackageItem)
+    primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['packagedMedicinalProductPrimaryKey']),
     manufacturedDoseForm=AttributeInfo(set_value=lambda x: x['manufacturedDoseForm']),
-    manufacturedItemUnitOfPresentation=AttributeInfo(set_value=lambda x: x['manufacturedItemUnitOfPresentation']),
+    unitOfPresentation=AttributeInfo(set_value=lambda x: x['manufacturedItemUnitOfPresentation']),
     manufacturedItemQuantity=AttributeInfo(set_value=lambda x: x['manufacturedItemQuantity']),
     manufacturedItemQuantityVolumeUnit=AttributeInfo(set_value=lambda x: x['manufacturedItemQuantityVolumeUnit']),
+)
+class ManufacturedItem:
+    pass
+
+@csv_mapping(
+    # in this case we use the same primary key as packagedMedicinalProuct 
+    # (we assume only one PackageItem per MedicinalProdctPacakge)
+    primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['packagedMedicinalProductPrimaryKey']),
+    itemType=AttributeInfo(set_value=lambda x: x['packageItemType']),
+    packageItemQuantity=AttributeInfo(set_value=lambda x: x['packageItemQuantity']),
+    manufacturedItems=AttributeInfo(set_value=lambda x: [
+        # we assume there is only one ManufacturedItem
+        ManufacturedItem(x),
+    ]),
+)
+class PackageItem():
+    pass
+
+@csv_mapping(
+    primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['packagedMedicinalProductPrimaryKey']),
+    pcId=AttributeInfo(set_value=lambda x: x['pcId']),
+    packSize=AttributeInfo(set_value=lambda x: x['packSize']),
+    packageItems=AttributeInfo(set_value=lambda x: [
+        # we assume there is only one PackageItem
+        PackageItem(x),
+    ]),
     medicinalProduct=AttributeInfo(set_value=lambda x: MedicinalProduct(x))
 )
 class PackagedMedicinalProduct:
@@ -97,6 +123,7 @@ if __name__ == '__main__':
     df = df.replace(r'^\s*$', None, regex=True)
     df = df.astype(dtype={
         'packSize': int,
+        'packageItemQuantity': int,
         'manufacturedItemQuantity': float,
         'referenceStrengthConcentrationNumeratorValue': float,
         'referenceStrengthConcentrationDenominatorValue': float,
