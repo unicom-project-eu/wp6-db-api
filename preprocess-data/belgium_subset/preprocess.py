@@ -9,6 +9,17 @@ def mocked_value(val):
 ORIGINA_PATH = 'original.csv'
 
 @csv_mapping(
+    pharmaceuticalProductPrimaryKey=AttributeInfo(is_key=True, set_value=lambda x: x['pharmaceuticalProductPrimaryKey']),
+    administrableDoseForm=AttributeInfo(set_value=lambda x: x['administrableDoseForm']),
+    pharmaceuticalProductUnitOfPresentation=AttributeInfo(set_value=lambda x: x['pharmaceuticalProductUnitOfPresentation']),
+    routesOfAdministration=AttributeInfo(set_value=lambda x: x['routesOfAdministration']),
+    ingredientRole=AttributeInfo(set_value=lambda x: x['ingredientRole']),
+    
+)
+class PharmaceuticalProduct:
+    pass
+
+@csv_mapping(
     medicinalProductPrimaryKey=AttributeInfo(is_key=True, set_value=lambda x: x['medicinalProductPrimaryKey']),
     mpId=AttributeInfo(set_value=lambda x: x['mpId']),
     fullName=AttributeInfo(set_value=lambda x: x['fullName']),
@@ -17,6 +28,7 @@ ORIGINA_PATH = 'original.csv'
     marketingAuthorizationHolder=AttributeInfo(set_value=lambda x: x['marketingAuthorizationHolder']),
     marketingAuthorizationHolderLabel=AttributeInfo(set_value=lambda x: x['marketingAuthorizationHolderLabel']),
     country=AttributeInfo(set_value=lambda x: x['country']),
+    pharmaceuticalProduct=AttributeInfo(set_value=lambda x: PharmaceuticalProduct(x)),
 )
 class MedicinalProduct:
     pass
