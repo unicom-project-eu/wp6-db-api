@@ -25,6 +25,16 @@ class Strength:
     substanceName=AttributeInfo(set_value=lambda x: x['substanceName']),
     moietyCode=AttributeInfo(set_value=lambda x: x['moietyCode']),
     moietyName=AttributeInfo(set_value=lambda x: x['moietyName']),
+)
+class Substance:
+    pass
+
+
+@csv_mapping(
+    # Assume only one Ingredient per PharmaceuticalProduct
+    primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['pharmaceuticalProductPrimaryKey']),
+    administrableDoseForm=AttributeInfo(set_value=lambda x: x['ingredientRole']),
+    substance=AttributeInfo(set_value=lambda x: Substance(x)),
     referenceStrength=AttributeInfo(set_value=lambda x: Strength({
         "concentrationNumeratorValue": x["referenceStrengthConcentrationNumeratorValue"],
         "concentrationDenominatorValue": x["referenceStrengthConcentrationDenominatorValue"],
@@ -46,7 +56,7 @@ class Strength:
         "presentationDenominatorUnit": x["strengthPresentationDenominatorUnit"],
     })),
 )
-class Substance:
+class Ingredient:
     pass
 
 
@@ -56,7 +66,10 @@ class Substance:
     pharmaceuticalProductUnitOfPresentation=AttributeInfo(set_value=lambda x: x['pharmaceuticalProductUnitOfPresentation']),
     routesOfAdministration=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(x['routesOfAdministration'])),
     ingredientRole=AttributeInfo(set_value=lambda x: x['ingredientRole']),
-    substance=AttributeInfo(set_value=lambda x: Substance(x)),
+    ingredients=AttributeInfo(set_value=lambda x: [
+        # Assume only one Ingredient
+        Ingredient(x)
+    ]),
 )
 class PharmaceuticalProduct:
     pass
