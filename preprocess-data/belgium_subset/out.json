@@ -3,7 +3,7 @@
   "packSize": 100,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
@@ -12,7 +12,8 @@
           "manufacturedItemQuantity": 100.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -24,17 +25,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": "PAI",
       "ingredients": [
         {
-          "administrableDoseForm": "PAI",
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -70,7 +70,7 @@
   "packSize": 30,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
@@ -79,7 +79,8 @@
           "manufacturedItemQuantity": 30.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -91,17 +92,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -137,7 +137,7 @@
   "packSize": 100,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
@@ -146,7 +146,8 @@
           "manufacturedItemQuantity": 100.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -158,17 +159,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -204,7 +204,7 @@
   "packSize": 100,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
@@ -213,7 +213,8 @@
           "manufacturedItemQuantity": 100.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -225,17 +226,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -271,7 +271,7 @@
   "packSize": 100,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
@@ -280,7 +280,8 @@
           "manufacturedItemQuantity": 100.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -292,17 +293,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -338,7 +338,7 @@
   "packSize": 30,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
@@ -347,7 +347,8 @@
           "manufacturedItemQuantity": 30.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -359,17 +360,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -405,7 +405,7 @@
   "packSize": 100,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
@@ -414,7 +414,8 @@
           "manufacturedItemQuantity": 100.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -426,17 +427,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -472,7 +472,7 @@
   "packSize": 100,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
@@ -481,7 +481,8 @@
           "manufacturedItemQuantity": 100.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -493,17 +494,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -539,7 +539,7 @@
   "packSize": 30,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
@@ -548,7 +548,8 @@
           "manufacturedItemQuantity": 30.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -560,17 +561,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -606,7 +606,7 @@
   "packSize": 100,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
@@ -615,7 +615,8 @@
           "manufacturedItemQuantity": 100.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -627,17 +628,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -673,7 +673,7 @@
   "packSize": 100,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
@@ -682,7 +682,8 @@
           "manufacturedItemQuantity": 100.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -694,17 +695,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -740,7 +740,7 @@
   "packSize": 30,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
@@ -749,7 +749,8 @@
           "manufacturedItemQuantity": 30.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -761,17 +762,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -807,7 +807,7 @@
   "packSize": 100,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
@@ -816,7 +816,8 @@
           "manufacturedItemQuantity": 100.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -828,17 +829,16 @@
     "authorizedPharmaceuticalDoseForm": "10210000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10210000",
       "pharmaceuticalProductUnitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -874,7 +874,7 @@
   "packSize": 30,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
@@ -883,7 +883,8 @@
           "manufacturedItemQuantity": 30.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -895,17 +896,16 @@
     "authorizedPharmaceuticalDoseForm": "10210000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10210000",
       "pharmaceuticalProductUnitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -941,7 +941,7 @@
   "packSize": 30,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
@@ -950,7 +950,8 @@
           "manufacturedItemQuantity": 30.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -962,17 +963,16 @@
     "authorizedPharmaceuticalDoseForm": "10210000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10210000",
       "pharmaceuticalProductUnitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -1008,7 +1008,7 @@
   "packSize": 28,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 28,
       "manufacturedItems": [
         {
@@ -1017,7 +1017,8 @@
           "manufacturedItemQuantity": 28.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1029,17 +1030,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -1075,7 +1075,7 @@
   "packSize": 98,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 98,
       "manufacturedItems": [
         {
@@ -1084,7 +1084,8 @@
           "manufacturedItemQuantity": 98.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1096,17 +1097,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -1142,7 +1142,7 @@
   "packSize": 100,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
@@ -1151,7 +1151,8 @@
           "manufacturedItemQuantity": 100.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1163,17 +1164,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -1209,7 +1209,7 @@
   "packSize": 100,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
@@ -1218,7 +1218,8 @@
           "manufacturedItemQuantity": 100.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1230,17 +1231,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -1276,7 +1276,7 @@
   "packSize": 100,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
@@ -1285,7 +1285,8 @@
           "manufacturedItemQuantity": 100.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1297,17 +1298,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -1343,7 +1343,7 @@
   "packSize": 30,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
@@ -1352,7 +1352,8 @@
           "manufacturedItemQuantity": 30.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1364,17 +1365,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -1410,7 +1410,7 @@
   "packSize": 60,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 60,
       "manufacturedItems": [
         {
@@ -1419,7 +1419,8 @@
           "manufacturedItemQuantity": 60.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1431,17 +1432,16 @@
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -1477,7 +1477,7 @@
   "packSize": 28,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 28,
       "manufacturedItems": [
         {
@@ -1486,27 +1486,27 @@
           "manufacturedItemQuantity": 28.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
-    "mpId": "Amlodipine EG tabl. Besilate 5 mg",
+    "mpId": null,
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -1542,7 +1542,7 @@
   "packSize": 98,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 98,
       "manufacturedItems": [
         {
@@ -1551,27 +1551,27 @@
           "manufacturedItemQuantity": 98.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
-    "mpId": "Amlodipine EG tabl. Besilate 5 mg",
+    "mpId": null,
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -1607,7 +1607,7 @@
   "packSize": 100,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
@@ -1616,27 +1616,27 @@
           "manufacturedItemQuantity": 100.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
-    "mpId": "Amlodipine Mylan tabl. (deelb.) Besilate 5 mg",
+    "mpId": null,
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -1672,7 +1672,7 @@
   "packSize": 30,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
@@ -1681,27 +1681,27 @@
           "manufacturedItemQuantity": 30.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
-    "mpId": "Amlodipine Mylan tabl. (deelb.) Besilate 5 mg",
+    "mpId": null,
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -1737,7 +1737,7 @@
   "packSize": 28,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 28,
       "manufacturedItems": [
         {
@@ -1746,27 +1746,27 @@
           "manufacturedItemQuantity": 28.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
-    "mpId": "Amlodipine Teva tabl. (deelb.) 5 mg",
+    "mpId": null,
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -1802,7 +1802,7 @@
   "packSize": 56,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 56,
       "manufacturedItems": [
         {
@@ -1811,27 +1811,27 @@
           "manufacturedItemQuantity": 56.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
-    "mpId": "Amlodipine Teva tabl. (deelb.) 5 mg",
+    "mpId": null,
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -1867,7 +1867,7 @@
   "packSize": 98,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 98,
       "manufacturedItems": [
         {
@@ -1876,27 +1876,27 @@
           "manufacturedItemQuantity": 98.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
-    "mpId": "Amlodipine Teva tabl. (deelb.) 5 mg",
+    "mpId": null,
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10219000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
       "pharmaceuticalProductUnitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -1932,7 +1932,7 @@
   "packSize": 28,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 28,
       "manufacturedItems": [
         {
@@ -1941,27 +1941,27 @@
           "manufacturedItemQuantity": 28.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
-    "mpId": "Amlor harde caps. 5 mg",
+    "mpId": null,
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10210000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10210000",
       "pharmaceuticalProductUnitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -1997,7 +1997,7 @@
   "packSize": 30,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
@@ -2006,27 +2006,27 @@
           "manufacturedItemQuantity": 30.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
-    "mpId": "Amlor harde caps. 5 mg",
+    "mpId": null,
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10210000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10210000",
       "pharmaceuticalProductUnitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -2062,7 +2062,7 @@
   "packSize": 56,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 56,
       "manufacturedItems": [
         {
@@ -2071,27 +2071,27 @@
           "manufacturedItemQuantity": 56.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
-    "mpId": "Amlor harde caps. 5 mg",
+    "mpId": null,
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10210000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10210000",
       "pharmaceuticalProductUnitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
@@ -2127,7 +2127,7 @@
   "packSize": 98,
   "packageItems": [
     {
-      "itemType": null,
+      "packageItemType": null,
       "packageItemQuantity": 98,
       "manufacturedItems": [
         {
@@ -2136,27 +2136,27 @@
           "manufacturedItemQuantity": 98.0,
           "manufacturedItemQuantityVolumeUnit": null
         }
-      ]
+      ],
+      "packageItems": []
     }
   ],
   "medicinalProduct": {
-    "mpId": "Amlor harde caps. 5 mg",
+    "mpId": null,
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10210000",
     "marketingAuthorizationHolder": null,
     "marketingAuthorizationHolderLabel": null,
-    "country": "BE",
+    "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10210000",
       "pharmaceuticalProductUnitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
       ],
-      "ingredientRole": null,
       "ingredients": [
         {
-          "administrableDoseForm": null,
+          "role": "100000072072",
           "substance": {
             "substanceCode": "100000090079",
             "substanceName": "amlodipine besylate",
