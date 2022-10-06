@@ -46,8 +46,8 @@ def csv_mapping(**attributes):
                             '------------------------------\n'
                         +   'CONFLICT\n'
                         +   f'key: {key}\n'
-                        +   f'old:\n{instances_dict[key]}\n'
-                        +   f'new:\n{self}\n'
+                        +   f'old: {instances_dict[key]}\n\n'
+                        +   f'new: {self}\n'
                         +   '------------------------------\n'
                     )
                     raise Exception(f'Conflicting values for key {key}')
