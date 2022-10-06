@@ -33,7 +33,7 @@ class Substance:
 @csv_mapping(
     # Assume only one Ingredient per PharmaceuticalProduct
     primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['pharmaceuticalProductPrimaryKey']),
-    ingredientRole=AttributeInfo(set_value=lambda x: x['ingredientRole']),
+    role=AttributeInfo(set_value=lambda x: '100000072072'), # assume it's Active (spor)
     substance=AttributeInfo(set_value=lambda x: Substance(x)),
     referenceStrength=AttributeInfo(set_value=lambda x: Strength({
         "concentrationNumeratorValue": x["referenceStrengthConcentrationNumeratorValue"],
@@ -105,12 +105,13 @@ class ManufacturedItem:
     # in this case we use the same primary key as packagedMedicinalProuct 
     # (we assume only one PackageItem per MedicinalProdctPacakge)
     primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['packagedMedicinalProductPrimaryKey']),
-    itemType=AttributeInfo(set_value=lambda x: x['packageItemType']),
+    packageItemType=AttributeInfo(set_value=lambda x: x['packageItemType']),
     packageItemQuantity=AttributeInfo(set_value=lambda x: x['packageItemQuantity']),
     manufacturedItems=AttributeInfo(set_value=lambda x: [
         # we assume there is only one ManufacturedItem
         ManufacturedItem(x),
     ]),
+    packageItems=AttributeInfo(set_value=lambda x: []),
 )
 class PackageItem():
     pass
