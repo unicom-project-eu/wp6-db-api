@@ -11,19 +11,7 @@ class AttributeInfo:
 
 def csv_mapping(**attributes):
     def decorator(cls):
-        old_init = cls.__init__
-        def new_init(self, x, *args, **kwargs):
-            old_init(self, *args, **kwargs)
-
-            for attr, info in attributes.items():
-                setattr(self, attr, info.set_value(x) if info.set_value else None)
-
-            pass
-        cls.__init__ = new_init
-
-        def get_key(self):
-            return tuple(getattr(self, attr) for attr, info in attributes.items() if info.is_key)
-        cls.get_key = get_key
+        instances_dict = {}
 
         def non_hidden_dict(self):
             hidden = {
@@ -37,10 +25,35 @@ def csv_mapping(**attributes):
                 if k not in hidden
             }
         cls.non_hidden_dict = non_hidden_dict
-
         cls.__repr__ = lambda self: json.dumps(self.non_hidden_dict(), indent=2, default=lambda o: o.non_hidden_dict() if hasattr(o, 'non_hidden_dict') else o.__dict__)
-
         cls.__eq__ = lambda self, other: self.__dict__ == other.__dict__
+
+        def get_key(self):
+            return tuple(getattr(self, attr) for attr, info in attributes.items() if info.is_key)
+        cls.get_key = get_key
+
+        old_init = cls.__init__
+        def new_init(self, x, *args, **kwargs):
+            old_init(self, *args, **kwargs)
+
+            for attr, info in attributes.items():
+                setattr(self, attr, info.set_value(x) if info.set_value else None)
+            
+            key = self.get_key()
+            if key in instances_dict:
+                if instances_dict[key] != self:
+                    print(
+                            '------------------------------\n'
+                        +   'CONFLICT\n'
+                        +   f'key: {key}\n'
+                        +   f'old:\n{instances_dict[key]}\n'
+                        +   f'new:\n{self}\n'
+                        +   '------------------------------\n'
+                    )
+                    raise Exception(f'Conflicting values for key {key}')
+            instances_dict[key] = self
+            pass
+        cls.__init__ = new_init
 
         return cls
     return decorator

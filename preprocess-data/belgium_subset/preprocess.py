@@ -7,6 +7,7 @@ from csvutils.csvutils import *
 ORIGINA_PATH = 'original.csv'
 
 @csv_mapping(
+    primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['primaryKey']),
     concentrationNumeratorValue=AttributeInfo(set_value=lambda x: x['concentrationNumeratorValue']),
     concentrationDenominatorValue=AttributeInfo(set_value=lambda x: x['concentrationDenominatorValue']),
     concentrationNumeratorUnit=AttributeInfo(set_value=lambda x: x['concentrationNumeratorUnit']),
@@ -20,7 +21,7 @@ class Strength:
     pass
 
 @csv_mapping(
-    sprimaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['substancePrimaryKey']),
+    primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['substancePrimaryKey']),
     substanceCode=AttributeInfo(set_value=lambda x: x['substanceCode']),
     substanceName=AttributeInfo(set_value=lambda x: x['substanceName']),
     moietyCode=AttributeInfo(set_value=lambda x: x['moietyCode']),
@@ -36,24 +37,26 @@ class Substance:
     role=AttributeInfo(set_value=lambda x: '100000072072'), # assume it's Active (spor)
     substance=AttributeInfo(set_value=lambda x: Substance(x)),
     referenceStrength=AttributeInfo(set_value=lambda x: Strength({
-        "concentrationNumeratorValue": x["referenceStrengthConcentrationNumeratorValue"],
-        "concentrationDenominatorValue": x["referenceStrengthConcentrationDenominatorValue"],
-        "concentrationNumeratorUnit": x["referenceStrengthConcentrationNumeratorUnit"],
-        "concentrationDenominatorUnit": x["referenceStrengthConcentrationDenominatorUnit"],
-        "presentationNumeratorValue": x["referenceStrengthPresentationNumeratorValue"],
-        "presentationDenominatorValue": x["referenceStrengthPresentationDenominatorValue"],
-        "presentationNumeratorUnit": x["referenceStrengthPresentationNumeratorUnit"],
-        "presentationDenominatorUnit": x["referenceStrengthPresentationDenominatorUnit"],
+        'primaryKey': 'referenceStrength-' + x['pharmaceuticalProductPrimaryKey'],
+        'concentrationNumeratorValue': x['referenceStrengthConcentrationNumeratorValue'],
+        'concentrationDenominatorValue': x['referenceStrengthConcentrationDenominatorValue'],
+        'concentrationNumeratorUnit': x['referenceStrengthConcentrationNumeratorUnit'],
+        'concentrationDenominatorUnit': x['referenceStrengthConcentrationDenominatorUnit'],
+        'presentationNumeratorValue': x['referenceStrengthPresentationNumeratorValue'],
+        'presentationDenominatorValue': x['referenceStrengthPresentationDenominatorValue'],
+        'presentationNumeratorUnit': x['referenceStrengthPresentationNumeratorUnit'],
+        'presentationDenominatorUnit': x['referenceStrengthPresentationDenominatorUnit'],
     })),
     strength=AttributeInfo(set_value=lambda x: Strength({
-        "concentrationNumeratorValue": x["strengthConcentrationNumeratorValue"],
-        "concentrationDenominatorValue": x["strengthConcentrationDenominatorValue"],
-        "concentrationNumeratorUnit": x["strengthConcentrationNumeratorUnit"],
-        "concentrationDenominatorUnit": x["strengthConcentrationDenominatorUnit"],
-        "presentationNumeratorValue": x["strengthPresentationNumeratorValue"],
-        "presentationDenominatorValue": x["strengthPresentationDenominatorValue"],
-        "presentationNumeratorUnit": x["strengthPresentationNumeratorUnit"],
-        "presentationDenominatorUnit": x["strengthPresentationDenominatorUnit"],
+        'primaryKey': 'strength-' + x['pharmaceuticalProductPrimaryKey'],
+        'concentrationNumeratorValue': x['strengthConcentrationNumeratorValue'],
+        'concentrationDenominatorValue': x['strengthConcentrationDenominatorValue'],
+        'concentrationNumeratorUnit': x['strengthConcentrationNumeratorUnit'],
+        'concentrationDenominatorUnit': x['strengthConcentrationDenominatorUnit'],
+        'presentationNumeratorValue': x['strengthPresentationNumeratorValue'],
+        'presentationDenominatorValue': x['strengthPresentationDenominatorValue'],
+        'presentationNumeratorUnit': x['strengthPresentationNumeratorUnit'],
+        'presentationDenominatorUnit': x['strengthPresentationDenominatorUnit'],
     })),
 )
 class Ingredient:
@@ -131,7 +134,6 @@ class PackagedMedicinalProduct:
 
 
 if __name__ == '__main__':
-    print(f'Parsing "{ORIGINA_PATH}"...')    
     df = pd.read_csv(ORIGINA_PATH, keep_default_na=False, dtype=str)
     df = df.replace(r'^\s*$', None, regex=True)
     df = df.astype(dtype={
