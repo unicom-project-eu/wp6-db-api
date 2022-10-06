@@ -33,7 +33,7 @@ class Substance:
 @csv_mapping(
     # Assume only one Ingredient per PharmaceuticalProduct
     primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['pharmaceuticalProductPrimaryKey']),
-    administrableDoseForm=AttributeInfo(set_value=lambda x: x['ingredientRole']),
+    ingredientRole=AttributeInfo(set_value=lambda x: x['ingredientRole']),
     substance=AttributeInfo(set_value=lambda x: Substance(x)),
     referenceStrength=AttributeInfo(set_value=lambda x: Strength({
         "concentrationNumeratorValue": x["referenceStrengthConcentrationNumeratorValue"],
@@ -65,7 +65,6 @@ class Ingredient:
     administrableDoseForm=AttributeInfo(set_value=lambda x: x['administrableDoseForm']),
     pharmaceuticalProductUnitOfPresentation=AttributeInfo(set_value=lambda x: x['pharmaceuticalProductUnitOfPresentation']),
     routesOfAdministration=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(x['routesOfAdministration'])),
-    ingredientRole=AttributeInfo(set_value=lambda x: x['ingredientRole']),
     ingredients=AttributeInfo(set_value=lambda x: [
         # Assume only one Ingredient
         Ingredient(x)
