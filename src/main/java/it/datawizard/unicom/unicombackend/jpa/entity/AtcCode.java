@@ -1,5 +1,7 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -9,6 +11,7 @@ import org.hibernate.Hibernate;
 import javax.persistence.*;
 import java.util.Objects;
 
+@JsonIdentityInfo(property = "atcCode", generator = ObjectIdGenerators.PropertyGenerator.class)
 @Entity
 @Getter
 @Setter

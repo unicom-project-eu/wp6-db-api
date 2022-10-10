@@ -1,5 +1,6 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -28,6 +29,7 @@ public class Ingredient {
     @OneToOne
     private Strength strength;
 
+    // @JsonIdentityReference
     @ManyToOne
     @JoinColumn()
     private Substance substance;

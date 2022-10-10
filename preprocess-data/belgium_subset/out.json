@@ -3,17 +3,18 @@
   "packSize": 100,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -23,12 +24,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -70,17 +71,18 @@
   "packSize": 30,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 30.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -90,12 +92,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -137,17 +139,18 @@
   "packSize": 100,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -157,12 +160,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -204,17 +207,18 @@
   "packSize": 100,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -224,12 +228,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -271,17 +275,18 @@
   "packSize": 100,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -291,12 +296,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -338,17 +343,18 @@
   "packSize": 30,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 30.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -358,12 +364,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -405,17 +411,18 @@
   "packSize": 100,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -425,12 +432,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -472,17 +479,18 @@
   "packSize": 100,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -492,12 +500,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -539,17 +547,18 @@
   "packSize": 30,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 30.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -559,12 +568,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -606,17 +615,18 @@
   "packSize": 100,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -626,12 +636,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -673,17 +683,18 @@
   "packSize": 100,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -693,12 +704,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -740,17 +751,18 @@
   "packSize": 30,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 30.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -760,12 +772,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -807,17 +819,18 @@
   "packSize": 100,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10210000",
           "unitOfPresentation": "15012000",
           "manufacturedItemQuantity": 100.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -827,12 +840,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10210000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10210000",
-      "pharmaceuticalProductUnitOfPresentation": "15012000",
+      "unitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -874,17 +887,18 @@
   "packSize": 30,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10210000",
           "unitOfPresentation": "15012000",
           "manufacturedItemQuantity": 30.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -894,12 +908,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10210000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10210000",
-      "pharmaceuticalProductUnitOfPresentation": "15012000",
+      "unitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -941,17 +955,18 @@
   "packSize": 30,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10210000",
           "unitOfPresentation": "15012000",
           "manufacturedItemQuantity": 30.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -961,12 +976,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10210000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10210000",
-      "pharmaceuticalProductUnitOfPresentation": "15012000",
+      "unitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -1008,17 +1023,18 @@
   "packSize": 28,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 28,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 28.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1028,12 +1044,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -1075,17 +1091,18 @@
   "packSize": 98,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 98,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 98.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1095,12 +1112,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -1142,17 +1159,18 @@
   "packSize": 100,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1162,12 +1180,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -1209,17 +1227,18 @@
   "packSize": 100,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1229,12 +1248,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -1276,17 +1295,18 @@
   "packSize": 100,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1296,12 +1316,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -1343,17 +1363,18 @@
   "packSize": 30,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 30.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1363,12 +1384,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -1410,17 +1431,18 @@
   "packSize": 60,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 60,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 60.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1430,12 +1452,12 @@
       "C08CA01"
     ],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -1477,17 +1499,18 @@
   "packSize": 28,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 28,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 28.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1495,12 +1518,12 @@
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -1542,17 +1565,18 @@
   "packSize": 98,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 98,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 98.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1560,12 +1584,12 @@
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -1607,17 +1631,18 @@
   "packSize": 100,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 100,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1625,12 +1650,12 @@
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -1672,17 +1697,18 @@
   "packSize": 30,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 30.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1690,12 +1716,12 @@
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -1737,17 +1763,18 @@
   "packSize": 28,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 28,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 28.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1755,12 +1782,12 @@
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -1802,17 +1829,18 @@
   "packSize": 56,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 56,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 56.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1820,12 +1848,12 @@
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -1867,17 +1895,18 @@
   "packSize": 98,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 98,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 98.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1885,12 +1914,12 @@
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10219000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10219000",
-      "pharmaceuticalProductUnitOfPresentation": "15054000",
+      "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -1932,17 +1961,18 @@
   "packSize": 28,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 28,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10210000",
           "unitOfPresentation": "15012000",
           "manufacturedItemQuantity": 28.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -1950,12 +1980,12 @@
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10210000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10210000",
-      "pharmaceuticalProductUnitOfPresentation": "15012000",
+      "unitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -1997,17 +2027,18 @@
   "packSize": 30,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 30,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10210000",
           "unitOfPresentation": "15012000",
           "manufacturedItemQuantity": 30.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -2015,12 +2046,12 @@
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10210000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10210000",
-      "pharmaceuticalProductUnitOfPresentation": "15012000",
+      "unitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -2062,17 +2093,18 @@
   "packSize": 56,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 56,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10210000",
           "unitOfPresentation": "15012000",
           "manufacturedItemQuantity": 56.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -2080,12 +2112,12 @@
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10210000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10210000",
-      "pharmaceuticalProductUnitOfPresentation": "15012000",
+      "unitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
       ],
@@ -2127,17 +2159,18 @@
   "packSize": 98,
   "packageItems": [
     {
-      "packageItemType": null,
+      "type": null,
       "packageItemQuantity": 98,
       "manufacturedItems": [
         {
           "manufacturedDoseForm": "10210000",
           "unitOfPresentation": "15012000",
           "manufacturedItemQuantity": 98.0,
-          "manufacturedItemQuantityVolumeUnit": null
+          "volumeUnit": null
         }
       ],
-      "packageItems": []
+      "parentPackageItem": null,
+      "childrenPackageItems": []
     }
   ],
   "medicinalProduct": {
@@ -2145,12 +2178,12 @@
     "fullName": "C08CA01",
     "atcCodes": [],
     "authorizedPharmaceuticalDoseForm": "10210000",
-    "marketingAuthorizationHolder": null,
+    "marketingAuthorizationHolderCode": null,
     "marketingAuthorizationHolderLabel": null,
     "country": "BEL",
     "pharmaceuticalProduct": {
       "administrableDoseForm": "10210000",
-      "pharmaceuticalProductUnitOfPresentation": "15012000",
+      "unitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
       ],

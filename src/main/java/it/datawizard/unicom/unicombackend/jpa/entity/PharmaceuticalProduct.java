@@ -1,5 +1,6 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmDoseForm;
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmRouteOfAdministration;
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmUnitOfPresentation;
@@ -39,9 +40,10 @@ public class PharmaceuticalProduct {
     @ManyToMany
     @JoinTable()
     @ToString.Exclude
-    private Set<EdqmRouteOfAdministration> edqmRoutesOfAdministration;
+    private Set<EdqmRouteOfAdministration> routesOfAdministration;
 
     @OneToMany (mappedBy = "pharmaceuticalProduct")
+    @ToString.Exclude
     private Set<MedicinalProduct> medicinalProducts;
 
     @Override

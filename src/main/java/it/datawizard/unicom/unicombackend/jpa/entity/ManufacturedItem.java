@@ -1,5 +1,6 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmDoseForm;
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmUnitOfPresentation;
 import lombok.Getter;
@@ -18,7 +19,6 @@ import java.util.Set;
 @ToString
 @RequiredArgsConstructor
 public class ManufacturedItem {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -54,5 +54,4 @@ public class ManufacturedItem {
     public int hashCode() {
         return getClass().hashCode();
     }
-
 }

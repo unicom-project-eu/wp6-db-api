@@ -4,5 +4,5 @@ import it.datawizard.unicom.unicombackend.jpa.entity.Ingredient;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
-     Ingredient findBySubstance_Code(String code);
+     Ingredient findBySubstance_SubstanceCode(String code);
 }

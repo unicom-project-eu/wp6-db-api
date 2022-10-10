@@ -1,5 +1,6 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmDoseForm;
 import lombok.*;
 import org.hibernate.Hibernate;
@@ -29,13 +30,15 @@ public class MedicinalProduct {
     @Field(type = FieldType.Text)
     private String fullName;
 
+    // @JsonIdentityReference
     @ManyToOne
     @JoinColumn()
     @ToString.Exclude
     private EdqmDoseForm authorizedPharmaceuticalDoseForm;
 
     //TODO Decide for Organization entity usage
-    private String marketingAuthorizationHolder;
+    private String marketingAuthorizationHolderCode;
+    private String marketingAuthorizationHolderLabel;
 
     @ManyToOne
     @JoinColumn(nullable = false)
@@ -45,6 +48,7 @@ public class MedicinalProduct {
     @ToString.Exclude
     private Set<PackagedMedicinalProduct> packagedMedicinalProducts;
 
+    // @JsonIdentityReference
     @OneToMany (mappedBy = "medicinalProduct")
     @ToString.Exclude
     private Set<AtcCode> atcCodes;

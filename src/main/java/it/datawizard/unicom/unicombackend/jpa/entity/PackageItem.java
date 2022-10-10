@@ -1,5 +1,6 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmPackageItemType;
 import lombok.*;
 
@@ -16,6 +17,7 @@ public class PackageItem {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    // @JsonIdentityReference
     @ManyToOne
     @JoinColumn()
     @ToString.Exclude

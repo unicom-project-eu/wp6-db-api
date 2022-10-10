@@ -66,7 +66,7 @@ class Ingredient:
 @csv_mapping(
     primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['pharmaceuticalProductPrimaryKey']),
     administrableDoseForm=AttributeInfo(set_value=lambda x: x['administrableDoseForm']),
-    pharmaceuticalProductUnitOfPresentation=AttributeInfo(set_value=lambda x: x['pharmaceuticalProductUnitOfPresentation']),
+    unitOfPresentation=AttributeInfo(set_value=lambda x: x['pharmaceuticalProductUnitOfPresentation']),
     routesOfAdministration=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(x['routesOfAdministration'])),
     ingredients=AttributeInfo(set_value=lambda x: [
         # Assume only one Ingredient
@@ -82,7 +82,7 @@ class PharmaceuticalProduct:
     fullName=AttributeInfo(set_value=lambda x: x['fullName']),
     atcCodes=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(x['atcCodes'])),
     authorizedPharmaceuticalDoseForm=AttributeInfo(set_value=lambda x: x['authorizedPharmaceuticalDoseForm']),
-    marketingAuthorizationHolder=AttributeInfo(set_value=lambda x: x['marketingAuthorizationHolder']),
+    marketingAuthorizationHolderCode=AttributeInfo(set_value=lambda x: x['marketingAuthorizationHolder']),
     marketingAuthorizationHolderLabel=AttributeInfo(set_value=lambda x: x['marketingAuthorizationHolderLabel']),
     country=AttributeInfo(set_value=lambda x: x['country']),
     pharmaceuticalProduct=AttributeInfo(set_value=lambda x: PharmaceuticalProduct(x)),
@@ -99,7 +99,7 @@ class MedicinalProduct:
     manufacturedDoseForm=AttributeInfo(set_value=lambda x: x['manufacturedDoseForm']),
     unitOfPresentation=AttributeInfo(set_value=lambda x: x['manufacturedItemUnitOfPresentation']),
     manufacturedItemQuantity=AttributeInfo(set_value=lambda x: x['manufacturedItemQuantity']),
-    manufacturedItemQuantityVolumeUnit=AttributeInfo(set_value=lambda x: x['manufacturedItemQuantityVolumeUnit']),
+    volumeUnit=AttributeInfo(set_value=lambda x: x['manufacturedItemQuantityVolumeUnit']),
 )
 class ManufacturedItem:
     pass
@@ -108,13 +108,14 @@ class ManufacturedItem:
     # in this case we use the same primary key as packagedMedicinalProuct 
     # (we assume only one PackageItem per MedicinalProdctPacakge)
     primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['packagedMedicinalProductPrimaryKey']),
-    packageItemType=AttributeInfo(set_value=lambda x: x['packageItemType']),
+    type=AttributeInfo(set_value=lambda x: x['packageItemType']),
     packageItemQuantity=AttributeInfo(set_value=lambda x: x['packageItemQuantity']),
     manufacturedItems=AttributeInfo(set_value=lambda x: [
         # we assume there is only one ManufacturedItem
         ManufacturedItem(x),
     ]),
-    packageItems=AttributeInfo(set_value=lambda x: []),
+    parentPackageItem=AttributeInfo(set_value=lambda x: None),
+    childrenPackageItems=AttributeInfo(set_value=lambda x: []),
 )
 class PackageItem():
     pass

@@ -1,5 +1,7 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -8,6 +10,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.util.Set;
 
+@JsonIdentityInfo(property = "substanceCode", generator = ObjectIdGenerators.PropertyGenerator.class)
 @Entity
 @Getter
 @Setter
@@ -15,12 +18,11 @@ import java.util.Set;
 @RequiredArgsConstructor
 public class Substance {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private String substanceCode;
+    private String substanceName;
 
-    private String code;
-    private String name;
-    private String moiety;
+    private String moietyCode;
+    private String moietyName;
 
     @OneToMany(mappedBy = "substance")
     @ToString.Exclude
