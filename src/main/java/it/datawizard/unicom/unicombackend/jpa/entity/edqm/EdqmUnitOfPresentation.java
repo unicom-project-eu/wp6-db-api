@@ -16,7 +16,6 @@ import javax.persistence.OneToMany;
 import java.util.Set;
 
 @JsonIdentityInfo(property = "code", generator = ObjectIdGenerators.PropertyGenerator.class, resolver = EdqmUnitOfPresentationIdResolver.class)
-@JsonIdentityReference(alwaysAsId = true)
 @Entity
 @Getter
 @Setter

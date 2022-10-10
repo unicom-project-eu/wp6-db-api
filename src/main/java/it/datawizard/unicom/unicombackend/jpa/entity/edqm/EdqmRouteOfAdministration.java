@@ -15,7 +15,6 @@ import javax.persistence.ManyToMany;
 import java.util.Set;
 
 @JsonIdentityInfo(property = "code", generator = ObjectIdGenerators.PropertyGenerator.class, resolver = EdqmRouteOfAdministrationIdResolver.class)
-@JsonIdentityReference(alwaysAsId = true)
 @Entity
 @Getter
 @Setter
