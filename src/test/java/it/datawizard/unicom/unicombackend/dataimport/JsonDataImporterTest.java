@@ -42,7 +42,12 @@ class JsonDataImporterTest {
 
     @Test
     void importDataJsonString() throws IOException {
-          final String jsonData = """
+
+    }
+
+    @Test
+    void deserializePackagedMedicinalProduct() throws IOException {
+        final String jsonData = """
                   {
                     "pcId": null,
                     "packSize": 30,
@@ -114,7 +119,7 @@ class JsonDataImporterTest {
                   }
                   """;
 
-        PackagedMedicinalProduct medicinalProduct = new ObjectMapper().readValue(jsonData, PackagedMedicinalProduct.class);
+        PackagedMedicinalProduct packagedMedicinalProduct = new ObjectMapper().readValue(jsonData, PackagedMedicinalProduct.class);
         LOG.info("we");
     }
 

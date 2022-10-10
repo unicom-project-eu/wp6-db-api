@@ -1,7 +1,5 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -11,14 +9,12 @@ import org.hibernate.Hibernate;
 import javax.persistence.*;
 import java.util.Objects;
 
-@JsonIdentityInfo(property = "atcCode", generator = ObjectIdGenerators.PropertyGenerator.class)
 @Entity
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
 public class AtcCode {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -28,6 +24,10 @@ public class AtcCode {
     @ManyToOne
     @JoinColumn()
     private MedicinalProduct medicinalProduct;
+
+    public AtcCode(String atcCode) {
+        this.atcCode = atcCode;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -41,8 +41,4 @@ public class AtcCode {
     public int hashCode() {
         return getClass().hashCode();
     }
-
-
-
-
 }
