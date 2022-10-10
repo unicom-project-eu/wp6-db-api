@@ -14,7 +14,7 @@ public class EdqmUnitOfPresentationIdResolver implements ObjectIdResolver {
     @Override
     public EdqmUnitOfPresentation resolveId(ObjectIdGenerator.IdKey idKey) {
         EdqmUnitOfPresentation edqmUnitOfPresentation = new EdqmUnitOfPresentation();
-        edqmUnitOfPresentation.setCode(idKey.toString());
+        edqmUnitOfPresentation.setCode((String) idKey.key);
         return edqmUnitOfPresentation;
     }
 

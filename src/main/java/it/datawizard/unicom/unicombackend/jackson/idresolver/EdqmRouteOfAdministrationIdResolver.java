@@ -14,7 +14,7 @@ public class EdqmRouteOfAdministrationIdResolver implements ObjectIdResolver {
     @Override
     public EdqmRouteOfAdministration resolveId(ObjectIdGenerator.IdKey idKey) {
         EdqmRouteOfAdministration edqmRouteOfAdministration = new EdqmRouteOfAdministration();
-        edqmRouteOfAdministration.setCode(idKey.toString());
+        edqmRouteOfAdministration.setCode((String) idKey.key);
         return edqmRouteOfAdministration;
     }
 

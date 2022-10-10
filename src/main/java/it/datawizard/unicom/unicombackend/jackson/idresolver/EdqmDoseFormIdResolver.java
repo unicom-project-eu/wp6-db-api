@@ -13,7 +13,7 @@ public class EdqmDoseFormIdResolver implements ObjectIdResolver {
     @Override
     public EdqmDoseForm resolveId(ObjectIdGenerator.IdKey idKey) {
         EdqmDoseForm edqmDoseForm = new EdqmDoseForm();
-        edqmDoseForm.setCode(idKey.toString());
+        edqmDoseForm.setCode((String) idKey.key);
         return edqmDoseForm;
     }
 

@@ -14,7 +14,7 @@ public class EdqmPackageItemTypeIdResolver implements ObjectIdResolver {
     @Override
     public EdqmPackageItemType resolveId(ObjectIdGenerator.IdKey idKey) {
         EdqmPackageItemType edqmPackageItemType = new EdqmPackageItemType();
-        edqmPackageItemType.setCode(idKey.toString());
+        edqmPackageItemType.setCode((String) idKey.key);
         return edqmPackageItemType;
     }
 
