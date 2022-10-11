@@ -71,10 +71,7 @@ class JsonDataImporterTest {
                           {
                             "role": "100000072072",
                             "substance": {
-                              "substanceCode": "100000090079",
-                              "substanceName": "amlodipine besylate",
-                              "moietyCode": "100000085259",
-                              "moietyName": "amlodipine"
+                              "substanceCode": "100000090079"
                             },
                             "referenceStrength": {
                               "concentrationNumeratorValue": 13.87,
@@ -107,6 +104,8 @@ class JsonDataImporterTest {
     void parseDataJsonString() throws  IOException {
         ArrayList<PackagedMedicinalProduct> packagedMedicinalProducts = new JsonDataImporter()
                 .parseDataJsonString(packagedMedicinalProductJsonString);
+
+        LOG.info("we");
     }
 
     @Test
@@ -116,6 +115,5 @@ class JsonDataImporterTest {
             .parseDataJsonString(packagedMedicinalProductJsonString);
 
         jsonDataImporter.saveParsedPackagedMedicinalProduct(packagedMedicinalProducts);
-
     }
 }
