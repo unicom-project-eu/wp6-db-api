@@ -10,15 +10,18 @@ if __name__ == '__main__':
     df = df[df['Is_Preferred_Name'] == True]
     
     df = pd.DataFrame({
-        'substanceCode': df['#SMS_ID'],
-        'substanceName': df['Substance_Name']
+        'substance_code': df['#SMS_ID'],
+        'substance_name': df['Substance_Name']
     })
 
     # leave empty for now
-    df['moietyCode'] = None
-    df['moietyName'] = None
+    df['moiety_code'] = None
+    df['moiety_name'] = None
 
-    df['substanceName'] = df['substanceName'].apply(lambda x: x.lower())
+    trim = lambda x: x if len(x) <= 255 else x[:252] + '...'
+    df['substance_name'] = df['substance_name'].apply(lambda x: trim(x.lower()))
+
+    df = df.drop_duplicates(subset=['substance_code'], keep='first')
 
     df.to_csv('substance.csv', index=False)
     pass
