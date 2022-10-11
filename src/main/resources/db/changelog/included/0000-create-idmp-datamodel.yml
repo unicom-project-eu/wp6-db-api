@@ -1,0 +1,764 @@
+databaseChangeLog:
+- changeSet:
+    id: 1665504035281-1
+    author: francesco (generated)
+    changes:
+    - createSequence:
+        incrementBy: 1
+        sequenceName: hibernate_sequence
+        startValue: 1
+- changeSet:
+    id: 1665504035281-2
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: atc_codePK
+            name: id
+            type: BIGINT
+        - column:
+            name: atc_code
+            type: VARCHAR(255)
+        - column:
+            name: medicinal_product_id
+            type: BIGINT
+        tableName: atc_code
+- changeSet:
+    id: 1665504035281-3
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: edqm_dose_formPK
+            name: code
+            type: VARCHAR(255)
+        - column:
+            name: comment
+            type: VARCHAR(4096)
+        - column:
+            name: definition
+            type: VARCHAR(4096)
+        - column:
+            constraints:
+              nullable: false
+            name: term
+            type: VARCHAR(255)
+        tableName: edqm_dose_form
+- changeSet:
+    id: 1665504035281-4
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: edqm_package_item_typePK
+            name: code
+            type: VARCHAR(255)
+        - column:
+            name: comment
+            type: VARCHAR(4096)
+        - column:
+            name: definition
+            type: VARCHAR(4096)
+        - column:
+            constraints:
+              nullable: false
+            name: term
+            type: VARCHAR(255)
+        tableName: edqm_package_item_type
+- changeSet:
+    id: 1665504035281-5
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: edqm_package_item_type_package_itemsPK
+            name: edqm_package_item_type_code
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: edqm_package_item_type_package_itemsPK
+            name: package_items_id
+            type: BIGINT
+        tableName: edqm_package_item_type_package_items
+- changeSet:
+    id: 1665504035281-6
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: edqm_route_of_administrationPK
+            name: code
+            type: VARCHAR(255)
+        - column:
+            name: comment
+            type: VARCHAR(4096)
+        - column:
+            name: definition
+            type: VARCHAR(4096)
+        - column:
+            constraints:
+              nullable: false
+            name: term
+            type: VARCHAR(255)
+        tableName: edqm_route_of_administration
+- changeSet:
+    id: 1665504035281-7
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: edqm_route_of_administration_pharmaceutical_productsPK
+            name: edqm_route_of_administration_code
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: edqm_route_of_administration_pharmaceutical_productsPK
+            name: pharmaceutical_products_id
+            type: BIGINT
+        tableName: edqm_route_of_administration_pharmaceutical_products
+- changeSet:
+    id: 1665504035281-8
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: edqm_unit_of_presentationPK
+            name: code
+            type: VARCHAR(255)
+        - column:
+            name: comment
+            type: VARCHAR(4096)
+        - column:
+            name: definition
+            type: VARCHAR(4096)
+        - column:
+            constraints:
+              nullable: false
+            name: term
+            type: VARCHAR(255)
+        tableName: edqm_unit_of_presentation
+- changeSet:
+    id: 1665504035281-9
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: ingredientPK
+            name: id
+            type: BIGINT
+        - column:
+            name: role
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: reference_strength_id
+            type: BIGINT
+        - column:
+            name: strength_id
+            type: BIGINT
+        - column:
+            name: substance_substance_code
+            type: VARCHAR(255)
+        tableName: ingredient
+- changeSet:
+    id: 1665504035281-10
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: ingredient_pharmaceutical_productsPK
+            name: ingredients_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: ingredient_pharmaceutical_productsPK
+            name: pharmaceutical_products_id
+            type: BIGINT
+        tableName: ingredient_pharmaceutical_products
+- changeSet:
+    id: 1665504035281-11
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: manufactured_itemPK
+            name: id
+            type: BIGINT
+        - column:
+            name: manufactured_item_quantity
+            type: INTEGER
+        - column:
+            name: volume_unit
+            type: VARCHAR(255)
+        - column:
+            name: manufactured_dose_form_code
+            type: VARCHAR(255)
+        - column:
+            name: package_item_id
+            type: BIGINT
+        - column:
+            name: unit_of_presentation_code
+            type: VARCHAR(255)
+        tableName: manufactured_item
+- changeSet:
+    id: 1665504035281-12
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: medicinal_productPK
+            name: id
+            type: BIGINT
+        - column:
+            name: country
+            type: VARCHAR(255)
+        - column:
+            name: full_name
+            type: VARCHAR(255)
+        - column:
+            name: marketing_authorization_holder_code
+            type: VARCHAR(255)
+        - column:
+            name: marketing_authorization_holder_label
+            type: VARCHAR(255)
+        - column:
+            name: mp_id
+            type: VARCHAR(255)
+        - column:
+            name: authorized_pharmaceutical_dose_form_code
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: pharmaceutical_product_id
+            type: BIGINT
+        tableName: medicinal_product
+- changeSet:
+    id: 1665504035281-13
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: package_itemPK
+            name: id
+            type: BIGINT
+        - column:
+            name: package_item_quantity
+            type: INTEGER
+        - column:
+            name: packaged_medicinal_product_id
+            type: BIGINT
+        - column:
+            name: parent_package_item_id
+            type: BIGINT
+        - column:
+            name: type_code
+            type: VARCHAR(255)
+        tableName: package_item
+- changeSet:
+    id: 1665504035281-14
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: packaged_medicinal_productPK
+            name: id
+            type: BIGINT
+        - column:
+            name: pack_size
+            type: INTEGER
+        - column:
+            name: pc_id
+            type: VARCHAR(255)
+        - column:
+            name: medicinal_product_id
+            type: BIGINT
+        tableName: packaged_medicinal_product
+- changeSet:
+    id: 1665504035281-15
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pharmaceutical_productPK
+            name: id
+            type: BIGINT
+        - column:
+            name: idmp_php_id
+            type: VARCHAR(255)
+        - column:
+            name: administrable_dose_form_code
+            type: VARCHAR(255)
+        - column:
+            name: unit_of_presentation_code
+            type: VARCHAR(255)
+        tableName: pharmaceutical_product
+- changeSet:
+    id: 1665504035281-16
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pharmaceutical_product_routes_of_administrationPK
+            name: pharmaceutical_product_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: pharmaceutical_product_routes_of_administrationPK
+            name: routes_of_administration_code
+            type: VARCHAR(255)
+        tableName: pharmaceutical_product_routes_of_administration
+- changeSet:
+    id: 1665504035281-17
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: strengthPK
+            name: id
+            type: BIGINT
+        - column:
+            name: concentration_denominator_unit
+            type: VARCHAR(255)
+        - column:
+            name: concentration_denominator_value
+            type: FLOAT4
+        - column:
+            name: concentration_numerator_unit
+            type: VARCHAR(255)
+        - column:
+            name: concentration_numerator_value
+            type: FLOAT4
+        - column:
+            name: presentation_denominator_unit
+            type: VARCHAR(255)
+        - column:
+            name: presentation_denominator_value
+            type: FLOAT4
+        - column:
+            name: presentation_numerator_unit
+            type: VARCHAR(255)
+        - column:
+            name: presentation_numerator_value
+            type: FLOAT4
+        tableName: strength
+- changeSet:
+    id: 1665504035281-18
+    author: francesco (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: substancePK
+            name: substance_code
+            type: VARCHAR(255)
+        - column:
+            name: moiety_code
+            type: VARCHAR(255)
+        - column:
+            name: moiety_name
+            type: VARCHAR(255)
+        - column:
+            name: substance_name
+            type: VARCHAR(255)
+        tableName: substance
+- changeSet:
+    id: 1665504035281-19
+    author: francesco (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: reference_strength_id
+        constraintName: UK_64ahl4qmggmun4t78je1kywg6
+        tableName: ingredient
+- changeSet:
+    id: 1665504035281-20
+    author: francesco (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: package_items_id
+        constraintName: UK_tb4foijmst911o65eyscgixmc
+        tableName: edqm_package_item_type_package_items
+- changeSet:
+    id: 1665504035281-21
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: medicinal_product_id
+        baseTableName: packaged_medicinal_product
+        constraintName: FK26pr64xvih8csv19nwnp6yai4
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: medicinal_product
+        validate: true
+- changeSet:
+    id: 1665504035281-22
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: authorized_pharmaceutical_dose_form_code
+        baseTableName: medicinal_product
+        constraintName: FK2kvpfpkmqexwiq5ph303s1vne
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: code
+        referencedTableName: edqm_dose_form
+        validate: true
+- changeSet:
+    id: 1665504035281-23
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: package_items_id
+        baseTableName: edqm_package_item_type_package_items
+        constraintName: FK2neboli9ocfo11dvg87g99c0m
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: package_item
+        validate: true
+- changeSet:
+    id: 1665504035281-24
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: unit_of_presentation_code
+        baseTableName: pharmaceutical_product
+        constraintName: FK3cesrxyglmnhaajwwawnu94au
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: code
+        referencedTableName: edqm_unit_of_presentation
+        validate: true
+- changeSet:
+    id: 1665504035281-25
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: parent_package_item_id
+        baseTableName: package_item
+        constraintName: FK3iljcixbfgda2cp8b2oe8ura5
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: package_item
+        validate: true
+- changeSet:
+    id: 1665504035281-26
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: unit_of_presentation_code
+        baseTableName: manufactured_item
+        constraintName: FK4ntdt36qodgpayujmbtskg8e2
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: code
+        referencedTableName: edqm_unit_of_presentation
+        validate: true
+- changeSet:
+    id: 1665504035281-27
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: edqm_package_item_type_code
+        baseTableName: edqm_package_item_type_package_items
+        constraintName: FK5u3it0u1xpggwn8shlsqwvrtv
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: code
+        referencedTableName: edqm_package_item_type
+        validate: true
+- changeSet:
+    id: 1665504035281-28
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: substance_substance_code
+        baseTableName: ingredient
+        constraintName: FK6cum637mup9911qeg9c4a4go2
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: substance_code
+        referencedTableName: substance
+        validate: true
+- changeSet:
+    id: 1665504035281-29
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: reference_strength_id
+        baseTableName: ingredient
+        constraintName: FK6h2di314j4wf6wr2k51nw0lwt
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: strength
+        validate: true
+- changeSet:
+    id: 1665504035281-30
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: type_code
+        baseTableName: package_item
+        constraintName: FK8e19k2adtfist4q24a5ftb1es
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: code
+        referencedTableName: edqm_package_item_type
+        validate: true
+- changeSet:
+    id: 1665504035281-31
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: routes_of_administration_code
+        baseTableName: pharmaceutical_product_routes_of_administration
+        constraintName: FK956hrqx0mqw6eras21wyx60e9
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: code
+        referencedTableName: edqm_route_of_administration
+        validate: true
+- changeSet:
+    id: 1665504035281-32
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: pharmaceutical_product_id
+        baseTableName: pharmaceutical_product_routes_of_administration
+        constraintName: FKa2kcqc7ch8bmnwcr811x2bpjt
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: pharmaceutical_product
+        validate: true
+- changeSet:
+    id: 1665504035281-33
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: packaged_medicinal_product_id
+        baseTableName: package_item
+        constraintName: FKaqhyqqnjsjwd3401e5c9a40t
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: packaged_medicinal_product
+        validate: true
+- changeSet:
+    id: 1665504035281-34
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: medicinal_product_id
+        baseTableName: atc_code
+        constraintName: FKbe5m876ukp5bhim6wap9j5mcp
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: medicinal_product
+        validate: true
+- changeSet:
+    id: 1665504035281-35
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: pharmaceutical_products_id
+        baseTableName: ingredient_pharmaceutical_products
+        constraintName: FKd5lqq4msjp69hxrnuksnvjxl2
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: pharmaceutical_product
+        validate: true
+- changeSet:
+    id: 1665504035281-36
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: strength_id
+        baseTableName: ingredient
+        constraintName: FKh6fhu6i7y5k0vxyxjysk5leyv
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: strength
+        validate: true
+- changeSet:
+    id: 1665504035281-37
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: pharmaceutical_product_id
+        baseTableName: medicinal_product
+        constraintName: FKit7ccse9nqavucdli5dsjws27
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: pharmaceutical_product
+        validate: true
+- changeSet:
+    id: 1665504035281-38
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: manufactured_dose_form_code
+        baseTableName: manufactured_item
+        constraintName: FKkdxd920r012lvejmb8yxjumcl
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: code
+        referencedTableName: edqm_dose_form
+        validate: true
+- changeSet:
+    id: 1665504035281-39
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: pharmaceutical_products_id
+        baseTableName: edqm_route_of_administration_pharmaceutical_products
+        constraintName: FKli6pccwtyouv87r2pbs3nifti
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: pharmaceutical_product
+        validate: true
+- changeSet:
+    id: 1665504035281-40
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: ingredients_id
+        baseTableName: ingredient_pharmaceutical_products
+        constraintName: FKnu7eigde4uc1plh1b1sw9j8b
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: ingredient
+        validate: true
+- changeSet:
+    id: 1665504035281-41
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: edqm_route_of_administration_code
+        baseTableName: edqm_route_of_administration_pharmaceutical_products
+        constraintName: FKoblsb9yxmxauiw0whgvofaogg
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: code
+        referencedTableName: edqm_route_of_administration
+        validate: true
+- changeSet:
+    id: 1665504035281-42
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: package_item_id
+        baseTableName: manufactured_item
+        constraintName: FKrr238w3b30kqgqowrjwjimo3j
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: package_item
+        validate: true
+- changeSet:
+    id: 1665504035281-43
+    author: francesco (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: administrable_dose_form_code
+        baseTableName: pharmaceutical_product
+        constraintName: FKs4glwnvg2kf0ey21nmbmoorg1
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: code
+        referencedTableName: edqm_dose_form
+        validate: true
+
