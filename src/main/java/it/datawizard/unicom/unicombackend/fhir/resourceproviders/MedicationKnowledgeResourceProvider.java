@@ -4,9 +4,8 @@ import ca.uhn.fhir.rest.annotation.IdParam;
 import ca.uhn.fhir.rest.annotation.Read;
 import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.rest.server.IResourceProvider;
-import it.datawizard.unicom.unicombackend.jpa.entity.Ingredient;
-import it.datawizard.unicom.unicombackend.jpa.repository.MedicationKnowledgeRepository;
-import org.apache.commons.lang3.NotImplementedException;
+import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
+import it.datawizard.unicom.unicombackend.jpa.repository.PackagedMedicinalProductRepository;
 import org.hl7.fhir.r5.model.CodeableConcept;
 import org.hl7.fhir.r5.model.CodeableReference;
 import org.hl7.fhir.r5.model.IdType;
@@ -25,11 +24,11 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
 
     private static Logger LOG = LoggerFactory.getLogger(MedicationKnowledgeResourceProvider.class);
 
-    final private MedicationKnowledgeRepository medicationKnowledgeRepository;
+    final private PackagedMedicinalProductRepository packagedMedicinalProductRepository;
 
     @Autowired
-    public MedicationKnowledgeResourceProvider(MedicationKnowledgeRepository medicationKnowledgeRepository) {
-        this.medicationKnowledgeRepository = medicationKnowledgeRepository;
+    public MedicationKnowledgeResourceProvider(PackagedMedicinalProductRepository PackagedMedicinalProductRepository) {
+        this.packagedMedicinalProductRepository = PackagedMedicinalProductRepository;
     }
 
 
@@ -40,26 +39,27 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
 
     @Read()
     public MedicationKnowledge getResourceById(@IdParam IdType id) {
-        Optional<it.datawizard.unicom.unicombackend.jpa.entity.MedicationKnowledge> result = medicationKnowledgeRepository.findById(id.getIdPartAsLong());
-        return result.map(MedicationKnowledgeResourceProvider::medicationKnowledgeFromEntity).orElse(null);
+        Optional<PackagedMedicinalProduct> result = packagedMedicinalProductRepository.findById(id.getIdPartAsLong());
+        //return result.map(MedicationKnowledgeResourceProvider::medicationKnowledgeFromEntity).orElse(null);
+        return null;
     }
 
     @Search()
     public List<MedicationKnowledge> findAllResources() {
         ArrayList<MedicationKnowledge> medicationKnowledges = new ArrayList<>();
 
-        for (it.datawizard.unicom.unicombackend.jpa.entity.MedicationKnowledge medicationKnowledge: medicationKnowledgeRepository.findAll()) {
-            medicationKnowledges.add(medicationKnowledgeFromEntity(medicationKnowledge));
-        }
+//        for (it.datawizard.unicom.unicombackend.jpa.entity.MedicationKnowledge medicationKnowledge: PackagedMedicinalProductRepository.findAll()) {
+//            medicationKnowledges.add(medicationKnowledgeFromEntity(medicationKnowledge));
+//        }
 
         return medicationKnowledges;
     }
 
-    public static MedicationKnowledge medicationKnowledgeFromEntity(it.datawizard.unicom.unicombackend.jpa.entity.MedicationKnowledge entityMedicationKnowledge) {
+    public static MedicationKnowledge medicationKnowledgeFromEntity(PackagedMedicinalProduct entityMedicationKnowledge) {
         MedicationKnowledge medicationKnowledge = new MedicationKnowledge();
 
-
         medicationKnowledge.setId(entityMedicationKnowledge.getId().toString());
+
 
         //TODO: add CodeableConcept code
         //TODO: add CodeableConcept status
