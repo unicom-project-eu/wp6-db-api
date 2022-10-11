@@ -2,7 +2,7 @@ package it.datawizard.unicom.unicombackend.jpa.entity.edqm;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import it.datawizard.unicom.unicombackend.jackson.idresolver.EdqmPackageItemTypeIdResolver;
+import it.datawizard.unicom.unicombackend.jackson.idresolver.edqm.EdqmPackageItemTypeIdResolver;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackageItem;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

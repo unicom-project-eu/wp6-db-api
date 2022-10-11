@@ -1,21 +1,21 @@
-package it.datawizard.unicom.unicombackend.jackson.idresolver;
+package it.datawizard.unicom.unicombackend.jackson.idresolver.edqm;
 
 import com.fasterxml.jackson.annotation.ObjectIdGenerator;
 import com.fasterxml.jackson.annotation.ObjectIdResolver;
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmDoseForm;
-import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmPackageItemType;
+import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmUnitOfPresentation;
 
-public class EdqmPackageItemTypeIdResolver implements ObjectIdResolver {
+public class EdqmUnitOfPresentationIdResolver implements ObjectIdResolver {
     @Override
     public void bindItem(ObjectIdGenerator.IdKey idKey, Object o) {
 
     }
 
     @Override
-    public EdqmPackageItemType resolveId(ObjectIdGenerator.IdKey idKey) {
-        EdqmPackageItemType edqmPackageItemType = new EdqmPackageItemType();
-        edqmPackageItemType.setCode((String) idKey.key);
-        return edqmPackageItemType;
+    public EdqmUnitOfPresentation resolveId(ObjectIdGenerator.IdKey idKey) {
+        EdqmUnitOfPresentation edqmUnitOfPresentation = new EdqmUnitOfPresentation();
+        edqmUnitOfPresentation.setCode((String) idKey.key);
+        return edqmUnitOfPresentation;
     }
 
     @Override

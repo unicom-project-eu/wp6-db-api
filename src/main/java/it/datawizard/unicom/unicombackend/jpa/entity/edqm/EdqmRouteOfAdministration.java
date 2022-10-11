@@ -1,9 +1,8 @@
 package it.datawizard.unicom.unicombackend.jpa.entity.edqm;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import it.datawizard.unicom.unicombackend.jackson.idresolver.EdqmRouteOfAdministrationIdResolver;
+import it.datawizard.unicom.unicombackend.jackson.idresolver.edqm.EdqmRouteOfAdministrationIdResolver;
 import it.datawizard.unicom.unicombackend.jpa.entity.PharmaceuticalProduct;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
