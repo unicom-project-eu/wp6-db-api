@@ -23,9 +23,9 @@ class Strength:
 @csv_mapping(
     primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['substancePrimaryKey']),
     substanceCode=AttributeInfo(set_value=lambda x: x['substanceCode']),
-    substanceName=AttributeInfo(set_value=lambda x: x['substanceName']),
-    moietyCode=AttributeInfo(set_value=lambda x: x['moietyCode']),
-    moietyName=AttributeInfo(set_value=lambda x: x['moietyName']),
+    # substanceName=AttributeInfo(set_value=lambda x: x['substanceName']),
+    # moietyCode=AttributeInfo(set_value=lambda x: x['moietyCode']),
+    # moietyName=AttributeInfo(set_value=lambda x: x['moietyName']),
 )
 class Substance:
     pass

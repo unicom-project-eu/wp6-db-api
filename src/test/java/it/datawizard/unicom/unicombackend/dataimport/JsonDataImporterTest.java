@@ -104,17 +104,18 @@ class JsonDataImporterTest {
                   ]""";
 
     @Test
-    void importDataJsonString() throws IOException {
-
-    }
-
-
-    @Test
     void parseDataJsonString() throws  IOException {
         ArrayList<PackagedMedicinalProduct> packagedMedicinalProducts = new JsonDataImporter()
                 .parseDataJsonString(packagedMedicinalProductJsonString);
+    }
 
+    @Test
+    void saveParsedPackagedMedicinalProduct() throws IOException {
+        JsonDataImporter jsonDataImporter = new JsonDataImporter();
+        ArrayList<PackagedMedicinalProduct> packagedMedicinalProducts = jsonDataImporter
+            .parseDataJsonString(packagedMedicinalProductJsonString);
 
-        LOG.info("asdasd");
+        jsonDataImporter.saveParsedPackagedMedicinalProduct(packagedMedicinalProducts);
+
     }
 }
