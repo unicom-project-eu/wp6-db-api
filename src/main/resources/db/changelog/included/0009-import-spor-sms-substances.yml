@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0009-import-spor-sms-substances
+      author: francesco
+      changes:
+        - loadData:
+            file: '../data/0009-import-spor-sms-substances/substance.csv'
+            relativeToChangelogFile: true
+            tableName: 'substance'
