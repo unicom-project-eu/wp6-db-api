@@ -2,8 +2,11 @@ package it.datawizard.unicom.unicombackend.fhir.resourceproviders;
 
 import ca.uhn.fhir.rest.annotation.IdParam;
 import ca.uhn.fhir.rest.annotation.Read;
+import ca.uhn.fhir.rest.annotation.RequiredParam;
 import ca.uhn.fhir.rest.annotation.Search;
+import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
+import it.datawizard.unicom.unicombackend.jpa.entity.AtcCode;
 import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.repository.MedicinalProductRepository;
 import org.hl7.fhir.instance.model.api.IBaseResource;
@@ -12,8 +15,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Component
 public class MedicinalProductDefinitionResourceProvider implements IResourceProvider {
@@ -45,16 +50,69 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
         }
         return resources;
     }
+
+    @Search
+    public MedicinalProductDefinition findByIdentifier(@RequiredParam(name = MedicinalProductDefinition.SP_IDENTIFIER) StringParam identifier) {
+        MedicinalProduct medicinalProduct = medicinalProductRepository.findByMpId(identifier.getValue());
+
+        if (medicinalProduct == null)
+            return null;
+
+        return medicinalProductDefinitionFromEntity(medicinalProduct);
+    }
+
+    @Search
+    public List<MedicinalProductDefinition> findByClassification(@RequiredParam(name = MedicinalProductDefinition.SP_PRODUCT_CLASSIFICATION) StringParam classification) {
+        List<MedicinalProduct> medicinalProducts = medicinalProductRepository.findByAtcCodesIn(Collections.singleton(classification.getValue()));
+
+        if (medicinalProducts == null)
+            return null;
+
+        return medicinalProducts.stream().map((medicinalProduct -> medicinalProductDefinitionFromEntity(medicinalProduct))).collect(Collectors.toList());
+    }
+
+
+    @Search
+    public MedicinalProductDefinition findByName(@RequiredParam(name = MedicinalProductDefinition.SP_NAME) StringParam name) {
+        MedicinalProduct medicinalProduct = medicinalProductRepository.findByFullName(name.getValue());
+
+        if (medicinalProduct == null)
+            return null;
+
+        return medicinalProductDefinitionFromEntity(medicinalProduct);
+    }
     public static MedicinalProductDefinition medicinalProductDefinitionFromEntity(MedicinalProduct medicinalProductEntity) {
         MedicinalProductDefinition medicinalProductDefinition = new MedicinalProductDefinition();
         medicinalProductDefinition.setId(medicinalProductEntity.getId().toString());
 
+        //Identifier
         ArrayList<Identifier> identifiers = new ArrayList<>();
         Identifier identifier = new Identifier();
         identifier.setSystem("http://ema.europa.eu/fhir/mpId");
         identifier.setValue(medicinalProductEntity.getMpId());
         identifiers.add(identifier);
         medicinalProductDefinition.setIdentifier(identifiers);
+
+        //Country
+        CodeableConcept countryCodeableConcept = new CodeableConcept();
+        countryCodeableConcept.addCoding("https://spor.ema.europa.eu/v1/lists/100000000002",medicinalProductEntity.getCountry(),medicinalProductEntity.getCountry());
+        medicinalProductDefinition.setType(countryCodeableConcept);
+
+        //Name
+        ArrayList<MedicinalProductDefinition.MedicinalProductDefinitionNameComponent> names = new ArrayList<>();
+        MedicinalProductDefinition.MedicinalProductDefinitionNameComponent name = new MedicinalProductDefinition.MedicinalProductDefinitionNameComponent();
+        name.setProductName(medicinalProductEntity.getFullName());
+        names.add(name);
+        medicinalProductDefinition.setName(names);
+
+        //Classification
+        ArrayList<CodeableConcept> codes = new ArrayList<>();
+        for (AtcCode code : medicinalProductEntity.getAtcCodes()) {
+            CodeableConcept codeCodeableConcept = new CodeableConcept();
+            codeCodeableConcept.addCoding("https://spor.ema.europa.eu/v1/lists/100000093533",code.getAtcCode(), code.toString());
+            codes.add(codeCodeableConcept);
+        }
+        medicinalProductDefinition.setClassification(codes);
 
         return medicinalProductDefinition;
     }
