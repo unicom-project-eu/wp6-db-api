@@ -15,17 +15,21 @@ import org.springframework.context.annotation.Bean;
 
 import java.io.File;
 
-@SpringBootApplication(scanBasePackages = "it.datawizard.unicom.unicombackend")
+@SpringBootApplication(scanBasePackages = {
+		"it.datawizard.unicom.unicombackend"
+})
 public class UnicomApplication implements CommandLineRunner {
-	private static Logger LOG = LoggerFactory.getLogger(UnicomApplication.class);
+	private final static Logger LOG = LoggerFactory.getLogger(UnicomApplication.class);
 
 	private final ConfigurableApplicationContext applicationContext;
 	private final UnicomFHIRServlet unicomFHIRServlet;
+	private final JsonDataImporter jsonDataImporter;
 
 	@Autowired
-	public UnicomApplication(UnicomFHIRServlet unicomFHIRServlet, ConfigurableApplicationContext context) {
+	public UnicomApplication(UnicomFHIRServlet unicomFHIRServlet, ConfigurableApplicationContext context, JsonDataImporter jsonDataImporter) {
 		this.unicomFHIRServlet = unicomFHIRServlet;
 		this.applicationContext = context;
+		this.jsonDataImporter = jsonDataImporter;
 	}
 
 	@Bean
@@ -64,7 +68,7 @@ public class UnicomApplication implements CommandLineRunner {
 		}
 
 		if (commandLine.hasOption(importJsonOption)) {
-			new JsonDataImporter().importData(new File(commandLine.getOptionValue(importJsonOption)));
+			jsonDataImporter.importData(new File(commandLine.getOptionValue(importJsonOption)));
 			System.exit(SpringApplication.exit(applicationContext));
 		}
 	}

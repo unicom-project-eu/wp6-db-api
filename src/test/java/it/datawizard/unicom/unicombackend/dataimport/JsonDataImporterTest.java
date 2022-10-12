@@ -1,5 +1,6 @@
 package it.datawizard.unicom.unicombackend.dataimport;
 
+import it.datawizard.unicom.unicombackend.UnicomApplication;
 import it.datawizard.unicom.unicombackend.elasticsearch.repository.MedicinalProductElasticsearchRepository;
 import it.datawizard.unicom.unicombackend.fhir.UnicomFHIRServlet;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
@@ -11,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.io.IOException;
@@ -18,14 +20,18 @@ import java.util.ArrayList;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
+@Import(JsonDataImporter.class)
 class JsonDataImporterTest {
     private final Logger LOG = LoggerFactory.getLogger(JsonDataImporterTest.class);
+
+    @Autowired
+    private JsonDataImporter jsonDataImporter;
 
     @Autowired
     private MedicinalProductRepository medicinalProductRepository;
 
     @MockBean
-    private UnicomFHIRServlet unicomFHIRServlet;
+    private UnicomApplication unicomApplication;
 
     @MockBean
     private MedicinalProductElasticsearchRepository medicinalProductElasticsearchRepository;
@@ -101,19 +107,16 @@ class JsonDataImporterTest {
                   ]""";
 
     @Test
-    void parseDataJsonString() throws  IOException {
-        ArrayList<PackagedMedicinalProduct> packagedMedicinalProducts = new JsonDataImporter()
+    void parseDataJsonString() throws IOException {
+        ArrayList<PackagedMedicinalProduct> packagedMedicinalProducts = jsonDataImporter
                 .parseDataJsonString(packagedMedicinalProductJsonString);
-
-        LOG.info("we");
     }
 
     @Test
     void saveParsedPackagedMedicinalProduct() throws IOException {
-        JsonDataImporter jsonDataImporter = new JsonDataImporter();
         ArrayList<PackagedMedicinalProduct> packagedMedicinalProducts = jsonDataImporter
             .parseDataJsonString(packagedMedicinalProductJsonString);
 
-        jsonDataImporter.saveParsedPackagedMedicinalProduct(packagedMedicinalProducts);
+        jsonDataImporter.saveParsedPackagedMedicinalProducts(packagedMedicinalProducts);
     }
 }
