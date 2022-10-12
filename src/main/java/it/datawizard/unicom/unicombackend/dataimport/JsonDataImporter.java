@@ -2,9 +2,16 @@ package it.datawizard.unicom.unicombackend.dataimport;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import it.datawizard.unicom.unicombackend.jpa.entity.Ingredient;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.entity.PharmaceuticalProduct;
+import it.datawizard.unicom.unicombackend.jpa.entity.Strength;
+import it.datawizard.unicom.unicombackend.jpa.repository.IngredientRepository;
 import it.datawizard.unicom.unicombackend.jpa.repository.PharmaceuticalProductRepository;
+import it.datawizard.unicom.unicombackend.jpa.repository.StrengthRepository;
+import it.datawizard.unicom.unicombackend.jpa.repository.SubstanceRepository;
+import it.datawizard.unicom.unicombackend.jpa.repository.edqm.EdqmDoseFormRepository;
+import it.datawizard.unicom.unicombackend.jpa.repository.edqm.EdqmUnitOfPresentationRepository;
 import org.apache.commons.lang3.NotImplementedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,10 +28,20 @@ public class JsonDataImporter {
     private final static Logger LOG = LoggerFactory.getLogger(JsonDataImporter.class);
 
     private final PharmaceuticalProductRepository pharmaceuticalProductRepository;
+    private final EdqmDoseFormRepository edqmDoseFormRepository;
+    private final EdqmUnitOfPresentationRepository edqmUnitOfPresentationRepository;
+    private final IngredientRepository ingredientRepository;
+    private final StrengthRepository strengthRepository;
+    private final SubstanceRepository substanceRepository;
 
     @Autowired
-    public JsonDataImporter(PharmaceuticalProductRepository pharmaceuticalProductRepository) {
+    public JsonDataImporter(PharmaceuticalProductRepository pharmaceuticalProductRepository, EdqmDoseFormRepository edqmDoseFormRepository, EdqmUnitOfPresentationRepository edqmUnitOfPresentationRepository, IngredientRepository ingredientRepository, StrengthRepository strengthRepository, SubstanceRepository substanceRepository) {
         this.pharmaceuticalProductRepository = pharmaceuticalProductRepository;
+        this.edqmDoseFormRepository = edqmDoseFormRepository;
+        this.edqmUnitOfPresentationRepository = edqmUnitOfPresentationRepository;
+        this.ingredientRepository = ingredientRepository;
+        this.strengthRepository = strengthRepository;
+        this.substanceRepository = substanceRepository;
     }
 
     public void importData(File jsonFile) throws IOException {
@@ -41,6 +58,36 @@ public class JsonDataImporter {
             // PharmaceuticalProduct
             PharmaceuticalProduct pharmaceuticalProduct = packagedMedicinalProduct.getMedicinalProduct()
                     .getPharmaceuticalProduct();
+
+            // PharmaceuticalProduct > ingredients
+            for (Ingredient ingredient : pharmaceuticalProduct.getIngredients()) {
+                // referenceStrength
+                Strength referenceStrength = strengthRepository.save(ingredient.getReferenceStrength());
+                ingredient.setReferenceStrength(referenceStrength);
+
+                // strength
+                Strength strength = strengthRepository.save(ingredient.getStrength());
+                ingredient.setStrength(strength);
+
+                // substance
+                ingredient.setSubstance(
+                    substanceRepository.findById(ingredient.getSubstance().getSubstanceCode()).orElseThrow()
+                );
+
+                ingredientRepository.save(ingredient);
+            }
+
+            // PharmaceuticalProduct > administrableDoseForm
+            pharmaceuticalProduct.setAdministrableDoseForm(
+                edqmDoseFormRepository.findById(pharmaceuticalProduct.getAdministrableDoseForm().getCode())
+                        .orElseThrow()
+            );
+
+            // PharmaceuticalProduct > unitOfPresentation
+            pharmaceuticalProduct.setUnitOfPresentation(
+                    edqmUnitOfPresentationRepository.findById(pharmaceuticalProduct.getUnitOfPresentation().getCode())
+                            .orElseThrow()
+            );
 
             pharmaceuticalProductRepository.save(pharmaceuticalProduct);
         }
