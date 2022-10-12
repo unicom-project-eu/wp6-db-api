@@ -1,6 +1,7 @@
 from collections import defaultdict
 import numpy as np
 import pandas as pd
+import re
 
 from csvutils.csvutils import *
 
@@ -77,15 +78,15 @@ class PharmaceuticalProduct:
     pass
 
 @csv_mapping(
-    primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['medicinalProductPrimaryKey']),
-    mpId=AttributeInfo(set_value=lambda x: x['mpId']),
-    fullName=AttributeInfo(set_value=lambda x: x['fullName']),
-    atcCodes=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(x['atcCodes'])),
-    authorizedPharmaceuticalDoseForm=AttributeInfo(set_value=lambda x: x['authorizedPharmaceuticalDoseForm']),
-    marketingAuthorizationHolderCode=AttributeInfo(set_value=lambda x: x['marketingAuthorizationHolder']),
-    marketingAuthorizationHolderLabel=AttributeInfo(set_value=lambda x: x['marketingAuthorizationHolderLabel']),
-    country=AttributeInfo(set_value=lambda x: x['country']),
-    pharmaceuticalProduct=AttributeInfo(set_value=lambda x: PharmaceuticalProduct(x)),
+    primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['mpPrimaryKey']),
+    # mpId=AttributeInfo(set_value=lambda x: x['mpId']),
+    # fullName=AttributeInfo(set_value=lambda x: x['fullName']),
+    # atcCodes=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(x['atcCodes'])),
+    # authorizedPharmaceuticalDoseForm=AttributeInfo(set_value=lambda x: x['authorizedPharmaceuticalDoseForm']),
+    # marketingAuthorizationHolderCode=AttributeInfo(set_value=lambda x: x['marketingAuthorizationHolder']),
+    # marketingAuthorizationHolderLabel=AttributeInfo(set_value=lambda x: x['marketingAuthorizationHolderLabel']),
+    # country=AttributeInfo(set_value=lambda x: x['country']),
+    # pharmaceuticalProduct=AttributeInfo(set_value=lambda x: PharmaceuticalProduct(x)),
 )
 class MedicinalProduct:
     pass
@@ -133,7 +134,7 @@ class PackageItem():
                 'manufacturedItems': [
                     ManufacturedItem({
                         'primaryKey': 'manufacturedItem1' + x['Codice AIC - LocalMppid'],
-                        'manufacturedDoseForm': x['Dose form (EDQM Code)'],
+                        'manufacturedDoseForm': x['Dose form (EDQM Code)'] if x['Priorità'] <= 2 else None,
                         'unitOfPresentation': x['Unit of Presentation 1 (EDQM Code)'],
                         'manufacturedItemQuantity': x['Package Size'] if x['Priorità'] <= 2 else None,
                         'volumeUnit':  None if x['Priorità'] <= 2 else x['Active Ingredient 1 Numerator Unit of Mesurement (UCUM)'],
@@ -143,7 +144,7 @@ class PackageItem():
             })
         ],
     })),
-    # medicinalProduct=AttributeInfo(set_value=lambda x: MedicinalProduct(x))
+    medicinalProduct=AttributeInfo(set_value=lambda x: MedicinalProduct(x))
 )
 class PackagedMedicinalProduct:
     pass
@@ -168,6 +169,12 @@ if __name__ == '__main__':
     })
     df = df.drop(df[df['Priorità'] >= 3].index)
     df = df.replace(np.nan, None)
+
+    # add local pharmaceuticalProductPrimaryKey
+    # regex = r'Substance [0-9]+ \(SMS code\)'
+    # substances_cols = [col for col in df if re.match(regex, col)]
+
+    df['__pharmaceuticalProductPrimaryKey'] = df['Principio Attivo'] + x['Dose form (EDQM Code)'] + # TODO fix this
 
     packages_list = []
 
