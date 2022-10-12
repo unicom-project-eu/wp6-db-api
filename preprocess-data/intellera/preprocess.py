@@ -135,8 +135,8 @@ class PackageItem():
                         'primaryKey': 'manufacturedItem1' + x['Codice AIC - LocalMppid'],
                         'manufacturedDoseForm': x['Dose form (EDQM Code)'],
                         'unitOfPresentation': x['Unit of Presentation 1 (EDQM Code)'],
-                        'manufacturedItemQuantity': float(x['Active Ingredient 1 Numerator Quantity']) / float(x['Active Ingredient 1 Denominator Quantity']),
-                        'volumeUnit': x['Active Ingredient 1 Numerator Unit of Mesurement (UCUM)'],
+                        'manufacturedItemQuantity': x['Package Size'] if x['Priorità'] <= 2 else None,
+                        'volumeUnit':  None if x['Priorità'] <= 2 else x['Active Ingredient 1 Numerator Unit of Mesurement (UCUM)'],
                     }),
                 ],
                 'childrenPackageItems': [],
@@ -166,7 +166,7 @@ if __name__ == '__main__':
     #     'strengthPresentationNumeratorValue': float,
     #     'strengthPresentationDenominatorValue': float,
     })
-    df = df.drop(df[df['Priorità'] >= 3])
+    df = df.drop(df[df['Priorità'] >= 3].index)
     df = df.replace(np.nan, None)
 
     packages_list = []
