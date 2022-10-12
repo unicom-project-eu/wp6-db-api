@@ -3,14 +3,10 @@ package it.datawizard.unicom.unicombackend.dataimport;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import it.datawizard.unicom.unicombackend.jpa.entity.*;
-import it.datawizard.unicom.unicombackend.jpa.repository.IngredientRepository;
-import it.datawizard.unicom.unicombackend.jpa.repository.PharmaceuticalProductRepository;
-import it.datawizard.unicom.unicombackend.jpa.repository.StrengthRepository;
-import it.datawizard.unicom.unicombackend.jpa.repository.SubstanceRepository;
+import it.datawizard.unicom.unicombackend.jpa.repository.*;
 import it.datawizard.unicom.unicombackend.jpa.repository.edqm.EdqmDoseFormRepository;
 import it.datawizard.unicom.unicombackend.jpa.repository.edqm.EdqmRouteOfAdministrationRepository;
 import it.datawizard.unicom.unicombackend.jpa.repository.edqm.EdqmUnitOfPresentationRepository;
-import org.apache.commons.lang3.NotImplementedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +22,10 @@ import java.util.stream.Collectors;
 public class JsonDataImporter {
     private final static Logger LOG = LoggerFactory.getLogger(JsonDataImporter.class);
 
+    private final ManufacturedItemRepository manufacturedItemRepository;
+    private final PackageItemRepository packageItemRepository;
+    private final PackagedMedicinalProductRepository packagedMedicinalProductRepository;
+    private final MedicinalProductRepository medicinalProductRepository;
     private final PharmaceuticalProductRepository pharmaceuticalProductRepository;
     private final EdqmDoseFormRepository edqmDoseFormRepository;
     private final EdqmUnitOfPresentationRepository edqmUnitOfPresentationRepository;
@@ -35,7 +35,11 @@ public class JsonDataImporter {
     private final SubstanceRepository substanceRepository;
 
     @Autowired
-    public JsonDataImporter(PharmaceuticalProductRepository pharmaceuticalProductRepository, EdqmDoseFormRepository edqmDoseFormRepository, EdqmUnitOfPresentationRepository edqmUnitOfPresentationRepository, EdqmRouteOfAdministrationRepository edqmRouteOfAdministrationRepository, IngredientRepository ingredientRepository, StrengthRepository strengthRepository, SubstanceRepository substanceRepository) {
+    public JsonDataImporter(ManufacturedItemRepository manufacturedItemRepository, PackageItemRepository packageItemRepository, PackagedMedicinalProductRepository packagedMedicinalProductRepository, MedicinalProductRepository medicinalProductRepository, PharmaceuticalProductRepository pharmaceuticalProductRepository, EdqmDoseFormRepository edqmDoseFormRepository, EdqmUnitOfPresentationRepository edqmUnitOfPresentationRepository, EdqmRouteOfAdministrationRepository edqmRouteOfAdministrationRepository, IngredientRepository ingredientRepository, StrengthRepository strengthRepository, SubstanceRepository substanceRepository) {
+        this.manufacturedItemRepository = manufacturedItemRepository;
+        this.packageItemRepository = packageItemRepository;
+        this.packagedMedicinalProductRepository = packagedMedicinalProductRepository;
+        this.medicinalProductRepository = medicinalProductRepository;
         this.pharmaceuticalProductRepository = pharmaceuticalProductRepository;
         this.edqmDoseFormRepository = edqmDoseFormRepository;
         this.edqmUnitOfPresentationRepository = edqmUnitOfPresentationRepository;
@@ -56,11 +60,11 @@ public class JsonDataImporter {
     @Transactional
     protected void saveParsedPackagedMedicinalProducts(ArrayList<PackagedMedicinalProduct> packagedMedicinalProducts) {
         for (PackagedMedicinalProduct packagedMedicinalProduct : packagedMedicinalProducts) {
-            // MedicinalProduct > PharmaceuticalProduct
+            // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct
             PharmaceuticalProduct pharmaceuticalProduct = packagedMedicinalProduct.getMedicinalProduct()
                     .getPharmaceuticalProduct();
 
-            // PharmaceuticalProduct > ingredients
+            // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct > ingredients
             for (Ingredient ingredient : pharmaceuticalProduct.getIngredients()) {
                 // referenceStrength
                 Strength referenceStrength = strengthRepository.save(ingredient.getReferenceStrength());
@@ -78,19 +82,19 @@ public class JsonDataImporter {
                 ingredientRepository.save(ingredient);
             }
 
-            // PharmaceuticalProduct > administrableDoseForm
+            // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct > administrableDoseForm
             pharmaceuticalProduct.setAdministrableDoseForm(
                 edqmDoseFormRepository.findById(pharmaceuticalProduct.getAdministrableDoseForm().getCode())
                         .orElseThrow()
             );
 
-            // PharmaceuticalProduct > unitOfPresentation
+            // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct > unitOfPresentation
             pharmaceuticalProduct.setUnitOfPresentation(
                     edqmUnitOfPresentationRepository.findById(pharmaceuticalProduct.getUnitOfPresentation().getCode())
                             .orElseThrow()
             );
 
-            // PharmaceuticalProduct > routesOfAdministration
+            // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct > routesOfAdministration
             pharmaceuticalProduct.setRoutesOfAdministration(
                     pharmaceuticalProduct.getRoutesOfAdministration().stream().map(
                             edqmRouteOfAdministration -> edqmRouteOfAdministrationRepository
@@ -100,12 +104,52 @@ public class JsonDataImporter {
 
             pharmaceuticalProductRepository.save(pharmaceuticalProduct);
 
-            // MedicinalProduct
+            // PackagedMedicinalProduct > MedicinalProduct
             MedicinalProduct medicinalProduct = packagedMedicinalProduct.getMedicinalProduct();
+            medicinalProduct.setPharmaceuticalProduct(pharmaceuticalProduct);
 
+            // PackagedMedicinalProduct > MedicinalProduct > authorizedPharmaceuticalDoseForm
+            medicinalProduct.setAuthorizedPharmaceuticalDoseForm(
+                    edqmDoseFormRepository.findById(medicinalProduct.getAuthorizedPharmaceuticalDoseForm().getCode())
+                            .orElseThrow()
+            );
 
+            medicinalProductRepository.save(medicinalProduct);
+
+            // PackagedMedicinalProduct
+            packagedMedicinalProduct.setMedicinalProduct(medicinalProduct);
+
+            packagedMedicinalProductRepository.save(packagedMedicinalProduct);
+
+            // PackagedMedicinalProduct > PackageItems
+            for (PackageItem packageItem : packagedMedicinalProduct.getPackageItems()) {
+                savePackageItem(packageItem);
+            }
         }
+    }
 
-        throw new NotImplementedException();
+    private void savePackageItem(PackageItem packageItem) {
+        packageItemRepository.save(packageItem);
+
+        // ManufacturedItem
+        packageItem.getManufacturedItems().forEach(manufacturedItem -> {
+            // manufacturedDoseForm
+            manufacturedItem.setManufacturedDoseForm(
+                    edqmDoseFormRepository.findById(manufacturedItem.getManufacturedDoseForm().getCode())
+                            .orElseThrow()
+            );
+
+            // unitOfPresentation
+            manufacturedItem.setUnitOfPresentation(
+                    edqmUnitOfPresentationRepository.findById(manufacturedItem.getUnitOfPresentation().getCode())
+                            .orElseThrow()
+            );
+
+            manufacturedItemRepository.save(manufacturedItem);
+        });
+
+        for (PackageItem childPackageItem : packageItem.getChildrenPackageItems()) {
+            savePackageItem(childPackageItem);
+        }
     }
 }
