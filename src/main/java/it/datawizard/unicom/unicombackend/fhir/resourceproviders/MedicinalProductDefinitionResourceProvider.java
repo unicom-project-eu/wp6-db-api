@@ -133,8 +133,20 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
         }
         medicinalProductDefinition.setClassification(codes);
 
+        // authorizedPharmaceuticalDoseForm
+        CodeableConcept authorizedPharmaceuticalDoseFormCodeableConcept = new CodeableConcept();
+        authorizedPharmaceuticalDoseFormCodeableConcept.addCoding(
+                "https://spor.ema.europa.eu/v1/lists/200000000004",
+                medicinalProductEntity.getAuthorizedPharmaceuticalDoseForm().getCode(),
+                medicinalProductEntity.getAuthorizedPharmaceuticalDoseForm().getTerm()
+        );
+
+        // TODO
+        medicinalProductDefinition.getExtension().add(new Extension(
+           "TODO use appropriate url for extension",
+                authorizedPharmaceuticalDoseFormCodeableConcept
+        ));
+
         return medicinalProductDefinition;
     }
-
-
 }
