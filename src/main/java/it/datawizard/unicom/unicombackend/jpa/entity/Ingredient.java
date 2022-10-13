@@ -1,6 +1,5 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -9,7 +8,6 @@ import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 @Getter
@@ -34,11 +32,9 @@ public class Ingredient {
     @JoinColumn()
     private Substance substance;
 
-    @ManyToMany
-    @Column(nullable = false)
-    @JoinTable()
-    @ToString.Exclude
-    private Set<PharmaceuticalProduct> pharmaceuticalProducts;
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private PharmaceuticalProduct pharmaceuticalProduct;
 
     @Override
     public boolean equals(Object o) {

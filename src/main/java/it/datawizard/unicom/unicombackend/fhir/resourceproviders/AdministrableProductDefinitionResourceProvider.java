@@ -7,22 +7,23 @@ import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.Ingredient;
 import it.datawizard.unicom.unicombackend.jpa.entity.PharmaceuticalProduct;
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmRouteOfAdministration;
+import it.datawizard.unicom.unicombackend.jpa.repository.IngredientRepository;
 import it.datawizard.unicom.unicombackend.jpa.repository.PharmaceuticalProductRepository;
-import org.apache.commons.lang3.NotImplementedException;
-import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Component
 public class AdministrableProductDefinitionResourceProvider implements IResourceProvider {
+    private static final Logger LOG = LoggerFactory.getLogger(AdministrableProductDefinitionResourceProvider.class);
     private final PharmaceuticalProductRepository pharmaceuticalProductRepository;
+    private final IngredientRepository ingredientRepository;
 
     @Override
     public Class<AdministrableProductDefinition> getResourceType() {
@@ -30,8 +31,9 @@ public class AdministrableProductDefinitionResourceProvider implements IResource
     }
 
     @Autowired
-    public AdministrableProductDefinitionResourceProvider(PharmaceuticalProductRepository pharmaceuticalProductRepository) {
+    public AdministrableProductDefinitionResourceProvider(PharmaceuticalProductRepository pharmaceuticalProductRepository, IngredientRepository ingredientRepository) {
         this.pharmaceuticalProductRepository = pharmaceuticalProductRepository;
+        this.ingredientRepository = ingredientRepository;
     }
 
     @Read()
@@ -98,15 +100,17 @@ public class AdministrableProductDefinitionResourceProvider implements IResource
             administrableProductDefinition.addRouteOfAdministration(fhirRouteOfAdministration);
         }
 
+        // TODO ingredient should be list of references, does HAPI fhir lack this feature?
         // Ingredient
         for (Ingredient ingredientEntity : pharmaceuticalProductEntity.getIngredients()) {
-            Reference reference = new Reference();
-            reference.setResource(
-                    IngredientResourceProvider.ingredientFromEntity(ingredientEntity)
-            );
+            CodeableConcept ingredientCodeableConcept = new CodeableConcept();
+            ingredientCodeableConcept.addCoding(
+                    "TODO find right way to add ingredients",
+                    ingredientEntity.getSubstance().getSubstanceCode(),
+                    ingredientEntity.getSubstance().getSubstanceName()
+                );
 
-            CodeableReference ingredientCodeableReference = new CodeableReference(reference);
-            administrableProductDefinition.addIngredient(ingredientCodeableReference.getConcept());
+            administrableProductDefinition.addIngredient(ingredientCodeableConcept);
         }
 
         return administrableProductDefinition;

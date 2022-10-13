@@ -68,6 +68,8 @@ public class JsonDataImporter {
             PharmaceuticalProduct pharmaceuticalProduct = packagedMedicinalProduct.getMedicinalProduct()
                     .getPharmaceuticalProduct();
 
+            pharmaceuticalProduct = pharmaceuticalProductRepository.save(pharmaceuticalProduct);
+
             // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct > ingredients
             for (Ingredient ingredient : pharmaceuticalProduct.getIngredients()) {
                 // referenceStrength
@@ -83,6 +85,7 @@ public class JsonDataImporter {
                     substanceRepository.findById(ingredient.getSubstance().getSubstanceCode()).orElseThrow()
                 );
 
+                ingredient.setPharmaceuticalProduct(pharmaceuticalProduct);
                 ingredientRepository.save(ingredient);
             }
 
