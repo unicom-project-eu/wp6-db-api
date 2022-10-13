@@ -13,7 +13,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Document(indexName = "medicinal_product")
+// @Document(indexName = "medicinal_product")
 @Getter
 @Setter
 @ToString
@@ -27,7 +27,7 @@ public class MedicinalProduct {
 
     private String country;
 
-    @Field(type = FieldType.Text)
+    // @Field(type = FieldType.Text)
     private String fullName;
 
     // @JsonIdentityReference
