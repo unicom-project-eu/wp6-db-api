@@ -1,7 +1,6 @@
 package it.datawizard.unicom.unicombackend.jpa.repository;
 
 import it.datawizard.unicom.unicombackend.dataimport.JsonDataImporter;
-import it.datawizard.unicom.unicombackend.elasticsearch.repository.MedicinalProductElasticsearchRepository;
 import it.datawizard.unicom.unicombackend.fhir.UnicomFHIRServlet;
 import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.entity.PharmaceuticalProduct;
@@ -31,8 +30,8 @@ public class MedicinalProductRepositoryTest {
     @MockBean
     JsonDataImporter jsonDataImporter;
 
-    @MockBean
-    private MedicinalProductElasticsearchRepository medicinalProductElasticsearchRepository;
+//    @MockBean
+//    private MedicinalProductElasticsearchRepository medicinalProductElasticsearchRepository;
 
     @Test
     public void medicinalProductSave() {

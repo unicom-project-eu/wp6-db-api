@@ -1,7 +1,6 @@
 package it.datawizard.unicom.unicombackend.dataimport;
 
 import it.datawizard.unicom.unicombackend.UnicomApplication;
-import it.datawizard.unicom.unicombackend.elasticsearch.repository.MedicinalProductElasticsearchRepository;
 import it.datawizard.unicom.unicombackend.fhir.UnicomFHIRServlet;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.repository.MedicinalProductRepository;
@@ -34,8 +33,8 @@ class JsonDataImporterTest {
     @MockBean
     private UnicomApplication unicomApplication;
 
-    @MockBean
-    private MedicinalProductElasticsearchRepository medicinalProductElasticsearchRepository;
+//    @MockBean
+//    private MedicinalProductElasticsearchRepository medicinalProductElasticsearchRepository;
 
     private final String packagedMedicinalProductJsonString = """
                   [
