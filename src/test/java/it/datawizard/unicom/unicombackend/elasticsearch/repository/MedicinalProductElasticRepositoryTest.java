@@ -1,5 +1,6 @@
 package it.datawizard.unicom.unicombackend.elasticsearch.repository;
 
+import it.datawizard.unicom.unicombackend.dataimport.JsonDataImporter;
 import it.datawizard.unicom.unicombackend.fhir.UnicomFHIRServlet;
 import it.datawizard.unicom.unicombackend.jpa.repository.MedicinalProductRepository;
 import lombok.Getter;
@@ -24,6 +25,9 @@ public class MedicinalProductElasticRepositoryTest {
 
     @MockBean
     private UnicomFHIRServlet unicomFHIRServlet;
+
+    @MockBean
+    JsonDataImporter jsonDataImporter;
 
     @MockBean
     private MedicinalProductRepository medicinalProductRepository;

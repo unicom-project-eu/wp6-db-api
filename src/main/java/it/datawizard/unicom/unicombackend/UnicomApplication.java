@@ -68,7 +68,9 @@ public class UnicomApplication implements CommandLineRunner {
 		}
 
 		if (commandLine.hasOption(importJsonOption)) {
-			jsonDataImporter.importData(new File(commandLine.getOptionValue(importJsonOption)));
+			File f = new File(commandLine.getOptionValue(importJsonOption));
+			LOG.info("Importing data from " + f.getPath());
+			jsonDataImporter.importData(f);
 			System.exit(SpringApplication.exit(applicationContext));
 		}
 	}

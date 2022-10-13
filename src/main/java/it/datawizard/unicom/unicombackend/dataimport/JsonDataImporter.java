@@ -15,13 +15,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 @Component
 public class JsonDataImporter {
     private final static Logger LOG = LoggerFactory.getLogger(JsonDataImporter.class);
-
     private final ManufacturedItemRepository manufacturedItemRepository;
     private final PackageItemRepository packageItemRepository;
     private final PackagedMedicinalProductRepository packagedMedicinalProductRepository;
@@ -50,7 +50,9 @@ public class JsonDataImporter {
     }
 
     public void importData(File jsonFile) throws IOException {
-        LOG.info("Importing " + jsonFile.getPath());
+        String jsonData =  Files.readString(jsonFile.toPath());
+        ArrayList<PackagedMedicinalProduct> packagedMedicinalProducts = parseDataJsonString(jsonData);
+        saveParsedPackagedMedicinalProducts(packagedMedicinalProducts);
     }
 
     public ArrayList<PackagedMedicinalProduct> parseDataJsonString(String jsonData) throws IOException {
@@ -128,6 +130,7 @@ public class JsonDataImporter {
         }
     }
 
+    @Transactional
     private void savePackageItem(PackageItem packageItem) {
         packageItemRepository.save(packageItem);
 
