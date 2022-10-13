@@ -13,6 +13,7 @@ import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,12 +37,14 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
     }
 
     @Read()
+    @Transactional
     public MedicinalProductDefinition getResourceById(@IdParam IdType id) {
         Optional<MedicinalProduct> result = medicinalProductRepository.findById(id.getIdPartAsLong());
         return result.map(MedicinalProductDefinitionResourceProvider::medicinalProductDefinitionFromEntity).orElse(null);
     }
 
     @Search
+    @Transactional
     public List<MedicinalProductDefinition> findAllResources() {
         ArrayList<MedicinalProductDefinition> resources = new ArrayList<>();
         for (MedicinalProduct medicinalProduct: medicinalProductRepository.findAll()) {
@@ -51,6 +54,7 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
     }
 
     @Search
+    @Transactional
     public MedicinalProductDefinition findByIdentifier(@RequiredParam(name = MedicinalProductDefinition.SP_IDENTIFIER) StringParam identifier) {
         MedicinalProduct medicinalProduct = medicinalProductRepository.findByMpId(identifier.getValue());
 
@@ -61,6 +65,7 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
     }
 
     @Search
+    @Transactional
     public List<MedicinalProductDefinition> findByClassification(@RequiredParam(name = MedicinalProductDefinition.SP_PRODUCT_CLASSIFICATION) StringParam classification) {
         List<MedicinalProduct> medicinalProducts = medicinalProductRepository.findByAtcCodesIn(Collections.singleton(classification.getValue()));
 
@@ -72,6 +77,7 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
 
 
     @Search
+    @Transactional
     public MedicinalProductDefinition findByName(@RequiredParam(name = MedicinalProductDefinition.SP_NAME) StringParam name) {
         MedicinalProduct medicinalProduct = medicinalProductRepository.findByFullName(name.getValue());
 
@@ -92,10 +98,24 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
         identifiers.add(identifier);
         medicinalProductDefinition.setIdentifier(identifiers);
 
+        //Type
+        CodeableConcept typeCodeableConcept = new CodeableConcept();
+        typeCodeableConcept.addCoding(
+                "https://spor.ema.europa.eu/v1/lists/100000000002",
+                "200000025916",
+                "Authorised Medicinal Product"
+        );
+        medicinalProductDefinition.setType(typeCodeableConcept);
+
         //Country
+        // TODO download all possible values and put them inside an entity
+        //      * http://spor.ema.europa.eu/rmswi/#/lists/100000000002/terms
         CodeableConcept countryCodeableConcept = new CodeableConcept();
-        countryCodeableConcept.addCoding("https://spor.ema.europa.eu/v1/lists/100000000002",medicinalProductEntity.getCountry(),medicinalProductEntity.getCountry());
-        medicinalProductDefinition.setType(countryCodeableConcept);
+        countryCodeableConcept.addCoding(
+                "https://spor.ema.europa.eu/v1/lists/100000000002",
+                "TODO use appropriate code",
+                "TODO use appropriate term"
+        );
 
         //Name
         ArrayList<MedicinalProductDefinition.MedicinalProductDefinitionNameComponent> names = new ArrayList<>();

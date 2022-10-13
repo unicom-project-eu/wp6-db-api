@@ -27,6 +27,7 @@ public class PackagedMedicinalProduct {
 
     @OneToMany (mappedBy = "packagedMedicinalProduct")
     @Column(nullable = false)
+    @ToString.Exclude
     private Set<PackageItem> packageItems;
 
     @Override
