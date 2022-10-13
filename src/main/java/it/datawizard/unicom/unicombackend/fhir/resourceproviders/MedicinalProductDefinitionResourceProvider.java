@@ -147,6 +147,10 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
                 authorizedPharmaceuticalDoseFormCodeableConcept
         ));
 
+        // TODO marketing authorization holder
+        //      * https://build.fhir.org/medicinalproductdefinition.html#authorisations
+        //        A key aspect of a regulated medicinal product is the authorisation (marketing authorisation). This is not directly carried on the product resource, but instead a RegulatedAuthorization resource is created which points back to this resource.
+
         return medicinalProductDefinition;
     }
 }
