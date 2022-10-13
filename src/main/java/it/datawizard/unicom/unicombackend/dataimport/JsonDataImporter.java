@@ -26,6 +26,7 @@ public class JsonDataImporter {
     private final PackageItemRepository packageItemRepository;
     private final PackagedMedicinalProductRepository packagedMedicinalProductRepository;
     private final MedicinalProductRepository medicinalProductRepository;
+    private final AtcCodeRepository atcCodeRepository;
     private final PharmaceuticalProductRepository pharmaceuticalProductRepository;
     private final EdqmDoseFormRepository edqmDoseFormRepository;
     private final EdqmUnitOfPresentationRepository edqmUnitOfPresentationRepository;
@@ -35,11 +36,12 @@ public class JsonDataImporter {
     private final SubstanceRepository substanceRepository;
 
     @Autowired
-    public JsonDataImporter(ManufacturedItemRepository manufacturedItemRepository, PackageItemRepository packageItemRepository, PackagedMedicinalProductRepository packagedMedicinalProductRepository, MedicinalProductRepository medicinalProductRepository, PharmaceuticalProductRepository pharmaceuticalProductRepository, EdqmDoseFormRepository edqmDoseFormRepository, EdqmUnitOfPresentationRepository edqmUnitOfPresentationRepository, EdqmRouteOfAdministrationRepository edqmRouteOfAdministrationRepository, IngredientRepository ingredientRepository, StrengthRepository strengthRepository, SubstanceRepository substanceRepository) {
+    public JsonDataImporter(ManufacturedItemRepository manufacturedItemRepository, PackageItemRepository packageItemRepository, PackagedMedicinalProductRepository packagedMedicinalProductRepository, MedicinalProductRepository medicinalProductRepository, AtcCodeRepository atcCodeRepository, PharmaceuticalProductRepository pharmaceuticalProductRepository, EdqmDoseFormRepository edqmDoseFormRepository, EdqmUnitOfPresentationRepository edqmUnitOfPresentationRepository, EdqmRouteOfAdministrationRepository edqmRouteOfAdministrationRepository, IngredientRepository ingredientRepository, StrengthRepository strengthRepository, SubstanceRepository substanceRepository) {
         this.manufacturedItemRepository = manufacturedItemRepository;
         this.packageItemRepository = packageItemRepository;
         this.packagedMedicinalProductRepository = packagedMedicinalProductRepository;
         this.medicinalProductRepository = medicinalProductRepository;
+        this.atcCodeRepository = atcCodeRepository;
         this.pharmaceuticalProductRepository = pharmaceuticalProductRepository;
         this.edqmDoseFormRepository = edqmDoseFormRepository;
         this.edqmUnitOfPresentationRepository = edqmUnitOfPresentationRepository;
@@ -118,6 +120,15 @@ public class JsonDataImporter {
 
             medicinalProductRepository.save(medicinalProduct);
 
+            // PackagedMedicinalProduct > MedicinalProduct > atcCodes
+            medicinalProduct.setAtcCodes(
+                    medicinalProduct.getAtcCodes().stream().map(atcCode -> {
+                                atcCode.setMedicinalProduct(medicinalProduct);
+                                return atcCodeRepository.save(atcCode);
+                            })
+                            .collect(Collectors.toSet())
+            );
+
             // PackagedMedicinalProduct
             packagedMedicinalProduct.setMedicinalProduct(medicinalProduct);
 
@@ -130,7 +141,6 @@ public class JsonDataImporter {
         }
     }
 
-    @Transactional
     private void savePackageItem(PackageItem packageItem) {
         packageItemRepository.save(packageItem);
 

@@ -22,8 +22,7 @@ import java.util.stream.Collectors;
 
 @Component
 public class MedicinalProductDefinitionResourceProvider implements IResourceProvider {
-
-    private MedicinalProductRepository medicinalProductRepository;
+    private final MedicinalProductRepository medicinalProductRepository;
 
     @Autowired
     public MedicinalProductDefinitionResourceProvider(MedicinalProductRepository medicinalProductRepository) {
@@ -68,7 +67,7 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
         if (medicinalProducts == null)
             return null;
 
-        return medicinalProducts.stream().map((medicinalProduct -> medicinalProductDefinitionFromEntity(medicinalProduct))).collect(Collectors.toList());
+        return medicinalProducts.stream().map((MedicinalProductDefinitionResourceProvider::medicinalProductDefinitionFromEntity)).collect(Collectors.toList());
     }
 
 
