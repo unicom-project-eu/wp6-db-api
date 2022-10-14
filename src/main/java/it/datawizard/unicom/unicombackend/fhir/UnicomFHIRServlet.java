@@ -4,10 +4,7 @@ package it.datawizard.unicom.unicombackend.fhir;
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.RestfulServer;
-import it.datawizard.unicom.unicombackend.fhir.resourceproviders.AdministrableProductDefinitionResourceProvider;
-import it.datawizard.unicom.unicombackend.fhir.resourceproviders.IngredientResourceProvider;
-import it.datawizard.unicom.unicombackend.fhir.resourceproviders.MedicationKnowledgeResourceProvider;
-import it.datawizard.unicom.unicombackend.fhir.resourceproviders.MedicinalProductDefinitionResourceProvider;
+import it.datawizard.unicom.unicombackend.fhir.resourceproviders.*;
 import it.datawizard.unicom.unicombackend.fhir.tenants.UnicomTenantIdentificationStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,10 +27,12 @@ public class UnicomFHIRServlet extends RestfulServer {
     final private AdministrableProductDefinitionResourceProvider administrableProductDefinitionResourceProvider;
     final private MedicinalProductDefinitionResourceProvider medicinalProductDefinitionResourceProvider;
 
+    final private PackagedProductDefinitionResourceProvider packagedProductDefinitionResourceProvider;
+
     final private UnicomOpenApiInterceptor unicomOpenApiInterceptor;
 
     @Autowired
-    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, UnicomOpenApiInterceptor unicomOpenApiInterceptor, UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy, FhirContext fhirContext, IngredientResourceProvider ingredientResourceProvider, AdministrableProductDefinitionResourceProvider administrableProductDefinitionResourceProvider, MedicinalProductDefinitionResourceProvider medicinalProductDefinitionResourceProvider) {
+    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, UnicomOpenApiInterceptor unicomOpenApiInterceptor, UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy, FhirContext fhirContext, IngredientResourceProvider ingredientResourceProvider, AdministrableProductDefinitionResourceProvider administrableProductDefinitionResourceProvider, MedicinalProductDefinitionResourceProvider medicinalProductDefinitionResourceProvider, PackagedProductDefinitionResourceProvider packagedProductDefinitionResourceProvider) {
         this.medicationKnowledgeResourceProvider = medicationKnowledgeResourceProvider;
         this.unicomOpenApiInterceptor = unicomOpenApiInterceptor;
         this.unicomTenantIdentificationStrategy = unicomTenantIdentificationStrategy;
@@ -41,6 +40,7 @@ public class UnicomFHIRServlet extends RestfulServer {
         this.ingredientResourceProvider = ingredientResourceProvider;
         this.administrableProductDefinitionResourceProvider = administrableProductDefinitionResourceProvider;
         this.medicinalProductDefinitionResourceProvider = medicinalProductDefinitionResourceProvider;
+        this.packagedProductDefinitionResourceProvider = packagedProductDefinitionResourceProvider;
     }
 
     /**
@@ -62,6 +62,7 @@ public class UnicomFHIRServlet extends RestfulServer {
         resourceProviders.add(ingredientResourceProvider);
         resourceProviders.add(administrableProductDefinitionResourceProvider);
         resourceProviders.add(medicinalProductDefinitionResourceProvider);
+        resourceProviders.add(packagedProductDefinitionResourceProvider);
         setResourceProviders(resourceProviders);
 
         // register swagger interceptor

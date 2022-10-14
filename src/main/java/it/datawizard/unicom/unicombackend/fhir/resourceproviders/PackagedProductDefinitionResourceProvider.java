@@ -18,6 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Component
 public class PackagedProductDefinitionResourceProvider implements IResourceProvider {
@@ -86,22 +87,28 @@ public class PackagedProductDefinitionResourceProvider implements IResourceProvi
         //Package
 
         PackagedProductDefinition.PackagedProductDefinitionPackageComponent packagedProductDefinitionPackageComponent = new PackagedProductDefinition.PackagedProductDefinitionPackageComponent();
+        PackagedProductDefinition.PackagedProductDefinitionPackageComponent packageContentComponent = new PackagedProductDefinition.PackagedProductDefinitionPackageComponent();
         for (PackageItem packageItem : packagedProductEntity.getPackageItems()) {
-            PackagedProductDefinition.PackagedProductDefinitionPackageComponent packageContentComponent = new PackagedProductDefinition.PackagedProductDefinitionPackageComponent();
             //Type
-            // TODO download all possible values and put them inside an entity
-            //      * https://spor.ema.europa.eu/rmswi/#/lists/100000073346/terms
             CodeableConcept packageTypeCodeableConcept = new CodeableConcept();
             packageTypeCodeableConcept.addCoding(
                     "https://spor.ema.europa.eu/v1/lists/100000073346",
-                    "TODO use appropriate code",
-                    "TODO use appropriate term"
+                    packageItem.getType().getCode(),
+                    packageItem.getType().getDefinition()
             );
             packageContentComponent.setType(packageTypeCodeableConcept);
 
-            //TODO: Set package item references
-
             //TODO: Set manufactured item references
+            packageContentComponent.setContainedItem(packageItem.getManufacturedItems().stream().map((manufacturedItem) -> {
+                        CodeableReference childPackageReference = new CodeableReference();
+                        CodeableConcept childPackageCodeableConcept = new CodeableConcept();
+                        //TODO: Find the right way to insert manufacturedProduct, as it should be provided as BackboneElement
+                        childPackageCodeableConcept.addCoding(
+                                "TODO find the right coding if it exists", manufacturedItem.getId().toString(), manufacturedItem.getId().toString()
+                        );
+                        childPackageReference.setConcept(childPackageCodeableConcept);
+                        return new PackagedProductDefinition.PackagedProductDefinitionPackageContainedItemComponent(childPackageReference);
+                    }).collect(Collectors.toList()));
 
             //Quantity
             packageContentComponent.setQuantity(packageItem.getPackageItemQuantity());
