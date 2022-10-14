@@ -78,7 +78,7 @@ class PharmaceuticalProduct:
     pass
 
 @csv_mapping(
-    primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['mpPrimaryKey']),
+    primaryKey=AttributeInfo(is_key=True, is_hidden=False, set_value=lambda x: x['phpPrimaryKey'] + x['Medicinal Product Name'] + str(x['Package Size'])),
     # mpId=AttributeInfo(set_value=lambda x: x['mpId']),
     # fullName=AttributeInfo(set_value=lambda x: x['fullName']),
     # atcCodes=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(x['atcCodes'])),
@@ -167,14 +167,14 @@ if __name__ == '__main__':
     #     'strengthPresentationNumeratorValue': float,
     #     'strengthPresentationDenominatorValue': float,
     })
-    df = df.drop(df[df['Priorità'] >= 3].index)
+    df = df.drop(df[df['Priorità'] > 1].index)
     df = df.replace(np.nan, None)
 
     # add local pharmaceuticalProductPrimaryKey
     # regex = r'Substance [0-9]+ \(SMS code\)'
     # substances_cols = [col for col in df if re.match(regex, col)]
 
-    df['__pharmaceuticalProductPrimaryKey'] = df['Principio Attivo'] + x['Dose form (EDQM Code)'] + # TODO fix this
+    df['phpPrimaryKey'] = df['Principio Attivo'] + df['Dose form (EDQM Code)'] + df['Active Ingredient 1 Numerator Quantity'] + ' ' + df['Active Ingredient 1 Numerator Unit of Mesurement (UCUM)']
 
     packages_list = []
 
