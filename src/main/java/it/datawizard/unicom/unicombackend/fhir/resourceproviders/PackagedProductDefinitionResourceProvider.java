@@ -74,17 +74,6 @@ public class PackagedProductDefinitionResourceProvider implements IResourceProvi
         identifiers.add(identifier);
         packagedProductDefinition.setIdentifier(identifiers);
 
-        //Type
-        // TODO download all possible values and put them inside an entity
-        //      * https://spor.ema.europa.eu/rmswi/#/lists/100000073346/terms
-        CodeableConcept typeCodeableConcept = new CodeableConcept();
-        typeCodeableConcept.addCoding(
-                "https://spor.ema.europa.eu/v1/lists/100000073346",
-                "TODO use appropriate code",
-                "TODO use appropriate term"
-        );
-        packagedProductDefinition.setType(typeCodeableConcept);
-
         //Country
         // TODO download all possible values and put them inside an entity
         //      * http://spor.ema.europa.eu/rmswi/#/lists/100000000002/terms
@@ -94,14 +83,29 @@ public class PackagedProductDefinitionResourceProvider implements IResourceProvi
                 "TODO use appropriate code",
                 "TODO use appropriate term"
         );
-
         //Package
+
         PackagedProductDefinition.PackagedProductDefinitionPackageComponent packagedProductDefinitionPackageComponent = new PackagedProductDefinition.PackagedProductDefinitionPackageComponent();
         for (PackageItem packageItem : packagedProductEntity.getPackageItems()) {
-            //TODO: Set package type https://spor.ema.europa.eu/v1/lists/100000073346
+            PackagedProductDefinition.PackagedProductDefinitionPackageComponent packageContentComponent = new PackagedProductDefinition.PackagedProductDefinitionPackageComponent();
+            //Type
+            // TODO download all possible values and put them inside an entity
+            //      * https://spor.ema.europa.eu/rmswi/#/lists/100000073346/terms
+            CodeableConcept packageTypeCodeableConcept = new CodeableConcept();
+            packageTypeCodeableConcept.addCoding(
+                    "https://spor.ema.europa.eu/v1/lists/100000073346",
+                    "TODO use appropriate code",
+                    "TODO use appropriate term"
+            );
+            packageContentComponent.setType(packageTypeCodeableConcept);
+
             //TODO: Set package item references
+
             //TODO: Set manufactured item references
-            //TODO: Set package quantity https://spor.ema.europa.eu/v1/lists/100000000008
+
+            //Quantity
+            packageContentComponent.setQuantity(packageItem.getPackageItemQuantity());
+            packagedProductDefinitionPackageComponent.addPackage(packageContentComponent);
         }
         packagedProductDefinition.setPackage(packagedProductDefinitionPackageComponent);
 
