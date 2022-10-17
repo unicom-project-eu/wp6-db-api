@@ -8,6 +8,7 @@ import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackageItem;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
+import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmPackageItemType;
 import it.datawizard.unicom.unicombackend.jpa.repository.PackagedMedicinalProductRepository;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
@@ -18,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Component
@@ -84,38 +86,85 @@ public class PackagedProductDefinitionResourceProvider implements IResourceProvi
                 "TODO use appropriate code",
                 "TODO use appropriate term"
         );
-        //Package
 
-        PackagedProductDefinition.PackagedProductDefinitionPackageComponent packagedProductDefinitionPackageComponent = new PackagedProductDefinition.PackagedProductDefinitionPackageComponent();
-        PackagedProductDefinition.PackagedProductDefinitionPackageComponent packageContentComponent = new PackagedProductDefinition.PackagedProductDefinitionPackageComponent();
-        for (PackageItem packageItem : packagedProductEntity.getPackageItems()) {
-            //Type
+        //Package
+        Set<PackageItem> packageItemEntities = packagedProductEntity.getPackageItems();
+        if (packageItemEntities.size() == 1) {
+            packagedProductDefinition.setPackage(
+                    packageFromEntity((PackageItem) packageItemEntities.toArray()[0])
+            );
+        }
+
+        else if (packageItemEntities.size() > 1) {
+            PackagedProductDefinition.PackagedProductDefinitionPackageComponent outerPackage
+                    = new PackagedProductDefinition.PackagedProductDefinitionPackageComponent();
+
+            outerPackage.setPackage(
+                    packageItemEntities.stream().map(PackagedProductDefinitionResourceProvider::packageFromEntity)
+                            .toList()
+            );
+
+            packagedProductDefinition.setPackage(outerPackage);
+        }
+
+        return packagedProductDefinition;
+    }
+
+    public static PackagedProductDefinition.PackagedProductDefinitionPackageComponent packageFromEntity(PackageItem packageItemEntity) {
+        PackagedProductDefinition.PackagedProductDefinitionPackageComponent fhirPackage
+                = new PackagedProductDefinition.PackagedProductDefinitionPackageComponent();
+
+        //Type
+        EdqmPackageItemType packageItemType = packageItemEntity.getType();
+        if (packageItemType != null) {
             CodeableConcept packageTypeCodeableConcept = new CodeableConcept();
             packageTypeCodeableConcept.addCoding(
                     "https://spor.ema.europa.eu/v1/lists/100000073346",
-                    packageItem.getType().getCode(),
-                    packageItem.getType().getDefinition()
+                    packageItemEntity.getType().getCode(),
+                    packageItemEntity.getType().getDefinition()
             );
-            packageContentComponent.setType(packageTypeCodeableConcept);
-
-            //TODO: Set manufactured item references
-            packageContentComponent.setContainedItem(packageItem.getManufacturedItems().stream().map((manufacturedItem) -> {
-                        CodeableReference childPackageReference = new CodeableReference();
-                        CodeableConcept childPackageCodeableConcept = new CodeableConcept();
-                        //TODO: Find the right way to insert manufacturedProduct, as it should be provided as BackboneElement
-                        childPackageCodeableConcept.addCoding(
-                                "TODO find the right coding if it exists", manufacturedItem.getId().toString(), manufacturedItem.getId().toString()
-                        );
-                        childPackageReference.setConcept(childPackageCodeableConcept);
-                        return new PackagedProductDefinition.PackagedProductDefinitionPackageContainedItemComponent(childPackageReference);
-                    }).collect(Collectors.toList()));
-
-            //Quantity
-            packageContentComponent.setQuantity(packageItem.getPackageItemQuantity());
-            packagedProductDefinitionPackageComponent.addPackage(packageContentComponent);
+            fhirPackage.setType(packageTypeCodeableConcept);
         }
-        packagedProductDefinition.setPackage(packagedProductDefinitionPackageComponent);
 
-        return packagedProductDefinition;
+        // Quantity
+        fhirPackage.setQuantity(packageItemEntity.getPackageItemQuantity());
+
+        // Inner packages
+        fhirPackage.setPackage(
+                packageItemEntity.getChildrenPackageItems().stream()
+                        .map(PackagedProductDefinitionResourceProvider::packageFromEntity)
+                        .toList()
+        );
+
+        return fhirPackage;
+        //packageItemEntity.
+//        PackagedProductDefinition.PackagedProductDefinitionPackageComponent packageContentComponent = new PackagedProductDefinition.PackagedProductDefinitionPackageComponent();
+//        for (PackageItem packageItemEntity : packagedProductEntity.getPackageItems()) {
+//            //Type
+//            CodeableConcept packageTypeCodeableConcept = new CodeableConcept();
+//            packageTypeCodeableConcept.addCoding(
+//                    "https://spor.ema.europa.eu/v1/lists/100000073346",
+//                    packageItemEntity.getType().getCode(),
+//                    packageItemEntity.getType().getDefinition()
+//            );
+//            packageContentComponent.setType(packageTypeCodeableConcept);
+//
+//            //TODO: Set manufactured item references
+//
+//            packageContentComponent.setContainedItem(packageItemEntity.getManufacturedItems().stream().map((manufacturedItem) -> {
+//                CodeableReference childPackageReference = new CodeableReference();
+//                CodeableConcept childPackageCodeableConcept = new CodeableConcept();
+//                //TODO: Find the right way to insert manufacturedProduct, as it should be provided as BackboneElement
+//                childPackageCodeableConcept.addCoding(
+//                        "TODO find the right coding if it exists", manufacturedItem.getId().toString(), manufacturedItem.getId().toString()
+//                );
+//                childPackageReference.setConcept(childPackageCodeableConcept);
+//                return new PackagedProductDefinition.PackagedProductDefinitionPackageContainedItemComponent(childPackageReference);
+//            }).collect(Collectors.toList()));
+//
+//            //Quantity
+//            packageContentComponent.setQuantity(packageItemEntity.getPackageItemQuantity());
+//            outerPackage.addPackage(packageContentComponent);
+//        }
     }
 }
