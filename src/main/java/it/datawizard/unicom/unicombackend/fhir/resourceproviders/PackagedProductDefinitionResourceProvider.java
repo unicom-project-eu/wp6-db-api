@@ -145,42 +145,27 @@ public class PackagedProductDefinitionResourceProvider implements IResourceProvi
         );
 
         return fhirPackage;
-        //packageItemEntity.
-//        PackagedProductDefinition.PackagedProductDefinitionPackageComponent packageContentComponent = new PackagedProductDefinition.PackagedProductDefinitionPackageComponent();
-//        for (PackageItem packageItemEntity : packagedProductEntity.getPackageItems()) {
-//            //Type
-//            CodeableConcept packageTypeCodeableConcept = new CodeableConcept();
-//            packageTypeCodeableConcept.addCoding(
-//                    "https://spor.ema.europa.eu/v1/lists/100000073346",
-//                    packageItemEntity.getType().getCode(),
-//                    packageItemEntity.getType().getDefinition()
-//            );
-//            packageContentComponent.setType(packageTypeCodeableConcept);
-//
-//            //TODO: Set manufactured item references
-//
-//            packageContentComponent.setContainedItem(packageItemEntity.getManufacturedItems().stream().map((manufacturedItem) -> {
-//                CodeableReference childPackageReference = new CodeableReference();
-//                CodeableConcept childPackageCodeableConcept = new CodeableConcept();
-//                //TODO: Find the right way to insert manufacturedProduct, as it should be provided as BackboneElement
-//                childPackageCodeableConcept.addCoding(
-//                        "TODO find the right coding if it exists", manufacturedItem.getId().toString(), manufacturedItem.getId().toString()
-//                );
-//                childPackageReference.setConcept(childPackageCodeableConcept);
-//                return new PackagedProductDefinition.PackagedProductDefinitionPackageContainedItemComponent(childPackageReference);
-//            }).collect(Collectors.toList()));
-//
-//            //Quantity
-//            packageContentComponent.setQuantity(packageItemEntity.getPackageItemQuantity());
-//            outerPackage.addPackage(packageContentComponent);
-//        }
     }
 
-    public static PackagedProductDefinition.PackagedProductDefinitionPackageContainedItemComponent containedItemFromEntity(ManufacturedItem manufacturedItem) {
+    public static PackagedProductDefinition.PackagedProductDefinitionPackageContainedItemComponent containedItemFromEntity(ManufacturedItem manufacturedItemEntity) {
         PackagedProductDefinition.PackagedProductDefinitionPackageContainedItemComponent fhirContainedItem =
                 new PackagedProductDefinition.PackagedProductDefinitionPackageContainedItemComponent();
 
-        // TODO finish implementing this
+        // manufacturedItem
+        CodeableReference manufacturedItemCodeableReference = new CodeableReference();
+        Reference reference = new Reference();
+        reference.setResource(ManufacturedItemDefinitionResourceProvider.manufacturedItemDefinitionFromEntity(
+                manufacturedItemEntity
+        ));
+        manufacturedItemCodeableReference.setReference(reference);
+        fhirContainedItem.setItem(manufacturedItemCodeableReference);
+
+        // amount
+        Quantity quantity = new Quantity();
+        quantity.setSystem("https://spor.ema.europa.eu/v1/lists/100000110633");
+        quantity.setValue(manufacturedItemEntity.getManufacturedItemQuantity());
+        quantity.setUnit(manufacturedItemEntity.getVolumeUnit());
+        fhirContainedItem.setAmount(quantity);
 
         return fhirContainedItem;
     }
