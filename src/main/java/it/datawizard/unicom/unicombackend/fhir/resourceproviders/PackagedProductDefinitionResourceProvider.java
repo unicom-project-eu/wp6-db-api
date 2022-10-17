@@ -6,6 +6,7 @@ import ca.uhn.fhir.rest.annotation.RequiredParam;
 import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
+import it.datawizard.unicom.unicombackend.jpa.entity.ManufacturedItem;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackageItem;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmPackageItemType;
@@ -121,7 +122,7 @@ public class PackagedProductDefinitionResourceProvider implements IResourceProvi
             packageTypeCodeableConcept.addCoding(
                     "https://spor.ema.europa.eu/v1/lists/100000073346",
                     packageItemEntity.getType().getCode(),
-                    packageItemEntity.getType().getDefinition()
+                    packageItemEntity.getType().getTerm()
             );
             fhirPackage.setType(packageTypeCodeableConcept);
         }
@@ -133,6 +134,13 @@ public class PackagedProductDefinitionResourceProvider implements IResourceProvi
         fhirPackage.setPackage(
                 packageItemEntity.getChildrenPackageItems().stream()
                         .map(PackagedProductDefinitionResourceProvider::packageFromEntity)
+                        .toList()
+        );
+
+        // Contained items (ManufacturedItems)
+        fhirPackage.setContainedItem(
+                packageItemEntity.getManufacturedItems().stream()
+                        .map(PackagedProductDefinitionResourceProvider::containedItemFromEntity)
                         .toList()
         );
 
@@ -166,5 +174,14 @@ public class PackagedProductDefinitionResourceProvider implements IResourceProvi
 //            packageContentComponent.setQuantity(packageItemEntity.getPackageItemQuantity());
 //            outerPackage.addPackage(packageContentComponent);
 //        }
+    }
+
+    public static PackagedProductDefinition.PackagedProductDefinitionPackageContainedItemComponent containedItemFromEntity(ManufacturedItem manufacturedItem) {
+        PackagedProductDefinition.PackagedProductDefinitionPackageContainedItemComponent fhirContainedItem =
+                new PackagedProductDefinition.PackagedProductDefinitionPackageContainedItemComponent();
+
+        // TODO finish implementing this
+
+        return fhirContainedItem;
     }
 }

@@ -26,13 +26,13 @@ public class UnicomFHIRServlet extends RestfulServer {
     final private IngredientResourceProvider ingredientResourceProvider;
     final private AdministrableProductDefinitionResourceProvider administrableProductDefinitionResourceProvider;
     final private MedicinalProductDefinitionResourceProvider medicinalProductDefinitionResourceProvider;
-
     final private PackagedProductDefinitionResourceProvider packagedProductDefinitionResourceProvider;
+    final private ManufacturedItemDefinitionResourceProvider manufacturedItemDefinitionResourceProvider;
 
     final private UnicomOpenApiInterceptor unicomOpenApiInterceptor;
 
     @Autowired
-    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, UnicomOpenApiInterceptor unicomOpenApiInterceptor, UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy, FhirContext fhirContext, IngredientResourceProvider ingredientResourceProvider, AdministrableProductDefinitionResourceProvider administrableProductDefinitionResourceProvider, MedicinalProductDefinitionResourceProvider medicinalProductDefinitionResourceProvider, PackagedProductDefinitionResourceProvider packagedProductDefinitionResourceProvider) {
+    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, UnicomOpenApiInterceptor unicomOpenApiInterceptor, UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy, FhirContext fhirContext, IngredientResourceProvider ingredientResourceProvider, AdministrableProductDefinitionResourceProvider administrableProductDefinitionResourceProvider, MedicinalProductDefinitionResourceProvider medicinalProductDefinitionResourceProvider, PackagedProductDefinitionResourceProvider packagedProductDefinitionResourceProvider, ManufacturedItemDefinitionResourceProvider manufacturedItemDefinitionResourceProvider) {
         this.medicationKnowledgeResourceProvider = medicationKnowledgeResourceProvider;
         this.unicomOpenApiInterceptor = unicomOpenApiInterceptor;
         this.unicomTenantIdentificationStrategy = unicomTenantIdentificationStrategy;
@@ -41,6 +41,7 @@ public class UnicomFHIRServlet extends RestfulServer {
         this.administrableProductDefinitionResourceProvider = administrableProductDefinitionResourceProvider;
         this.medicinalProductDefinitionResourceProvider = medicinalProductDefinitionResourceProvider;
         this.packagedProductDefinitionResourceProvider = packagedProductDefinitionResourceProvider;
+        this.manufacturedItemDefinitionResourceProvider = manufacturedItemDefinitionResourceProvider;
     }
 
     /**
@@ -63,6 +64,7 @@ public class UnicomFHIRServlet extends RestfulServer {
         resourceProviders.add(administrableProductDefinitionResourceProvider);
         resourceProviders.add(medicinalProductDefinitionResourceProvider);
         resourceProviders.add(packagedProductDefinitionResourceProvider);
+        resourceProviders.add(manufacturedItemDefinitionResourceProvider);
         setResourceProviders(resourceProviders);
 
         // register swagger interceptor
