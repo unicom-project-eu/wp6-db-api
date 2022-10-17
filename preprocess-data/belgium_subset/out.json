@@ -10,7 +10,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 13.87,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 10.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -32,34 +60,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 13.87,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 10.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -75,7 +75,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 30.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 13.87,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 10.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -97,34 +125,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 13.87,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 10.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -140,7 +140,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 13.87,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 10.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -162,34 +190,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 13.87,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 10.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -205,7 +205,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 13.87,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 10.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -227,34 +255,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 13.87,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 10.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -270,7 +270,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 13.87,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 10.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -292,34 +320,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 13.87,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 10.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -335,7 +335,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 30.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 13.87,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 10.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -357,34 +385,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 13.87,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 10.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -400,7 +400,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 13.87,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 10.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -422,34 +450,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 13.87,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 10.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -465,7 +465,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 13.87,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 10.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -487,34 +515,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 13.87,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 10.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -530,7 +530,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 30.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 13.87,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 10.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -552,34 +580,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 13.87,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 10.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -595,7 +595,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 13.87,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 10.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -617,34 +645,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 13.87,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 10.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -660,7 +660,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 13.87,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 10.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -682,34 +710,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 13.87,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 10.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -725,7 +725,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 30.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 13.87,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 10.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -747,34 +775,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 13.87,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 10.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -790,7 +790,35 @@
           "manufacturedDoseForm": "10210000",
           "unitOfPresentation": "15012000",
           "manufacturedItemQuantity": 100.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 13.87,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 10.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -812,34 +840,6 @@
       "unitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 13.87,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 10.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -855,7 +855,35 @@
           "manufacturedDoseForm": "10210000",
           "unitOfPresentation": "15012000",
           "manufacturedItemQuantity": 30.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 13.87,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 10.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -877,34 +905,6 @@
       "unitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 13.87,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 10.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -920,7 +920,35 @@
           "manufacturedDoseForm": "10210000",
           "unitOfPresentation": "15012000",
           "manufacturedItemQuantity": 30.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 13.87,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 10.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -942,34 +970,6 @@
       "unitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 13.87,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 10.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -985,7 +985,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 28.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -1007,34 +1035,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -1050,7 +1050,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 98.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -1072,34 +1100,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -1115,7 +1115,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -1137,34 +1165,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -1180,7 +1180,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -1202,34 +1230,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -1245,7 +1245,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -1267,34 +1295,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -1310,7 +1310,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 30.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -1332,34 +1360,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -1375,7 +1375,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 60.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -1397,34 +1425,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -1440,7 +1440,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 28.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -1462,34 +1490,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -1505,7 +1505,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 98.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -1527,34 +1555,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -1570,7 +1570,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 100.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -1592,34 +1620,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -1635,7 +1635,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 30.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -1657,34 +1685,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -1700,7 +1700,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 28.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -1722,34 +1750,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -1765,7 +1765,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 56.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -1787,34 +1815,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -1830,7 +1830,35 @@
           "manufacturedDoseForm": "10219000",
           "unitOfPresentation": "15054000",
           "manufacturedItemQuantity": 98.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -1852,34 +1880,6 @@
       "unitOfPresentation": "15054000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -1895,7 +1895,35 @@
           "manufacturedDoseForm": "10210000",
           "unitOfPresentation": "15012000",
           "manufacturedItemQuantity": 28.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -1917,34 +1945,6 @@
       "unitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -1960,7 +1960,35 @@
           "manufacturedDoseForm": "10210000",
           "unitOfPresentation": "15012000",
           "manufacturedItemQuantity": 30.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -1982,34 +2010,6 @@
       "unitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -2025,7 +2025,35 @@
           "manufacturedDoseForm": "10210000",
           "unitOfPresentation": "15012000",
           "manufacturedItemQuantity": 56.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -2047,34 +2075,6 @@
       "unitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }
@@ -2090,7 +2090,35 @@
           "manufacturedDoseForm": "10210000",
           "unitOfPresentation": "15012000",
           "manufacturedItemQuantity": 98.0,
-          "volumeUnit": null
+          "volumeUnit": null,
+          "ingredients": [
+            {
+              "role": "100000072072",
+              "substance": {
+                "substanceCode": "100000090079"
+              },
+              "referenceStrength": {
+                "concentrationNumeratorValue": 6.93,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": null,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              },
+              "strength": {
+                "concentrationNumeratorValue": null,
+                "concentrationDenominatorValue": null,
+                "concentrationNumeratorUnit": null,
+                "concentrationDenominatorUnit": null,
+                "presentationNumeratorValue": 5.0,
+                "presentationDenominatorValue": null,
+                "presentationNumeratorUnit": null,
+                "presentationDenominatorUnit": null
+              }
+            }
+          ]
         }
       ],
       "parentPackageItem": null,
@@ -2112,34 +2140,6 @@
       "unitOfPresentation": "15012000",
       "routesOfAdministration": [
         "20053000"
-      ],
-      "ingredients": [
-        {
-          "role": "100000072072",
-          "substance": {
-            "substanceCode": "100000090079"
-          },
-          "referenceStrength": {
-            "concentrationNumeratorValue": 6.93,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": null,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          },
-          "strength": {
-            "concentrationNumeratorValue": null,
-            "concentrationDenominatorValue": null,
-            "concentrationNumeratorUnit": null,
-            "concentrationDenominatorUnit": null,
-            "presentationNumeratorValue": 5.0,
-            "presentationDenominatorValue": null,
-            "presentationNumeratorUnit": null,
-            "presentationDenominatorUnit": null
-          }
-        }
       ]
     }
   }

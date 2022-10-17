@@ -69,10 +69,6 @@ class Ingredient:
     administrableDoseForm=AttributeInfo(set_value=lambda x: x['administrableDoseForm']),
     unitOfPresentation=AttributeInfo(set_value=lambda x: x['pharmaceuticalProductUnitOfPresentation']),
     routesOfAdministration=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(x['routesOfAdministration'])),
-    ingredients=AttributeInfo(set_value=lambda x: [
-        # Assume only one Ingredient
-        Ingredient(x)
-    ]),
 )
 class PharmaceuticalProduct:
     pass
@@ -138,6 +134,11 @@ class PackageItem():
                         'unitOfPresentation': x['Unit of Presentation 1 (EDQM Code)'],
                         'manufacturedItemQuantity': x['Package Size'] if x['Priorità'] <= 2 else None,
                         'volumeUnit':  None if x['Priorità'] <= 2 else x['Active Ingredient 1 Numerator Unit of Mesurement (UCUM)'],
+
+                        'ingredients': [
+                            TODO sistema qui
+                            Ingredient(x)
+                        ]),
                     }),
                 ],
                 'childrenPackageItems': [],

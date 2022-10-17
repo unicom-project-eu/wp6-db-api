@@ -33,10 +33,6 @@ public class PharmaceuticalProduct {
     @ToString.Exclude
     private EdqmUnitOfPresentation unitOfPresentation;
 
-    @OneToMany(mappedBy = "pharmaceuticalProduct")
-    @ToString.Exclude
-    private Set<Ingredient> ingredients;
-
     @ManyToMany
     @JoinTable()
     @ToString.Exclude

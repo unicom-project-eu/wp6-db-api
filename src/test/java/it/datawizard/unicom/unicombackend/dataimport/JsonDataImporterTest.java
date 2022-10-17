@@ -38,72 +38,72 @@ class JsonDataImporterTest {
 
     private final String packagedMedicinalProductJsonString = """
                   [
-                  {
-                    "pcId": null,
-                    "packSize": 30,
-                    "packageItems": [
-                      {
-                        "type": null,
-                        "packageItemQuantity": 30,
-                        "manufacturedItems": [
-                          {
-                            "manufacturedDoseForm": "10219000",
-                            "unitOfPresentation": "15054000",
-                            "manufacturedItemQuantity": 30.0,
-                            "volumeUnit": null
-                          }
-                        ],
-                        "parentPackageItem": null,
-                        "childrenPackageItems": []
-                      }
-                    ],
-                    "medicinalProduct": {
-                      "mpId": null,
-                      "fullName": "Amlodipin AB tabl. 10 mg",
-                      "atcCodes": [
-                        "C08CA01"
-                      ],
-                      "authorizedPharmaceuticalDoseForm": "10219000",
-                      "marketingAuthorizationHolderCode": null,
-                      "marketingAuthorizationHolderLabel": null,
-                      "country": "BEL",
-                      "pharmaceuticalProduct": {
-                        "administrableDoseForm": "10219000",
-                        "unitOfPresentation": "15054000",
-                        "routesOfAdministration": [
-                          "20053000"
-                        ],
-                        "ingredients": [
-                          {
-                            "role": "100000072072",
-                            "substance": {
-                              "substanceCode": "100000090079"
-                            },
-                            "referenceStrength": {
-                              "concentrationNumeratorValue": 13.87,
-                              "concentrationDenominatorValue": null,
-                              "concentrationNumeratorUnit": null,
-                              "concentrationDenominatorUnit": null,
-                              "presentationNumeratorValue": null,
-                              "presentationDenominatorValue": null,
-                              "presentationNumeratorUnit": null,
-                              "presentationDenominatorUnit": null
-                            },
-                            "strength": {
-                              "concentrationNumeratorValue": null,
-                              "concentrationDenominatorValue": null,
-                              "concentrationNumeratorUnit": null,
-                              "concentrationDenominatorUnit": null,
-                              "presentationNumeratorValue": 10.0,
-                              "presentationDenominatorValue": null,
-                              "presentationNumeratorUnit": null,
-                              "presentationDenominatorUnit": null
+                    {
+                      "pcId": null,
+                      "packSize": 98,
+                      "packageItems": [
+                        {
+                          "type": null,
+                          "packageItemQuantity": 98,
+                          "manufacturedItems": [
+                            {
+                              "manufacturedDoseForm": "10210000",
+                              "unitOfPresentation": "15012000",
+                              "manufacturedItemQuantity": 98.0,
+                              "volumeUnit": null,
+                              "ingredients": [
+                                {
+                                  "role": "100000072072",
+                                  "substance": {
+                                    "substanceCode": "100000090079"
+                                  },
+                                  "referenceStrength": {
+                                    "concentrationNumeratorValue": 6.93,
+                                    "concentrationDenominatorValue": null,
+                                    "concentrationNumeratorUnit": null,
+                                    "concentrationDenominatorUnit": null,
+                                    "presentationNumeratorValue": null,
+                                    "presentationDenominatorValue": null,
+                                    "presentationNumeratorUnit": null,
+                                    "presentationDenominatorUnit": null
+                                  },
+                                  "strength": {
+                                    "concentrationNumeratorValue": null,
+                                    "concentrationDenominatorValue": null,
+                                    "concentrationNumeratorUnit": null,
+                                    "concentrationDenominatorUnit": null,
+                                    "presentationNumeratorValue": 5.0,
+                                    "presentationDenominatorValue": null,
+                                    "presentationNumeratorUnit": null,
+                                    "presentationDenominatorUnit": null
+                                  }
+                                }
+                              ]
                             }
-                          }
-                        ]
+                          ],
+                          "parentPackageItem": null,
+                          "childrenPackageItems": []
+                        }
+                      ],
+                      "medicinalProduct": {
+                        "mpId": null,
+                        "fullName": "Amlor harde caps. 5 mg",
+                        "atcCodes": [
+                          "C08CA01"
+                        ],
+                        "authorizedPharmaceuticalDoseForm": "10210000",
+                        "marketingAuthorizationHolderCode": null,
+                        "marketingAuthorizationHolderLabel": null,
+                        "country": "BEL",
+                        "pharmaceuticalProduct": {
+                          "administrableDoseForm": "10210000",
+                          "unitOfPresentation": "15012000",
+                          "routesOfAdministration": [
+                            "20053000"
+                          ]
+                        }
                       }
                     }
-                  }
                   ]""";
 
     @Test

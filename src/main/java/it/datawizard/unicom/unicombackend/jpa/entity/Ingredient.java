@@ -34,7 +34,7 @@ public class Ingredient {
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    private PharmaceuticalProduct pharmaceuticalProduct;
+    private ManufacturedItem manufacturedItem;
 
     @Override
     public boolean equals(Object o) {

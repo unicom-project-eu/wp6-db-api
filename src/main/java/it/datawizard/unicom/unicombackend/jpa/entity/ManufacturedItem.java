@@ -42,6 +42,10 @@ public class ManufacturedItem {
     @ToString.Exclude
     private PackageItem packageItem;
 
+    @OneToMany(mappedBy = "manufacturedItem")
+    @ToString.Exclude
+    private Set<Ingredient> ingredients;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

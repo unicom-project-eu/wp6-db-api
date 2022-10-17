@@ -70,25 +70,6 @@ public class JsonDataImporter {
 
             pharmaceuticalProduct = pharmaceuticalProductRepository.save(pharmaceuticalProduct);
 
-            // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct > ingredients
-            for (Ingredient ingredient : pharmaceuticalProduct.getIngredients()) {
-                // referenceStrength
-                Strength referenceStrength = strengthRepository.save(ingredient.getReferenceStrength());
-                ingredient.setReferenceStrength(referenceStrength);
-
-                // strength
-                Strength strength = strengthRepository.save(ingredient.getStrength());
-                ingredient.setStrength(strength);
-
-                // substance
-                ingredient.setSubstance(
-                    substanceRepository.findById(ingredient.getSubstance().getSubstanceCode()).orElseThrow()
-                );
-
-                ingredient.setPharmaceuticalProduct(pharmaceuticalProduct);
-                ingredientRepository.save(ingredient);
-            }
-
             // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct > administrableDoseForm
             pharmaceuticalProduct.setAdministrableDoseForm(
                 edqmDoseFormRepository.findById(pharmaceuticalProduct.getAdministrableDoseForm().getCode())
@@ -162,8 +143,28 @@ public class JsonDataImporter {
             );
 
             manufacturedItemRepository.save(manufacturedItem);
+
+            // ManufacturedItem > ingredients
+            for (Ingredient ingredient :  manufacturedItem.getIngredients()) {
+                // referenceStrength
+                Strength referenceStrength = strengthRepository.save(ingredient.getReferenceStrength());
+                ingredient.setReferenceStrength(referenceStrength);
+
+                // strength
+                Strength strength = strengthRepository.save(ingredient.getStrength());
+                ingredient.setStrength(strength);
+
+                // substance
+                ingredient.setSubstance(
+                        substanceRepository.findById(ingredient.getSubstance().getSubstanceCode()).orElseThrow()
+                );
+
+                ingredient.setManufacturedItem(manufacturedItem);
+                ingredientRepository.save(ingredient);
+            }
         });
 
+        // PackageItem > childrenPackageItems
         for (PackageItem childPackageItem : packageItem.getChildrenPackageItems()) {
             savePackageItem(childPackageItem);
         }

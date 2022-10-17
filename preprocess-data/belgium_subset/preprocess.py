@@ -68,10 +68,6 @@ class Ingredient:
     administrableDoseForm=AttributeInfo(set_value=lambda x: x['administrableDoseForm']),
     unitOfPresentation=AttributeInfo(set_value=lambda x: x['pharmaceuticalProductUnitOfPresentation']),
     routesOfAdministration=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(x['routesOfAdministration'])),
-    ingredients=AttributeInfo(set_value=lambda x: [
-        # Assume only one Ingredient
-        Ingredient(x)
-    ]),
 )
 class PharmaceuticalProduct:
     pass
@@ -100,6 +96,10 @@ class MedicinalProduct:
     unitOfPresentation=AttributeInfo(set_value=lambda x: x['manufacturedItemUnitOfPresentation']),
     manufacturedItemQuantity=AttributeInfo(set_value=lambda x: x['manufacturedItemQuantity']),
     volumeUnit=AttributeInfo(set_value=lambda x: x['manufacturedItemQuantityVolumeUnit']),
+    ingredients=AttributeInfo(set_value=lambda x: [
+        # Assume only one Ingredient
+        Ingredient(x)
+    ]),
 )
 class ManufacturedItem:
     pass
