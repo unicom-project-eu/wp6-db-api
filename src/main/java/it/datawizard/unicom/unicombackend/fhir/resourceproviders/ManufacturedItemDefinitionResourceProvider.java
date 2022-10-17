@@ -69,10 +69,6 @@ public class ManufacturedItemDefinitionResourceProvider implements IResourceProv
         );
         manufacturedItemDefinition.setUnitOfPresentation(unitOfPresentationCodeableConcept);
 
-        // ingredients
-        // TODO find a way to add ingredients
-
-
         return manufacturedItemDefinition;
     }
 }

@@ -6,6 +6,10 @@ import ca.uhn.fhir.rest.annotation.RequiredParam;
 import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
+import it.datawizard.unicom.unicombackend.jpa.entity.ManufacturedItem;
+import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
+import it.datawizard.unicom.unicombackend.jpa.entity.PackageItem;
+import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.repository.IngredientRepository;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
@@ -13,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +38,7 @@ public class IngredientResourceProvider implements IResourceProvider {
     }
 
     @Search
+    @Transactional
     public List<Ingredient> findAllResources() {
         ArrayList<Ingredient> substances = new ArrayList<>();
 
@@ -44,6 +50,7 @@ public class IngredientResourceProvider implements IResourceProvider {
     }
 
     @Search
+    @Transactional
     public Ingredient findByIngredientCode(@RequiredParam(name = Substance.SP_CODE) StringParam code) {
         it.datawizard.unicom.unicombackend.jpa.entity.Ingredient substanceWithRolePai = ingredientRepository.findBySubstance_SubstanceCode(code.getValue());
 
@@ -54,12 +61,16 @@ public class IngredientResourceProvider implements IResourceProvider {
     }
 
     @Read
+    @Transactional
     public Ingredient getResourceById(@IdParam IdType id) {
         Optional<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> result = ingredientRepository.findById(id.getIdPartAsLong());
         return result.map(IngredientResourceProvider::ingredientFromEntity).orElse(null);
     }
 
-    public static Ingredient ingredientFromEntity(it.datawizard.unicom.unicombackend.jpa.entity.Ingredient entityIngredient) {
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    public static Ingredient ingredientFromEntity(
+            it.datawizard.unicom.unicombackend.jpa.entity.Ingredient entityIngredient) {
         Ingredient ingredient = new Ingredient();
 
         ingredient.setId(entityIngredient.getId().toString());
@@ -85,6 +96,40 @@ public class IngredientResourceProvider implements IResourceProvider {
         codeableReference.setConcept(substanceCodeableConcept);
         ingredientSubstanceComponent.setCode(codeableReference);
         ingredient.setSubstance(ingredientSubstanceComponent);
+
+        // for ManufacturedItem
+        ManufacturedItem entityManufacturedItem = entityIngredient.getManufacturedItem();
+        ingredient.addFor(new Reference(
+                ManufacturedItemDefinitionResourceProvider.manufacturedItemDefinitionFromEntity(
+                        entityManufacturedItem
+                )
+        ));
+
+        // for MedicinalProductDefinition
+        PackageItem entityOuterPackageItem;
+        for (entityOuterPackageItem = entityManufacturedItem.getPackageItem();
+             entityOuterPackageItem != null
+                     && entityOuterPackageItem.getParentPackageItem() != null
+                     && entityOuterPackageItem.getPackagedMedicinalProduct() == null;
+             entityOuterPackageItem = entityOuterPackageItem.getParentPackageItem()) {}
+
+        if (entityOuterPackageItem == null) {
+            return  ingredient;
+        }
+
+        MedicinalProduct entityMedicinalProduct = entityOuterPackageItem.getPackagedMedicinalProduct().getMedicinalProduct();
+        ingredient.addFor(new Reference(
+                MedicinalProductDefinitionResourceProvider.medicinalProductDefinitionFromEntity(
+                    entityMedicinalProduct
+                )
+        ));
+
+        // for AdministrableProductDefinition
+        ingredient.addFor(new Reference(
+                AdministrableProductDefinitionResourceProvider.administrableProductDefinitionFromEntity(
+                    entityMedicinalProduct.getPharmaceuticalProduct()
+                )
+        ));
 
         return ingredient;
     }

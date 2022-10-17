@@ -100,19 +100,6 @@ public class AdministrableProductDefinitionResourceProvider implements IResource
             administrableProductDefinition.addRouteOfAdministration(fhirRouteOfAdministration);
         }
 
-        // TODO ingredient should be list of references, does HAPI fhir lack this feature?
-        // Ingredient
-//        for (Ingredient ingredientEntity : pharmaceuticalProductEntity.getIngredients()) {
-//            CodeableConcept ingredientCodeableConcept = new CodeableConcept();
-//            ingredientCodeableConcept.addCoding(
-//                    "TODO find right way to add ingredients",
-//                    ingredientEntity.getSubstance().getSubstanceCode(),
-//                    ingredientEntity.getSubstance().getSubstanceName()
-//                );
-//
-//            administrableProductDefinition.addIngredient(ingredientCodeableConcept);
-//        }
-
         return administrableProductDefinition;
     }
 }
