@@ -6,7 +6,6 @@ import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.ManufacturedItem;
 import it.datawizard.unicom.unicombackend.jpa.repository.ManufacturedItemRepository;
-import org.apache.commons.lang3.NotImplementedException;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,6 +71,7 @@ public class ManufacturedItemDefinitionResourceProvider implements IResourceProv
 
         // ingredients
         // TODO find a way to add ingredients
+
 
         return manufacturedItemDefinition;
     }
