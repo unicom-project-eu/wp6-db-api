@@ -128,10 +128,13 @@ public class JsonDataImporter {
     }
 
     private PackageItem savePackageItem(PackageItem packageItem) {
-        packageItem = packageItemRepository.save(packageItem);
+        packageItemRepository.save(packageItem);
 
         // ManufacturedItem
         packageItem.getManufacturedItems().forEach(manufacturedItem -> {
+            // packageItem
+            manufacturedItem.setPackageItem(packageItem);
+
             // manufacturedDoseForm
             manufacturedItem.setManufacturedDoseForm(
                     edqmDoseFormRepository.findById(manufacturedItem.getManufacturedDoseForm().getCode())
