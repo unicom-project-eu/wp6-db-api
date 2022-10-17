@@ -120,13 +120,15 @@ public class JsonDataImporter {
 
             // PackagedMedicinalProduct > PackageItems
             for (PackageItem packageItem : packagedMedicinalProduct.getPackageItems()) {
-                savePackageItem(packageItem);
+                packageItem = savePackageItem(packageItem);
+                packageItem.setPackagedMedicinalProduct(packagedMedicinalProduct);
+                packageItemRepository.save(packageItem);
             }
         }
     }
 
-    private void savePackageItem(PackageItem packageItem) {
-        packageItemRepository.save(packageItem);
+    private PackageItem savePackageItem(PackageItem packageItem) {
+        packageItem = packageItemRepository.save(packageItem);
 
         // ManufacturedItem
         packageItem.getManufacturedItems().forEach(manufacturedItem -> {
@@ -166,7 +168,11 @@ public class JsonDataImporter {
 
         // PackageItem > childrenPackageItems
         for (PackageItem childPackageItem : packageItem.getChildrenPackageItems()) {
-            savePackageItem(childPackageItem);
+            childPackageItem = savePackageItem(childPackageItem);
+            childPackageItem.setParentPackageItem(packageItem);
+            packageItemRepository.save(childPackageItem);
         }
+
+        return packageItem;
     }
 }
