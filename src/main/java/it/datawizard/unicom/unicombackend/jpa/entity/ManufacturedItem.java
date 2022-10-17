@@ -33,7 +33,7 @@ public class ManufacturedItem {
     @ToString.Exclude
     private EdqmUnitOfPresentation unitOfPresentation;
 
-    private Integer manufacturedItemQuantity;
+    private Double manufacturedItemQuantity;
 
     private String volumeUnit;
 
