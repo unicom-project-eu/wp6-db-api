@@ -22,8 +22,8 @@ class Strength:
     pass
 
 @csv_mapping(
-    primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['substancePrimaryKey']),
-    substanceCode=AttributeInfo(set_value=lambda x: x['substanceCode']),
+    primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['Substance 1 (SMS code)']),
+    substanceCode=AttributeInfo(set_value=lambda x: x['Substance 1 (SMS code)']),
     # substanceName=AttributeInfo(set_value=lambda x: x['substanceName']),
     # moietyCode=AttributeInfo(set_value=lambda x: x['moietyCode']),
     # moietyName=AttributeInfo(set_value=lambda x: x['moietyName']),
@@ -34,30 +34,31 @@ class Substance:
 
 @csv_mapping(
     # Assume only one Ingredient per PharmaceuticalProduct
-    primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['pharmaceuticalProductPrimaryKey']),
+    # TODO this only works for priority 1
+    primaryKey=AttributeInfo(is_key=True, is_hidden=False, set_value=lambda x: x['phpPrimaryKey']),
     role=AttributeInfo(set_value=lambda x: '100000072072'), # assume it's Active (spor)
     substance=AttributeInfo(set_value=lambda x: Substance(x)),
     referenceStrength=AttributeInfo(set_value=lambda x: Strength({
-        'primaryKey': 'referenceStrength-' + x['pharmaceuticalProductPrimaryKey'],
-        'concentrationNumeratorValue': x['referenceStrengthConcentrationNumeratorValue'],
-        'concentrationDenominatorValue': x['referenceStrengthConcentrationDenominatorValue'],
-        'concentrationNumeratorUnit': x['referenceStrengthConcentrationNumeratorUnit'],
-        'concentrationDenominatorUnit': x['referenceStrengthConcentrationDenominatorUnit'],
-        'presentationNumeratorValue': x['referenceStrengthPresentationNumeratorValue'],
-        'presentationDenominatorValue': x['referenceStrengthPresentationDenominatorValue'],
-        'presentationNumeratorUnit': x['referenceStrengthPresentationNumeratorUnit'],
-        'presentationDenominatorUnit': x['referenceStrengthPresentationDenominatorUnit'],
+        'primaryKey': 'referenceStrength-' + x['phpPrimaryKey'],
+        'concentrationNumeratorValue': None,
+        'concentrationDenominatorValue': None,
+        'concentrationNumeratorUnit': None,
+        'concentrationDenominatorUnit': None,
+        'presentationNumeratorValue': x['Active Ingredient 1 Numerator Quantity'],
+        'presentationDenominatorValue': 1,
+        'presentationNumeratorUnit': x['Active Ingredient 1 Numerator Unit of Mesurement (UCUM)'],
+        'presentationDenominatorUnit': 'Unit',
     })),
     strength=AttributeInfo(set_value=lambda x: Strength({
-        'primaryKey': 'strength-' + x['pharmaceuticalProductPrimaryKey'],
-        'concentrationNumeratorValue': x['strengthConcentrationNumeratorValue'],
-        'concentrationDenominatorValue': x['strengthConcentrationDenominatorValue'],
-        'concentrationNumeratorUnit': x['strengthConcentrationNumeratorUnit'],
-        'concentrationDenominatorUnit': x['strengthConcentrationDenominatorUnit'],
-        'presentationNumeratorValue': x['strengthPresentationNumeratorValue'],
-        'presentationDenominatorValue': x['strengthPresentationDenominatorValue'],
-        'presentationNumeratorUnit': x['strengthPresentationNumeratorUnit'],
-        'presentationDenominatorUnit': x['strengthPresentationDenominatorUnit'],
+        'primaryKey': 'strength-' + x['phpPrimaryKey'],
+        'concentrationNumeratorValue': None,
+        'concentrationDenominatorValue': None,
+        'concentrationNumeratorUnit': None,
+        'concentrationDenominatorUnit': None,
+        'presentationNumeratorValue': None,
+        'presentationDenominatorValue': None,
+        'presentationNumeratorUnit': None,
+        'presentationDenominatorUnit': None,
     })),
 )
 class Ingredient:
@@ -142,7 +143,7 @@ class PackageItem():
 
                         'ingredients': [
                             # TODO sistema qui
-                            # Ingredient(x)
+                            Ingredient(x),
                         ],
                     }),
                 ],
