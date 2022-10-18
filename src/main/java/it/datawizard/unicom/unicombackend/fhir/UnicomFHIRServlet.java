@@ -2,6 +2,7 @@ package it.datawizard.unicom.unicombackend.fhir;
 
 
 import ca.uhn.fhir.context.FhirContext;
+import ca.uhn.fhir.rest.server.FifoMemoryPagingProvider;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.RestfulServer;
 import it.datawizard.unicom.unicombackend.fhir.resourceproviders.*;
@@ -72,5 +73,11 @@ public class UnicomFHIRServlet extends RestfulServer {
 
         // register swagger interceptor
         registerInterceptor(unicomOpenApiInterceptor);
+
+        //Set paging provider
+        FifoMemoryPagingProvider pp = new FifoMemoryPagingProvider(10);
+        pp.setDefaultPageSize(10);
+        pp.setMaximumPageSize(100);
+        setPagingProvider(pp);
     }
 }
