@@ -54,7 +54,7 @@ public class SubstanceDefinitionResourceProvider implements IResourceProvider {
     @Transactional
     public IBundleProvider findAllResources() {
         final InstantType searchTime = InstantType.withCurrentTime();
-        final List<Long> allSubstanceCodes = substanceRepository.getAllSubstanceCodes();
+        final List<String> allSubstanceCodes = substanceRepository.getAllSubstanceCodes();
 
         return new IBundleProvider() {
 
@@ -67,7 +67,7 @@ public class SubstanceDefinitionResourceProvider implements IResourceProvider {
             @Override
             public List<IBaseResource> getResources(int theFromIndex, int theToIndex) {
                 int end = Math.max(theToIndex, allSubstanceCodes.size() - 1);
-                List<Long> idsToReturn = allSubstanceCodes.subList(theFromIndex, end);
+                List<String> idsToReturn = allSubstanceCodes.subList(theFromIndex, end);
                 return loadResourcesByIds(idsToReturn);
             }
 
@@ -89,8 +89,8 @@ public class SubstanceDefinitionResourceProvider implements IResourceProvider {
         };
     }
 
-    private List<IBaseResource> loadResourcesByIds(List<Long> idsList) {
-        return substanceRepository.findAllById(idsList.stream().map(i -> i.toString()).collect(Collectors.toList())).stream()
+    private List<IBaseResource> loadResourcesByIds(List<String> idsList) {
+        return substanceRepository.findAllById(idsList).stream()
                 .map(SubstanceDefinitionResourceProvider::substanceDefinitionFromEntity).collect(Collectors.toList());
     }
 

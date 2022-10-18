@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface SubstanceRepository extends JpaRepository<Substance, String> {
     @Query("SELECT s.substanceCode from Substance s")
-    List<Long> getAllSubstanceCodes();
+    List<String> getAllSubstanceCodes();
 }
