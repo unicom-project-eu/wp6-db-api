@@ -65,10 +65,13 @@ class Ingredient:
 
 
 @csv_mapping(
-    primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['pharmaceuticalProductPrimaryKey']),
-    administrableDoseForm=AttributeInfo(set_value=lambda x: x['administrableDoseForm']),
-    unitOfPresentation=AttributeInfo(set_value=lambda x: x['pharmaceuticalProductUnitOfPresentation']),
-    routesOfAdministration=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(x['routesOfAdministration'])),
+    primaryKey=AttributeInfo(is_key=True, is_hidden=False, set_value=lambda x: x['phpPrimaryKey']),
+    administrableDoseForm=AttributeInfo(set_value=lambda x: x['Dose form (EDQM Code)']),
+    unitOfPresentation=AttributeInfo(set_value=lambda x: x['Unit of Presentation 1 (EDQM Code)']),
+    routesOfAdministration=AttributeInfo(set_value=lambda x: [
+        # for priority 1, 2 only one route of administration
+        x['Route of Administration (EDQM Code)'],
+    ]),
 )
 class PharmaceuticalProduct:
     pass
@@ -82,7 +85,7 @@ class PharmaceuticalProduct:
     # marketingAuthorizationHolderCode=AttributeInfo(set_value=lambda x: x['marketingAuthorizationHolder']),
     # marketingAuthorizationHolderLabel=AttributeInfo(set_value=lambda x: x['marketingAuthorizationHolderLabel']),
     # country=AttributeInfo(set_value=lambda x: x['country']),
-    # pharmaceuticalProduct=AttributeInfo(set_value=lambda x: PharmaceuticalProduct(x)),
+    pharmaceuticalProduct=AttributeInfo(set_value=lambda x: PharmaceuticalProduct(x)),
 )
 class MedicinalProduct:
     pass
@@ -136,9 +139,9 @@ class PackageItem():
                         'volumeUnit':  None if x['Priorità'] <= 2 else x['Active Ingredient 1 Numerator Unit of Mesurement (UCUM)'],
 
                         'ingredients': [
-                            TODO sistema qui
-                            Ingredient(x)
-                        ]),
+                            # TODO sistema qui
+                            # Ingredient(x)
+                        ],
                     }),
                 ],
                 'childrenPackageItems': [],
@@ -175,12 +178,15 @@ if __name__ == '__main__':
     # regex = r'Substance [0-9]+ \(SMS code\)'
     # substances_cols = [col for col in df if re.match(regex, col)]
 
-    df['phpPrimaryKey'] = df['Principio Attivo'] + df['Dose form (EDQM Code)'] + df['Active Ingredient 1 Numerator Quantity'] + ' ' + df['Active Ingredient 1 Numerator Unit of Mesurement (UCUM)']
+    df['phpPrimaryKey'] = df['Principio Attivo'] + ';' + df['Dose form (EDQM Code)'] + ';' + df['Active Ingredient 1 Numerator Quantity'] + ' ' + df['Active Ingredient 1 Numerator Unit of Mesurement (UCUM)']
 
     packages_list = []
 
     for index, x in df.iterrows():
-        packages_list.append(PackagedMedicinalProduct(x))
+        try:
+            packages_list.append(PackagedMedicinalProduct(x))
+        except Exception as e:
+            print(e)
         pass
 
     print(packages_list)
