@@ -24,6 +24,7 @@ public class UnicomFHIRServlet extends RestfulServer {
     final private UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy;
     final private MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider;
     final private IngredientResourceProvider ingredientResourceProvider;
+    final private SubstanceDefinitionResourceProvider substanceDefinitionResourceProvider;
     final private AdministrableProductDefinitionResourceProvider administrableProductDefinitionResourceProvider;
     final private MedicinalProductDefinitionResourceProvider medicinalProductDefinitionResourceProvider;
     final private PackagedProductDefinitionResourceProvider packagedProductDefinitionResourceProvider;
@@ -32,12 +33,13 @@ public class UnicomFHIRServlet extends RestfulServer {
     final private UnicomOpenApiInterceptor unicomOpenApiInterceptor;
 
     @Autowired
-    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, UnicomOpenApiInterceptor unicomOpenApiInterceptor, UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy, FhirContext fhirContext, IngredientResourceProvider ingredientResourceProvider, AdministrableProductDefinitionResourceProvider administrableProductDefinitionResourceProvider, MedicinalProductDefinitionResourceProvider medicinalProductDefinitionResourceProvider, PackagedProductDefinitionResourceProvider packagedProductDefinitionResourceProvider, ManufacturedItemDefinitionResourceProvider manufacturedItemDefinitionResourceProvider) {
+    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, UnicomOpenApiInterceptor unicomOpenApiInterceptor, UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy, FhirContext fhirContext, IngredientResourceProvider ingredientResourceProvider, SubstanceDefinitionResourceProvider substanceDefinitionResourceProvider, AdministrableProductDefinitionResourceProvider administrableProductDefinitionResourceProvider, MedicinalProductDefinitionResourceProvider medicinalProductDefinitionResourceProvider, PackagedProductDefinitionResourceProvider packagedProductDefinitionResourceProvider, ManufacturedItemDefinitionResourceProvider manufacturedItemDefinitionResourceProvider) {
         this.medicationKnowledgeResourceProvider = medicationKnowledgeResourceProvider;
         this.unicomOpenApiInterceptor = unicomOpenApiInterceptor;
         this.unicomTenantIdentificationStrategy = unicomTenantIdentificationStrategy;
         this.fhirContext = fhirContext;
         this.ingredientResourceProvider = ingredientResourceProvider;
+        this.substanceDefinitionResourceProvider = substanceDefinitionResourceProvider;
         this.administrableProductDefinitionResourceProvider = administrableProductDefinitionResourceProvider;
         this.medicinalProductDefinitionResourceProvider = medicinalProductDefinitionResourceProvider;
         this.packagedProductDefinitionResourceProvider = packagedProductDefinitionResourceProvider;
@@ -58,9 +60,10 @@ public class UnicomFHIRServlet extends RestfulServer {
         setTenantIdentificationStrategy(unicomTenantIdentificationStrategy);
 
         // register resource providers
-        List<IResourceProvider> resourceProviders = new ArrayList<IResourceProvider>();
+        List<IResourceProvider> resourceProviders = new ArrayList<>();
         resourceProviders.add(medicationKnowledgeResourceProvider);
         resourceProviders.add(ingredientResourceProvider);
+        resourceProviders.add(substanceDefinitionResourceProvider);
         resourceProviders.add(administrableProductDefinitionResourceProvider);
         resourceProviders.add(medicinalProductDefinitionResourceProvider);
         resourceProviders.add(packagedProductDefinitionResourceProvider);
