@@ -77,14 +77,16 @@ class PharmaceuticalProduct:
     pass
 
 @csv_mapping(
-    primaryKey=AttributeInfo(is_key=True, is_hidden=False, set_value=lambda x: x['phpPrimaryKey'] + x['Medicinal Product Name'] + str(x['Package Size'])),
-    # mpId=AttributeInfo(set_value=lambda x: x['mpId']),
-    # fullName=AttributeInfo(set_value=lambda x: x['fullName']),
-    # atcCodes=AttributeInfo(set_value=lambda x: comma_separated_str_to_list(x['atcCodes'])),
-    # authorizedPharmaceuticalDoseForm=AttributeInfo(set_value=lambda x: x['authorizedPharmaceuticalDoseForm']),
-    # marketingAuthorizationHolderCode=AttributeInfo(set_value=lambda x: x['marketingAuthorizationHolder']),
-    # marketingAuthorizationHolderLabel=AttributeInfo(set_value=lambda x: x['marketingAuthorizationHolderLabel']),
-    # country=AttributeInfo(set_value=lambda x: x['country']),
+    primaryKey=AttributeInfo(is_key=True, is_hidden=False, set_value=lambda x: x['phpPrimaryKey'] + ';' + x['Medicinal Product Name'] + ' ' + str(x['Package Size']) + ';' + x['Titolare AIC']),
+    mpId=AttributeInfo(set_value=lambda x: None),
+    fullName=AttributeInfo(set_value=lambda x: x['Medicinal Product Name']),
+    atcCodes=AttributeInfo(set_value=lambda x: [
+        x['ATC'],
+    ]),
+    authorizedPharmaceuticalDoseForm=AttributeInfo(set_value=lambda x: x['Dose form (EDQM Code)']),
+    marketingAuthorizationHolderCode=AttributeInfo(set_value=lambda x: None),
+    marketingAuthorizationHolderLabel=AttributeInfo(set_value=lambda x: x['Titolare AIC']),
+    country=AttributeInfo(set_value=lambda x: 'ita'),
     pharmaceuticalProduct=AttributeInfo(set_value=lambda x: PharmaceuticalProduct(x)),
 )
 class MedicinalProduct:
