@@ -1,7 +1,9 @@
 package it.datawizard.unicom.unicombackend;
 
+import it.datawizard.unicom.unicombackend.dataimport.DataImportSaveException;
 import it.datawizard.unicom.unicombackend.dataimport.JsonDataImporter;
 import it.datawizard.unicom.unicombackend.fhir.UnicomFHIRServlet;
+import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
 import org.apache.commons.cli.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +16,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 import java.io.File;
+import java.io.IOException;
 
 @SpringBootApplication(scanBasePackages = {
 		"it.datawizard.unicom.unicombackend"
@@ -44,7 +47,7 @@ public class UnicomApplication implements CommandLineRunner {
 	}
 
 	@Override
-	public void run(String... args) throws Exception {
+	public void run(String... args) {
 		// argument parsing
 		Options options = new Options();
 
@@ -70,7 +73,16 @@ public class UnicomApplication implements CommandLineRunner {
 		if (commandLine.hasOption(importJsonOption)) {
 			File f = new File(commandLine.getOptionValue(importJsonOption));
 			LOG.info("Importing data from " + f.getPath());
-			jsonDataImporter.importData(f);
+
+			try {
+				jsonDataImporter.importData(f);
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			} catch (DataImportSaveException e) {
+				PackagedMedicinalProduct packagedMedicinalProduct = e.getPackagedMedicinalProduct();
+				LOG.error("Can't save {}\n\n{}", packagedMedicinalProduct, e);
+			}
+
 			System.exit(SpringApplication.exit(applicationContext));
 		}
 	}

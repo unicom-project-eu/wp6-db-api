@@ -1,6 +1,7 @@
 package it.datawizard.unicom.unicombackend.dataimport;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import it.datawizard.unicom.unicombackend.jpa.entity.*;
 import it.datawizard.unicom.unicombackend.jpa.repository.*;
@@ -51,78 +52,88 @@ public class JsonDataImporter {
         this.substanceRepository = substanceRepository;
     }
 
-    public void importData(File jsonFile) throws IOException {
+    public void importData(File jsonFile) throws IOException, DataImportSaveException {
         String jsonData =  Files.readString(jsonFile.toPath());
         ArrayList<PackagedMedicinalProduct> packagedMedicinalProducts = parseDataJsonString(jsonData);
         saveParsedPackagedMedicinalProducts(packagedMedicinalProducts);
     }
 
     public ArrayList<PackagedMedicinalProduct> parseDataJsonString(String jsonData) throws IOException {
-        return new ObjectMapper().readValue(jsonData, new TypeReference<>() {});
+        return new ObjectMapper()
+                .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
+                .configure(DeserializationFeature.FAIL_ON_MISSING_CREATOR_PROPERTIES, true)
+                .readValue(jsonData, new TypeReference<>() {});
     }
 
-    @Transactional
-    protected void saveParsedPackagedMedicinalProducts(ArrayList<PackagedMedicinalProduct> packagedMedicinalProducts) {
+    @Transactional(rollbackFor = {DataImportSaveException.class})
+    protected void saveParsedPackagedMedicinalProducts(ArrayList<PackagedMedicinalProduct> packagedMedicinalProducts) throws DataImportSaveException {
         for (PackagedMedicinalProduct packagedMedicinalProduct : packagedMedicinalProducts) {
-            // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct
-            PharmaceuticalProduct pharmaceuticalProduct = packagedMedicinalProduct.getMedicinalProduct()
-                    .getPharmaceuticalProduct();
+            try {
+                // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct
+                PharmaceuticalProduct pharmaceuticalProduct = packagedMedicinalProduct.getMedicinalProduct()
+                        .getPharmaceuticalProduct();
 
-            pharmaceuticalProduct = pharmaceuticalProductRepository.save(pharmaceuticalProduct);
+                pharmaceuticalProduct = pharmaceuticalProductRepository.save(pharmaceuticalProduct);
 
-            // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct > administrableDoseForm
-            pharmaceuticalProduct.setAdministrableDoseForm(
-                edqmDoseFormRepository.findById(pharmaceuticalProduct.getAdministrableDoseForm().getCode())
-                        .orElseThrow()
-            );
+                // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct > administrableDoseForm
+                if (pharmaceuticalProduct.getAdministrableDoseForm() != null)
+                    pharmaceuticalProduct.setAdministrableDoseForm(
+                            edqmDoseFormRepository.findById(pharmaceuticalProduct.getAdministrableDoseForm().getCode())
+                                    .orElseThrow()
+                    );
 
-            // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct > unitOfPresentation
-            pharmaceuticalProduct.setUnitOfPresentation(
-                    edqmUnitOfPresentationRepository.findById(pharmaceuticalProduct.getUnitOfPresentation().getCode())
-                            .orElseThrow()
-            );
+                // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct > unitOfPresentation
+                if (pharmaceuticalProduct.getUnitOfPresentation() != null)
+                    pharmaceuticalProduct.setUnitOfPresentation(
+                            edqmUnitOfPresentationRepository.findById(pharmaceuticalProduct.getUnitOfPresentation().getCode())
+                                    .orElseThrow()
+                    );
 
-            // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct > routesOfAdministration
-            pharmaceuticalProduct.setRoutesOfAdministration(
-                    pharmaceuticalProduct.getRoutesOfAdministration().stream().map(
-                            edqmRouteOfAdministration -> edqmRouteOfAdministrationRepository
-                                    .findById(edqmRouteOfAdministration.getCode()).orElseThrow()
-                    ).collect(Collectors.toSet())
-            );
+                // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct > routesOfAdministration
+                pharmaceuticalProduct.setRoutesOfAdministration(
+                        pharmaceuticalProduct.getRoutesOfAdministration().stream().map(
+                                edqmRouteOfAdministration -> edqmRouteOfAdministrationRepository
+                                        .findById(edqmRouteOfAdministration.getCode()).orElseThrow()
+                        ).collect(Collectors.toSet())
+                );
 
-            pharmaceuticalProductRepository.save(pharmaceuticalProduct);
+                pharmaceuticalProductRepository.save(pharmaceuticalProduct);
 
-            // PackagedMedicinalProduct > MedicinalProduct
-            MedicinalProduct medicinalProduct = packagedMedicinalProduct.getMedicinalProduct();
-            medicinalProduct.setPharmaceuticalProduct(pharmaceuticalProduct);
+                // PackagedMedicinalProduct > MedicinalProduct
+                MedicinalProduct medicinalProduct = packagedMedicinalProduct.getMedicinalProduct();
+                medicinalProduct.setPharmaceuticalProduct(pharmaceuticalProduct);
 
-            // PackagedMedicinalProduct > MedicinalProduct > authorizedPharmaceuticalDoseForm
-            medicinalProduct.setAuthorizedPharmaceuticalDoseForm(
-                    edqmDoseFormRepository.findById(medicinalProduct.getAuthorizedPharmaceuticalDoseForm().getCode())
-                            .orElseThrow()
-            );
+                // PackagedMedicinalProduct > MedicinalProduct > authorizedPharmaceuticalDoseForm
+                if (medicinalProduct.getAuthorizedPharmaceuticalDoseForm() != null)
+                    medicinalProduct.setAuthorizedPharmaceuticalDoseForm(
+                            edqmDoseFormRepository.findById(medicinalProduct.getAuthorizedPharmaceuticalDoseForm().getCode())
+                                    .orElseThrow()
+                    );
 
-            medicinalProductRepository.save(medicinalProduct);
+                medicinalProductRepository.save(medicinalProduct);
 
-            // PackagedMedicinalProduct > MedicinalProduct > atcCodes
-            medicinalProduct.setAtcCodes(
-                    medicinalProduct.getAtcCodes().stream().map(atcCode -> {
-                                atcCode.setMedicinalProduct(medicinalProduct);
-                                return atcCodeRepository.save(atcCode);
-                            })
-                            .collect(Collectors.toSet())
-            );
+                // PackagedMedicinalProduct > MedicinalProduct > atcCodes
+                medicinalProduct.setAtcCodes(
+                        medicinalProduct.getAtcCodes().stream().map(atcCode -> {
+                                    atcCode.setMedicinalProduct(medicinalProduct);
+                                    return atcCodeRepository.save(atcCode);
+                                })
+                                .collect(Collectors.toSet())
+                );
 
-            // PackagedMedicinalProduct
-            packagedMedicinalProduct.setMedicinalProduct(medicinalProduct);
+                // PackagedMedicinalProduct
+                packagedMedicinalProduct.setMedicinalProduct(medicinalProduct);
 
-            packagedMedicinalProductRepository.save(packagedMedicinalProduct);
+                packagedMedicinalProductRepository.save(packagedMedicinalProduct);
 
-            // PackagedMedicinalProduct > PackageItems
-            for (PackageItem packageItem : packagedMedicinalProduct.getPackageItems()) {
-                packageItem = savePackageItem(packageItem);
-                packageItem.setPackagedMedicinalProduct(packagedMedicinalProduct);
-                packageItemRepository.save(packageItem);
+                // PackagedMedicinalProduct > PackageItems
+                for (PackageItem packageItem : packagedMedicinalProduct.getPackageItems()) {
+                    packageItem = savePackageItem(packageItem);
+                    packageItem.setPackagedMedicinalProduct(packagedMedicinalProduct);
+                    packageItemRepository.save(packageItem);
+                }
+            } catch (Exception e) {
+                throw new DataImportSaveException(e, packagedMedicinalProduct);
             }
         }
     }
@@ -136,16 +147,18 @@ public class JsonDataImporter {
             manufacturedItem.setPackageItem(packageItem);
 
             // manufacturedDoseForm
-            manufacturedItem.setManufacturedDoseForm(
-                    edqmDoseFormRepository.findById(manufacturedItem.getManufacturedDoseForm().getCode())
-                            .orElseThrow()
-            );
+            if (manufacturedItem.getManufacturedDoseForm() != null)
+                manufacturedItem.setManufacturedDoseForm(
+                        edqmDoseFormRepository.findById(manufacturedItem.getManufacturedDoseForm().getCode())
+                                .orElseThrow()
+                );
 
             // unitOfPresentation
-            manufacturedItem.setUnitOfPresentation(
-                    edqmUnitOfPresentationRepository.findById(manufacturedItem.getUnitOfPresentation().getCode())
-                            .orElseThrow()
-            );
+            if (manufacturedItem.getUnitOfPresentation() != null)
+                manufacturedItem.setUnitOfPresentation(
+                        edqmUnitOfPresentationRepository.findById(manufacturedItem.getUnitOfPresentation().getCode())
+                                .orElseThrow()
+                );
 
             manufacturedItemRepository.save(manufacturedItem);
 
