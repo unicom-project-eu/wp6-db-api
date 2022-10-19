@@ -44,19 +44,10 @@ public class SubstanceDefinitionResourceProvider implements IResourceProvider {
                 .orElse(null);
     }
 
-//    @Search
-//    @Transactional
-//    public List<SubstanceDefinition> findAllResources() {
-//        return substanceRepository.findAll().stream().map(
-//                SubstanceDefinitionResourceProvider::substanceDefinitionFromEntity
-//        ).toList();
-//    }
-
     @Search
     @Transactional
     public IBundleProvider findAllResources() {
         final InstantType searchTime = InstantType.withCurrentTime();
-        //final List<String> allSubstanceCodes = substanceRepository.getAllSubstanceCodes();
 
         return new IBundleProvider() {
 
@@ -91,11 +82,6 @@ public class SubstanceDefinitionResourceProvider implements IResourceProvider {
                 return null;
             }
         };
-    }
-
-    private List<IBaseResource> loadResourcesByIds(List<String> idsList) {
-        return substanceRepository.findAllById(idsList).stream()
-                .map(SubstanceDefinitionResourceProvider::substanceDefinitionFromEntity).collect(Collectors.toList());
     }
 
     public static SubstanceDefinition substanceDefinitionFromEntity(Substance substanceEntity)  {
