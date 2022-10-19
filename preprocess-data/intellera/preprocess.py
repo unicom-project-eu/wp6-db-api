@@ -175,15 +175,25 @@ if __name__ == '__main__':
     #     'strengthPresentationNumeratorValue': float,
     #     'strengthPresentationDenominatorValue': float,
     })
-    df['Active Ingredient 1 Numerator Quantity'] = df['Active Ingredient 1 Numerator Quantity'].apply(lambda x: x.replace(',', '.') if x else None)
 
     df = df.drop(df[df['Priorità'] > 1].index)
     df = df.replace(np.nan, None)
 
+    # -------- quick fixes --------
+    # change ',' to '.' in 'Active Ingredient 1 Numerator Quantity'
+    df['Active Ingredient 1 Numerator Quantity'] = df['Active Ingredient 1 Numerator Quantity'].apply(lambda x: x.replace(',', '.') if x else None)
+
+    # remove records with invalid doseforms
     dose_form_df = pd.read_csv('../edqm/processed/pharmaceutical_dose_form.csv', keep_default_na=False, dtype=str)
     invalid_dose_forms = [c for c in list(df['Dose form (EDQM Code)']) if c not in list(dose_form_df['code'])]
     df = df[~df['Dose form (EDQM Code)'].isin(invalid_dose_forms)]
 
+    # for some reasons, some of the Substance codes have 'NaN' string
+    df = df[df['Substance 1 (SMS code)'] != 'NaN']
+
+    # remove records without ATC codes
+    df = df[~df['ATC'].isnull()]
+    # -----------------------------
 
     # add local pharmaceuticalProductPrimaryKey
     # regex = r'Substance [0-9]+ \(SMS code\)'
