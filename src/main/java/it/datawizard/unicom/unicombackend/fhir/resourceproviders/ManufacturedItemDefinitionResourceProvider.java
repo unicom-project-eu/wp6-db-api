@@ -3,17 +3,21 @@ package it.datawizard.unicom.unicombackend.fhir.resourceproviders;
 import ca.uhn.fhir.rest.annotation.IdParam;
 import ca.uhn.fhir.rest.annotation.Read;
 import ca.uhn.fhir.rest.annotation.Search;
+import ca.uhn.fhir.rest.api.server.IBundleProvider;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.ManufacturedItem;
 import it.datawizard.unicom.unicombackend.jpa.repository.ManufacturedItemRepository;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
+import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class ManufacturedItemDefinitionResourceProvider implements IResourceProvider {
@@ -39,10 +43,42 @@ public class ManufacturedItemDefinitionResourceProvider implements IResourceProv
 
     @Search
     @Transactional
-    public List<ManufacturedItemDefinition> findAllResources() {
-        return manufacturedItemRepository.findAll().stream()
-                .map(ManufacturedItemDefinitionResourceProvider::manufacturedItemDefinitionFromEntity)
-                .toList();
+    public IBundleProvider findAllResources() {
+        final InstantType searchTime = InstantType.withCurrentTime();
+
+        return new IBundleProvider() {
+
+            @Override
+            public Integer size() {
+                return (int)manufacturedItemRepository.findAll(PageRequest.of(1,1)).getTotalElements();
+            }
+
+            @Nonnull
+            @Override
+            public List<IBaseResource> getResources(int theFromIndex, int theToIndex) {
+                int pageSize = theToIndex-theFromIndex;
+                int currentPageIndex = theFromIndex/pageSize;
+                Page<ManufacturedItem> allManufacturedProducts = manufacturedItemRepository.findAll(PageRequest.of(currentPageIndex,pageSize));
+                return allManufacturedProducts.stream()
+                        .map(ManufacturedItemDefinitionResourceProvider::manufacturedItemDefinitionFromEntity).collect(Collectors.toList());
+            }
+
+            @Override
+            public InstantType getPublished() {
+                return searchTime;
+            }
+
+            @Override
+            public Integer preferredPageSize() {
+                // Typically this method just returns null
+                return null;
+            }
+
+            @Override
+            public String getUuid() {
+                return null;
+            }
+        };
     }
 
     public static ManufacturedItemDefinition manufacturedItemDefinitionFromEntity(ManufacturedItem manufacturedItemEntity) {
