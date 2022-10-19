@@ -37,42 +37,48 @@ class JsonDataImporterTest {
 //    private MedicinalProductElasticsearchRepository medicinalProductElasticsearchRepository;
 
     private final String packagedMedicinalProductJsonString = """
-                  [
+             [
+                {
+                  "pcId": null,
+                  "packSize": "20",
+                  "packageItems": [
                     {
-                      "pcId": null,
-                      "packSize": 98,
-                      "packageItems": [
+                      "type": "30009000",
+                      "packageItemQuantity": null,
+                      "manufacturedItems": [],
+                      "childrenPackageItems": [
                         {
-                          "type": null,
-                          "packageItemQuantity": 98,
+                          "type": "30007000",
+                          "packageItemQuantity": null,
                           "manufacturedItems": [
                             {
-                              "manufacturedDoseForm": "10210000",
-                              "unitOfPresentation": "15012000",
-                              "manufacturedItemQuantity": 98.0,
+                              "manufacturedDoseForm": "10219000",
+                              "unitOfPresentation": "15054000",
+                              "manufacturedItemQuantity": "20",
                               "volumeUnit": null,
                               "ingredients": [
                                 {
+                                  "primaryKey": "Acido ursodesossicolico;10219000;300 mg",
                                   "role": "100000072072",
                                   "substance": {
-                                    "substanceCode": "100000090079"
+                                    "substanceCode": "100000092107"
                                   },
                                   "referenceStrength": {
-                                    "concentrationNumeratorValue": 6.93,
+                                    "concentrationNumeratorValue": null,
                                     "concentrationDenominatorValue": null,
                                     "concentrationNumeratorUnit": null,
                                     "concentrationDenominatorUnit": null,
-                                    "presentationNumeratorValue": null,
-                                    "presentationDenominatorValue": null,
-                                    "presentationNumeratorUnit": null,
-                                    "presentationDenominatorUnit": null
+                                    "presentationNumeratorValue": "300",
+                                    "presentationDenominatorValue": 1,
+                                    "presentationNumeratorUnit": "mg",
+                                    "presentationDenominatorUnit": "Unit"
                                   },
                                   "strength": {
                                     "concentrationNumeratorValue": null,
                                     "concentrationDenominatorValue": null,
                                     "concentrationNumeratorUnit": null,
                                     "concentrationDenominatorUnit": null,
-                                    "presentationNumeratorValue": 5.0,
+                                    "presentationNumeratorValue": null,
                                     "presentationDenominatorValue": null,
                                     "presentationNumeratorUnit": null,
                                     "presentationDenominatorUnit": null
@@ -81,30 +87,33 @@ class JsonDataImporterTest {
                               ]
                             }
                           ],
-                          "parentPackageItem": null,
                           "childrenPackageItems": []
                         }
-                      ],
-                      "medicinalProduct": {
-                        "mpId": null,
-                        "fullName": "Amlor harde caps. 5 mg",
-                        "atcCodes": [
-                          "C08CA01"
-                        ],
-                        "authorizedPharmaceuticalDoseForm": "10210000",
-                        "marketingAuthorizationHolderCode": null,
-                        "marketingAuthorizationHolderLabel": null,
-                        "country": "BEL",
-                        "pharmaceuticalProduct": {
-                          "administrableDoseForm": "10210000",
-                          "unitOfPresentation": "15012000",
-                          "routesOfAdministration": [
-                            "20053000"
-                          ]
-                        }
-                      }
+                      ]
                     }
-                  ]""";
+                  ],
+                  "medicinalProduct": {
+                    "primaryKey": "Acido ursodesossicolico;10219000;300 mg;ACIDO URSODESOSSICOLICO 20;RATIOPHARM GMBH",
+                    "mpId": null,
+                    "fullName": "ACIDO URSODESOSSICOLICO",
+                    "atcCodes": [
+                      "A05AA02"
+                    ],
+                    "authorizedPharmaceuticalDoseForm": "10219000",
+                    "marketingAuthorizationHolderCode": null,
+                    "marketingAuthorizationHolderLabel": "RATIOPHARM GMBH",
+                    "country": "ita",
+                    "pharmaceuticalProduct": {
+                      "primaryKey": "Acido ursodesossicolico;10219000;300 mg",
+                      "administrableDoseForm": "10219000",
+                      "unitOfPresentation": "15054000",
+                      "routesOfAdministration": [
+                        "20053000"
+                      ]
+                    }
+                  }
+                }
+             ]""";
 
     @Test
     void parseDataJsonString() throws IOException {
@@ -113,7 +122,7 @@ class JsonDataImporterTest {
     }
 
     @Test
-    void saveParsedPackagedMedicinalProduct() throws IOException {
+    void saveParsedPackagedMedicinalProduct() throws Exception {
         ArrayList<PackagedMedicinalProduct> packagedMedicinalProducts = jsonDataImporter
             .parseDataJsonString(packagedMedicinalProductJsonString);
 

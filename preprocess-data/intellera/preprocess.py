@@ -103,6 +103,7 @@ class MedicinalProduct:
     unitOfPresentation=AttributeInfo(set_value=lambda x: x['unitOfPresentation']),
     manufacturedItemQuantity=AttributeInfo(set_value=lambda x: x['manufacturedItemQuantity']),
     volumeUnit=AttributeInfo(set_value=lambda x: x['volumeUnit']),
+    ingredients=AttributeInfo(set_value=lambda x: x['ingredients']),
 )
 class ManufacturedItem:
     pass
@@ -123,7 +124,7 @@ class PackageItem():
     primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['Codice AIC - LocalMppid']),
     pcId=AttributeInfo(set_value=lambda x: None),
     packSize=AttributeInfo(set_value=lambda x: x['Package Size']),
-    packageItem=AttributeInfo(set_value=lambda x: PackageItem({
+    packageItems=AttributeInfo(set_value=lambda x: [PackageItem({
         'primaryKey': 'outer' + x['Codice AIC - LocalMppid'],
         'type': '30009000',
         'packageItemQuantity': None,
@@ -150,7 +151,7 @@ class PackageItem():
                 'childrenPackageItems': [],
             })
         ],
-    })),
+    })]),
     medicinalProduct=AttributeInfo(set_value=lambda x: MedicinalProduct(x))
 )
 class PackagedMedicinalProduct:
@@ -174,8 +175,15 @@ if __name__ == '__main__':
     #     'strengthPresentationNumeratorValue': float,
     #     'strengthPresentationDenominatorValue': float,
     })
+    df['Active Ingredient 1 Numerator Quantity'] = df['Active Ingredient 1 Numerator Quantity'].apply(lambda x: x.replace(',', '.') if x else None)
+
     df = df.drop(df[df['Priorità'] > 1].index)
     df = df.replace(np.nan, None)
+
+    dose_form_df = pd.read_csv('../edqm/processed/pharmaceutical_dose_form.csv', keep_default_na=False, dtype=str)
+    invalid_dose_forms = [c for c in list(df['Dose form (EDQM Code)']) if c not in list(dose_form_df['code'])]
+    df = df[~df['Dose form (EDQM Code)'].isin(invalid_dose_forms)]
+
 
     # add local pharmaceuticalProductPrimaryKey
     # regex = r'Substance [0-9]+ \(SMS code\)'
