@@ -95,6 +95,20 @@ public class IngredientResourceProvider implements IResourceProvider {
         );
         codeableReference.setConcept(substanceCodeableConcept);
         ingredientSubstanceComponent.setCode(codeableReference);
+
+        // strength
+        Ingredient.IngredientSubstanceStrengthComponent strength = ingredientSubstanceComponent.addStrength();
+        Ingredient.IngredientSubstanceStrengthReferenceStrengthComponent referenceStrength = strength.addReferenceStrength();
+
+        // referenceStrength
+        Quantity numeratorQuantity = new Quantity();
+        numeratorQuantity.setSystem("https://spor.ema.europa.eu/v1/lists/100000110633");
+        // TODO finish this
+//        referenceStrength.setSubstance(
+//
+//        );
+
+
         ingredient.setSubstance(ingredientSubstanceComponent);
 
         // for ManufacturedItem
@@ -133,4 +147,6 @@ public class IngredientResourceProvider implements IResourceProvider {
 
         return ingredient;
     }
+
+
 }
