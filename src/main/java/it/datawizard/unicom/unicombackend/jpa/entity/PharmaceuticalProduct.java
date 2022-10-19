@@ -33,7 +33,7 @@ public class PharmaceuticalProduct {
     @ToString.Exclude
     private EdqmUnitOfPresentation unitOfPresentation;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable()
     @ToString.Exclude
     private Set<EdqmRouteOfAdministration> routesOfAdministration;

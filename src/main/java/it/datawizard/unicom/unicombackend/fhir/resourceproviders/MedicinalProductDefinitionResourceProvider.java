@@ -4,17 +4,22 @@ import ca.uhn.fhir.rest.annotation.IdParam;
 import ca.uhn.fhir.rest.annotation.Read;
 import ca.uhn.fhir.rest.annotation.RequiredParam;
 import ca.uhn.fhir.rest.annotation.Search;
+import ca.uhn.fhir.rest.api.server.IBundleProvider;
 import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.AtcCode;
 import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
+import it.datawizard.unicom.unicombackend.jpa.entity.Substance;
 import it.datawizard.unicom.unicombackend.jpa.repository.MedicinalProductRepository;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -43,14 +48,54 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
         return result.map(MedicinalProductDefinitionResourceProvider::medicinalProductDefinitionFromEntity).orElse(null);
     }
 
+//    @Search
+//    @Transactional
+//    public List<MedicinalProductDefinition> findAllResources() {
+//        ArrayList<MedicinalProductDefinition> resources = new ArrayList<>();
+//        for (MedicinalProduct medicinalProduct: medicinalProductRepository.findAll()) {
+//            resources.add(medicinalProductDefinitionFromEntity(medicinalProduct));
+//        }
+//        return resources;
+//    }
+
     @Search
     @Transactional
-    public List<MedicinalProductDefinition> findAllResources() {
-        ArrayList<MedicinalProductDefinition> resources = new ArrayList<>();
-        for (MedicinalProduct medicinalProduct: medicinalProductRepository.findAll()) {
-            resources.add(medicinalProductDefinitionFromEntity(medicinalProduct));
-        }
-        return resources;
+    public IBundleProvider findAllResources() {
+        final InstantType searchTime = InstantType.withCurrentTime();
+
+        return new IBundleProvider() {
+
+            @Override
+            public Integer size() {
+                return (int)medicinalProductRepository.findAll(PageRequest.of(1,1)).getTotalElements();
+            }
+
+            @Nonnull
+            @Override
+            public List<IBaseResource> getResources(int theFromIndex, int theToIndex) {
+                int pageSize = theToIndex-theFromIndex;
+                int currentPageIndex = theFromIndex/pageSize;
+                Page<MedicinalProduct> allMedicinalProducts = medicinalProductRepository.findAll(PageRequest.of(currentPageIndex,pageSize));
+                return allMedicinalProducts.stream()
+                        .map(MedicinalProductDefinitionResourceProvider::medicinalProductDefinitionFromEntity).collect(Collectors.toList());
+            }
+
+            @Override
+            public InstantType getPublished() {
+                return searchTime;
+            }
+
+            @Override
+            public Integer preferredPageSize() {
+                // Typically this method just returns null
+                return null;
+            }
+
+            @Override
+            public String getUuid() {
+                return null;
+            }
+        };
     }
 
     @Search

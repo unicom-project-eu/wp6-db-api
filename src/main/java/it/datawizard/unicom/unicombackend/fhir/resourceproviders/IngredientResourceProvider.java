@@ -4,6 +4,7 @@ import ca.uhn.fhir.rest.annotation.IdParam;
 import ca.uhn.fhir.rest.annotation.Read;
 import ca.uhn.fhir.rest.annotation.RequiredParam;
 import ca.uhn.fhir.rest.annotation.Search;
+import ca.uhn.fhir.rest.api.server.IBundleProvider;
 import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.ManufacturedItem;
@@ -16,12 +17,17 @@ import org.hl7.fhir.r5.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Component
 public class IngredientResourceProvider implements IResourceProvider {
@@ -37,16 +43,56 @@ public class IngredientResourceProvider implements IResourceProvider {
         this.ingredientRepository = ingredientRepository;
     }
 
+//    @Search
+//    @Transactional
+//    public List<Ingredient> findAllResources() {
+//        ArrayList<Ingredient> substances = new ArrayList<>();
+//
+//        for (it.datawizard.unicom.unicombackend.jpa.entity.Ingredient substanceWithRolePai: ingredientRepository.findAll()) {
+//            substances.add(ingredientFromEntity(substanceWithRolePai));
+//        }
+//
+//        return substances;
+//    }
+
     @Search
     @Transactional
-    public List<Ingredient> findAllResources() {
-        ArrayList<Ingredient> substances = new ArrayList<>();
+    public IBundleProvider findAllResources() {
+        final InstantType searchTime = InstantType.withCurrentTime();
 
-        for (it.datawizard.unicom.unicombackend.jpa.entity.Ingredient substanceWithRolePai: ingredientRepository.findAll()) {
-            substances.add(ingredientFromEntity(substanceWithRolePai));
-        }
+        return new IBundleProvider() {
 
-        return substances;
+            @Override
+            public Integer size() {
+                return (int)ingredientRepository.findAll(PageRequest.of(1,1)).getTotalElements();
+            }
+
+            @Nonnull
+            @Override
+            public List<IBaseResource> getResources(int theFromIndex, int theToIndex) {
+                int pageSize = theToIndex-theFromIndex;
+                int currentPageIndex = theFromIndex/pageSize;
+                Page<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> allIngredients = ingredientRepository.findAll(PageRequest.of(currentPageIndex,pageSize));
+                return allIngredients.stream()
+                        .map(IngredientResourceProvider::ingredientFromEntity).collect(Collectors.toList());
+            }
+
+            @Override
+            public InstantType getPublished() {
+                return searchTime;
+            }
+
+            @Override
+            public Integer preferredPageSize() {
+                // Typically this method just returns null
+                return null;
+            }
+
+            @Override
+            public String getUuid() {
+                return null;
+            }
+        };
     }
 
     @Search
