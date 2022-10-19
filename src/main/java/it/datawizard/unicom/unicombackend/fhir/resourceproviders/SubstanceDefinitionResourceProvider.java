@@ -12,6 +12,8 @@ import org.hl7.fhir.r5.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -54,21 +56,23 @@ public class SubstanceDefinitionResourceProvider implements IResourceProvider {
     @Transactional
     public IBundleProvider findAllResources() {
         final InstantType searchTime = InstantType.withCurrentTime();
-        final List<String> allSubstanceCodes = substanceRepository.getAllSubstanceCodes();
+        //final List<String> allSubstanceCodes = substanceRepository.getAllSubstanceCodes();
 
         return new IBundleProvider() {
 
             @Override
             public Integer size() {
-                return allSubstanceCodes.size();
+                return (int)substanceRepository.findAll(PageRequest.of(1,1)).getTotalElements();
             }
 
             @Nonnull
             @Override
             public List<IBaseResource> getResources(int theFromIndex, int theToIndex) {
-                int end = Math.max(theToIndex, allSubstanceCodes.size() - 1);
-                List<String> idsToReturn = allSubstanceCodes.subList(theFromIndex, end);
-                return loadResourcesByIds(idsToReturn);
+                int pageSize = theToIndex-theFromIndex;
+                int currentPageIndex = theFromIndex/pageSize;
+                Page<Substance> allSubstances = substanceRepository.findAll(PageRequest.of(currentPageIndex,pageSize));
+                return allSubstances.stream()
+                        .map(SubstanceDefinitionResourceProvider::substanceDefinitionFromEntity).collect(Collectors.toList());
             }
 
             @Override

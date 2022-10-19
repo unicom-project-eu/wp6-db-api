@@ -75,9 +75,9 @@ public class UnicomFHIRServlet extends RestfulServer {
         registerInterceptor(unicomOpenApiInterceptor);
 
         //Set paging provider
-        FifoMemoryPagingProvider pp = new FifoMemoryPagingProvider(10);
-        pp.setDefaultPageSize(10);
-        pp.setMaximumPageSize(100);
-        setPagingProvider(pp);
+        FifoMemoryPagingProvider fifoMemoryPagingProvider = new FifoMemoryPagingProvider(100);
+        fifoMemoryPagingProvider.setDefaultPageSize(100);
+        fifoMemoryPagingProvider.setMaximumPageSize(100);
+        setPagingProvider(fifoMemoryPagingProvider);
     }
 }

@@ -7,6 +7,4 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface SubstanceRepository extends JpaRepository<Substance, String> {
-    @Query("SELECT s.substanceCode from Substance s")
-    List<String> getAllSubstanceCodes();
 }
