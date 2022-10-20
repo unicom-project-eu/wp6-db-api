@@ -15,8 +15,4 @@ public interface MedicinalProductRepository extends JpaRepository<MedicinalProdu
     MedicinalProduct findByMpId(String mpId);
 
     List<MedicinalProduct> findByAtcCodesIn(Set<String> atcCodes);
-
-    @Override
-    @EntityGraph(attributePaths = {"authorizedPharmaceuticalDoseForm","atcCodes","pharmaceuticalProduct"})
-    Page<MedicinalProduct> findAll(Pageable pageable);
 }

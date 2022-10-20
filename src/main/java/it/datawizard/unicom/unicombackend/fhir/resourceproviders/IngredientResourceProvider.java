@@ -44,20 +44,8 @@ public class IngredientResourceProvider implements IResourceProvider {
     public IngredientResourceProvider(IngredientRepository ingredientRepository, PlatformTransactionManager platformTransactionManager) {
         this.ingredientRepository = ingredientRepository;
         this.platformTransactionManager = platformTransactionManager;
-        this.transactionTemplate = new TransactionTemplate(platformTransactionManager);
+        this.transactionTemplate = new TransactionTemplate(this.platformTransactionManager);
     }
-
-//    @Search
-//    @Transactional
-//    public List<Ingredient> findAllResources() {
-//        ArrayList<Ingredient> substances = new ArrayList<>();
-//
-//        for (it.datawizard.unicom.unicombackend.jpa.entity.Ingredient substanceWithRolePai: ingredientRepository.findAll()) {
-//            substances.add(ingredientFromEntity(substanceWithRolePai));
-//        }
-//
-//        return substances;
-//    }
 
     @Search
     @Transactional

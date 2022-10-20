@@ -9,7 +9,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
      Ingredient findBySubstance_SubstanceCode(String code);
-
-     @Override
-     Page<Ingredient> findAll(Pageable pageable);
 }

@@ -9,7 +9,6 @@ import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.AtcCode;
 import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
-import it.datawizard.unicom.unicombackend.jpa.entity.Substance;
 import it.datawizard.unicom.unicombackend.jpa.repository.MedicinalProductRepository;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
@@ -17,7 +16,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
@@ -29,10 +30,14 @@ import java.util.stream.Collectors;
 @Component
 public class MedicinalProductDefinitionResourceProvider implements IResourceProvider {
     private final MedicinalProductRepository medicinalProductRepository;
+    final private PlatformTransactionManager platformTransactionManager;
+    final private TransactionTemplate transactionTemplate;
 
     @Autowired
-    public MedicinalProductDefinitionResourceProvider(MedicinalProductRepository medicinalProductRepository) {
+    public MedicinalProductDefinitionResourceProvider(MedicinalProductRepository medicinalProductRepository, PlatformTransactionManager platformTransactionManager) {
         this.medicinalProductRepository = medicinalProductRepository;
+        this.platformTransactionManager = platformTransactionManager;
+        this.transactionTemplate = new TransactionTemplate(this.platformTransactionManager);
     }
 
 
@@ -47,16 +52,6 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
         Optional<MedicinalProduct> result = medicinalProductRepository.findById(id.getIdPartAsLong());
         return result.map(MedicinalProductDefinitionResourceProvider::medicinalProductDefinitionFromEntity).orElse(null);
     }
-
-//    @Search
-//    @Transactional
-//    public List<MedicinalProductDefinition> findAllResources() {
-//        ArrayList<MedicinalProductDefinition> resources = new ArrayList<>();
-//        for (MedicinalProduct medicinalProduct: medicinalProductRepository.findAll()) {
-//            resources.add(medicinalProductDefinitionFromEntity(medicinalProduct));
-//        }
-//        return resources;
-//    }
 
     @Search
     @Transactional
@@ -73,11 +68,20 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
             @Nonnull
             @Override
             public List<IBaseResource> getResources(int theFromIndex, int theToIndex) {
-                int pageSize = theToIndex-theFromIndex;
-                int currentPageIndex = theFromIndex/pageSize;
-                Page<MedicinalProduct> allMedicinalProducts = medicinalProductRepository.findAll(PageRequest.of(currentPageIndex,pageSize));
-                return allMedicinalProducts.stream()
-                        .map(MedicinalProductDefinitionResourceProvider::medicinalProductDefinitionFromEntity).collect(Collectors.toList());
+                final int pageSize = theToIndex-theFromIndex;
+                final int currentPageIndex = theFromIndex/pageSize;
+
+                List<IBaseResource> results = new ArrayList<>();
+
+                transactionTemplate.execute(status -> {
+                    Page<MedicinalProduct> allMedicinalProducts = medicinalProductRepository.findAll(PageRequest.of(currentPageIndex,pageSize));
+                    results.addAll(allMedicinalProducts.stream()
+                            .map(MedicinalProductDefinitionResourceProvider::medicinalProductDefinitionFromEntity)
+                            .toList());
+                    return null;
+                });
+
+                return results;
             }
 
             @Override
