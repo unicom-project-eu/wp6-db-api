@@ -13,19 +13,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
 public class ManufacturedItemDefinitionResourceProvider implements IResourceProvider {
     private final ManufacturedItemRepository manufacturedItemRepository;
+    private final PlatformTransactionManager platformTransactionManager;
+    private final TransactionTemplate transactionTemplate;
+
 
     @Autowired
-    public ManufacturedItemDefinitionResourceProvider(ManufacturedItemRepository manufacturedItemRepository) {
+    public ManufacturedItemDefinitionResourceProvider(ManufacturedItemRepository manufacturedItemRepository, PlatformTransactionManager platformTransactionManager) {
         this.manufacturedItemRepository = manufacturedItemRepository;
+        this.platformTransactionManager = platformTransactionManager;
+        this.transactionTemplate = new TransactionTemplate(this.platformTransactionManager);
     }
 
     @Override
@@ -56,11 +64,20 @@ public class ManufacturedItemDefinitionResourceProvider implements IResourceProv
             @Nonnull
             @Override
             public List<IBaseResource> getResources(int theFromIndex, int theToIndex) {
-                int pageSize = theToIndex-theFromIndex;
-                int currentPageIndex = theFromIndex/pageSize;
-                Page<ManufacturedItem> allManufacturedProducts = manufacturedItemRepository.findAll(PageRequest.of(currentPageIndex,pageSize));
-                return allManufacturedProducts.stream()
-                        .map(ManufacturedItemDefinitionResourceProvider::manufacturedItemDefinitionFromEntity).collect(Collectors.toList());
+                final int pageSize = theToIndex-theFromIndex;
+                final int currentPageIndex = theFromIndex/pageSize;
+
+                List<IBaseResource> results = new ArrayList<>();
+
+                transactionTemplate.execute(status -> {
+                    Page<ManufacturedItem> allManufacturedProducts = manufacturedItemRepository.findAll(PageRequest.of(currentPageIndex,pageSize));
+                    results.addAll(allManufacturedProducts.stream()
+                            .map(ManufacturedItemDefinitionResourceProvider::manufacturedItemDefinitionFromEntity)
+                            .toList());
+                    return null;
+                });
+
+                return results;
             }
 
             @Override
