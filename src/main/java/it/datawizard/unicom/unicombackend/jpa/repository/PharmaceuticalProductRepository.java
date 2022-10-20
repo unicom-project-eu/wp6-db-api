@@ -8,8 +8,4 @@ import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PharmaceuticalProductRepository extends JpaRepository<PharmaceuticalProduct, Long> {
-
-    @Override
-    @EntityGraph(attributePaths = {"administrableDoseForm","unitOfPresentation","routesOfAdministration"})
-    Page<PharmaceuticalProduct> findAll(Pageable pageable);
 }
