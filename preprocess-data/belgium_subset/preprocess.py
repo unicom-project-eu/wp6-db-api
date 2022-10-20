@@ -152,6 +152,8 @@ if __name__ == '__main__':
     })
     df = df.replace(np.nan, None)
 
+    df['country'] = df['country'].str.lower()
+
     packages_list = []
 
     for index, x in df.iterrows():

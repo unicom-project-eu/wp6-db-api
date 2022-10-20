@@ -15,4 +15,6 @@ public interface MedicinalProductRepository extends JpaRepository<MedicinalProdu
     MedicinalProduct findByMpId(String mpId);
 
     List<MedicinalProduct> findByAtcCodesIn(Set<String> atcCodes);
+
+    Page<MedicinalProduct> findByCountry(String country, Pageable pageable);
 }

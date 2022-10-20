@@ -22,6 +22,7 @@ public class UnicomFHIRServerConfiguration {
         LinkedHashMap<TenantEnum, TenantDescriptor> tenantDescriptors = new LinkedHashMap<>();
 
         // tenantDescriptors.put(TenantEnum.global, new TenantDescriptor("Global","glob"));
+        tenantDescriptors.put(TenantEnum.italy, new TenantDescriptor("Italy","ita"));
         tenantDescriptors.put(TenantEnum.belgium, new TenantDescriptor("Belgium","bel"));
 
         return tenantDescriptors;
