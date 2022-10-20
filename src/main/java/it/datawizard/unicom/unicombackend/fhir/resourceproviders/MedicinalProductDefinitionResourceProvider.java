@@ -182,7 +182,11 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
         ArrayList<CodeableConcept> codes = new ArrayList<>();
         for (AtcCode code : medicinalProductEntity.getAtcCodes()) {
             CodeableConcept codeCodeableConcept = new CodeableConcept();
-            codeCodeableConcept.addCoding("https://spor.ema.europa.eu/v1/lists/100000093533",code.getAtcCode(), code.toString());
+            codeCodeableConcept.addCoding(
+                    "https://spor.ema.europa.eu/v1/lists/100000093533",
+                    code.getAtcCode(),
+                    null
+            );
             codes.add(codeCodeableConcept);
         }
         medicinalProductDefinition.setClassification(codes);
