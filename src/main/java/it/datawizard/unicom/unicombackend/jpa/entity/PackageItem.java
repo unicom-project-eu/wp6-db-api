@@ -36,10 +36,10 @@ public class PackageItem {
     @ToString.Exclude
     private PackageItem parentPackageItem;
 
-    @OneToMany(mappedBy = "parentPackageItem",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "parentPackageItem")
     private Set<PackageItem> childrenPackageItems;
 
-    @OneToMany(mappedBy = "packageItem",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "packageItem")
     private Set<ManufacturedItem> manufacturedItems;
 
 }

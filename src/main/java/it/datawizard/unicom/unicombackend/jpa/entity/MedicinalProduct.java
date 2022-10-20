@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmDoseForm;
 import lombok.*;
 import org.hibernate.Hibernate;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
@@ -49,7 +51,7 @@ public class MedicinalProduct {
     private Set<PackagedMedicinalProduct> packagedMedicinalProducts;
 
     // @JsonIdentityReference
-    @OneToMany (mappedBy = "medicinalProduct",fetch = FetchType.EAGER)
+    @OneToMany (mappedBy = "medicinalProduct")
     @ToString.Exclude
     private Set<AtcCode> atcCodes;
 

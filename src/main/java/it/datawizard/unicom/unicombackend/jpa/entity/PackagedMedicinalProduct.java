@@ -25,7 +25,7 @@ public class PackagedMedicinalProduct {
     @JoinColumn()
     private MedicinalProduct medicinalProduct;
 
-    @OneToMany (mappedBy = "packagedMedicinalProduct",fetch = FetchType.EAGER)
+    @OneToMany (mappedBy = "packagedMedicinalProduct")
     @Column(nullable = false)
     @ToString.Exclude
     private Set<PackageItem> packageItems;

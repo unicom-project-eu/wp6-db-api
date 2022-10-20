@@ -1,6 +1,9 @@
 package it.datawizard.unicom.unicombackend.jpa.repository;
 
 import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -12,4 +15,8 @@ public interface MedicinalProductRepository extends JpaRepository<MedicinalProdu
     MedicinalProduct findByMpId(String mpId);
 
     List<MedicinalProduct> findByAtcCodesIn(Set<String> atcCodes);
+
+    @Override
+    @EntityGraph(attributePaths = {"authorizedPharmaceuticalDoseForm","atcCodes","pharmaceuticalProduct"})
+    Page<MedicinalProduct> findAll(Pageable pageable);
 }
