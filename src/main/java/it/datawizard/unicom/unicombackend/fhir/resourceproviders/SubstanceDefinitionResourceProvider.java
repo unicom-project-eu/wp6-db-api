@@ -15,9 +15,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,10 +28,14 @@ import java.util.stream.Collectors;
 public class SubstanceDefinitionResourceProvider implements IResourceProvider {
     private static final Logger LOG = LoggerFactory.getLogger(SubstanceDefinitionResourceProvider.class);
     private final SubstanceRepository substanceRepository;
+    private final PlatformTransactionManager platformTransactionManager;
+    private final TransactionTemplate transactionTemplate;
 
     @Autowired
-    public SubstanceDefinitionResourceProvider(SubstanceRepository substanceRepository) {
+    public SubstanceDefinitionResourceProvider(SubstanceRepository substanceRepository, PlatformTransactionManager platformTransactionManager) {
         this.substanceRepository = substanceRepository;
+        this.platformTransactionManager = platformTransactionManager;
+        this.transactionTemplate = new TransactionTemplate(this.platformTransactionManager);
     }
 
     @Override
@@ -59,11 +66,19 @@ public class SubstanceDefinitionResourceProvider implements IResourceProvider {
             @Nonnull
             @Override
             public List<IBaseResource> getResources(int theFromIndex, int theToIndex) {
-                int pageSize = theToIndex-theFromIndex;
-                int currentPageIndex = theFromIndex/pageSize;
-                Page<Substance> allSubstances = substanceRepository.findAll(PageRequest.of(currentPageIndex,pageSize));
-                return allSubstances.stream()
-                        .map(SubstanceDefinitionResourceProvider::substanceDefinitionFromEntity).collect(Collectors.toList());
+                final int pageSize = theToIndex-theFromIndex;
+                final int currentPageIndex = theFromIndex/pageSize;
+
+                List<IBaseResource> results = new ArrayList<>();
+
+                transactionTemplate.execute(status -> {
+                    Page<Substance> allSubstances = substanceRepository.findAll(PageRequest.of(currentPageIndex,pageSize));
+                    results.addAll(allSubstances.stream()
+                            .map(SubstanceDefinitionResourceProvider::substanceDefinitionFromEntity).toList());
+                    return null;
+                });
+
+                return results;
             }
 
             @Override

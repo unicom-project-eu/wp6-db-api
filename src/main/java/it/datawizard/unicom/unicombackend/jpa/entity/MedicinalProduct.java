@@ -49,8 +49,7 @@ public class MedicinalProduct {
     @OneToMany(mappedBy = "medicinalProduct")
     @ToString.Exclude
     private Set<PackagedMedicinalProduct> packagedMedicinalProducts;
-
-    // @JsonIdentityReference
+    
     @OneToMany (mappedBy = "medicinalProduct")
     @ToString.Exclude
     private Set<AtcCode> atcCodes;
