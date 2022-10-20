@@ -10,7 +10,6 @@ import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.ManufacturedItem;
 import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackageItem;
-import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.repository.IngredientRepository;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
@@ -20,8 +19,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
@@ -37,10 +37,14 @@ public class IngredientResourceProvider implements IResourceProvider {
     public Class<? extends IBaseResource> getResourceType() { return Ingredient.class; }
 
     final private IngredientRepository ingredientRepository;
+    final private PlatformTransactionManager platformTransactionManager;
+    final private TransactionTemplate transactionTemplate;
 
     @Autowired
-    public IngredientResourceProvider(IngredientRepository ingredientRepository) {
+    public IngredientResourceProvider(IngredientRepository ingredientRepository, PlatformTransactionManager platformTransactionManager) {
         this.ingredientRepository = ingredientRepository;
+        this.platformTransactionManager = platformTransactionManager;
+        this.transactionTemplate = new TransactionTemplate(platformTransactionManager);
     }
 
 //    @Search
@@ -70,11 +74,20 @@ public class IngredientResourceProvider implements IResourceProvider {
             @Nonnull
             @Override
             public List<IBaseResource> getResources(int theFromIndex, int theToIndex) {
-                int pageSize = theToIndex-theFromIndex;
-                int currentPageIndex = theFromIndex/pageSize;
-                Page<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> allIngredients = ingredientRepository.findAll(PageRequest.of(currentPageIndex,pageSize));
-                return allIngredients.stream()
-                        .map(IngredientResourceProvider::ingredientFromEntity).collect(Collectors.toList());
+                final int pageSize = theToIndex-theFromIndex;
+                final int currentPageIndex = theFromIndex/pageSize;
+                final List<IBaseResource> result = new ArrayList<>();
+
+                transactionTemplate.execute(status -> {
+                    Page<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> allIngredients = ingredientRepository.findAll(PageRequest.of(currentPageIndex,pageSize));
+
+                    result.addAll(allIngredients.stream()
+                            .map(IngredientResourceProvider::ingredientFromEntity).toList());
+
+                    return null;
+                });
+
+                return result;
             }
 
             @Override

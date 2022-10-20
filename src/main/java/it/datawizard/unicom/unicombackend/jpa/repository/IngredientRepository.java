@@ -11,6 +11,5 @@ public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
      Ingredient findBySubstance_SubstanceCode(String code);
 
      @Override
-     @EntityGraph(attributePaths = {"substance","manufacturedItem.manufacturedDoseForm","manufacturedItem.unitOfPresentation","manufacturedItem.packageItem.packagedMedicinalProduct.medicinalProduct.atcCodes","manufacturedItem.packageItem.packagedMedicinalProduct.medicinalProduct.pharmaceuticalProduct","manufacturedItem.packageItem.packagedMedicinalProduct.medicinalProduct.pharmaceuticalProduct.routesOfAdministration"})
      Page<Ingredient> findAll(Pageable pageable);
 }
