@@ -71,7 +71,7 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
                 final int pageSize = theToIndex-theFromIndex;
                 final int currentPageIndex = theFromIndex/pageSize;
 
-                List<IBaseResource> results = new ArrayList<>();
+                final List<IBaseResource> results = new ArrayList<>();
 
                 transactionTemplate.execute(status -> {
                     Page<MedicinalProduct> allMedicinalProducts = medicinalProductRepository.findAll(PageRequest.of(currentPageIndex,pageSize));

@@ -9,8 +9,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PackagedMedicinalProductRepository extends JpaRepository<PackagedMedicinalProduct, Long> {
     PackagedMedicinalProduct findByPcId(String value);
-
-    @Override
-    @EntityGraph(attributePaths = {"packageItems.childrenPackageItems","packageItems.manufacturedItems","packageItems.manufacturedItems.manufacturedDoseForm","packageItems.manufacturedItems.unitOfPresentation"})
-    Page<PackagedMedicinalProduct> findAll(Pageable pageable);
 }
