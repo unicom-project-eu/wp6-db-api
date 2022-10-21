@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>it.datawizard.unicom</groupId>
 	<artifactId>unicom-backend</artifactId>
-	<version>0.1.0</version>
+	<version>0.2.1</version>
 	<name>unicom-backend</name>
 	<description>FHIR backend for the unicom project</description>
 
@@ -226,6 +226,13 @@
 				</dependencies>
 			</plugin>
 		</plugins>
+
+		<resources>
+			<resource>
+				<filtering>true</filtering>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
 	</build>
 
 </project>
