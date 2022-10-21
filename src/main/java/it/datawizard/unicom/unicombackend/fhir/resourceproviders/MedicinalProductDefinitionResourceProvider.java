@@ -107,39 +107,6 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
         };
     }
 
-    @Search
-    @Transactional
-    public MedicinalProductDefinition findByIdentifier(@RequiredParam(name = MedicinalProductDefinition.SP_IDENTIFIER) StringParam identifier) {
-        MedicinalProduct medicinalProduct = medicinalProductRepository.findByMpId(identifier.getValue());
-
-        if (medicinalProduct == null)
-            return null;
-
-        return medicinalProductDefinitionFromEntity(medicinalProduct);
-    }
-
-    @Search
-    @Transactional
-    public List<MedicinalProductDefinition> findByClassification(@RequiredParam(name = MedicinalProductDefinition.SP_PRODUCT_CLASSIFICATION) StringParam classification) {
-        List<MedicinalProduct> medicinalProducts = medicinalProductRepository.findByAtcCodesIn(Collections.singleton(classification.getValue()));
-
-        if (medicinalProducts == null)
-            return null;
-
-        return medicinalProducts.stream().map((MedicinalProductDefinitionResourceProvider::medicinalProductDefinitionFromEntity)).collect(Collectors.toList());
-    }
-
-
-    @Search
-    @Transactional
-    public MedicinalProductDefinition findByName(@RequiredParam(name = MedicinalProductDefinition.SP_NAME) StringParam name) {
-        MedicinalProduct medicinalProduct = medicinalProductRepository.findByFullName(name.getValue());
-
-        if (medicinalProduct == null)
-            return null;
-
-        return medicinalProductDefinitionFromEntity(medicinalProduct);
-    }
     public static MedicinalProductDefinition medicinalProductDefinitionFromEntity(MedicinalProduct medicinalProductEntity) {
         MedicinalProductDefinition medicinalProductDefinition = new MedicinalProductDefinition();
         medicinalProductDefinition.setId(medicinalProductEntity.getId().toString());
