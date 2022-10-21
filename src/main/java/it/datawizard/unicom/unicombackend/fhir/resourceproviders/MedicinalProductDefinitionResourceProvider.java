@@ -50,8 +50,8 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
 
     @Read()
     @Transactional
-    public MedicinalProductDefinition getResourceById(@IdParam IdType id) {
-        Optional<MedicinalProduct> result = medicinalProductRepository.findById(id.getIdPartAsLong());
+    public MedicinalProductDefinition getResourceById(RequestDetails requestDetails, @IdParam IdType id) {
+        Optional<MedicinalProduct> result = medicinalProductRepository.findByIdAndCountry(id.getIdPartAsLong(), requestDetails.getTenantId());
         return result.map(MedicinalProductDefinitionResourceProvider::medicinalProductDefinitionFromEntity).orElse(null);
     }
 
