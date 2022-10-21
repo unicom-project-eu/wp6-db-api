@@ -69,6 +69,7 @@ import org.hl7.fhir.r4.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.thymeleaf.IEngineConfiguration;
 import org.thymeleaf.TemplateEngine;
@@ -124,10 +125,14 @@ public class UnicomOpenApiInterceptor {
     private final Map<String, String> myExtensionToContentType = new HashMap<>();
     private String myBannerImage;
 
-    private static LinkedHashMap<TenantEnum, TenantDescriptor> tenantDescriptors;
+    private LinkedHashMap<TenantEnum, TenantDescriptor> tenantDescriptors;
+
+    @Value("${project.version}")
+    private String projectVersion;
+
     @Autowired
     public void setTenantDescriptors(LinkedHashMap<TenantEnum, TenantDescriptor> tenantDescriptors) {
-        UnicomOpenApiInterceptor.tenantDescriptors = tenantDescriptors;
+        this.tenantDescriptors = tenantDescriptors;
     }
 
     /**
@@ -304,7 +309,7 @@ public class UnicomOpenApiInterceptor {
         ServletContext servletContext = servletRequest.getServletContext();
         WebContext context = new WebContext(servletRequest, theResponse, servletContext);
         context.setVariable(REQUEST_DETAILS, theRequestDetails);
-        context.setVariable("DESCRIPTION", "UNICOM - T6.1 FHIR Server");
+        context.setVariable("DESCRIPTION", "UNICOM - T6.1 FHIR Server (v" + projectVersion + ")");
         context.setVariable("SERVER_NAME", cs.getSoftware().getName());
         context.setVariable("SERVER_VERSION", cs.getSoftware().getVersion());
         context.setVariable("BASE_URL", cs.getImplementation().getUrl());
