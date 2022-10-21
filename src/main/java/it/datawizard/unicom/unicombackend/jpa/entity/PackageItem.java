@@ -30,6 +30,10 @@ public class PackageItem {
     @ToString.Exclude
     private PackagedMedicinalProduct packagedMedicinalProduct;
 
+    @ManyToOne
+    @JoinColumn()
+    @ToString.Exclude
+    private PackagedMedicinalProduct rootPackagedMedicinalProduct;
 
     @ManyToOne
     @JoinColumn()

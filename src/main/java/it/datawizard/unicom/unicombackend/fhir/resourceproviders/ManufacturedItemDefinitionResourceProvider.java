@@ -4,6 +4,7 @@ import ca.uhn.fhir.rest.annotation.IdParam;
 import ca.uhn.fhir.rest.annotation.Read;
 import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.rest.api.server.IBundleProvider;
+import ca.uhn.fhir.rest.api.server.RequestDetails;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.ManufacturedItem;
 import it.datawizard.unicom.unicombackend.jpa.repository.ManufacturedItemRepository;
@@ -20,7 +21,6 @@ import org.springframework.transaction.support.TransactionTemplate;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class ManufacturedItemDefinitionResourceProvider implements IResourceProvider {
@@ -43,22 +43,23 @@ public class ManufacturedItemDefinitionResourceProvider implements IResourceProv
 
     @Read()
     @Transactional
-    public ManufacturedItemDefinition getResourceById(@IdParam IdType id) {
-        return manufacturedItemRepository.findById(id.getIdPartAsLong())
+    public ManufacturedItemDefinition getResourceById(RequestDetails requestDetails, @IdParam IdType id) {
+        return manufacturedItemRepository.findByIdAndPackageItem_RootPackagedMedicinalProduct_MedicinalProduct_Country(id.getIdPartAsLong(), requestDetails.getTenantId())
                 .map(ManufacturedItemDefinitionResourceProvider::manufacturedItemDefinitionFromEntity)
                 .orElse(null);
     }
 
     @Search
     @Transactional
-    public IBundleProvider findAllResources() {
+    public IBundleProvider findAllResources(RequestDetails requestDetails) {
         final InstantType searchTime = InstantType.withCurrentTime();
+        final String tenantId = requestDetails.getTenantId();
 
         return new IBundleProvider() {
 
             @Override
             public Integer size() {
-                return (int)manufacturedItemRepository.findAll(PageRequest.of(1,1)).getTotalElements();
+                return (int)manufacturedItemRepository.findByPackageItem_RootPackagedMedicinalProduct_MedicinalProduct_Country(tenantId,PageRequest.of(1,1)).getTotalElements();
             }
 
             @Nonnull
@@ -70,7 +71,7 @@ public class ManufacturedItemDefinitionResourceProvider implements IResourceProv
                 List<IBaseResource> results = new ArrayList<>();
 
                 transactionTemplate.execute(status -> {
-                    Page<ManufacturedItem> allManufacturedProducts = manufacturedItemRepository.findAll(PageRequest.of(currentPageIndex,pageSize));
+                    Page<ManufacturedItem> allManufacturedProducts = manufacturedItemRepository.findByPackageItem_RootPackagedMedicinalProduct_MedicinalProduct_Country(tenantId,PageRequest.of(currentPageIndex,pageSize));
                     results.addAll(allManufacturedProducts.stream()
                             .map(ManufacturedItemDefinitionResourceProvider::manufacturedItemDefinitionFromEntity)
                             .toList());

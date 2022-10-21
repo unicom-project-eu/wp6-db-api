@@ -30,6 +30,11 @@ public class PackagedMedicinalProduct {
     @ToString.Exclude
     private Set<PackageItem> packageItems;
 
+    @OneToMany (mappedBy = "rootPackagedMedicinalProduct")
+    @Column(nullable = false)
+    @ToString.Exclude
+    private Set<PackageItem> allPackageItems;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

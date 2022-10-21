@@ -128,7 +128,7 @@ public class JsonDataImporter {
 
                 // PackagedMedicinalProduct > PackageItems
                 for (PackageItem packageItem : packagedMedicinalProduct.getPackageItems()) {
-                    packageItem = savePackageItem(packageItem);
+                    packageItem = savePackageItem(packageItem, packagedMedicinalProduct);
                     packageItem.setPackagedMedicinalProduct(packagedMedicinalProduct);
                     packageItemRepository.save(packageItem);
                 }
@@ -138,7 +138,8 @@ public class JsonDataImporter {
         }
     }
 
-    private PackageItem savePackageItem(PackageItem packageItem) {
+    private PackageItem savePackageItem(PackageItem packageItem, PackagedMedicinalProduct rootPackagedMedicinalProduct) {
+        packageItem.setRootPackagedMedicinalProduct(rootPackagedMedicinalProduct);
         packageItemRepository.save(packageItem);
 
         // ManufacturedItem
@@ -184,7 +185,7 @@ public class JsonDataImporter {
 
         // PackageItem > childrenPackageItems
         for (PackageItem childPackageItem : packageItem.getChildrenPackageItems()) {
-            childPackageItem = savePackageItem(childPackageItem);
+            childPackageItem = savePackageItem(childPackageItem,rootPackagedMedicinalProduct);
             childPackageItem.setParentPackageItem(packageItem);
             packageItemRepository.save(childPackageItem);
         }

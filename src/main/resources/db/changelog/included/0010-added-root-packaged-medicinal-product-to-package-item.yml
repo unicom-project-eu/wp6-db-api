@@ -1,0 +1,25 @@
+databaseChangeLog:
+- changeSet:
+    id: 1666367873893-1
+    author: paolo (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: root_packaged_medicinal_product_id
+            type: int8
+        tableName: package_item
+- changeSet:
+    id: 1666367873893-2
+    author: paolo (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: root_packaged_medicinal_product_id
+        baseTableName: package_item
+        constraintName: FKdj2aabpjk30g9ru3lvk8hv291
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: packaged_medicinal_product
+        validate: true
+
