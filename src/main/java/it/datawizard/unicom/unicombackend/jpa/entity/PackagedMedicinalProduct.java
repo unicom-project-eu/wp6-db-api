@@ -4,6 +4,8 @@ import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -26,14 +28,24 @@ public class PackagedMedicinalProduct {
     private MedicinalProduct medicinalProduct;
 
     @OneToMany (mappedBy = "packagedMedicinalProduct")
-    @Column(nullable = false)
     @ToString.Exclude
     private Set<PackageItem> packageItems;
 
     @OneToMany (mappedBy = "rootPackagedMedicinalProduct")
-    @Column(nullable = false)
     @ToString.Exclude
     private Set<PackageItem> allPackageItems;
+
+    public List<Ingredient> getIngredients() {
+        List<Ingredient> ingredients = new ArrayList<>();
+
+        getAllPackageItems().forEach(packageItem -> {
+            packageItem.getManufacturedItems().forEach(manufacturedItem -> {
+                ingredients.addAll(manufacturedItem.getIngredients());
+            });
+        });
+
+        return ingredients;
+    }
 
     @Override
     public boolean equals(Object o) {

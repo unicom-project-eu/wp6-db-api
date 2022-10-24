@@ -1,10 +1,8 @@
 package it.datawizard.unicom.unicombackend.dataimport;
 
 import it.datawizard.unicom.unicombackend.UnicomApplication;
-import it.datawizard.unicom.unicombackend.fhir.UnicomFHIRServlet;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.repository.MedicinalProductRepository;
-import it.datawizard.unicom.unicombackend.jpa.repository.StrengthRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;

@@ -8,6 +8,7 @@ import ca.uhn.fhir.rest.api.server.RequestDetails;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
+import it.datawizard.unicom.unicombackend.jpa.repository.MedicinalProductRepository;
 import it.datawizard.unicom.unicombackend.jpa.repository.PackagedMedicinalProductRepository;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.instance.model.api.IPrimitiveType;
@@ -32,14 +33,13 @@ import java.util.Optional;
 public class MedicationKnowledgeResourceProvider implements IResourceProvider {
 
     private static Logger LOG = LoggerFactory.getLogger(MedicationKnowledgeResourceProvider.class);
-
-    final private PackagedMedicinalProductRepository packagedMedicinalProductRepository;
+    final private MedicinalProductRepository medicinalProductRepository;
     final private PlatformTransactionManager platformTransactionManager;
     final private TransactionTemplate transactionTemplate;
 
     @Autowired
-    public MedicationKnowledgeResourceProvider(PackagedMedicinalProductRepository PackagedMedicinalProductRepository, PlatformTransactionManager platformTransactionManager) {
-        this.packagedMedicinalProductRepository = PackagedMedicinalProductRepository;
+    public MedicationKnowledgeResourceProvider(MedicinalProductRepository medicinalProductRepository, PlatformTransactionManager platformTransactionManager) {
+        this.medicinalProductRepository = medicinalProductRepository;
         this.platformTransactionManager = platformTransactionManager;
         transactionTemplate = new TransactionTemplate(this.platformTransactionManager);
     }
@@ -52,8 +52,8 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
 
     @Read()
     public MedicationKnowledge getResourceById(RequestDetails requestDetails, @IdParam IdType id) {
-        Optional<PackagedMedicinalProduct> result = packagedMedicinalProductRepository
-                .findByIdAndMedicinalProduct_Country(id.getIdPartAsLong(), requestDetails.getTenantId());
+        Optional<MedicinalProduct> result = medicinalProductRepository
+                .findByIdAndCountry(id.getIdPartAsLong(), requestDetails.getTenantId());
         return result.map(MedicationKnowledgeResourceProvider::medicationKnowledgeFromEntity).orElse(null);
     }
 
@@ -71,8 +71,8 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
             @NotNull
             @Override
             public Integer size() {
-                return (int) packagedMedicinalProductRepository
-                        .findByMedicinalProduct_Country(tenantId, PageRequest.of(1, 1)).getTotalElements();
+                return (int) medicinalProductRepository
+                        .findByCountry(tenantId, PageRequest.of(1, 1)).getTotalElements();
             }
 
             @NotNull
@@ -84,8 +84,8 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
                 final List<IBaseResource> results = new ArrayList<>();
 
                 transactionTemplate.execute(status -> {
-                    Page<PackagedMedicinalProduct> allMedicinalProducts = packagedMedicinalProductRepository
-                            .findByMedicinalProduct_Country(tenantId, PageRequest.of(currentPageIndex,pageSize));
+                    Page<MedicinalProduct> allMedicinalProducts = medicinalProductRepository
+                            .findByCountry(tenantId, PageRequest.of(currentPageIndex,pageSize));
                     results.addAll(allMedicinalProducts.stream()
                             .map(MedicationKnowledgeResourceProvider::medicationKnowledgeFromEntity)
                             .toList());
@@ -108,23 +108,43 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
         };
     }
 
-    public static MedicationKnowledge medicationKnowledgeFromEntity(PackagedMedicinalProduct entityPackagedMedicinalProduct) {
+    public static MedicationKnowledge medicationKnowledgeFromEntity(MedicinalProduct entityMedicinalProduct) {
         MedicationKnowledge medicationKnowledge = new MedicationKnowledge();
 
-        medicationKnowledge.setId(entityPackagedMedicinalProduct.getId().toString());
+        medicationKnowledge.setId(entityMedicinalProduct.getId().toString());
 
         // packaging
-        List<MedicationKnowledge.MedicationKnowledgePackagingComponent> packagingComponents = new ArrayList<>();
-        MedicationKnowledge.MedicationKnowledgePackagingComponent packagingComponent
-                = new MedicationKnowledge.MedicationKnowledgePackagingComponent();
-        packagingComponent.setPackagedProduct(
-                new Reference(
-                        PackagedProductDefinitionResourceProvider
-                                .packagedProductDefinitionFromEntity(entityPackagedMedicinalProduct)
-                )
-        );
-        packagingComponents.add(packagingComponent);
+        List<MedicationKnowledge.MedicationKnowledgePackagingComponent> packagingComponents =
+                entityMedicinalProduct.getPackagedMedicinalProducts().stream().map(entityPackagedMedicinalProduct -> {
+                    MedicationKnowledge.MedicationKnowledgePackagingComponent packagingComponent =
+                            new MedicationKnowledge.MedicationKnowledgePackagingComponent();
+
+                    packagingComponent.setPackagedProduct(new Reference(PackagedProductDefinitionResourceProvider
+                            .packagedProductDefinitionFromEntity(entityPackagedMedicinalProduct)));
+
+                    return packagingComponent;
+                }).toList();
         medicationKnowledge.setPackaging(packagingComponents);
+
+        // definitional
+        final MedicationKnowledge.MedicationKnowledgeDefinitionalComponent definitionalComponent
+                = new MedicationKnowledge.MedicationKnowledgeDefinitionalComponent();
+        medicationKnowledge.setDefinitional(definitionalComponent);
+
+        // definitional > definition
+        List<Reference> definitions = new ArrayList<>();
+        definitions.add(new Reference(MedicinalProductDefinitionResourceProvider
+                .medicinalProductDefinitionFromEntity(entityMedicinalProduct)));
+        definitionalComponent.setDefinition(definitions);
+
+        // definitional > ingredient
+        entityMedicinalProduct.getAllIngredients().forEach(ingredient -> {
+            MedicationKnowledge.MedicationKnowledgeDefinitionalIngredientComponent definitionalIngredientComponent
+                    = new MedicationKnowledge.MedicationKnowledgeDefinitionalIngredientComponent();
+            Reference ingredientReference = new Reference(IngredientResourceProvider.ingredientFromEntity(ingredient));
+            definitionalIngredientComponent.setItem(new CodeableReference(ingredientReference));
+            definitionalComponent.addIngredient(definitionalIngredientComponent);
+        });
 
         return medicationKnowledge;
     }

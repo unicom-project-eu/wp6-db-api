@@ -1,16 +1,14 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmDoseForm;
+import it.datawizard.unicom.unicombackend.jpa.repository.IngredientRepository;
 import lombok.*;
 import org.hibernate.Hibernate;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
-import org.springframework.data.elasticsearch.annotations.FieldType;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -53,6 +51,16 @@ public class MedicinalProduct {
     @OneToMany (mappedBy = "medicinalProduct")
     @ToString.Exclude
     private Set<AtcCode> atcCodes;
+
+    public List<Ingredient> getAllIngredients() {
+        List<Ingredient> ingredients = new ArrayList<>();
+
+        getPackagedMedicinalProducts().forEach(packagedMedicinalProduct -> {
+            ingredients.addAll(packagedMedicinalProduct.getIngredients());
+        });
+
+        return ingredients;
+    }
 
     @Override
     public boolean equals(Object o) {

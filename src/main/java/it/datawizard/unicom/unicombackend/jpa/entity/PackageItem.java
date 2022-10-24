@@ -1,6 +1,5 @@
 package it.datawizard.unicom.unicombackend.jpa.entity;
 
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmPackageItemType;
 import lombok.*;
 
