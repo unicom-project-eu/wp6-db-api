@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>it.datawizard.unicom</groupId>
 	<artifactId>unicom-backend</artifactId>
-	<version>0.2.1</version>
+	<version>0.2.2</version>
 	<name>unicom-backend</name>
 	<description>FHIR backend for the unicom project</description>
 
