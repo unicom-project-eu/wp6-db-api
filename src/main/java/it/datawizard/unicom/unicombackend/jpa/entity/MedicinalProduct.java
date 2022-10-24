@@ -16,10 +16,8 @@ import java.util.Set;
 // @Document(indexName = "medicinal_product")
 @Getter
 @Setter
-@Builder()
 @ToString
-@NoArgsConstructor
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class MedicinalProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
