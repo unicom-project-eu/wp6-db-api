@@ -109,6 +109,9 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
     }
 
     public static MedicationKnowledge medicationKnowledgeFromEntity(MedicinalProduct entityMedicinalProduct) {
+        MedicinalProductDefinition medicinalProductDefinition = MedicinalProductDefinitionResourceProvider
+                .medicinalProductDefinitionFromEntity(entityMedicinalProduct);
+
         MedicationKnowledge medicationKnowledge = new MedicationKnowledge();
 
         medicationKnowledge.setId(entityMedicinalProduct.getId().toString());
@@ -133,8 +136,7 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
 
         // definitional > definition
         List<Reference> definitions = new ArrayList<>();
-        definitions.add(new Reference(MedicinalProductDefinitionResourceProvider
-                .medicinalProductDefinitionFromEntity(entityMedicinalProduct)));
+        definitions.add(new Reference(medicinalProductDefinition));
         definitionalComponent.setDefinition(definitions);
 
         // definitional > ingredient
@@ -145,6 +147,26 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
             definitionalIngredientComponent.setItem(new CodeableReference(ingredientReference));
             definitionalComponent.addIngredient(definitionalIngredientComponent);
         });
+
+        // definitional > doseForm
+        CodeableConcept doseFormCodeableConcept = new CodeableConcept();
+        doseFormCodeableConcept.addCoding(
+                    "https://spor.ema.europa.eu/v1/lists/200000000004",
+                    entityMedicinalProduct.getAuthorizedPharmaceuticalDoseForm().getCode(),
+                    entityMedicinalProduct.getAuthorizedPharmaceuticalDoseForm().getTerm()
+                );
+        definitionalComponent.setDoseForm(doseFormCodeableConcept);
+
+        // definitional > intendedRoute
+        entityMedicinalProduct.getPharmaceuticalProduct().getRoutesOfAdministration()
+                .forEach(edqmRouteOfAdministration -> {
+                definitionalComponent.addIntendedRoute().addCoding(
+                            "https://spor.ema.europa.eu/v1/lists/100000073345",
+                            edqmRouteOfAdministration.getCode(),
+                            edqmRouteOfAdministration.getTerm()
+                        );
+        });
+
 
         return medicationKnowledge;
     }
