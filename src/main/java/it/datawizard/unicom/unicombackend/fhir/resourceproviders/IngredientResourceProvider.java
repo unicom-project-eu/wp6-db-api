@@ -1,16 +1,15 @@
 package it.datawizard.unicom.unicombackend.fhir.resourceproviders;
 
-import ca.uhn.fhir.rest.annotation.IdParam;
-import ca.uhn.fhir.rest.annotation.Read;
-import ca.uhn.fhir.rest.annotation.RequiredParam;
-import ca.uhn.fhir.rest.annotation.Search;
+import ca.uhn.fhir.rest.annotation.*;
 import ca.uhn.fhir.rest.api.server.IBundleProvider;
+import ca.uhn.fhir.rest.api.server.RequestDetails;
 import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.ManufacturedItem;
 import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackageItem;
 import it.datawizard.unicom.unicombackend.jpa.repository.IngredientRepository;
+import it.datawizard.unicom.unicombackend.jpa.specification.IngredientSpecifications;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
 import org.slf4j.Logger;
@@ -18,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,7 +27,6 @@ import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Component
 public class IngredientResourceProvider implements IResourceProvider {
@@ -49,14 +48,20 @@ public class IngredientResourceProvider implements IResourceProvider {
 
     @Search
     @Transactional
-    public IBundleProvider findAllResources() {
+    public IBundleProvider findResources(RequestDetails requestDetails, @OptionalParam(name = Ingredient.SP_ROLE) StringParam role, @OptionalParam(name = Ingredient.SP_SUBSTANCE_CODE) StringParam substanceCode) {
+        final String tenantId = requestDetails.getTenantId();
         final InstantType searchTime = InstantType.withCurrentTime();
+
+        Specification<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> specification = Specification
+                .where(tenantId != null ? IngredientSpecifications.isCountryEqualTo(tenantId) : null)
+                .and(role != null ? IngredientSpecifications.isRoleEqualTo(role.getValue()) : null)
+                .and(substanceCode != null ? IngredientSpecifications.isSubstanceCodeEqualTo(substanceCode.getValue()): null);
 
         return new IBundleProvider() {
 
             @Override
             public Integer size() {
-                return (int)ingredientRepository.findAll(PageRequest.of(1,1)).getTotalElements();
+                return (int)ingredientRepository.findAll(specification,PageRequest.of(1,1)).getTotalElements();
             }
 
             @Nonnull
@@ -64,18 +69,18 @@ public class IngredientResourceProvider implements IResourceProvider {
             public List<IBaseResource> getResources(int theFromIndex, int theToIndex) {
                 final int pageSize = theToIndex-theFromIndex;
                 final int currentPageIndex = theFromIndex/pageSize;
-                final List<IBaseResource> result = new ArrayList<>();
+
+                final List<IBaseResource> results = new ArrayList<>();
 
                 transactionTemplate.execute(status -> {
-                    Page<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> allIngredients = ingredientRepository.findAll(PageRequest.of(currentPageIndex,pageSize));
-
-                    result.addAll(allIngredients.stream()
-                            .map(IngredientResourceProvider::ingredientFromEntity).toList());
-
+                    Page<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> allMedicinalProducts = ingredientRepository.findAll(specification, PageRequest.of(currentPageIndex,pageSize));
+                    results.addAll(allMedicinalProducts.stream()
+                            .map(IngredientResourceProvider::ingredientFromEntity)
+                            .toList());
                     return null;
                 });
 
-                return result;
+                return results;
             }
 
             @Override
@@ -96,21 +101,10 @@ public class IngredientResourceProvider implements IResourceProvider {
         };
     }
 
-    @Search
-    @Transactional
-    public Ingredient findByIngredientCode(@RequiredParam(name = Substance.SP_CODE) StringParam code) {
-        it.datawizard.unicom.unicombackend.jpa.entity.Ingredient substanceWithRolePai = ingredientRepository.findBySubstance_SubstanceCode(code.getValue());
-
-        if (substanceWithRolePai == null)
-            return null;
-
-        return ingredientFromEntity(substanceWithRolePai);
-    }
-
     @Read
     @Transactional
-    public Ingredient getResourceById(@IdParam IdType id) {
-        Optional<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> result = ingredientRepository.findById(id.getIdPartAsLong());
+    public Ingredient getResourceById(RequestDetails requestDetails, @IdParam IdType id) {
+        Optional<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> result = ingredientRepository.findByIdAndManufacturedItem_PackageItem_RootPackagedMedicinalProduct_MedicinalProduct_Country(id.getIdPartAsLong(), requestDetails.getTenantId());
         return result.map(IngredientResourceProvider::ingredientFromEntity).orElse(null);
     }
 

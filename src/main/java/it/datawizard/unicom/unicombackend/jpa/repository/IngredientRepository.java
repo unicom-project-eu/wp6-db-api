@@ -5,10 +5,11 @@ import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
-public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
-     Ingredient findBySubstance_SubstanceCode(String code);
+import java.util.Optional;
 
-     Page<Ingredient> findByManufacturedItem_PackageItem_RootPackagedMedicinalProduct_MedicinalProduct(
-             MedicinalProduct medicinalProduct, Pageable pageable);
+public interface IngredientRepository extends JpaRepository<Ingredient, Long>, JpaSpecificationExecutor<Ingredient> {
+
+    Optional<Ingredient> findByIdAndManufacturedItem_PackageItem_RootPackagedMedicinalProduct_MedicinalProduct_Country(Long idPartAsLong, String tenantId);
 }
