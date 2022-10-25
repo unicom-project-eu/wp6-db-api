@@ -65,13 +65,12 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
 
     @Search
     @Transactional
-    public IBundleProvider findResources(RequestDetails requestDetails, @OptionalParam(name = MedicationKnowledge.SP_IDENTIFIER) StringParam mpId,@OptionalParam(name = MedicationKnowledge.SP_CLASSIFICATION) StringParam classification,@OptionalParam(name = MedicationKnowledge.SP_DOSEFORM) StringParam authorizedPharmaceuticalDoseForm) {
+    public IBundleProvider findResources(RequestDetails requestDetails,@OptionalParam(name = MedicationKnowledge.SP_CLASSIFICATION) StringParam classification,@OptionalParam(name = MedicationKnowledge.SP_DOSEFORM) StringParam authorizedPharmaceuticalDoseForm) {
         final String tenantId = requestDetails.getTenantId();
         final InstantType searchTime = InstantType.withCurrentTime();
 
         Specification<MedicinalProduct> specification = Specification
                 .where(tenantId != null ? MedicinalProductSpecifications.isCountryEqualTo(tenantId) : null)
-                .and(mpId != null ? MedicinalProductSpecifications.isMpIdEqualTo(mpId.getValue()): null)
                 .and(classification != null ? MedicinalProductSpecifications.atcCodesContains(classification.getValue()): null)
                 .and(authorizedPharmaceuticalDoseForm != null ? MedicinalProductSpecifications.isAuthorizedPharmaceuticalDoseFormEqualTo(authorizedPharmaceuticalDoseForm.getValue()) : null);
 
@@ -126,14 +125,6 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
         MedicationKnowledge medicationKnowledge = new MedicationKnowledge();
 
         medicationKnowledge.setId(entityMedicinalProduct.getId().toString());
-
-        //Identifier
-        ArrayList<Identifier> identifiers = new ArrayList<>();
-        Identifier identifier = new Identifier();
-        identifier.setSystem("http://ema.europa.eu/fhir/mpId");
-        identifier.setValue(entityMedicinalProduct.getMpId());
-        identifiers.add(identifier);
-        medicinalProductDefinition.setIdentifier(identifiers);
 
         // packaging
         List<MedicationKnowledge.MedicationKnowledgePackagingComponent> packagingComponents =
