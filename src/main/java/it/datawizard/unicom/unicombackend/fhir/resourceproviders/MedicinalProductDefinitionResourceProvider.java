@@ -51,12 +51,13 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
 
     @Search
     @Transactional
-    public IBundleProvider findResources(RequestDetails requestDetails,@OptionalParam(name = MedicinalProductDefinition.SP_NAME) StringParam name, @OptionalParam(name = MedicinalProductDefinition.SP_PRODUCT_CLASSIFICATION) StringParam classification) {
+    public IBundleProvider findResources(RequestDetails requestDetails,@OptionalParam(name = MedicinalProductDefinition.SP_IDENTIFIER) StringParam mpId,@OptionalParam(name = MedicinalProductDefinition.SP_NAME) StringParam name, @OptionalParam(name = MedicinalProductDefinition.SP_PRODUCT_CLASSIFICATION) StringParam classification) {
         final String tenantId = requestDetails.getTenantId();
         final InstantType searchTime = InstantType.withCurrentTime();
 
         Specification<MedicinalProduct> specification = Specification
                 .where(tenantId != null ? MedicinalProductSpecifications.isCountryEqualTo(tenantId) : null)
+                .and(mpId != null ? MedicinalProductSpecifications.isMpIdEqualTo(mpId.getValue()): null)
                 .and(name != null ? MedicinalProductSpecifications.isFullNameEqualTo(name.getValue()) : null)
                 .and(classification != null ? MedicinalProductSpecifications.atcCodesContains(classification.getValue()): null);
 
