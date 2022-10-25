@@ -1,15 +1,18 @@
 package it.datawizard.unicom.unicombackend.fhir.resourceproviders;
 
 import ca.uhn.fhir.rest.annotation.IdParam;
+import ca.uhn.fhir.rest.annotation.OptionalParam;
 import ca.uhn.fhir.rest.annotation.Read;
 import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.rest.api.server.IBundleProvider;
 import ca.uhn.fhir.rest.api.server.RequestDetails;
+import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.repository.MedicinalProductRepository;
 import it.datawizard.unicom.unicombackend.jpa.repository.PackagedMedicinalProductRepository;
+import it.datawizard.unicom.unicombackend.jpa.specification.MedicinalProductSpecifications;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.instance.model.api.IPrimitiveType;
 import org.hl7.fhir.r5.model.*;
@@ -20,10 +23,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionTemplate;
 
+import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -57,25 +63,26 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
         return result.map(MedicationKnowledgeResourceProvider::medicationKnowledgeFromEntity).orElse(null);
     }
 
-    @Search()
-    public IBundleProvider findAllResources(RequestDetails requestDetails) {
+    @Search
+    @Transactional
+    public IBundleProvider findResources(RequestDetails requestDetails, @OptionalParam(name = MedicationKnowledge.SP_IDENTIFIER) StringParam mpId,@OptionalParam(name = MedicationKnowledge.SP_CLASSIFICATION) StringParam classification,@OptionalParam(name = MedicationKnowledge.SP_DOSEFORM) StringParam authorizedPharmaceuticalDoseForm) {
         final String tenantId = requestDetails.getTenantId();
         final InstantType searchTime = InstantType.withCurrentTime();
 
-        return new IBundleProvider() {
-            @Override
-            public IPrimitiveType<Date> getPublished() {
-                return searchTime;
-            }
+        Specification<MedicinalProduct> specification = Specification
+                .where(tenantId != null ? MedicinalProductSpecifications.isCountryEqualTo(tenantId) : null)
+                .and(mpId != null ? MedicinalProductSpecifications.isMpIdEqualTo(mpId.getValue()): null)
+                .and(classification != null ? MedicinalProductSpecifications.atcCodesContains(classification.getValue()): null)
+                .and(authorizedPharmaceuticalDoseForm != null ? MedicinalProductSpecifications.isAuthorizedPharmaceuticalDoseFormEqualTo(authorizedPharmaceuticalDoseForm.getValue()) : null);
 
-            @NotNull
+        return new IBundleProvider() {
+
             @Override
             public Integer size() {
-                return (int) medicinalProductRepository
-                        .findByCountry(tenantId, PageRequest.of(1, 1)).getTotalElements();
+                return (int)medicinalProductRepository.findAll(specification,PageRequest.of(1,1)).getTotalElements();
             }
 
-            @NotNull
+            @Nonnull
             @Override
             public List<IBaseResource> getResources(int theFromIndex, int theToIndex) {
                 final int pageSize = theToIndex-theFromIndex;
@@ -84,10 +91,9 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
                 final List<IBaseResource> results = new ArrayList<>();
 
                 transactionTemplate.execute(status -> {
-                    Page<MedicinalProduct> allMedicinalProducts = medicinalProductRepository
-                            .findByCountry(tenantId, PageRequest.of(currentPageIndex,pageSize));
+                    Page<MedicinalProduct> allMedicinalProducts = medicinalProductRepository.findAll(specification, PageRequest.of(currentPageIndex,pageSize));
                     results.addAll(allMedicinalProducts.stream()
-                            .map(MedicationKnowledgeResourceProvider::medicationKnowledgeFromEntity)
+                            .map(MedicinalProductDefinitionResourceProvider::medicinalProductDefinitionFromEntity)
                             .toList());
                     return null;
                 });
@@ -95,14 +101,19 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
                 return results;
             }
 
-            @Nullable
             @Override
-            public String getUuid() {
-                return null;
+            public InstantType getPublished() {
+                return searchTime;
             }
 
             @Override
             public Integer preferredPageSize() {
+                // Typically this method just returns null
+                return null;
+            }
+
+            @Override
+            public String getUuid() {
                 return null;
             }
         };
@@ -115,6 +126,14 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
         MedicationKnowledge medicationKnowledge = new MedicationKnowledge();
 
         medicationKnowledge.setId(entityMedicinalProduct.getId().toString());
+
+        //Identifier
+        ArrayList<Identifier> identifiers = new ArrayList<>();
+        Identifier identifier = new Identifier();
+        identifier.setSystem("http://ema.europa.eu/fhir/mpId");
+        identifier.setValue(entityMedicinalProduct.getMpId());
+        identifiers.add(identifier);
+        medicinalProductDefinition.setIdentifier(identifiers);
 
         // packaging
         List<MedicationKnowledge.MedicationKnowledgePackagingComponent> packagingComponents =
