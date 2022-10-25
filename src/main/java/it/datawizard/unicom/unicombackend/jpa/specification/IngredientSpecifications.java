@@ -17,4 +17,8 @@ public final class IngredientSpecifications {
     public static Specification<Ingredient> isCountryEqualTo(String expression) {
         return (root, query, builder) -> builder.equal(root.join("manufacturedItem").join("packageItem").join("rootPackagedMedicinalProduct").join("medicinalProduct").get("country"), expression);
     }
+
+    public static Specification<Ingredient> isManufacturedItemEqualTo(String expression) {
+        return (root, query, builder) -> builder.equal(root.join("manufacturedItem").get("id"), expression);
+    }
 }

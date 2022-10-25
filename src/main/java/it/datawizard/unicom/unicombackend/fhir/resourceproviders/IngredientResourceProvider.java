@@ -1,10 +1,13 @@
 package it.datawizard.unicom.unicombackend.fhir.resourceproviders;
 
+import ca.uhn.fhir.i18n.Msg;
 import ca.uhn.fhir.rest.annotation.*;
 import ca.uhn.fhir.rest.api.server.IBundleProvider;
 import ca.uhn.fhir.rest.api.server.RequestDetails;
+import ca.uhn.fhir.rest.param.ReferenceParam;
 import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
+import ca.uhn.fhir.rest.server.exceptions.InvalidRequestException;
 import it.datawizard.unicom.unicombackend.jpa.entity.ManufacturedItem;
 import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackageItem;
@@ -25,15 +28,19 @@ import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @Component
 public class IngredientResourceProvider implements IResourceProvider {
     private static Logger LOG = LoggerFactory.getLogger(IngredientResourceProvider.class);
 
     @Override
-    public Class<? extends IBaseResource> getResourceType() { return Ingredient.class; }
+    public Class<? extends IBaseResource> getResourceType() {
+        return Ingredient.class;
+    }
 
     final private IngredientRepository ingredientRepository;
     final private PlatformTransactionManager platformTransactionManager;
@@ -48,32 +55,40 @@ public class IngredientResourceProvider implements IResourceProvider {
 
     @Search
     @Transactional
-    public IBundleProvider findResources(RequestDetails requestDetails, @OptionalParam(name = Ingredient.SP_ROLE) StringParam role, @OptionalParam(name = Ingredient.SP_SUBSTANCE_CODE) StringParam substanceCode) {
+    public IBundleProvider findResources(RequestDetails requestDetails, @OptionalParam(name = Ingredient.SP_FOR) ReferenceParam forReference, @OptionalParam(name = Ingredient.SP_ROLE) StringParam role, @OptionalParam(name = Ingredient.SP_SUBSTANCE) ReferenceParam substanceReference, @OptionalParam(name = Ingredient.SP_SUBSTANCE_CODE) StringParam substanceCode) {
         final String tenantId = requestDetails.getTenantId();
         final InstantType searchTime = InstantType.withCurrentTime();
 
+        handleReferenceParamsExceptions(forReference,substanceReference);
+
         Specification<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> specification = Specification
                 .where(tenantId != null ? IngredientSpecifications.isCountryEqualTo(tenantId) : null)
+                //TODO: Handle AdministrableProductDefinition and MedicinalProductDefinition forReference cases
+                .and((forReference != null && forReference.getResourceType().equals("ManufacturedItemDefinition")) ? IngredientSpecifications.isManufacturedItemEqualTo(forReference.getIdPart()) : null)
                 .and(role != null ? IngredientSpecifications.isRoleEqualTo(role.getValue()) : null)
-                .and(substanceCode != null ? IngredientSpecifications.isSubstanceCodeEqualTo(substanceCode.getValue()): null);
+                .and(substanceReference != null ? IngredientSpecifications.isSubstanceCodeEqualTo(substanceReference.getIdPart()) : null)
+                .and(substanceCode != null ? IngredientSpecifications.isSubstanceCodeEqualTo(substanceCode.getValue()) : null);
+
+        Specification<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> finalSpecification = specification;
+
 
         return new IBundleProvider() {
 
             @Override
             public Integer size() {
-                return (int)ingredientRepository.findAll(specification,PageRequest.of(1,1)).getTotalElements();
+                return (int) ingredientRepository.findAll(finalSpecification, PageRequest.of(1, 1)).getTotalElements();
             }
 
             @Nonnull
             @Override
             public List<IBaseResource> getResources(int theFromIndex, int theToIndex) {
-                final int pageSize = theToIndex-theFromIndex;
-                final int currentPageIndex = theFromIndex/pageSize;
+                final int pageSize = theToIndex - theFromIndex;
+                final int currentPageIndex = theFromIndex / pageSize;
 
                 final List<IBaseResource> results = new ArrayList<>();
 
                 transactionTemplate.execute(status -> {
-                    Page<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> allMedicinalProducts = ingredientRepository.findAll(specification, PageRequest.of(currentPageIndex,pageSize));
+                    Page<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> allMedicinalProducts = ingredientRepository.findAll(finalSpecification, PageRequest.of(currentPageIndex, pageSize));
                     results.addAll(allMedicinalProducts.stream()
                             .map(IngredientResourceProvider::ingredientFromEntity)
                             .toList());
@@ -166,27 +181,44 @@ public class IngredientResourceProvider implements IResourceProvider {
              entityOuterPackageItem != null
                      && entityOuterPackageItem.getParentPackageItem() != null
                      && entityOuterPackageItem.getPackagedMedicinalProduct() == null;
-             entityOuterPackageItem = entityOuterPackageItem.getParentPackageItem()) {}
+             entityOuterPackageItem = entityOuterPackageItem.getParentPackageItem()) {
+        }
 
         if (entityOuterPackageItem == null) {
-            return  ingredient;
+            return ingredient;
         }
 
         MedicinalProduct entityMedicinalProduct = entityOuterPackageItem.getPackagedMedicinalProduct().getMedicinalProduct();
         ingredient.addFor(new Reference(
                 MedicinalProductDefinitionResourceProvider.medicinalProductDefinitionFromEntity(
-                    entityMedicinalProduct
+                        entityMedicinalProduct
                 )
         ));
 
         // for AdministrableProductDefinition
         ingredient.addFor(new Reference(
                 AdministrableProductDefinitionResourceProvider.administrableProductDefinitionFromEntity(
-                    entityMedicinalProduct.getPharmaceuticalProduct()
+                        entityMedicinalProduct.getPharmaceuticalProduct()
                 )
         ));
 
         return ingredient;
+    }
+
+    private void handleReferenceParamsExceptions(ReferenceParam forReference, ReferenceParam substanceReference) {
+        if (forReference != null && forReference.hasResourceType()) {
+            String forReferenceResourceType = forReference.getResourceType();
+            if (Stream.of("AdministrableProductDefinition", "ManufacturedItemDefinition", "MedicinalProductDefinition").noneMatch(s -> s.equals(forReferenceResourceType))) {
+                throw new InvalidRequestException(Msg.code(633) + "Invalid resource type for parameter 'for': " + forReferenceResourceType);
+            }
+        }
+
+        if (substanceReference != null && substanceReference.hasResourceType()) {
+            String substanceReferenceResourceType = substanceReference.getResourceType();
+            if ("Substance".equals(substanceReferenceResourceType) == false) {
+                throw new InvalidRequestException(Msg.code(633) + "Invalid resource type for parameter 'substance': " + substanceReferenceResourceType);
+            }
+        }
     }
 
 
