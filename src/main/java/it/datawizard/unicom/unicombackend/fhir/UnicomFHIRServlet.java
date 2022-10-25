@@ -15,7 +15,6 @@ import java.io.Serial;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(value = "/*", displayName = "fhir")
 @Service
 public class UnicomFHIRServlet extends RestfulServer {
     @Serial
