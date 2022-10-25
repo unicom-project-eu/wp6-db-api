@@ -4,13 +4,13 @@ import it.datawizard.unicom.unicombackend.jpa.entity.ManufacturedItem;
 import org.springframework.data.jpa.domain.Specification;
 
 
-public final class ManufacturedItemSpecifications extends AbstractSpecifications {
+public final class ManufacturedItemSpecifications {
     public static Specification<ManufacturedItem> isManufacturedDoseFormEqualTo(String expression) {
         return (root, query, builder) -> builder.equal(root.join("manufacturedDoseForm").get("code"), expression);
     }
 
     public static Specification<ManufacturedItem> ingredientsContains(String expression) {
-        return (root, query, builder) -> builder.like(root.join("ingredients").join("substance").get("substanceCode"), contains(expression));
+        return (root, query, builder) -> builder.equal(root.join("ingredients").join("substance").get("substanceCode"), expression);
     }
 
     public static Specification<ManufacturedItem> isCountryEqualTo(String expression) {
