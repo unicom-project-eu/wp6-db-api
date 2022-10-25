@@ -1,18 +1,24 @@
 package it.datawizard.unicom.unicombackend.fhir.resourceproviders;
 
 import ca.uhn.fhir.rest.annotation.IdParam;
+import ca.uhn.fhir.rest.annotation.OptionalParam;
 import ca.uhn.fhir.rest.annotation.Read;
 import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.rest.api.server.IBundleProvider;
 import ca.uhn.fhir.rest.api.server.RequestDetails;
+import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.ManufacturedItem;
+import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.repository.ManufacturedItemRepository;
+import it.datawizard.unicom.unicombackend.jpa.specification.ManufacturedItemSpecifications;
+import it.datawizard.unicom.unicombackend.jpa.specification.MedicinalProductSpecifications;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.Transactional;
@@ -51,15 +57,20 @@ public class ManufacturedItemDefinitionResourceProvider implements IResourceProv
 
     @Search
     @Transactional
-    public IBundleProvider findAllResources(RequestDetails requestDetails) {
-        final InstantType searchTime = InstantType.withCurrentTime();
+    public IBundleProvider findResources(RequestDetails requestDetails, @OptionalParam(name = ManufacturedItemDefinition.SP_DOSE_FORM) StringParam manufacturedDoseForm, @OptionalParam(name = ManufacturedItemDefinition.SP_INGREDIENT) StringParam ingredient) {
         final String tenantId = requestDetails.getTenantId();
+        final InstantType searchTime = InstantType.withCurrentTime();
+
+        Specification<ManufacturedItem> specification = Specification
+                .where(tenantId != null ? ManufacturedItemSpecifications.isCountryEqualTo(tenantId) : null)
+                .and(manufacturedDoseForm != null ? ManufacturedItemSpecifications.isManufacturedDoseFormEqualTo(manufacturedDoseForm.getValue()) : null)
+                .and(ingredient != null ? ManufacturedItemSpecifications.ingredientsContains(ingredient.getValue()): null);
 
         return new IBundleProvider() {
 
             @Override
             public Integer size() {
-                return (int)manufacturedItemRepository.findByPackageItem_RootPackagedMedicinalProduct_MedicinalProduct_Country(tenantId,PageRequest.of(1,1)).getTotalElements();
+                return (int)manufacturedItemRepository.findAll(specification,PageRequest.of(1,1)).getTotalElements();
             }
 
             @Nonnull
@@ -68,11 +79,11 @@ public class ManufacturedItemDefinitionResourceProvider implements IResourceProv
                 final int pageSize = theToIndex-theFromIndex;
                 final int currentPageIndex = theFromIndex/pageSize;
 
-                List<IBaseResource> results = new ArrayList<>();
+                final List<IBaseResource> results = new ArrayList<>();
 
                 transactionTemplate.execute(status -> {
-                    Page<ManufacturedItem> allManufacturedProducts = manufacturedItemRepository.findByPackageItem_RootPackagedMedicinalProduct_MedicinalProduct_Country(tenantId,PageRequest.of(currentPageIndex,pageSize));
-                    results.addAll(allManufacturedProducts.stream()
+                    Page<ManufacturedItem> allMedicinalProducts = manufacturedItemRepository.findAll(specification, PageRequest.of(currentPageIndex,pageSize));
+                    results.addAll(allMedicinalProducts.stream()
                             .map(ManufacturedItemDefinitionResourceProvider::manufacturedItemDefinitionFromEntity)
                             .toList());
                     return null;
