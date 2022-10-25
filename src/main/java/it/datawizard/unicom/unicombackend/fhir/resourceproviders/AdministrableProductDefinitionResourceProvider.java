@@ -59,60 +59,12 @@ public class AdministrableProductDefinitionResourceProvider implements IResource
         );
     }
 
+
+
     @Search
     @Transactional
-    public IBundleProvider findAllResources() {
-        final InstantType searchTime = InstantType.withCurrentTime();
-
-        return new IBundleProvider() {
-
-            @Override
-            public Integer size() {
-                return (int)pharmaceuticalProductRepository.findAll(PageRequest.of(1,1)).getTotalElements();
-            }
-
-            @Nonnull
-            @Override
-            public List<IBaseResource> getResources(int theFromIndex, int theToIndex) {
-                final int pageSize = theToIndex-theFromIndex;
-                final int currentPageIndex = theFromIndex/pageSize;
-
-                final List<IBaseResource> results = new ArrayList<>();
-
-                transactionTemplate.execute(status -> {
-                    Page<PharmaceuticalProduct> allPharmaceuticalProducts = pharmaceuticalProductRepository
-                            .findAll(PageRequest.of(currentPageIndex,pageSize));
-
-                    results.addAll(allPharmaceuticalProducts.stream()
-                            .map(AdministrableProductDefinitionResourceProvider::administrableProductDefinitionFromEntity)
-                            .toList());
-                    return null;
-                });
-
-                return results;
-            }
-
-            @Override
-            public InstantType getPublished() {
-                return searchTime;
-            }
-
-            @Override
-            public Integer preferredPageSize() {
-                // Typically this method just returns null
-                return null;
-            }
-
-            @Override
-            public String getUuid() {
-                return null;
-            }
-        };
-    }
-
-    @Search
-    public IBundleProvider findByAdministrableDoseFormAndRouteOfAdministration(RequestDetails requestDetails, @OptionalParam(name = AdministrableProductDefinition.SP_DOSE_FORM) StringParam administrableDoseForm, @OptionalParam(name = AdministrableProductDefinition.SP_ROUTE) StringParam routeOfAdministration) {
-        final String tenantId = requestDetails.getTenantId();
+    public IBundleProvider findResources(RequestDetails requestDetails, @OptionalParam(name = AdministrableProductDefinition.SP_DOSE_FORM) StringParam administrableDoseForm, @OptionalParam(name = AdministrableProductDefinition.SP_ROUTE) StringParam routeOfAdministration) {
+        //final String tenantId = requestDetails.getTenantId();
         final InstantType searchTime = InstantType.withCurrentTime();
 
         Specification<PharmaceuticalProduct> specification = Specification

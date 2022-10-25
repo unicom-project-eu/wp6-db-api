@@ -51,58 +51,7 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
 
     @Search
     @Transactional
-    public IBundleProvider findAllResources(RequestDetails requestDetails) {
-        final String tenantId = requestDetails.getTenantId();
-        final InstantType searchTime = InstantType.withCurrentTime();
-
-        return new IBundleProvider() {
-
-            @Override
-            public Integer size() {
-                return (int)medicinalProductRepository.findByCountry(tenantId, PageRequest.of(1,1))
-                        .getTotalElements();
-            }
-
-            @Nonnull
-            @Override
-            public List<IBaseResource> getResources(int theFromIndex, int theToIndex) {
-                final int pageSize = theToIndex-theFromIndex;
-                final int currentPageIndex = theFromIndex/pageSize;
-
-                final List<IBaseResource> results = new ArrayList<>();
-
-                transactionTemplate.execute(status -> {
-                    Page<MedicinalProduct> allMedicinalProducts = medicinalProductRepository
-                            .findByCountry(tenantId, PageRequest.of(currentPageIndex,pageSize));
-                    results.addAll(allMedicinalProducts.stream()
-                            .map(MedicinalProductDefinitionResourceProvider::medicinalProductDefinitionFromEntity)
-                            .toList());
-                    return null;
-                });
-
-                return results;
-            }
-
-            @Override
-            public InstantType getPublished() {
-                return searchTime;
-            }
-
-            @Override
-            public Integer preferredPageSize() {
-                // Typically this method just returns null
-                return null;
-            }
-
-            @Override
-            public String getUuid() {
-                return null;
-            }
-        };
-    }
-
-    @Search
-    public IBundleProvider findByCountryAndNameAndClassification(RequestDetails requestDetails,@OptionalParam(name = MedicinalProductDefinition.SP_NAME) StringParam name, @OptionalParam(name = MedicinalProductDefinition.SP_PRODUCT_CLASSIFICATION) StringParam classification) {
+    public IBundleProvider findResources(RequestDetails requestDetails,@OptionalParam(name = MedicinalProductDefinition.SP_NAME) StringParam name, @OptionalParam(name = MedicinalProductDefinition.SP_PRODUCT_CLASSIFICATION) StringParam classification) {
         final String tenantId = requestDetails.getTenantId();
         final InstantType searchTime = InstantType.withCurrentTime();
 
