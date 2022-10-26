@@ -28,7 +28,6 @@ import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -55,28 +54,38 @@ public class IngredientResourceProvider implements IResourceProvider {
 
     @Search
     @Transactional
-    public IBundleProvider findResources(RequestDetails requestDetails, @OptionalParam(name = Ingredient.SP_FOR) ReferenceParam forReference, @OptionalParam(name = Ingredient.SP_ROLE) StringParam role, @OptionalParam(name = Ingredient.SP_SUBSTANCE) ReferenceParam substanceReference, @OptionalParam(name = Ingredient.SP_SUBSTANCE_CODE) StringParam substanceCode) {
+    public IBundleProvider
+    findResources(
+            RequestDetails requestDetails,
+            @OptionalParam(name = Ingredient.SP_FOR) ReferenceParam forReference,
+            @OptionalParam(name = Ingredient.SP_FUNCTION) StringParam function,
+            @OptionalParam(name = Ingredient.SP_IDENTIFIER) StringParam identifier,
+            @OptionalParam(name = Ingredient.SP_MANUFACTURER) ReferenceParam manufacturerReference,
+            @OptionalParam(name = Ingredient.SP_ROLE) StringParam role,
+            @OptionalParam(name = Ingredient.SP_SUBSTANCE) ReferenceParam substanceReference,
+            @OptionalParam(name = Ingredient.SP_SUBSTANCE_CODE) StringParam substanceCode,
+            @OptionalParam(name = Ingredient.SP_SUBSTANCE_DEFINITION) ReferenceParam substanceDefinitionReference) {
         final String tenantId = requestDetails.getTenantId();
         final InstantType searchTime = InstantType.withCurrentTime();
 
-        handleReferenceParamsExceptions(forReference,substanceReference);
+        handleReferenceParamsExceptions(forReference, manufacturerReference, substanceReference, substanceDefinitionReference);
 
         Specification<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> specification = Specification
                 .where(tenantId != null ? IngredientSpecifications.isCountryEqualTo(tenantId) : null)
-                //TODO: Handle AdministrableProductDefinition and MedicinalProductDefinition forReference cases
                 .and((forReference != null && forReference.getResourceType().equals("ManufacturedItemDefinition")) ? IngredientSpecifications.isManufacturedItemEqualTo(forReference.getIdPart()) : null)
+                .and((forReference != null && forReference.getResourceType().equals("MedicinalProductDefinition")) ? IngredientSpecifications.isMedicinalProductEqualTo(forReference.getIdPart()) : null)
+                .and((forReference != null && forReference.getResourceType().equals("AdministrableProductDefinition")) ? IngredientSpecifications.isPharmaceuticalProductEqualTo(forReference.getIdPart()) : null)
                 .and(role != null ? IngredientSpecifications.isRoleEqualTo(role.getValue()) : null)
                 .and(substanceReference != null ? IngredientSpecifications.isSubstanceCodeEqualTo(substanceReference.getIdPart()) : null)
-                .and(substanceCode != null ? IngredientSpecifications.isSubstanceCodeEqualTo(substanceCode.getValue()) : null);
-
-        Specification<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> finalSpecification = specification;
-
+                .and(substanceCode != null ? IngredientSpecifications.isSubstanceCodeEqualTo(substanceCode.getValue()) : null)
+                .and(substanceDefinitionReference != null ? IngredientSpecifications.isSubstanceCodeEqualTo(substanceDefinitionReference.getIdPart()) : null);
 
         return new IBundleProvider() {
+            final boolean shouldReturnEmptyResult = Stream.of(function, identifier,manufacturerReference).filter(bp -> bp != null).count() > 0;
 
             @Override
             public Integer size() {
-                return (int) ingredientRepository.findAll(finalSpecification, PageRequest.of(1, 1)).getTotalElements();
+                return shouldReturnEmptyResult? 0 : (int) ingredientRepository.findAll(specification, PageRequest.of(1, 1)).getTotalElements();
             }
 
             @Nonnull
@@ -87,13 +96,15 @@ public class IngredientResourceProvider implements IResourceProvider {
 
                 final List<IBaseResource> results = new ArrayList<>();
 
-                transactionTemplate.execute(status -> {
-                    Page<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> allMedicinalProducts = ingredientRepository.findAll(finalSpecification, PageRequest.of(currentPageIndex, pageSize));
-                    results.addAll(allMedicinalProducts.stream()
-                            .map(IngredientResourceProvider::ingredientFromEntity)
-                            .toList());
-                    return null;
-                });
+                if (!shouldReturnEmptyResult) {
+                    transactionTemplate.execute(status -> {
+                        Page<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> allMedicinalProducts = ingredientRepository.findAll(specification, PageRequest.of(currentPageIndex, pageSize));
+                        results.addAll(allMedicinalProducts.stream()
+                                .map(IngredientResourceProvider::ingredientFromEntity)
+                                .toList());
+                        return null;
+                    });
+                }
 
                 return results;
             }
@@ -205,7 +216,7 @@ public class IngredientResourceProvider implements IResourceProvider {
         return ingredient;
     }
 
-    private void handleReferenceParamsExceptions(ReferenceParam forReference, ReferenceParam substanceReference) {
+    private void handleReferenceParamsExceptions(ReferenceParam forReference, ReferenceParam manufacturerReference,ReferenceParam substanceReference,ReferenceParam substanceDefinitionReference) {
         if (forReference != null && forReference.hasResourceType()) {
             String forReferenceResourceType = forReference.getResourceType();
             if (Stream.of("AdministrableProductDefinition", "ManufacturedItemDefinition", "MedicinalProductDefinition").noneMatch(s -> s.equals(forReferenceResourceType))) {
@@ -213,10 +224,24 @@ public class IngredientResourceProvider implements IResourceProvider {
             }
         }
 
+        if (manufacturerReference != null && manufacturerReference.hasResourceType()) {
+            String manufacturerReferenceResourceType = manufacturerReference.getResourceType();
+            if (!"Manufacturer".equals(manufacturerReferenceResourceType)) {
+                throw new InvalidRequestException(Msg.code(633) + "Invalid resource type for parameter 'manufacturer': " + manufacturerReferenceResourceType);
+            }
+        }
+
         if (substanceReference != null && substanceReference.hasResourceType()) {
             String substanceReferenceResourceType = substanceReference.getResourceType();
-            if ("Substance".equals(substanceReferenceResourceType) == false) {
+            if (!"Substance".equals(substanceReferenceResourceType)) {
                 throw new InvalidRequestException(Msg.code(633) + "Invalid resource type for parameter 'substance': " + substanceReferenceResourceType);
+            }
+        }
+
+        if (substanceDefinitionReference != null && substanceDefinitionReference.hasResourceType()) {
+            String substanceDefinitionReferenceResourceType = substanceDefinitionReference.getResourceType();
+            if (!"SubstanceDefinition".equals(substanceDefinitionReferenceResourceType)) {
+                throw new InvalidRequestException(Msg.code(633) + "Invalid resource type for parameter 'substanceDefinition': " + substanceDefinitionReferenceResourceType);
             }
         }
     }

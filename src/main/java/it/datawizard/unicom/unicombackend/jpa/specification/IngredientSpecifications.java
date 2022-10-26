@@ -1,7 +1,6 @@
 package it.datawizard.unicom.unicombackend.jpa.specification;
 
 import it.datawizard.unicom.unicombackend.jpa.entity.Ingredient;
-import it.datawizard.unicom.unicombackend.jpa.entity.ManufacturedItem;
 import org.springframework.data.jpa.domain.Specification;
 
 
@@ -20,5 +19,13 @@ public final class IngredientSpecifications {
 
     public static Specification<Ingredient> isManufacturedItemEqualTo(String expression) {
         return (root, query, builder) -> builder.equal(root.join("manufacturedItem").get("id"), expression);
+    }
+
+    public static Specification<Ingredient> isMedicinalProductEqualTo(String expression) {
+        return (root, query, builder) -> builder.equal(root.join("manufacturedItem").join("packageItem").join("rootPackagedMedicinalProduct").join("medicinalProduct").get("id"), expression);
+    }
+
+    public static Specification<Ingredient> isPharmaceuticalProductEqualTo(String expression) {
+        return (root, query, builder) -> builder.equal(root.join("manufacturedItem").join("packageItem").join("rootPackagedMedicinalProduct").join("medicinalProduct").join("pharmaceuticalProduct").get("id"), expression);
     }
 }
