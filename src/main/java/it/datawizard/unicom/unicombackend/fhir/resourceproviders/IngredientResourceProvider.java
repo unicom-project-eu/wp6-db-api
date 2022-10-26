@@ -134,7 +134,6 @@ public class IngredientResourceProvider implements IResourceProvider {
     }
 
 
-    @SuppressWarnings("StatementWithEmptyBody")
     public static Ingredient ingredientFromEntity(
             it.datawizard.unicom.unicombackend.jpa.entity.Ingredient entityIngredient) {
         Ingredient ingredient = new Ingredient();
@@ -186,19 +185,8 @@ public class IngredientResourceProvider implements IResourceProvider {
         ));
 
         // for MedicinalProductDefinition
-        PackageItem entityOuterPackageItem;
-        for (entityOuterPackageItem = entityManufacturedItem.getPackageItem();
-             entityOuterPackageItem != null
-                     && entityOuterPackageItem.getParentPackageItem() != null
-                     && entityOuterPackageItem.getPackagedMedicinalProduct() == null;
-             entityOuterPackageItem = entityOuterPackageItem.getParentPackageItem()) {
-        }
-
-        if (entityOuterPackageItem == null) {
-            return ingredient;
-        }
-
-        MedicinalProduct entityMedicinalProduct = entityOuterPackageItem.getPackagedMedicinalProduct().getMedicinalProduct();
+        MedicinalProduct entityMedicinalProduct = entityManufacturedItem.getPackageItem()
+                .getRootPackagedMedicinalProduct().getMedicinalProduct();
         ingredient.addFor(new Reference(
                 MedicinalProductDefinitionResourceProvider.medicinalProductDefinitionFromEntity(
                         entityMedicinalProduct
@@ -244,6 +232,4 @@ public class IngredientResourceProvider implements IResourceProvider {
             }
         }
     }
-
-
 }
