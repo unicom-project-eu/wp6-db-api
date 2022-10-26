@@ -1,0 +1,290 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "http://unicom.datawizard.it/schemas/import/v0.1.0/schema.json",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "pcId": {
+          "type": "null"
+        },
+        "packSize": {
+          "type": "integer"
+        },
+        "packageItems": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "packageItemQuantity": {
+                  "type": "null"
+                },
+                "manufacturedItems": {
+                  "type": "array",
+                  "items": {}
+                },
+                "childrenPackageItems": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "packageItemQuantity": {
+                          "type": "null"
+                        },
+                        "manufacturedItems": {
+                          "type": "array",
+                          "items": [
+                            {
+                              "type": "object",
+                              "properties": {
+                                "manufacturedDoseForm": {
+                                  "type": "string"
+                                },
+                                "unitOfPresentation": {
+                                  "type": "string"
+                                },
+                                "manufacturedItemQuantity": {
+                                  "type": "string"
+                                },
+                                "volumeUnit": {
+                                  "type": "null"
+                                },
+                                "ingredients": {
+                                  "type": "array",
+                                  "items": [
+                                    {
+                                      "type": "object",
+                                      "properties": {
+                                        "primaryKey": {
+                                          "type": "string"
+                                        },
+                                        "role": {
+                                          "type": "string"
+                                        },
+                                        "substance": {
+                                          "type": "object",
+                                          "properties": {
+                                            "substanceCode": {
+                                              "type": "string"
+                                            }
+                                          },
+                                          "required": [
+                                            "substanceCode"
+                                          ]
+                                        },
+                                        "referenceStrength": {
+                                          "type": "object",
+                                          "properties": {
+                                            "concentrationNumeratorValue": {
+                                              "type": "null"
+                                            },
+                                            "concentrationDenominatorValue": {
+                                              "type": "null"
+                                            },
+                                            "concentrationNumeratorUnit": {
+                                              "type": "null"
+                                            },
+                                            "concentrationDenominatorUnit": {
+                                              "type": "null"
+                                            },
+                                            "presentationNumeratorValue": {
+                                              "type": "string"
+                                            },
+                                            "presentationDenominatorValue": {
+                                              "type": "integer"
+                                            },
+                                            "presentationNumeratorUnit": {
+                                              "type": "string"
+                                            },
+                                            "presentationDenominatorUnit": {
+                                              "type": "string"
+                                            }
+                                          },
+                                          "required": [
+                                            "concentrationNumeratorValue",
+                                            "concentrationDenominatorValue",
+                                            "concentrationNumeratorUnit",
+                                            "concentrationDenominatorUnit",
+                                            "presentationNumeratorValue",
+                                            "presentationDenominatorValue",
+                                            "presentationNumeratorUnit",
+                                            "presentationDenominatorUnit"
+                                          ]
+                                        },
+                                        "strength": {
+                                          "type": "object",
+                                          "properties": {
+                                            "concentrationNumeratorValue": {
+                                              "type": "null"
+                                            },
+                                            "concentrationDenominatorValue": {
+                                              "type": "null"
+                                            },
+                                            "concentrationNumeratorUnit": {
+                                              "type": "null"
+                                            },
+                                            "concentrationDenominatorUnit": {
+                                              "type": "null"
+                                            },
+                                            "presentationNumeratorValue": {
+                                              "type": "null"
+                                            },
+                                            "presentationDenominatorValue": {
+                                              "type": "null"
+                                            },
+                                            "presentationNumeratorUnit": {
+                                              "type": "null"
+                                            },
+                                            "presentationDenominatorUnit": {
+                                              "type": "null"
+                                            }
+                                          },
+                                          "required": [
+                                            "concentrationNumeratorValue",
+                                            "concentrationDenominatorValue",
+                                            "concentrationNumeratorUnit",
+                                            "concentrationDenominatorUnit",
+                                            "presentationNumeratorValue",
+                                            "presentationDenominatorValue",
+                                            "presentationNumeratorUnit",
+                                            "presentationDenominatorUnit"
+                                          ]
+                                        }
+                                      },
+                                      "required": [
+                                        "primaryKey",
+                                        "role",
+                                        "substance",
+                                        "referenceStrength",
+                                        "strength"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": [
+                                "manufacturedDoseForm",
+                                "unitOfPresentation",
+                                "manufacturedItemQuantity",
+                                "volumeUnit",
+                                "ingredients"
+                              ]
+                            }
+                          ]
+                        },
+                        "childrenPackageItems": {
+                          "type": "array",
+                          "items": {}
+                        }
+                      },
+                      "required": [
+                        "type",
+                        "packageItemQuantity",
+                        "manufacturedItems",
+                        "childrenPackageItems"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "type",
+                "packageItemQuantity",
+                "manufacturedItems",
+                "childrenPackageItems"
+              ]
+            }
+          ]
+        },
+        "medicinalProduct": {
+          "type": "object",
+          "properties": {
+            "primaryKey": {
+              "type": "string"
+            },
+            "mpId": {
+              "type": "null"
+            },
+            "fullName": {
+              "type": "string"
+            },
+            "atcCodes": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "authorizedPharmaceuticalDoseForm": {
+              "type": "string"
+            },
+            "marketingAuthorizationHolderCode": {
+              "type": "null"
+            },
+            "marketingAuthorizationHolderLabel": {
+              "type": "string"
+            },
+            "country": {
+              "type": "string"
+            },
+            "pharmaceuticalProduct": {
+              "type": "object",
+              "properties": {
+                "primaryKey": {
+                  "type": "string"
+                },
+                "administrableDoseForm": {
+                  "type": "string"
+                },
+                "unitOfPresentation": {
+                  "type": "string"
+                },
+                "routesOfAdministration": {
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "primaryKey",
+                "administrableDoseForm",
+                "unitOfPresentation",
+                "routesOfAdministration"
+              ]
+            }
+          },
+          "required": [
+            "primaryKey",
+            "mpId",
+            "fullName",
+            "atcCodes",
+            "authorizedPharmaceuticalDoseForm",
+            "marketingAuthorizationHolderCode",
+            "marketingAuthorizationHolderLabel",
+            "country",
+            "pharmaceuticalProduct"
+          ]
+        }
+      },
+      "required": [
+        "pcId",
+        "packSize",
+        "packageItems",
+        "medicinalProduct"
+      ]
+    }
+  ]
+}

@@ -14,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.DispatcherServlet;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,14 +26,28 @@ public class UnicomApplication implements CommandLineRunner {
 	private final static Logger LOG = LoggerFactory.getLogger(UnicomApplication.class);
 
 	private final ConfigurableApplicationContext applicationContext;
+	private final DispatcherServlet dispatcherServlet;
 	private final UnicomFHIRServlet unicomFHIRServlet;
 	private final JsonDataImporter jsonDataImporter;
 
 	@Autowired
-	public UnicomApplication(UnicomFHIRServlet unicomFHIRServlet, ConfigurableApplicationContext context, JsonDataImporter jsonDataImporter) {
+	public UnicomApplication(UnicomFHIRServlet unicomFHIRServlet, ConfigurableApplicationContext context, DispatcherServlet dispatcherServlet, JsonDataImporter jsonDataImporter) {
 		this.unicomFHIRServlet = unicomFHIRServlet;
 		this.applicationContext = context;
+		this.dispatcherServlet = dispatcherServlet;
 		this.jsonDataImporter = jsonDataImporter;
+	}
+
+//	@Bean
+//	public DispatcherServlet dispatcherServlet() {
+//		return new DispatcherServlet();
+//	}
+
+	@Bean
+	public ServletRegistrationBean<DispatcherServlet> dispatcherServletServletRegistrationBean() {
+		ServletRegistrationBean<DispatcherServlet> bean = new ServletRegistrationBean<>(dispatcherServlet, "/*");
+		bean.setLoadOnStartup(1);
+		return bean;
 	}
 
 	@Bean
