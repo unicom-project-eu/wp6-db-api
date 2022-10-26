@@ -9,7 +9,7 @@ public final class ManufacturedItemSpecifications {
         return (root, query, builder) -> builder.equal(root.join("manufacturedDoseForm").get("code"), expression);
     }
 
-    public static Specification<ManufacturedItem> ingredientsContains(String expression) {
+    public static Specification<ManufacturedItem> ingredientsContain(String expression) {
         return (root, query, builder) -> builder.equal(root.join("ingredients").join("substance").get("substanceCode"), expression);
     }
 

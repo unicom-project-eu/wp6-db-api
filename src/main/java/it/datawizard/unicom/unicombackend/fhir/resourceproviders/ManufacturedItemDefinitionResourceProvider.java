@@ -9,10 +9,8 @@ import ca.uhn.fhir.rest.api.server.RequestDetails;
 import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import it.datawizard.unicom.unicombackend.jpa.entity.ManufacturedItem;
-import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.repository.ManufacturedItemRepository;
 import it.datawizard.unicom.unicombackend.jpa.specification.ManufacturedItemSpecifications;
-import it.datawizard.unicom.unicombackend.jpa.specification.MedicinalProductSpecifications;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.r5.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,7 +62,7 @@ public class ManufacturedItemDefinitionResourceProvider implements IResourceProv
         Specification<ManufacturedItem> specification = Specification
                 .where(tenantId != null ? ManufacturedItemSpecifications.isCountryEqualTo(tenantId) : null)
                 .and(manufacturedDoseForm != null ? ManufacturedItemSpecifications.isManufacturedDoseFormEqualTo(manufacturedDoseForm.getValue()) : null)
-                .and(ingredient != null ? ManufacturedItemSpecifications.ingredientsContains(ingredient.getValue()): null);
+                .and(ingredient != null ? ManufacturedItemSpecifications.ingredientsContain(ingredient.getValue()): null);
 
         return new IBundleProvider() {
 

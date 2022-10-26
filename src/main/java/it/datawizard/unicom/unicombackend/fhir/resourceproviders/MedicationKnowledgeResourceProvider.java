@@ -1,13 +1,18 @@
 package it.datawizard.unicom.unicombackend.fhir.resourceproviders;
 
+import ca.uhn.fhir.i18n.Msg;
 import ca.uhn.fhir.rest.annotation.IdParam;
 import ca.uhn.fhir.rest.annotation.OptionalParam;
 import ca.uhn.fhir.rest.annotation.Read;
 import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.rest.api.server.IBundleProvider;
 import ca.uhn.fhir.rest.api.server.RequestDetails;
+import ca.uhn.fhir.rest.param.QuantityParam;
+import ca.uhn.fhir.rest.param.ReferenceParam;
 import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
+import ca.uhn.fhir.rest.server.exceptions.InvalidRequestException;
+import it.datawizard.unicom.unicombackend.jpa.entity.AtcCode;
 import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.repository.MedicinalProductRepository;
@@ -34,6 +39,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @Component
 public class MedicationKnowledgeResourceProvider implements IResourceProvider {
@@ -65,20 +71,58 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
 
     @Search
     @Transactional
-    public IBundleProvider findResources(RequestDetails requestDetails,@OptionalParam(name = MedicationKnowledge.SP_CLASSIFICATION) StringParam classification,@OptionalParam(name = MedicationKnowledge.SP_DOSEFORM) StringParam authorizedPharmaceuticalDoseForm) {
+    public IBundleProvider
+    findResources(
+            RequestDetails requestDetails,
+            @OptionalParam(name = MedicationKnowledge.SP_CLASSIFICATION) StringParam classification,
+            @OptionalParam(name = MedicationKnowledge.SP_CLASSIFICATION_TYPE) StringParam classificationType,
+            @OptionalParam(name = MedicationKnowledge.SP_CODE) StringParam code,
+            @OptionalParam(name = MedicationKnowledge.SP_IDENTIFIER) StringParam identifier,
+            @OptionalParam(name = MedicationKnowledge.SP_DOSEFORM) StringParam authorizedPharmaceuticalDoseForm,
+            @OptionalParam(name = MedicationKnowledge.SP_INGREDIENT) ReferenceParam ingredientReference,
+            @OptionalParam(name = MedicationKnowledge.SP_INGREDIENT_CODE) StringParam ingredientCode,
+            @OptionalParam(name = MedicationKnowledge.SP_MONITORING_PROGRAM_NAME) StringParam monitoringProgramName,
+            @OptionalParam(name = MedicationKnowledge.SP_MONITORING_PROGRAM_NAME) StringParam monitoringProgramType,
+            @OptionalParam(name = MedicationKnowledge.SP_MONOGRAPH) ReferenceParam monographReference,
+            @OptionalParam(name = MedicationKnowledge.SP_MONOGRAPH_TYPE) StringParam monographType,
+            @OptionalParam(name = MedicationKnowledge.SP_PACKAGING_COST) QuantityParam packagingCost,
+            @OptionalParam(name = MedicationKnowledge.SP_PACKAGING_COST_CONCEPT) StringParam packagingCostConcept,
+            @OptionalParam(name = MedicationKnowledge.SP_PRODUCT_TYPE) StringParam productType,
+            @OptionalParam(name = MedicationKnowledge.SP_SOURCE_COST) StringParam sourceCost,
+            @OptionalParam(name = MedicationKnowledge.SP_STATUS) StringParam status
+            ) {
         final String tenantId = requestDetails.getTenantId();
         final InstantType searchTime = InstantType.withCurrentTime();
+
+        handleReferenceParamsExceptions(ingredientReference, monographReference);
+
 
         Specification<MedicinalProduct> specification = Specification
                 .where(tenantId != null ? MedicinalProductSpecifications.isCountryEqualTo(tenantId) : null)
                 .and(classification != null ? MedicinalProductSpecifications.atcCodesContains(classification.getValue()): null)
+                .and(ingredientReference != null ? MedicinalProductSpecifications.ingredientsContain(ingredientReference.getIdPart()): null)
+                .and(ingredientCode != null ? MedicinalProductSpecifications.isSubstanceCodeEqualTo(ingredientCode.getValue()): null)
                 .and(authorizedPharmaceuticalDoseForm != null ? MedicinalProductSpecifications.isAuthorizedPharmaceuticalDoseFormEqualTo(authorizedPharmaceuticalDoseForm.getValue()) : null);
 
         return new IBundleProvider() {
+            final boolean shouldReturnEmptyResult =
+                    Stream.of(
+                            code,
+                            identifier,
+                            monitoringProgramName,
+                            monitoringProgramType,
+                            monographReference,
+                            monographType,
+                            packagingCost,
+                            packagingCostConcept,
+                            productType,
+                            sourceCost,
+                            status).filter(bp -> bp != null).count() > 0
+                    || (classificationType != null && !classificationType.getValue().equals("200000025916"));
 
             @Override
             public Integer size() {
-                return (int)medicinalProductRepository.findAll(specification,PageRequest.of(1,1)).getTotalElements();
+                return shouldReturnEmptyResult? 0 : (int)medicinalProductRepository.findAll(specification,PageRequest.of(1,1)).getTotalElements();
             }
 
             @Nonnull
@@ -89,14 +133,15 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
 
                 final List<IBaseResource> results = new ArrayList<>();
 
-                transactionTemplate.execute(status -> {
-                    Page<MedicinalProduct> allMedicinalProducts = medicinalProductRepository.findAll(specification, PageRequest.of(currentPageIndex,pageSize));
-                    results.addAll(allMedicinalProducts.stream()
-                            .map(MedicinalProductDefinitionResourceProvider::medicinalProductDefinitionFromEntity)
-                            .toList());
-                    return null;
-                });
-
+                if (!shouldReturnEmptyResult) {
+                    transactionTemplate.execute(status -> {
+                        Page<MedicinalProduct> allMedicinalProducts = medicinalProductRepository.findAll(specification, PageRequest.of(currentPageIndex,pageSize));
+                        results.addAll(allMedicinalProducts.stream()
+                                .map(MedicinalProductDefinitionResourceProvider::medicinalProductDefinitionFromEntity)
+                                .toList());
+                        return null;
+                    });
+                }
                 return results;
             }
 
@@ -125,6 +170,12 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
         MedicationKnowledge medicationKnowledge = new MedicationKnowledge();
 
         medicationKnowledge.setId(entityMedicinalProduct.getId().toString());
+
+        //Classification
+        MedicationKnowledge.MedicationKnowledgeMedicineClassificationComponent medicationKnowledgeMedicineClassificationComponent = medicationKnowledge.addMedicineClassification();
+        medicationKnowledgeMedicineClassificationComponent.getClassification().addAll(medicinalProductDefinition.getClassification());
+        //Classification type
+        medicationKnowledgeMedicineClassificationComponent.setType(medicinalProductDefinition.getType());
 
         // packaging
         List<MedicationKnowledge.MedicationKnowledgePackagingComponent> packagingComponents =
@@ -179,5 +230,21 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
 
 
         return medicationKnowledge;
+    }
+    
+    private void handleReferenceParamsExceptions(ReferenceParam ingredientReference, ReferenceParam monographReference) {
+        if (ingredientReference != null && ingredientReference.hasResourceType()) {
+            String ingredientReferenceResourceType = ingredientReference.getResourceType();
+            if (!"Ingredient".equals(ingredientReferenceResourceType)) {
+                throw new InvalidRequestException(Msg.code(633) + "Invalid resource type for parameter 'ingredient': " + ingredientReferenceResourceType);
+            }
+        }
+
+        if (monographReference != null && monographReference.hasResourceType()) {
+            String monographReferenceResourceType = monographReference.getResourceType();
+            if (!"Monograph".equals(monographReferenceResourceType)) {
+                throw new InvalidRequestException(Msg.code(633) + "Invalid resource type for parameter 'substance': " + monographReferenceResourceType);
+            }
+        }
     }
 }

@@ -54,8 +54,7 @@ public class IngredientResourceProvider implements IResourceProvider {
 
     @Search
     @Transactional
-    public IBundleProvider
-    findResources(
+    public IBundleProvider findResources(
             RequestDetails requestDetails,
             @OptionalParam(name = Ingredient.SP_FOR) ReferenceParam forReference,
             @OptionalParam(name = Ingredient.SP_FUNCTION) StringParam function,
