@@ -137,7 +137,7 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
                     transactionTemplate.execute(status -> {
                         Page<MedicinalProduct> allMedicinalProducts = medicinalProductRepository.findAll(specification, PageRequest.of(currentPageIndex,pageSize));
                         results.addAll(allMedicinalProducts.stream()
-                                .map(MedicinalProductDefinitionResourceProvider::medicinalProductDefinitionFromEntity)
+                                .map(MedicationKnowledgeResourceProvider::medicationKnowledgeFromEntity)
                                 .toList());
                         return null;
                     });
