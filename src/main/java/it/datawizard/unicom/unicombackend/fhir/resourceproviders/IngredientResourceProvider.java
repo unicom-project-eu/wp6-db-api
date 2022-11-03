@@ -163,16 +163,42 @@ public class IngredientResourceProvider implements IResourceProvider {
 
         // strength
         Ingredient.IngredientSubstanceStrengthComponent strength = ingredientSubstanceComponent.addStrength();
-        Ingredient.IngredientSubstanceStrengthReferenceStrengthComponent referenceStrength = strength.addReferenceStrength();
 
+        // strength > presentation
+        strength.setPresentation(buildStrengthRatio(
+                entityIngredient.getStrength().getPresentationNumeratorValue(),
+                entityIngredient.getStrength().getPresentationNumeratorUnit(),
+                entityIngredient.getStrength().getPresentationDenominatorValue(),
+                entityIngredient.getStrength().getPresentationDenominatorUnit()
+        ));
+
+        // strength > concentration
+        strength.setConcentration(buildStrengthRatio(
+                entityIngredient.getStrength().getConcentrationNumeratorValue(),
+                entityIngredient.getStrength().getConcentrationNumeratorUnit(),
+                entityIngredient.getStrength().getConcentrationDenominatorValue(),
+                entityIngredient.getStrength().getConcentrationDenominatorUnit()
+        ));
+
+        // TODO is this the right way?
         // referenceStrength
-        Quantity numeratorQuantity = new Quantity();
-        numeratorQuantity.setSystem("https://spor.ema.europa.eu/v1/lists/100000110633");
-        // TODO finish this
-//        referenceStrength.setSubstance(
-//
-//        );
+        Ingredient.IngredientSubstanceStrengthReferenceStrengthComponent presentationReferenceStrength
+                = strength.addReferenceStrength();
+        presentationReferenceStrength.setStrength(buildStrengthRatio(
+                entityIngredient.getReferenceStrength().getPresentationNumeratorValue(),
+                entityIngredient.getReferenceStrength().getPresentationNumeratorUnit(),
+                entityIngredient.getReferenceStrength().getPresentationDenominatorValue(),
+                entityIngredient.getReferenceStrength().getPresentationDenominatorUnit()
+        ));
 
+        Ingredient.IngredientSubstanceStrengthReferenceStrengthComponent concentrationReferenceStrength
+                = strength.addReferenceStrength();
+        concentrationReferenceStrength.setStrength(buildStrengthRatio(
+                entityIngredient.getReferenceStrength().getConcentrationNumeratorValue(),
+                entityIngredient.getReferenceStrength().getConcentrationNumeratorUnit(),
+                entityIngredient.getReferenceStrength().getConcentrationDenominatorValue(),
+                entityIngredient.getReferenceStrength().getConcentrationDenominatorUnit()
+        ));
 
         ingredient.setSubstance(ingredientSubstanceComponent);
 
@@ -231,5 +257,22 @@ public class IngredientResourceProvider implements IResourceProvider {
                 throw new InvalidRequestException(Msg.code(633) + "Invalid resource type for parameter 'substanceDefinition': " + substanceDefinitionReferenceResourceType);
             }
         }
+    }
+
+    public static Ratio buildStrengthRatio(Float numeratorValue, String numeratorUnit, Float denominatorValue, String denominatorUnit) {
+        Ratio ratio = new Ratio();
+        Quantity presentationNumerator = new Quantity();
+        if (numeratorValue != null)
+            presentationNumerator.setValue(numeratorValue);
+        presentationNumerator.setUnit(numeratorUnit);
+        ratio.setNumerator(presentationNumerator);
+
+        Quantity presentationDenominator = new Quantity();
+        if (denominatorValue != null)
+            presentationDenominator.setValue(denominatorValue);
+        presentationDenominator.setUnit(denominatorUnit);
+        ratio.setDenominator(presentationDenominator);
+
+        return ratio;
     }
 }
