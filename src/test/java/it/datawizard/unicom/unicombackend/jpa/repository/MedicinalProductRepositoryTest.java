@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.web.servlet.DispatcherServlet;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
@@ -23,6 +24,9 @@ public class MedicinalProductRepositoryTest {
 
     @Autowired
     private PharmaceuticalProductRepository pharmaceuticalProductRepository;
+
+    @MockBean
+    private DispatcherServlet dispatcherServlet;
 
     @MockBean
     private UnicomFHIRServlet unicomFHIRServlet;
