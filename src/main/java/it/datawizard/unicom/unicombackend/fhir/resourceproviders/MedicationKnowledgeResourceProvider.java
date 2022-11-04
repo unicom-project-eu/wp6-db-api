@@ -63,6 +63,7 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
     }
 
     @Read()
+    @Transactional
     public MedicationKnowledge getResourceById(RequestDetails requestDetails, @IdParam IdType id) {
         Optional<MedicinalProduct> result = medicinalProductRepository
                 .findByIdAndCountry(id.getIdPartAsLong(), requestDetails.getTenantId());
