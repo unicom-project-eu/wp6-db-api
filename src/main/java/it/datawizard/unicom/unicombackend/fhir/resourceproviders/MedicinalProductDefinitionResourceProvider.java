@@ -167,7 +167,7 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
 
         // TODO
         medicinalProductDefinition.getExtension().add(new Extension(
-           "TODO use appropriate url for extension",
+                "http://unicom.datawizard.com/fhir/glob/Extension/authorized-pharmaceutical-dose-form", //TODO use appropriate url for extension,
                 authorizedPharmaceuticalDoseFormCodeableConcept
         ));
 
@@ -176,6 +176,10 @@ public class MedicinalProductDefinitionResourceProvider implements IResourceProv
         //        A key aspect of a regulated medicinal product is the authorisation (marketing authorisation).
         //        This is not directly carried on the product resource, but instead a RegulatedAuthorization resource is
         //        created which points back to this resource.
+        medicinalProductDefinition.getExtension().add(new Extension(
+            "http://unicom.datawizard.com/fhir/glob/Extension/marketing-authorization-holder",
+                new StringType(medicinalProductEntity.getMarketingAuthorizationHolderLabel())
+        ));
 
         return medicinalProductDefinition;
     }
