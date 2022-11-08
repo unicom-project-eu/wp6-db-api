@@ -3,10 +3,7 @@ package it.datawizard.unicom.unicombackend.fhir.plainproviders;
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.util.BundleBuilder;
-import org.hl7.fhir.r5.model.Bundle;
-import org.hl7.fhir.r5.model.CodeSystem;
-import org.hl7.fhir.r5.model.StructureDefinition;
-import org.hl7.fhir.r5.model.ValueSet;
+import org.hl7.fhir.r5.model.*;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -31,6 +28,12 @@ public class ConformanceResourcesPlainProvider {
 
     @Search(type = ValueSet.class)
     public Bundle searchValueSet() {
+        return (Bundle) new BundleBuilder(fhirContext)
+                .getBundle();
+    }
+
+    @Search(type = ImplementationGuide.class)
+    public Bundle searchImplementationGuide() {
         return (Bundle) new BundleBuilder(fhirContext)
                 .getBundle();
     }
