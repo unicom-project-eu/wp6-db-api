@@ -30,8 +30,15 @@ public class StaticFHIRResourcesLoader {
         ResourcePatternResolver resourcePatternResolver = ResourcePatternUtils
                 .getResourcePatternResolver(resourceLoader);
 
-        ArrayList<Resource> resourcesFileList = new ArrayList<>(Arrays.asList(
-                resourcePatternResolver.getResources("classpath:fhir/**/*.json")));
+        ArrayList<Resource> resourcesFileList;
+
+        try {
+             resourcesFileList = new ArrayList<>(Arrays.asList(
+                    resourcePatternResolver.getResources("classpath:fhir/**/*.json")));
+        } catch (IOException e) {
+            LOG.warn(e.getMessage());
+            resourcesFileList = new ArrayList<>();
+        }
 
         LOG.info("Found {} static resources", resourcesFileList.size());
 
