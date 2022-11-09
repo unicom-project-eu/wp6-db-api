@@ -205,7 +205,7 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
         entityMedicinalProduct.getAllIngredients().forEach(ingredient -> {
             MedicationKnowledge.MedicationKnowledgeDefinitionalIngredientComponent definitionalIngredientComponent
                     = new MedicationKnowledge.MedicationKnowledgeDefinitionalIngredientComponent();
-            Reference ingredientReference = new Reference(IngredientResourceProvider.ingredientFromEntity(ingredient));
+            Reference ingredientReference = new Reference(SubstanceResourceProvider.substanceFromEntity(ingredient));
             definitionalIngredientComponent.setItem(new CodeableReference(ingredientReference));
             definitionalComponent.addIngredient(definitionalIngredientComponent);
         });
