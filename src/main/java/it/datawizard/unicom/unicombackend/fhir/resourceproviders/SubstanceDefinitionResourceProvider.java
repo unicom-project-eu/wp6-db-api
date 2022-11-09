@@ -22,7 +22,6 @@ import org.springframework.transaction.support.TransactionTemplate;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class SubstanceDefinitionResourceProvider implements IResourceProvider {
@@ -53,7 +52,7 @@ public class SubstanceDefinitionResourceProvider implements IResourceProvider {
 
     @Search
     @Transactional
-    public IBundleProvider findAllResources() {
+    public IBundleProvider findResources() {
         final InstantType searchTime = InstantType.withCurrentTime();
 
         return new IBundleProvider() {
@@ -101,7 +100,29 @@ public class SubstanceDefinitionResourceProvider implements IResourceProvider {
 
     public static SubstanceDefinition substanceDefinitionFromEntity(Substance substanceEntity)  {
         SubstanceDefinition substanceDefinition = new SubstanceDefinition();
+
+        //Id
         substanceDefinition.setId(substanceEntity.getSubstanceCode());
+
+        //Code
+        List<SubstanceDefinition.SubstanceDefinitionCodeComponent> substanceDefinitionCodeComponentList = new ArrayList<>();
+        SubstanceDefinition.SubstanceDefinitionCodeComponent substanceDefinitionCodeComponent = new SubstanceDefinition.SubstanceDefinitionCodeComponent();
+        CodeableConcept substanceCodeCodeableConcept = new CodeableConcept();
+        substanceCodeCodeableConcept.addCoding(
+                "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                substanceEntity.getSubstanceCode(),
+                substanceEntity.getSubstanceName()
+        );
+        substanceDefinitionCodeComponent.setCode(substanceCodeCodeableConcept);
+        substanceDefinitionCodeComponentList.add(substanceDefinitionCodeComponent);
+        substanceDefinition.setCode(substanceDefinitionCodeComponentList);
+
+        //Name
+        List<SubstanceDefinition.SubstanceDefinitionNameComponent> substanceDefinitionNameComponentList = new ArrayList<>();
+        SubstanceDefinition.SubstanceDefinitionNameComponent substanceDefinitionNameComponent = new SubstanceDefinition.SubstanceDefinitionNameComponent();
+        substanceDefinitionNameComponent.setName(substanceEntity.getSubstanceName());
+        substanceDefinitionNameComponentList.add(substanceDefinitionNameComponent);
+        substanceDefinition.setName(substanceDefinitionNameComponentList);
 
         return substanceDefinition;
     }
