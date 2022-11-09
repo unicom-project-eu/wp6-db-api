@@ -1,0 +1,5594 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "active",
+  "content": "complete",
+  "name": "Container",
+  "id": "container",
+  "title": "Container",
+  "version": "0.1.0",
+  "url": "http://medigree.net/fhir/ee/idmp/CodeSystem/container",
+  "concept": [
+    {
+      "code": "13059000",
+      "display": "Unit-dose blister",
+      "definition": "Container consisting of two layers of which one is shaped to contain the individual unit, usually provided with perforations, the intention being to allow each individual unit to be separated for single unit administration. All the information required for blister packs must appear on each unit dose presentation. Blisters and strips are excluded.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Unit-dose blister"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Блистер с единични дози"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Jednodávkový blistr"
+        },
+        {
+          "language": "da-DK",
+          "value": "Enkeltdosisblister"
+        },
+        {
+          "language": "de-DE",
+          "value": "Einzeldosis-Blisterpackung"
+        },
+        {
+          "language": "el-GR",
+          "value": "Κυψέλη μονάδων δόσης"
+        },
+        {
+          "language": "es-ES",
+          "value": "Blíster unidosis"
+        },
+        {
+          "language": "et-EE",
+          "value": "Üksikannuseline blister"
+        },
+        {
+          "language": "fi-FI",
+          "value": "yksittäispakattu läpipainopakkaus"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Plaquette unitaire"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Spuaic aonad dáileoige"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Blister s jediničnom dozom"
+        },
+        {
+          "language": "is-IS",
+          "value": "Stakskammtaþynna"
+        },
+        {
+          "language": "it-IT",
+          "value": "Blister divisibile per dose unitaria"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Dalomoji lizdinė plokštelė"
+        },
+        {
+          "language": "lv-LV",
+          "value": "Dozējamu vienību blisteris"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Blisterverpakking voor eenmalig gebruik"
+        },
+        {
+          "language": "no-NO",
+          "value": "Endoseblisterpakning"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Blister jednodawkowy"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Blister em dose unitária"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Blister doze unitare"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Блистер однодозовый"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Blister s jednotlivými dávkami"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Deljiv pretisni omot s posameznimi odmerki"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Blister deljiv na pojedinačne doze"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Endosblister"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Birim dozlu blister"
+        }
+      ]
+    },
+    {
+      "code": "13063000",
+      "display": "Pre-filled injector",
+      "definition": "Filled container, usually fitted with an injection needle, which may or may not be fitted with a needle safety device, containing a sterile, single-dose parenteral preparation. This term is only to be used when a more-specific term such as 'Pre-filled syringe' or 'Pre-filled pen' is not appropriate.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Pre-filled injector"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Предварително напълнен инжектор"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Předplněný injektor"
+        },
+        {
+          "language": "da-DK",
+          "value": "Fyldt injektor"
+        },
+        {
+          "language": "de-DE",
+          "value": "Fertiginjektor"
+        },
+        {
+          "language": "el-GR",
+          "value": "Προγεμισμένος εγχυτήρας"
+        },
+        {
+          "language": "es-ES",
+          "value": "Inyector precargado"
+        },
+        {
+          "language": "et-EE",
+          "value": "Eeltäidetud süstevahend"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Esitäytetty injektori"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Injecteur prérempli"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Insteallaire réamh-líonta"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Napunjen injektor"
+        },
+        {
+          "language": "is-IS",
+          "value": "Áfyllt inndælingartæki"
+        },
+        {
+          "language": "it-IT",
+          "value": "Iniettore preriempito"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Užpildytas injektorius"
+        },
+        {
+          "language": "lv-LV",
+          "value": "Pilninjektors"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Voorgevulde injector"
+        },
+        {
+          "language": "no-NO",
+          "value": "Ferdigfylt injektor"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Wstrzykiwacz napełniony"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Injetor pré-cheio"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Injector preumplut"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Предварительно заполненный инжектор"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Naplnený injektor"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Napolnjen injektor"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Napunjeni injektor"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Förfylld injektor"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Kullanıma hazır enjektör"
+        }
+      ]
+    },
+    {
+      "code": "13073000",
+      "display": "Pre-filled oral syringe",
+      "definition": "Filled container for administering a liquid or semi-solid pharmaceutical form to the oral cavity, containing the final preparation in one compartment, or the components necessary for its preparation in different compartments.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Pre-filled oral syringe"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Предварително напълнена спринцовка за перорални форми"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Předplněná stříkačka pro perorální podání"
+        },
+        {
+          "language": "da-DK",
+          "value": "Fyldt oral sprøjte"
+        },
+        {
+          "language": "de-DE",
+          "value": "Fertigspritze für orale Verabreichung"
+        },
+        {
+          "language": "el-GR",
+          "value": "Προγεμισμένη σύριγγα για χορήγηση από του στόματος"
+        },
+        {
+          "language": "es-ES",
+          "value": "Jeringa precargada para uso oral"
+        },
+        {
+          "language": "et-EE",
+          "value": "Eeltäidetud suusüstal"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Esitäytetty mittaruisku"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Seringue préremplie pour administration orale"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Steallaire béil réamh-líonta"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Napunjena štrcaljka za usta"
+        },
+        {
+          "language": "is-IS",
+          "value": "Áfyllt munngjafarsprauta"
+        },
+        {
+          "language": "it-IT",
+          "value": "Siringa preriempita per somministrazione orale"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Užpildytas geriamasis švirkštas"
+        },
+        {
+          "language": "lv-LV",
+          "value": "Pildīta perorālā šļirce"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Voorgevulde doseerspuit voor orale toediening"
+        },
+        {
+          "language": "no-NO",
+          "value": "Ferdigfylt oralsprøyte"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Strzykawka doustna napełniona"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Seringa oral pré-cheia"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Seringă preumplută pentru administrare orală"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Шприц оральный предварительно заполненный"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Naplnená perorálna striekačka"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Napolnjena brizga za peroralno dajanje"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Napunjeni oralni špric"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Förfylld oral doseringsspruta"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Kullanıma hazır ağızdan şırınga"
+        }
+      ]
+    },
+    {
+      "code": "13074000",
+      "display": "Pre-filled oral applicator",
+      "definition": "Filled container for administering a liquid or semi-solid pharmaceutical form to the oral cavity, containing the final preparation in one compartment, or the components necessary for its preparation in different compartments. This term may be used to describe a pre-filled oral syringe in cases where there is a risk of administration error, e.g. where a similar product is often administered by injection, such as with vaccines.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Pre-filled oral applicator"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Предварително напълнен апликатор за перорални форми"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Předplněný aplikátor pro perorální podání"
+        },
+        {
+          "language": "da-DK",
+          "value": "Fyldt oral applikator"
+        },
+        {
+          "language": "de-DE",
+          "value": "Fertigapplikator für die orale Verabreichung"
+        },
+        {
+          "language": "el-GR",
+          "value": "Προγεμισμένο εξάρτημα χορήγησης από του στόματος"
+        },
+        {
+          "language": "es-ES",
+          "value": "Aplicador precargado para uso oral"
+        },
+        {
+          "language": "et-EE",
+          "value": "Eeltäidetud suukaudse manustamise aplikaator"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Esitäytetty oraaliannostelija"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Applicateur prérempli pour administration orale"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Forchuradóir béil réamh-líonta"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Napunjeni aplikator za usta"
+        },
+        {
+          "language": "is-IS",
+          "value": "Áfyllt munngjafaráhald"
+        },
+        {
+          "language": "it-IT",
+          "value": "Applicatore preriempito per somministrazione orale"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Užpildytas geriamasis aplikatorius"
+        },
+        {
+          "language": "lv-LV",
+          "value": "Pildīts perorālais aplikators"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Voorgevulde applicator voor oraal gebruik"
+        },
+        {
+          "language": "no-NO",
+          "value": "Ferdigfylt oralapplikator"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Aplikator doustny napełniony"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Aplicador oral pré-cheio"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Aplicator preumplut pentru administrare orală"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Предварительно заполненный аппликатор пероральный"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Naplnený perorálny aplikátor"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Napolnjen peroralni aplikator"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Napunjeni oralni aplikator"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Förfylld oral applikator"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Kullanıma hazır ağızdan uygulayıcı"
+        }
+      ]
+    },
+    {
+      "code": "13125000",
+      "display": "Wrapper",
+      "definition": "Single-dose or multidose container, usually consisting of a single flexible surface (which may consist of one or more layers and may be coated) intended to be used to enclose one or more units of a solid preparation such as a tablet or lozenge. Multidose wrappers may be used to present the individual units of a medicinal product together in the form of a roll that can be torn or otherwise opened to allow the removal of the required number of units. Blisters, sachets, strips and unit-dose blisters are excluded.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Wrapper"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Обвивка"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Přebal"
+        },
+        {
+          "language": "de-DE",
+          "value": "Hülle"
+        },
+        {
+          "language": "es-ES",
+          "value": "Envoltorio"
+        },
+        {
+          "language": "et-EE",
+          "value": "Ümbris"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Kääre"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Cumhdach"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Ovitak"
+        },
+        {
+          "language": "is-IS",
+          "value": "Umbúðir"
+        },
+        {
+          "language": "it-IT",
+          "value": "Involucro"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Įvynioklis"
+        },
+        {
+          "language": "lv-LV",
+          "value": "Apvalks"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Wikkel"
+        },
+        {
+          "language": "no-NO",
+          "value": "Omslag"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Owijka"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Envoltório"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Ovoj"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Omslag"
+        }
+      ]
+    },
+    {
+      "code": "13131000",
+      "display": "Capsule for opening",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Capsule for opening"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Capsúl le hoscailt"
+        }
+      ]
+    },
+    {
+      "code": "13142000",
+      "display": "Pouch",
+      "definition": "Item of packaging intended for use as an intermediate or outer container, intended to contain one or more medicinal product(s); it is made of a flexible material and may be for single use or be re-usable, and may be fitted with a closure system. Bags and sachets are excluded.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Pouch"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Торбичка"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Váček"
+        },
+        {
+          "language": "da-DK",
+          "value": "Pose"
+        },
+        {
+          "language": "es-ES",
+          "value": "Bolsa"
+        },
+        {
+          "language": "et-EE",
+          "value": "Ravimkotike"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Suojapussi"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Spaga"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Vrećica"
+        },
+        {
+          "language": "is-IS",
+          "value": "Poki"
+        },
+        {
+          "language": "it-IT",
+          "value": "Sacchetto"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Maišiukas"
+        },
+        {
+          "language": "lv-LV",
+          "value": "Maisiņš"
+        },
+        {
+          "language": "no-NO",
+          "value": "Omslagspose"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Torebka lecznicza"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Мешочек"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Mošnjiček"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Skyddspåse"
+        }
+      ]
+    },
+    {
+      "code": "13151000",
+      "display": "Tablet tube",
+      "definition": "Rigid, cylindrical container that is closed at one end, usually intended for fragile tablets such as effervescent tablets, and which is designed to allow the tablets to be stacked in a single column, thereby reducing the likelihood of physical damage caused by impacts with each other or the container wall. The open end can be reclosed, and in the case of effervescent tablets, a desiccant is usually integrated into the closure.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Tablet tube"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Туба за таблетки"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Tuba na tablety"
+        },
+        {
+          "language": "de-DE",
+          "value": "Tablettenröhrchen"
+        },
+        {
+          "language": "es-ES",
+          "value": "Tubo para comprimidos"
+        },
+        {
+          "language": "et-EE",
+          "value": "Tabletituub"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Putki"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Tube pour comprimés"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Tiúb táibléad"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Tuba za tablete"
+        },
+        {
+          "language": "is-IS",
+          "value": "Töflustaukur"
+        },
+        {
+          "language": "it-IT",
+          "value": "Tubo per compresse"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Tablečių tūbelė"
+        },
+        {
+          "language": "lv-LV",
+          "value": "Tablešu tūba"
+        },
+        {
+          "language": "no-NO",
+          "value": "Tablettrør"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Tuba do tabletek"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Tubo para comprimidos"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Tuba za tablete"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Rör"
+        }
+      ]
+    },
+    {
+      "code": "13156000",
+      "display": "Gas cylinder bundle",
+      "definition": "Container consisting of an assembly of cylinders suited for compressed, liquefied or dissolved gas, which are fastened together in a frame and interconnected by a manifold, and are transported and used as a single unit. It is fitted with a device to regulate the spontaneous outflow of gas at atmospheric pressure and room temperature.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Gas cylinder bundle"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Svazek tlakových lahví"
+        },
+        {
+          "language": "de-DE",
+          "value": "Gasflaschenbündel"
+        },
+        {
+          "language": "es-ES",
+          "value": "Bloque de balas de gas"
+        },
+        {
+          "language": "et-EE",
+          "value": "Gaasiballoonide pakett"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Kaasupullonippu"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Bouteilles de gaz en cadre"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Beart sorcóirí gáis"
+        },
+        {
+          "language": "no-NO",
+          "value": "Gassflaskebunt"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Zestaw butli gazowych"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Sklop plinskih jeklenk"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Sammankopplade gasflaskor"
+        }
+      ]
+    },
+    {
+      "code": "30001000",
+      "display": "Ampoule",
+      "definition": "Container sealed by fusion and to be opened exclusively by breaking. The contents are intended for use on one occasion only.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Ampoule"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Ампула"
+        },
+        {
+          "language": "bs-BA",
+          "value": "Ampula"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Ampulka"
+        },
+        {
+          "language": "da-DK",
+          "value": "Ampul"
+        },
+        {
+          "language": "de-DE",
+          "value": "Ampulle"
+        },
+        {
+          "language": "el-GR",
+          "value": "Φύσιγγα"
+        },
+        {
+          "language": "es-ES",
+          "value": "Ampolla"
+        },
+        {
+          "language": "et-EE",
+          "value": "ampull"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Ampulli"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Ampoule"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Ampúl"
+        },
+        {
+          "language": "hr-HR",
+          "value": "ampula"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Ampulla"
+        },
+        {
+          "language": "is-IS",
+          "value": "Lykja"
+        },
+        {
+          "language": "it-IT",
+          "value": "Fiala"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Ампула"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Ampulė"
+        },
+        {
+          "language": "lv-LV",
+          "value": "ampula"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Ампула"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Ampulla"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Ampul"
+        },
+        {
+          "language": "no-NO",
+          "value": "Ampulle"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Ampułka"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Ampola"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Fiolă"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Ампула"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Ampulka"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Ampula"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Ampulë"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Ampula"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Ampull"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Ampul"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Ампула"
+        },
+        {
+          "language": "zh-CN",
+          "value": "安瓿"
+        }
+      ]
+    },
+    {
+      "code": "30004000",
+      "display": "Bag",
+      "definition": "Container consisting of surfaces, whether or not with a flat bottom, made of flexible material, generally closed at the bottom and at the sides by sealing; at the top possibly to be closed by fusion of the material, depending on the intended use. Equipped with special attachments. Contains the final preparation in one compartment or the components necessary for its preparation in different compartments.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Bag"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Сак"
+        },
+        {
+          "language": "bs-BA",
+          "value": "Kesa"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Vak"
+        },
+        {
+          "language": "da-DK",
+          "value": "Pose"
+        },
+        {
+          "language": "de-DE",
+          "value": "Beutel"
+        },
+        {
+          "language": "el-GR",
+          "value": "Σάκκος"
+        },
+        {
+          "language": "es-ES",
+          "value": "Bolsa"
+        },
+        {
+          "language": "et-EE",
+          "value": "kott"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Pussi"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Poche"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Mála"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Vrećica"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Zsák"
+        },
+        {
+          "language": "is-IS",
+          "value": "Poki"
+        },
+        {
+          "language": "it-IT",
+          "value": "Sacca"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Қапшық"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Maišelis"
+        },
+        {
+          "language": "lv-LV",
+          "value": "maiss"
+        },
+        {
+          "language": "mk-MK",
+          "value": "ќесе"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Borża"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Zak"
+        },
+        {
+          "language": "no-NO",
+          "value": "Pose"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Worek"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Saco"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Pungă"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Пакет"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Vak"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Vreča"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Qese"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Kesa"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Påse"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Torba"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Пакет"
+        },
+        {
+          "language": "zh-CN",
+          "value": "袋"
+        }
+      ]
+    },
+    {
+      "code": "30006000",
+      "display": "Barrel",
+      "definition": "Container of large size, suited for liquid, solid and semi-solid pharmaceutical forms.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Barrel"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Бидон"
+        },
+        {
+          "language": "bs-BA",
+          "value": "Bure"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Sud"
+        },
+        {
+          "language": "da-DK",
+          "value": "Tromle"
+        },
+        {
+          "language": "de-DE",
+          "value": "Kanister"
+        },
+        {
+          "language": "el-GR",
+          "value": "Βαρέλι"
+        },
+        {
+          "language": "es-ES",
+          "value": "Bidón"
+        },
+        {
+          "language": "et-EE",
+          "value": "tünn"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Tynnyri"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Fût"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Bairille"
+        },
+        {
+          "language": "hr-HR",
+          "value": "bačva"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Hordó"
+        },
+        {
+          "language": "is-IS",
+          "value": "Tunna"
+        },
+        {
+          "language": "it-IT",
+          "value": "Fusto"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Цилиндр"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Bidonas"
+        },
+        {
+          "language": "lv-LV",
+          "value": "kanna"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Буре"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Bettija"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Vat"
+        },
+        {
+          "language": "no-NO",
+          "value": "Tønne"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Pojemnik"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Barrica"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Bidon"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Бочка"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Sud"
+        },
+        {
+          "language": "sl-SI",
+          "value": "sod"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Fuçi"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Bure"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Dunk"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Fıçı"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Барель"
+        },
+        {
+          "language": "zh-CN",
+          "value": "桶"
+        }
+      ]
+    },
+    {
+      "code": "30007000",
+      "display": "Blister",
+      "definition": "Container (usually multidose) consisting of two layers of which one is shaped to contain the individual doses. Strips and unit-dose blisters are excluded.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Blister"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Блистер"
+        },
+        {
+          "language": "bs-BA",
+          "value": "Blister"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Blistr"
+        },
+        {
+          "language": "da-DK",
+          "value": "Blister"
+        },
+        {
+          "language": "de-DE",
+          "value": "Blisterpackung"
+        },
+        {
+          "language": "el-GR",
+          "value": "Κυψέλη"
+        },
+        {
+          "language": "es-ES",
+          "value": "Blíster"
+        },
+        {
+          "language": "et-EE",
+          "value": "blister"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Läpipainopakkaus"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Plaquette"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Spuaic"
+        },
+        {
+          "language": "hr-HR",
+          "value": "blister"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Buborékcsomagolás"
+        },
+        {
+          "language": "is-IS",
+          "value": "Þynnupakkning"
+        },
+        {
+          "language": "it-IT",
+          "value": "Blister"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Пластырь"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Lizdinė plokštelė"
+        },
+        {
+          "language": "lv-LV",
+          "value": "blisteris"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Блистер"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Folja"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Blisterverpakking"
+        },
+        {
+          "language": "no-NO",
+          "value": "Blisterpakning"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Blister"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Blister"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Blister"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Блистер"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Pretlačovacie balenie"
+        },
+        {
+          "language": "sl-SI",
+          "value": "pretisni omot"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Blistër"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Blister"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Blister"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Blister"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Блістер"
+        },
+        {
+          "language": "zh-CN",
+          "value": "泡罩"
+        }
+      ]
+    },
+    {
+      "code": "30008000",
+      "display": "Bottle",
+      "definition": "Container with a more or less pronounced neck and usually a flat bottom.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Bottle"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Бутилка"
+        },
+        {
+          "language": "bs-BA",
+          "value": "Boca"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Lahev"
+        },
+        {
+          "language": "da-DK",
+          "value": "Flaske"
+        },
+        {
+          "language": "de-DE",
+          "value": "Flasche"
+        },
+        {
+          "language": "el-GR",
+          "value": "Φιάλη"
+        },
+        {
+          "language": "es-ES",
+          "value": "Frasco"
+        },
+        {
+          "language": "et-EE",
+          "value": "pudel"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Pullo"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Flacon"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Buidéal"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Boca/Bočica"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Üveg"
+        },
+        {
+          "language": "is-IS",
+          "value": "Glas"
+        },
+        {
+          "language": "it-IT",
+          "value": "Flacone"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Шыны ыдыс"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Buteliukas"
+        },
+        {
+          "language": "lv-LV",
+          "value": "pudele"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Шише"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Flixkun"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Fles"
+        },
+        {
+          "language": "no-NO",
+          "value": "Flaske"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Butelka"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Frasco"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Flacon"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Флакон"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Fľaša; fľaška"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Steklenica; plastenka"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Shishe"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Boca/Bočica"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Flaska"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Şişe"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Пляшка"
+        },
+        {
+          "language": "zh-CN",
+          "value": "瓶"
+        }
+      ]
+    },
+    {
+      "code": "30009000",
+      "display": "Box",
+      "definition": "Primary container consisting of one or more parts made of a light material, can be closed.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Box"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Кутия"
+        },
+        {
+          "language": "bs-BA",
+          "value": "Kutija"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Krabička"
+        },
+        {
+          "language": "da-DK",
+          "value": "Æske"
+        },
+        {
+          "language": "de-DE",
+          "value": "Schachtel"
+        },
+        {
+          "language": "el-GR",
+          "value": "Κουτί"
+        },
+        {
+          "language": "es-ES",
+          "value": "Caja"
+        },
+        {
+          "language": "et-EE",
+          "value": "karp"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Rasia"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Boîte"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Bosca"
+        },
+        {
+          "language": "hr-HR",
+          "value": "kutija"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Doboz"
+        },
+        {
+          "language": "is-IS",
+          "value": "Askja"
+        },
+        {
+          "language": "it-IT",
+          "value": "Scatola"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Қорап"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Dėžutė"
+        },
+        {
+          "language": "lv-LV",
+          "value": "kārba"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Кутиjа"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Kaxxa"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Doos"
+        },
+        {
+          "language": "no-NO",
+          "value": "Boks"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Pudełko"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Caixa"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Cutie"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Коробка"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Krabička"
+        },
+        {
+          "language": "sl-SI",
+          "value": "škatla"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Kuti"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Kutija"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Kartong"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Kutu"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Коробка"
+        },
+        {
+          "language": "zh-CN",
+          "value": "盒"
+        }
+      ]
+    },
+    {
+      "code": "30011500",
+      "display": "Calendar package",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Calendar package"
+        },
+        {
+          "language": "bg-BG",
+          "value": "-"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Balení s kalendářem"
+        },
+        {
+          "language": "fi-FI",
+          "value": "-"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Pacáiste féilire"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Нұсқаулық орам"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Kalendárový dávkovač"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Kalenderförpackning"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Takvimli ambalaj"
+        },
+        {
+          "language": "uk-UA",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "code": "30014000",
+      "display": "Cartridge",
+      "definition": "Filled container, usually cylindrical, containing a sterile, single-dose or multidose, parenteral preparation; it contains the final preparation in one compartment, or the components necessary for its preparation in different compartments. It may be supplied as an integral part of a pre-filled pen or be intended for use in a reusable device especially designed for that purpose, such as a pen. Dose-dispenser cartridges are excluded.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Cartridge"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Патрон"
+        },
+        {
+          "language": "bs-BA",
+          "value": "Patrona"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Zásobní vložka"
+        },
+        {
+          "language": "da-DK",
+          "value": "Cylinderampul"
+        },
+        {
+          "language": "de-DE",
+          "value": "Patrone"
+        },
+        {
+          "language": "el-GR",
+          "value": "Φυσίγγιο"
+        },
+        {
+          "language": "es-ES",
+          "value": "Cartucho"
+        },
+        {
+          "language": "et-EE",
+          "value": "kolbampull"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Sylinteriampulli"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Cartouche"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Cartús"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Uložak"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Patron"
+        },
+        {
+          "language": "is-IS",
+          "value": "Rörlykja"
+        },
+        {
+          "language": "it-IT",
+          "value": "Cartuccia"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Патрон"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Užtaisas"
+        },
+        {
+          "language": "lv-LV",
+          "value": "kārtridžs"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Патрон"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Skartoċċ"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Patroon"
+        },
+        {
+          "language": "no-NO",
+          "value": "Sylinderampulle"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Wkład"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Cartucho"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Cartuş"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Картридж"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Náplň"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Vložek"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Fishek"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Uložak"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Cylinderampull"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Kartuş"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Картридж"
+        },
+        {
+          "language": "zh-CN",
+          "value": "筒"
+        }
+      ]
+    },
+    {
+      "code": "30015500",
+      "display": "Container",
+      "definition": "An item of packaging that is used for the storage, identification and/or transport of a medicinal product. Only to be used where more-specific terms do not apply. Specific characteristics of the container are defined in the product information of the medicinal product.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Container"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Опаковка"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Obal"
+        },
+        {
+          "language": "da-DK",
+          "value": "Beholder"
+        },
+        {
+          "language": "de-DE",
+          "value": "Behältnis"
+        },
+        {
+          "language": "el-GR",
+          "value": "Περιέκτης"
+        },
+        {
+          "language": "es-ES",
+          "value": "Envase"
+        },
+        {
+          "language": "et-EE",
+          "value": "Konteiner"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Purkki/pakkaus"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Récipient"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Coimeádán"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Spremnik"
+        },
+        {
+          "language": "is-IS",
+          "value": "Ílát"
+        },
+        {
+          "language": "it-IT",
+          "value": "Contenitore"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Talpyklė"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Container"
+        },
+        {
+          "language": "no-NO",
+          "value": "Beholder"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Pojemnik"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Recipiente"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Recipient"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Контейнер"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Obal; Liekovka"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Vsebnik"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Kontejner"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Behållare"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Kap"
+        }
+      ]
+    },
+    {
+      "code": "30018000",
+      "display": "Dart",
+      "definition": "A pointed missile which on contact with an animal delivers its medicinal content.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Dart"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Стрела за инжектиране"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Injekční střela"
+        },
+        {
+          "language": "da-DK",
+          "value": "Bedøvningspil"
+        },
+        {
+          "language": "de-DE",
+          "value": "Pfeil"
+        },
+        {
+          "language": "el-GR",
+          "value": "Εκτοξευόμενη σύριγγα"
+        },
+        {
+          "language": "es-ES",
+          "value": "Dardo"
+        },
+        {
+          "language": "et-EE",
+          "value": "lendsüstal"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Nuoliruisku"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Fléchette"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Ga"
+        },
+        {
+          "language": "hr-HR",
+          "value": "strelica"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Gyógyszeres dárda"
+        },
+        {
+          "language": "is-IS",
+          "value": "Píla"
+        },
+        {
+          "language": "it-IT",
+          "value": "Cartuccia siringa"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Етті қабыршақ"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Strėlinis injektorius"
+        },
+        {
+          "language": "lv-LV",
+          "value": "šautra"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Стреличка"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Dart"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Pijltje"
+        },
+        {
+          "language": "no-NO",
+          "value": "Pil"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Strzała iniekcyjna"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Dardo"
+        },
+        {
+          "language": "ro-RO",
+          "value": "-"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Žihadlo"
+        },
+        {
+          "language": "sl-SI",
+          "value": "injektor za izstrelitev"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Një mjet i mprehtë që kur bie në kontakt me kafshën lëshon lëndën mjekuese"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Strelica"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Bedövningspil"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Cirit"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Шприц-дротик"
+        },
+        {
+          "language": "zh-CN",
+          "value": "镖"
+        }
+      ]
+    },
+    {
+      "code": "30018300",
+      "display": "Dose-dispenser cartridge",
+      "definition": "Container intended for use in a dose dispenser, usually pre-filled with a medicinal product. Cartridges, intended for use in pens, are excluded.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Dose-dispenser cartridge"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Патрон за дозиращо устройство"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Zásobní vložka pro dávkovací zařízení"
+        },
+        {
+          "language": "da-DK",
+          "value": "Kassette til dosisdispenser"
+        },
+        {
+          "language": "de-DE",
+          "value": "Patrone für ein Dosiergerät"
+        },
+        {
+          "language": "el-GR",
+          "value": "Φυσίγγιο δοσομετρητή"
+        },
+        {
+          "language": "es-ES",
+          "value": "Cartucho para dispensador de dosis"
+        },
+        {
+          "language": "et-EE",
+          "value": "Annusti kolbampull"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Säiliö annostelulaitteeseen"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Cartouche pour dispensateur de dose"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Cartús dáilte dáileoige"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Uložak za dozator"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Dózisadagoló patron"
+        },
+        {
+          "language": "is-IS",
+          "value": "Rörlykja fyrir skammtara"
+        },
+        {
+          "language": "it-IT",
+          "value": "Cartuccia per dispositivo di somministrazione"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Dozės skaičiuoklio užtaisas"
+        },
+        {
+          "language": "lv-LV",
+          "value": "Devu sadalītāja kārtridžs"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Patroon voor dosisdispenser"
+        },
+        {
+          "language": "no-NO",
+          "value": "Kassett til dosedispenser"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Wkład do dozownika"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Cartucho para dispensador de dose"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Cartuș dozator"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Картридж для дозирующего устройства"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Náplň do dávkovacieho zariadenia"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Vložek za odmernik"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Uložak za dozni dispenzer"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Kassett för dosdispenser"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Doz dağıtımlı kartuş"
+        }
+      ]
+    },
+    {
+      "code": "30020000",
+      "display": "Dredging container",
+      "definition": "Container for a pharmaceutical form to be applied by dredging.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Dredging container"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Опаковка за посипване"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Obal umožňující zasypávání"
+        },
+        {
+          "language": "da-DK",
+          "value": "Strødåse"
+        },
+        {
+          "language": "de-DE",
+          "value": "Streudose"
+        },
+        {
+          "language": "el-GR",
+          "value": "Περιέκτης επίπασης"
+        },
+        {
+          "language": "es-ES",
+          "value": "Envase espolvoreador"
+        },
+        {
+          "language": "et-EE",
+          "value": "puistekonteiner"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Sirotepakkaus"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Flacon poudreur"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Coimeádán dreideála"
+        },
+        {
+          "language": "hr-HR",
+          "value": "spremnik za posip"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Szórótartály"
+        },
+        {
+          "language": "is-IS",
+          "value": "Sáldurílát"
+        },
+        {
+          "language": "it-IT",
+          "value": "Contenitore aspersore"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Себу контейнері"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Talpyklė su barstytuvu"
+        },
+        {
+          "language": "lv-LV",
+          "value": "pūderējošais trauciņš"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Контеjнер за прашок за посипување"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Kontenitur biex ittalla'"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Strooicontainer"
+        },
+        {
+          "language": "no-NO",
+          "value": "Strøbeholder"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Pojemnik do zasypek"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Frasco polvilhador"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Recipient pentru pudrare"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Контейнер для нанесения присыпки"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Obal na zásyp"
+        },
+        {
+          "language": "sl-SI",
+          "value": "vsebnik za posipalo"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Enë ku mbahen materialet që do të përdoren për pluhurosje"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Kontejner za prašak za posipanje"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Ströburk"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Serpme kabı"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Контейнер для нанесення присипки"
+        },
+        {
+          "language": "zh-CN",
+          "value": "撒粉瓶"
+        }
+      ]
+    },
+    {
+      "code": "30023000",
+      "display": "Dropper container",
+      "definition": "A container, usually a bottle, fitted with a dropper applicator.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Dropper container"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Опаковка с капкомер"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Kapací lahvička"
+        },
+        {
+          "language": "da-DK",
+          "value": "Dråbebeholder"
+        },
+        {
+          "language": "de-DE",
+          "value": "Tropfbehältnis"
+        },
+        {
+          "language": "el-GR",
+          "value": "Σταγονομετρικό φιαλίδιο"
+        },
+        {
+          "language": "es-ES",
+          "value": "Envase cuentagotas"
+        },
+        {
+          "language": "et-EE",
+          "value": "tilgutiga konteiner"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Tiputinpullo"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Flacon compte-gouttes"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Coimeádán le braonaire"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Spremnik s kapaljkom"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Cseppentös tartály"
+        },
+        {
+          "language": "is-IS",
+          "value": "Dropaílát"
+        },
+        {
+          "language": "it-IT",
+          "value": "Flacone contagocce"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Тамшыға арналған контейнер"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Talpyklė su lašintuvu"
+        },
+        {
+          "language": "lv-LV",
+          "value": "trauciņš/konteiners ar pilinātāju"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Шише со вградена капалка"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Kontenitur għat-tqattir"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Container met druppelpipet"
+        },
+        {
+          "language": "no-NO",
+          "value": "Dråpebeholder"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Pojemnik z kroplomierzem"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Frasco conta-gotas"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Flacon picurător"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Контейнер-капельница"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Liekovka s kvapkadlom"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Kapalni vsebnik"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Enë pikatore"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Boca sa kapaljkom"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Droppbehållare"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Damlalıklı şişe"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Контейнер- крапельниця"
+        },
+        {
+          "language": "zh-CN",
+          "value": "带滴头的容器"
+        }
+      ]
+    },
+    {
+      "code": "30023005",
+      "display": "Fixed cryogenic vessel",
+      "definition": "A static thermally insulated container designed to maintain the contents in the liquid state",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Fixed cryogenic vessel"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Неподвижен криогенен съд"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Fixní kryogenní nádoba"
+        },
+        {
+          "language": "da-DK",
+          "value": "Opbevaringsbeholder til kryogen gas, stationær"
+        },
+        {
+          "language": "de-DE",
+          "value": "Ortsfestes Behältnis für kälteverflüssigte Gase"
+        },
+        {
+          "language": "el-GR",
+          "value": "Κρυογόνο δοχείο, ακίνητο"
+        },
+        {
+          "language": "es-ES",
+          "value": "RECIPIENTE CRIOGÉNICO FIJO"
+        },
+        {
+          "language": "et-EE",
+          "value": "Statsionaarne külmutusanum"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Kiintokryosäiliö"
+        },
+        {
+          "language": "fr-FR",
+          "value": "récipient cryogénique fixe"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Soitheach crióigineach seasta"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Fiksirana kriogena posuda"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Rögzített kriogén tartály"
+        },
+        {
+          "language": "is-IS",
+          "value": "Staðbundið lághitaílát"
+        },
+        {
+          "language": "it-IT",
+          "value": "Recipiente criogenico fisso"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Берік криогенді ыдыс"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Stacionarusis kriogeninis indas"
+        },
+        {
+          "language": "lv-LV",
+          "value": "Stacionāra kriogēnā tvertne"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Reċipjent krijoġeniku immobbli"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Cryogeen vat, vast"
+        },
+        {
+          "language": "no-NO",
+          "value": "Stasjonær kryobeholder"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Zamocowany zbiornik kriogeniczny"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Recipiente criogénico fixo"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Recipient criogenic fix"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Стационарный криогенный сосуд"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Statická kryogénna nádoba"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Stacionarna kriogenska posoda"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Enë kriogjene e ngulitur"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Nepokretni kriogeni sud"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Stationärt kryokärl"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Sabit kriyojenik kap"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Зафіксована кріогенна посудина"
+        }
+      ]
+    },
+    {
+      "code": "30024000",
+      "display": "Gas cylinder",
+      "definition": "Container usually cylindrical suited for compressed, liquefied or dissolved gas, fitted with a device to regulate the spontaneous outflow of gas at atmospheric pressure and room temperature.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Gas cylinder"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Бутилка за газ"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Tlaková lahev"
+        },
+        {
+          "language": "da-DK",
+          "value": "Gasbeholder"
+        },
+        {
+          "language": "de-DE",
+          "value": "Druckbehältnis"
+        },
+        {
+          "language": "el-GR",
+          "value": "Οβίδα αερίων"
+        },
+        {
+          "language": "es-ES",
+          "value": "Bala de gas"
+        },
+        {
+          "language": "et-EE",
+          "value": "Gaasiballoon"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Kaasupullo"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Bouteille de gaz"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Sorcóir gáis"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Spremnik za plin"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Gázpalack"
+        },
+        {
+          "language": "is-IS",
+          "value": "Gashylki"
+        },
+        {
+          "language": "it-IT",
+          "value": "Bombola"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Газ-баллоны"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Dujų balionėlis"
+        },
+        {
+          "language": "lv-LV",
+          "value": "gāzes cilindrs"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Цилиндер за гас"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Ċilindru tal-gass"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Gascilinder"
+        },
+        {
+          "language": "no-NO",
+          "value": "Gassbeholder"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Butla gazowa"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Cilindro de gás"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Butelie pentru gaz"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Газовый баллон"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Fľaša na stlačený plyn"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Jeklenka"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Bombol gazi"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Boca za gas"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Gasflaska"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Basınçlı gaz tüpü"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Балон для стиснутого газу"
+        },
+        {
+          "language": "zh-CN",
+          "value": "气筒"
+        }
+      ]
+    },
+    {
+      "code": "30032000",
+      "display": "Jar",
+      "definition": "Container, without a pronounced neck, with a wide opening at the top and a more-or-less flat bottom. It is suited for semi-solid and solid pharmaceutical forms (including those that are stored/supplied in a liquid medium, such as living tissue equivalents). It can be reclosed.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Jar"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Банка"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Kelímek"
+        },
+        {
+          "language": "da-DK",
+          "value": "Dåse"
+        },
+        {
+          "language": "de-DE",
+          "value": "Weithalsgefäss"
+        },
+        {
+          "language": "el-GR",
+          "value": "Βάζο"
+        },
+        {
+          "language": "es-ES",
+          "value": "Tarro"
+        },
+        {
+          "language": "et-EE",
+          "value": "purk"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Tölkki"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Pot"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Próca"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Posuda"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Tégely"
+        },
+        {
+          "language": "is-IS",
+          "value": "Krukka"
+        },
+        {
+          "language": "it-IT",
+          "value": "Vasetto"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Банка"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Plačiakaklis indas"
+        },
+        {
+          "language": "lv-LV",
+          "value": "burka/burciņa"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Тегличка"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Vażett"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Pot"
+        },
+        {
+          "language": "no-NO",
+          "value": "Krukke"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Słoik"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Boião"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Borcan"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Банка"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Téglik"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Lonček"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Vazo"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Tegla"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Burk"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Kavanoz"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Банка"
+        },
+        {
+          "language": "zh-CN",
+          "value": "广口瓶"
+        }
+      ]
+    },
+    {
+      "code": "30036005",
+      "display": "Mobile cryogenic vessel",
+      "definition": "A mobile thermally insulated container designed to maintain the contents in a liquid state.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Mobile cryogenic vessel"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Преносим криогенен съд"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Mobilní kryogenní nádoba"
+        },
+        {
+          "language": "da-DK",
+          "value": "Opbevaringsbeholder til kryogen gas, transportabel"
+        },
+        {
+          "language": "de-DE",
+          "value": "Mobiles Behältnis für kälteverflüssigte Gase"
+        },
+        {
+          "language": "el-GR",
+          "value": "Κρυογόνο δοχείο, φορητό"
+        },
+        {
+          "language": "es-ES",
+          "value": "RECIPIENTE CRIOGÉNICO MÓVIL"
+        },
+        {
+          "language": "et-EE",
+          "value": "Mobiilne külmutusanum"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Kuljetuskryosäiliö"
+        },
+        {
+          "language": "fr-FR",
+          "value": "récipient cryogénique mobile"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Soitheach crióigineach soghluaiste"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Mobilna kriogena posuda"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Hordozható kriogén tartály"
+        },
+        {
+          "language": "is-IS",
+          "value": "Færanlegt lághitaílát"
+        },
+        {
+          "language": "it-IT",
+          "value": "Recipiente criogenico mobile"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Ұялы криогенді ыдыс"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Mobilusis kriogeninis indas"
+        },
+        {
+          "language": "lv-LV",
+          "value": "Mobila kriogēnā tvertne"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Reċipjent krijoġeniku mobbli"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Cryogeen vat, mobiel"
+        },
+        {
+          "language": "no-NO",
+          "value": "Mobil kryobeholder"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Przenośny zbiornik kriogeniczny"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Recipiente criogénico móvel"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Recipient criogenic mobil"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Переносной криогенный сосуд"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Mobilná kryogénna nádoba"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Mobilna kriogenska posoda"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Enë ftohëse e lëvizshme"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Pokretni kriogeni sud"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Mobilt kryokärl"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Hareketli kriyojenik kap"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Мобільна кріогенна посудина"
+        }
+      ]
+    },
+    {
+      "code": "30038000",
+      "display": "Multidose container",
+      "definition": "A container holding a quantity of the preparation suitable for 2 or more doses.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Multidose container"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Mнoroдозова опаковка"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Vícedávkový obal"
+        },
+        {
+          "language": "da-DK",
+          "value": "Flerdosisbeholder"
+        },
+        {
+          "language": "de-DE",
+          "value": "Mehrdosenbehältnis"
+        },
+        {
+          "language": "el-GR",
+          "value": "Περιέκτης πολλαπλών δόσεων"
+        },
+        {
+          "language": "es-ES",
+          "value": "Envase multidosis"
+        },
+        {
+          "language": "et-EE",
+          "value": "mitmeannuseline konteiner"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Moniannospakkaus"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Récipient multidose"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Coimeádán ildáileoige"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Višedozni spremnik"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Tôbbadagos tartály"
+        },
+        {
+          "language": "is-IS",
+          "value": "Fjölskammtaílát"
+        },
+        {
+          "language": "it-IT",
+          "value": "Contenitore multidose"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Көп дозалы контейнер"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Daugiadozė talpyklė"
+        },
+        {
+          "language": "lv-LV",
+          "value": "daudzdevu konteiners"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Мултидозен контеjнер*"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Kontenitur b'ħafna dożi"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Multidoseringscontainer"
+        },
+        {
+          "language": "no-NO",
+          "value": "Flerdosebeholder"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Pojemnik wielodawkowy"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Recipiente multidose"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Recipient multidoză"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Мультидозовый контейнер"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Viacdávkový obal"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Večodmerni vsebnik"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Enë shumëdozëshe"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Višedozni kontejner"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Flerdosbehållare"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Çok dozlu kap"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Багатодозовий контейнер"
+        },
+        {
+          "language": "zh-CN",
+          "value": "多剂量容器"
+        }
+      ]
+    },
+    {
+      "code": "30039000",
+      "display": "Multidose container with airless pump",
+      "definition": "Multidose container with an integral pump designed to protect the contents against in use-contamination.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Multidose container with airless pump"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Многодозова опаковка с херметически затворена помпа"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Vícedávkový obal s odvzdušňovací pumpou"
+        },
+        {
+          "language": "da-DK",
+          "value": "Flerdosisbeholder med ikke-ventileret pumpe"
+        },
+        {
+          "language": "de-DE",
+          "value": "Mehrdosenbehältnis mit gasfreiem Pumpsystem"
+        },
+        {
+          "language": "el-GR",
+          "value": "Περιέκτης πολλαπλών δόσεων με αυτλία χωρις χρήση αέρα"
+        },
+        {
+          "language": "es-ES",
+          "value": "Envase multidosis con bombeo sin entrada de aire"
+        },
+        {
+          "language": "et-EE",
+          "value": "Õhukindla pumbaga mitmeannuseline konteiner"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Moniannospakkaus, ilmattomalla pumpulla varustettu"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Récipient multidose avec système de fermeture sans entrée d'air"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Coimeádán ildáileoige le caidéal gan aer"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Višedozni spremnik s bezračnom pumpicom"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Légzáró pumpával ellátott többadagos tartály"
+        },
+        {
+          "language": "is-IS",
+          "value": "Fjölskammtaílát með lofttæmidælu"
+        },
+        {
+          "language": "it-IT",
+          "value": "Contenitore multidose con pompa a tenuta d'aria"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Герметикалық насосы бар көп дозалы контейнер"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Daugiadozė talpyklė su sandariąja  pompa"
+        },
+        {
+          "language": "lv-LV",
+          "value": "daudzdevu konteiners ar hermētisku sūkni"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Мултидозен контеjнер со херметички затворена пумпа*"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Kontenitur b'ħafna dożi, b'pompa bla arja"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Multidoseringscontainer met pomp"
+        },
+        {
+          "language": "no-NO",
+          "value": "Flerdosebeholder med pumpe uten ventilering"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Pojemnik hermetyczny wielodawkowy z pompką"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Recipiente multidose com sistema de fecho sem entrada de ar"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Recipient multidoză cu pompă pentru împiedicarea pătrunderii aerului"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Мультидозовый контейнер с вакуумным насосом"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Viacdávkový obal s odvzdušňovacou pumpou"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Večodmerni vsebnik z brezzračno črpalko"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Enë shumëdozëshe me pompë me qëllim mbrojtjen e lëndës vepruese nga ndotjet gjatë përdorimit"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Višedozni kontejner sa hermetički zatvorenom pumpom"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Flerdosbehållare med icke ventilerad pump"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Havasız pompalı çok dozlu kap"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Багатодозовий контейнер з повітронепроникним насосом"
+        },
+        {
+          "language": "zh-CN",
+          "value": "带无气泵的多剂量容器"
+        }
+      ]
+    },
+    {
+      "code": "30039400",
+      "display": "Multidose container with metering pump",
+      "definition": "Multidose container with integral metering pump.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Multidose container with metering pump"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Многодозова опаковка с дозираща помпа"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Vícedávkový obal s dávkovací pumpou"
+        },
+        {
+          "language": "da-DK",
+          "value": "Flerdosisbeholder med doseringspumpe"
+        },
+        {
+          "language": "de-DE",
+          "value": "Mehrdosenbehältnis mit Dosierpumpe"
+        },
+        {
+          "language": "el-GR",
+          "value": "Περιέκτης πολλαπλών δόσεων με δοσιμετρική αντλία"
+        },
+        {
+          "language": "es-ES",
+          "value": "Envase multidosis con bomba dosificadora"
+        },
+        {
+          "language": "et-EE",
+          "value": "Mõõtepumbaga mitmeannuseline konteiner"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Moniannospakkaus, mittapumpulla varustettu"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Récipient multidose avec pompe doseuse"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Coimeádán ildáileoige le caidéal méadraithe"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Višedozni spremnik s odmjernom pumpicom"
+        },
+        {
+          "language": "is-IS",
+          "value": "Fjölskammtaílát með mælipumpu"
+        },
+        {
+          "language": "it-IT",
+          "value": "Contenitore multidose con pompa dosatrice"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Дозалайтын сорғышы бар көп дозалы  контейнер"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Daugiadozė talpyklė su dozavimo pompa"
+        },
+        {
+          "language": "lv-LV",
+          "value": "Daudzdevu iepakojums ar dozēšanas sūkni"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Multidoseringscontainer met doseerpomp"
+        },
+        {
+          "language": "no-NO",
+          "value": "Flerdosebeholder med doseringspumpe"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Pojemnik wielodawkowy z pompką dozującą"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Recipiente multidose com bomba doseadora"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Recipient multidoză cu pompă dozatoare"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Мультидозовый контейнер с дозирующим насосом"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Viacdávkový obal s dávkovacou pumpou"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Večodmerni vsebnik z odmerno črpalko"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Višedozni kontejner sa pumpom za doziranje"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Flerdosbehållare med doseringspump"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Ölçülü pompalı çokdozlu kap"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Багатодозовий контейнер з дозуючим насосом"
+        }
+      ]
+    },
+    {
+      "code": "30039500",
+      "display": "Multidose container with pump",
+      "definition": "Multidose container with an integral pump. Metering pump, spray pump, and multidose container with airless pump are excluded.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Multidose container with pump"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Многодозова опаковка с помпа"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Vícedávkový obal s  pumpou"
+        },
+        {
+          "language": "da-DK",
+          "value": "Flerdosisbeholder med pumpe"
+        },
+        {
+          "language": "de-DE",
+          "value": "Mehrdosenbehältnis mit Pumpe"
+        },
+        {
+          "language": "el-GR",
+          "value": "Περιέκτης πολλαπλών δόσεων με αντλία"
+        },
+        {
+          "language": "es-ES",
+          "value": "Envase multidosis con bomba"
+        },
+        {
+          "language": "et-EE",
+          "value": "Pumbaga mitmeannuseline konteiner"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Moniannospumppupakkaus"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Récipient multidose avec pompe"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Coimeádán ildáileoige le caidéal"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Višedozni spremnik s pumpicom"
+        },
+        {
+          "language": "is-IS",
+          "value": "Fjölskammtaílát með dælu"
+        },
+        {
+          "language": "it-IT",
+          "value": "Contenitore multidose con pompa"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Сорғышы бар көп дозалы  контейнер"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Daugiadozė talpyklė su pompa"
+        },
+        {
+          "language": "lv-LV",
+          "value": "Daudzdevu iepakojums ar sūkni"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Multidoseringscontainer met pomp"
+        },
+        {
+          "language": "no-NO",
+          "value": "Flerdosebeholder med pumpe"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Pojemnik wielodawkowy z pompką"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Recipiente multidose com bomba"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Recipient multidoză cu pompă"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Мультидозовый контейнер с насосом"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Viacdávkový obal s pumpou"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Večodmerni vsebnik s črpalko"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Višedozni kontejner sa pumpom"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Flerdosbehållare med pump"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Pompalı çokdozlu kap"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Багатодозовий контейнер з насосом"
+        }
+      ]
+    },
+    {
+      "code": "30045500",
+      "display": "Pack",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Pack"
+        },
+        {
+          "language": "bg-BG",
+          "value": "-"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "-"
+        },
+        {
+          "language": "da-DK",
+          "value": "-"
+        },
+        {
+          "language": "fi-FI",
+          "value": "-"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Paca"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "пакет"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Paket"
+        },
+        {
+          "language": "uk-UA",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "code": "30048000",
+      "display": "Pour-on container",
+      "definition": "Container with built-in applicator for pouring-on use.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Pour-on container"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Опаковка за поливане"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Nádoba na přípravek pro nalévání na hřbet - pour-on"
+        },
+        {
+          "language": "da-DK",
+          "value": "Pour-on beholder"
+        },
+        {
+          "language": "de-DE",
+          "value": "Gießbehältnis"
+        },
+        {
+          "language": "el-GR",
+          "value": "Περιέκτης κατάλληλος για επίχυση"
+        },
+        {
+          "language": "es-ES",
+          "value": "Envase con aplicador para unción continua"
+        },
+        {
+          "language": "et-EE",
+          "value": "kriipsuravimikonteiner"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Kertavalelukaatimella varustettu pakkaus"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Récipient pour pour-on"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Coimeádán doirte"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Spremnik za poliv"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Ráöntő tartály"
+        },
+        {
+          "language": "is-IS",
+          "value": "Áhelluílát"
+        },
+        {
+          "language": "it-IT",
+          "value": "Contenitore per pour-on"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Құюға арналған контейнер"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Užpilamojo skysčio talpyklė"
+        },
+        {
+          "language": "lv-LV",
+          "value": "aplikators aplaistīšanai"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Контеjнер со апликатор за полевање"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Kontenitur biex tferragħ"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Pour-on container"
+        },
+        {
+          "language": "no-NO",
+          "value": "Påhellingsbeholder"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Pojemnik do polewania"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Recipiente com aplicador para unção contínua"
+        },
+        {
+          "language": "ro-RO",
+          "value": "-"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Nádoba na nalievanie"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Vsebnik za kožni poliv"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Enë që përdoret për aplikim të lëngjeve në lëkurë"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Kontejner za polivanje"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Pour on-behållare"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Dökme şişesi"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Контейнер для зрошення"
+        },
+        {
+          "language": "zh-CN",
+          "value": "浇泼容器"
+        }
+      ]
+    },
+    {
+      "code": "30049000",
+      "display": "Pre-filled gastroenteral tube",
+      "definition": "Pre-filled tube for the administration of a medicinal product to the gastroenteral tract.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Pre-filled gastroenteral tube"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Предварително напълнена гастроентерална сонда"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Předplněná gastroenterální sonda"
+        },
+        {
+          "language": "da-DK",
+          "value": "Fyldt gastroenteraltube"
+        },
+        {
+          "language": "de-DE",
+          "value": "vorgefüllter Schlauch zur gastrointestinalen Anwendung"
+        },
+        {
+          "language": "el-GR",
+          "value": "Προγεμισμένος γαστροεντερικός σωλήνας"
+        },
+        {
+          "language": "es-ES",
+          "value": "Sonda precargada"
+        },
+        {
+          "language": "et-EE",
+          "value": "Eeltäidetud gastrointestinaalne tuub"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Esitäytetty letku, maha-suolikanavaan"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Sonde préremplie"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Tiúb ghaistreinteireach réamh-lionta"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Napunjena gastroenteralna sonda"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Előretöltött gasztroenterális eszköz"
+        },
+        {
+          "language": "is-IS",
+          "value": "Áfyllt túpa fyrir maga- og þarmalyf"
+        },
+        {
+          "language": "it-IT",
+          "value": "Tubo gastroenterico preriempito"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Алдын-ала толтырылған гастроэнтрологиялық зонд"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Užpildytas virškinimo trakto vamzdelis"
+        },
+        {
+          "language": "lv-LV",
+          "value": "Gastroenterāla zonde"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Tubu gastroenterali mimli għal-lest"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Voorgevulde sonde voor gastro-enteraal gebruik"
+        },
+        {
+          "language": "no-NO",
+          "value": "Ferdigfylt gastroenteralsonde"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Zgłębnik żołądkowo-jelitowy z wypełnieniem"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Sonda gastroentérica pré-cheia"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Tub gastroenteral preumplut"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Предварительно заполненная гастроэнтеральная трубка"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Naplnená gastroenterálna sonda"
+        },
+        {
+          "language": "sl-SI",
+          "value": "napolnjena gastroenteralna sonda"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Gyp gastroenterik i parambushur"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Napunjena gastroenteralna tuba"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Förfylld sond för gastroenteral användning"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Önceden doldurulmuş gastroenteral tüp"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Попередньо наповнена гастроентеральна трубка"
+        },
+        {
+          "language": "zh-CN",
+          "value": "预充胃肠管"
+        }
+      ]
+    },
+    {
+      "code": "30050000",
+      "display": "Pre-filled pen",
+      "definition": "Filled container consisting usually of a cartridge, usually fitted with an injection needle, housed in a pen device that may or may not be fitted with a needle safety device. The cartridge contains a sterile, single-dose or multidose, parenteral preparation; it contains the final preparation in one compartment, or the components necessary for its preparation in different compartments. The cartridge is not replaceable and the pre-filled pen is intended to be discarded when empty. The pre-defined dose, which may or may not be adjustable, is administered via an actuation, such as the pressing of a button.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Pre-filled pen"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Предварително напълнена писалка"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Předplněné pero"
+        },
+        {
+          "language": "da-DK",
+          "value": "Fyldt pen"
+        },
+        {
+          "language": "de-DE",
+          "value": "Fertigpen"
+        },
+        {
+          "language": "el-GR",
+          "value": "Προγεμισμένη συσκευή τύπου πένας"
+        },
+        {
+          "language": "es-ES",
+          "value": "Pluma precargada"
+        },
+        {
+          "language": "et-EE",
+          "value": "Pen-süstel"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Esitäytetty kynä"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Stylo prérempli"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Peann réamh-líonta"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Napunjena brizgalica"
+        },
+        {
+          "language": "is-IS",
+          "value": "Áfylltur lyfjapenni"
+        },
+        {
+          "language": "it-IT",
+          "value": "Penna preriempita"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Алдын-ала толтырылған қалам"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Užpildytas švirkštiklis"
+        },
+        {
+          "language": "lv-LV",
+          "value": "pildspalvveida pilnšļirce"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Наполнето инjекциско пенкало"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Pinna mimlija għal-lest"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Voorgevulde pen"
+        },
+        {
+          "language": "no-NO",
+          "value": "Ferdigfylt penn"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Wstrzykiwacz półautomatyczny napełniony"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Caneta pré-cheia"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Stilou injector (pen) preumplut"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Предварительно заполненный шприц-ручка"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Naplnené pero"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Napolnjen injekcijski peresnik"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Penë e parambushur"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Napunjeni injekcioni pen"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Förfylld injektionspenna"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Kullanıma hazır dolu enjeksiyon kalemi"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Попередньо наповнена ручка"
+        },
+        {
+          "language": "zh-CN",
+          "value": "预充笔芯"
+        }
+      ]
+    },
+    {
+      "code": "30051000",
+      "display": "Pre-filled syringe",
+      "definition": "Filled container consisting of an injection syringe, generally supplied with an injection needle, which may or may not be fitted with a needle safety device. It contains a sterile, single-dose or multidose, parenteral preparation; it contains the final preparation in one compartment, or the components necessary for its preparation in different compartments. The pre-filled syringe is intended to be discarded when empty.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Pre-filled syringe"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Предварително напълнена спринцовка"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Předplněná injekční stříkačka"
+        },
+        {
+          "language": "da-DK",
+          "value": "Fyldt injektionssprøjte"
+        },
+        {
+          "language": "de-DE",
+          "value": "Fertigspritze"
+        },
+        {
+          "language": "el-GR",
+          "value": "Προγεμισμένη σύριγγα"
+        },
+        {
+          "language": "es-ES",
+          "value": "Jeringa precargada"
+        },
+        {
+          "language": "et-EE",
+          "value": "süstel"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Esitäytetty ruisku"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Seringue préremplie"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Steallaire réamh-líonta"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Napunjena štrcaljka"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Előretöltött fecskendő"
+        },
+        {
+          "language": "is-IS",
+          "value": "Áfyllt sprauta"
+        },
+        {
+          "language": "it-IT",
+          "value": "Siringa preriempita"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Алдын-ала толтырылған шприц"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Užpildytas švirkštas"
+        },
+        {
+          "language": "lv-LV",
+          "value": "pilnšļirce"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Наполнет инjекциски шприц"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Siringa mimlija għal-lest"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Voorgevulde spuit"
+        },
+        {
+          "language": "no-NO",
+          "value": "Ferdigfylt sprøyte"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Ampułko-strzykawka"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Seringa pré-cheia"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Seringă preumplută"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Предварительно заполненный шприц"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Naplnená injekčná striekačka"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Napolnjena injekcijska brizga"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Shiringë e parambushur"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Napunjeni injekcioni špric"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Förfylld spruta"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Kullanıma hazır şırınga"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Попередньо наповнений шприц"
+        },
+        {
+          "language": "zh-CN",
+          "value": "预充注射器"
+        }
+      ]
+    },
+    {
+      "code": "30052000",
+      "display": "Pressurised container",
+      "definition": "Container suited for compressed, liquefied or dissolved gas fitted with a device to enable, after its actuation, a controlled spontaneous release of the contents at atmospheric pressure and room temperature.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Pressurised container"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Опаковка под налягане"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Tlakový obal"
+        },
+        {
+          "language": "da-DK",
+          "value": "Trykbeholder"
+        },
+        {
+          "language": "de-DE",
+          "value": "Druckbehältnis"
+        },
+        {
+          "language": "el-GR",
+          "value": "Περιέκτης υπό πίεση"
+        },
+        {
+          "language": "es-ES",
+          "value": "Envase a presión"
+        },
+        {
+          "language": "et-EE",
+          "value": "rõhukonteiner"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Painepakkaus"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Récipient pressurisé"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Coimeádán brúchóirithe"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Spremnik pod tlakom"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Hajtógázas tartály"
+        },
+        {
+          "language": "is-IS",
+          "value": "Þrýstiílát"
+        },
+        {
+          "language": "it-IT",
+          "value": "Contenitore sotto pressione"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Қысымдағы контейнер"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Slėginė talpyklė"
+        },
+        {
+          "language": "lv-LV",
+          "value": "konteiners zem spiediena"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Контеjнер под притисок"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Kontenitur għal kontenut taħt pressjoni għolja"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Spuitbus"
+        },
+        {
+          "language": "no-NO",
+          "value": "Trykkbeholder"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Pojemnik ciśnieniowy"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Recipiente pressurizado"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Recipient presurizat"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Контейнер под давлением"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Tlakový obal"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Tlačni vsebnik"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Enë nën trysni"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Kontejner pod pritiskom"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Tryckbehållare"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Basınçlı kap"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Контейнер під тиском"
+        },
+        {
+          "language": "zh-CN",
+          "value": "耐压容器"
+        }
+      ]
+    },
+    {
+      "code": "30053500",
+      "display": "Roll-on container",
+      "definition": "A container, usually a bottle, fitted with a roll-on applicator",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Roll-on container"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Рол-он опаковка"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Obal s kuličkovým aplikátorem"
+        },
+        {
+          "language": "da-DK",
+          "value": "Roll-on beholder"
+        },
+        {
+          "language": "de-DE",
+          "value": "Roll-on Behältnis"
+        },
+        {
+          "language": "el-GR",
+          "value": "Περιέκτης με περιστρεφόμενη κεφαλή"
+        },
+        {
+          "language": "es-ES",
+          "value": "Envase con aplicador de bola"
+        },
+        {
+          "language": "et-EE",
+          "value": "Kuulpakend"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Roll-on-pakkaus"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Récipient avec applicateur à bille"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Coimeádán rollógach"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Roll-on spremnik"
+        },
+        {
+          "language": "is-IS",
+          "value": "Rúlluílát"
+        },
+        {
+          "language": "it-IT",
+          "value": "Contenitore con applicatore a sfera"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Домалақ аппликаторлы контейнер"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Talpyklė su rutuliniu aplikatoriumi"
+        },
+        {
+          "language": "lv-LV",
+          "value": "Iepakojums ar rullīti"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Container met roller"
+        },
+        {
+          "language": "no-NO",
+          "value": "Roll-on-beholder"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Pojemnik kulkowy"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Recipiente com aplicador roll-on"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Recipient cu bilă (roll-on)"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Контейнер с роликовым аппликатором"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Obal s guľôčkovým aplikátorom"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Vsebnik z vrtljivo kroglico"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Pakovanje sa roll-on aplikatorom"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Roll on-behållare"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Bilyeli kap"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Контейнер кульковий"
+        }
+      ]
+    },
+    {
+      "code": "30054000",
+      "display": "Sachet",
+      "definition": "Container consisting of two surfaces made of flexible material to be closed only by sealing or folding over. The contents are intended for single use.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Sachet"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Саше"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Sáček"
+        },
+        {
+          "language": "da-DK",
+          "value": "Brev"
+        },
+        {
+          "language": "de-DE",
+          "value": "Beutel"
+        },
+        {
+          "language": "el-GR",
+          "value": "Φακελίσκος"
+        },
+        {
+          "language": "es-ES",
+          "value": "Sobre"
+        },
+        {
+          "language": "et-EE",
+          "value": "kotike"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Annospussi"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Sachet"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Saicín"
+        },
+        {
+          "language": "hr-HR",
+          "value": "vrećica"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Tasak"
+        },
+        {
+          "language": "is-IS",
+          "value": "Skammtapoki"
+        },
+        {
+          "language": "it-IT",
+          "value": "Bustina"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Қапшық"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Paketėlis"
+        },
+        {
+          "language": "lv-LV",
+          "value": "paciņa"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Еднодозна ќесичка"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Qartas"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Sachet"
+        },
+        {
+          "language": "no-NO",
+          "value": "Dosepose"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Saszetka"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Saqueta"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Plic"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Саше"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Vrecko"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Vrečica"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Qeskë"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Kesica"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Dospåse"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Tek dozluk paket"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Саше"
+        }
+      ]
+    },
+    {
+      "code": "30057000",
+      "display": "Single-dose container",
+      "definition": "A container that holds a quantity of the preparation intended for total or partial use on one occasion only.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Single-dose container"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Еднодозова опаковка"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Jednodávkový obal"
+        },
+        {
+          "language": "da-DK",
+          "value": "Enkeltdosisbeholder"
+        },
+        {
+          "language": "de-DE",
+          "value": "Einzeldosisbehältnis"
+        },
+        {
+          "language": "el-GR",
+          "value": "Περιέκτης μίας δόσης"
+        },
+        {
+          "language": "es-ES",
+          "value": "Envase unidosis"
+        },
+        {
+          "language": "et-EE",
+          "value": "üheannuseline konteiner"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Kerta-annospakkaus"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Récipient unidose"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Coimeádán aon dáileoige"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Jednodozni spremnik"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Egyadagos tartály"
+        },
+        {
+          "language": "is-IS",
+          "value": "Stakskammtaílát"
+        },
+        {
+          "language": "it-IT",
+          "value": "Contenitore monodose"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Бір дозалы контейнер"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Vienadozė talpyklė"
+        },
+        {
+          "language": "lv-LV",
+          "value": "Vienas devas iepakojums"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Еднодозен контеjнер"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Kontenitur b'doża waħda"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Verpakking voor eenmalig gebruik"
+        },
+        {
+          "language": "no-NO",
+          "value": "Endosebeholder"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Pojemnik jednodawkowy"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Recipiente unidose"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Recipient unidoză"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Однодозовый контейнер"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Jednodávkový obal"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Enoodmerni vsebnik"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Enë njëdozëshe"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Jednodozni kontejner"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Endosbehållare"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Tek dozluk kap"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Однодозовий контейнер"
+        },
+        {
+          "language": "zh-CN",
+          "value": "单剂量容器"
+        }
+      ]
+    },
+    {
+      "code": "30060000",
+      "display": "Spray container",
+      "definition": "Container for a liquid pharmaceutical form to be converted into a spray by mechanical means.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Spray container"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Спрей опаковка"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Obal na sprej"
+        },
+        {
+          "language": "da-DK",
+          "value": "Spraybeholder"
+        },
+        {
+          "language": "de-DE",
+          "value": "Spraydose"
+        },
+        {
+          "language": "el-GR",
+          "value": "Περιέκτης ψεκασμού"
+        },
+        {
+          "language": "es-ES",
+          "value": "Envase pulverizador"
+        },
+        {
+          "language": "et-EE",
+          "value": "Spreipakend"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Sumutepakkaus"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Flacon pulvérisateur"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Coimeádán sprae"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Spremnik za tekućinu za raspršivanje"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Permettartály"
+        },
+        {
+          "language": "is-IS",
+          "value": "Úðaílát"
+        },
+        {
+          "language": "it-IT",
+          "value": "Flacone nebulizzatore"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Бүріккіш контейнер"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Purškalo talpyklė"
+        },
+        {
+          "language": "lv-LV",
+          "value": "aerosola baloniņš"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Спреj контеjнер"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Bott sprej"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Spuitbus"
+        },
+        {
+          "language": "no-NO",
+          "value": "Spraybeholder"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Pojemnik aerozolowy"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Frasco nebulizador"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Recipient pulverizator"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Контейнер-спрей"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Obal na aerodisperziu"
+        },
+        {
+          "language": "sl-SI",
+          "value": "vsebnik za pršilo"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Enë për sprucim"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Sprej kontejner"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Spraybehållare"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Aerosol kabı"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Контейнер-спрей"
+        },
+        {
+          "language": "zh-CN",
+          "value": "喷雾容器"
+        }
+      ]
+    },
+    {
+      "code": "30064500",
+      "display": "Straw",
+      "definition": "Hollow tube containing a single dose of a medicinal product for oral administration by sucking.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Straw"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Сламка"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Brčko"
+        },
+        {
+          "language": "da-DK",
+          "value": "Sugerør"
+        },
+        {
+          "language": "de-DE",
+          "value": "Trinkhalm"
+        },
+        {
+          "language": "el-GR",
+          "value": "Καλαμίσκος"
+        },
+        {
+          "language": "es-ES",
+          "value": "Pajita medicamentosa"
+        },
+        {
+          "language": "et-EE",
+          "value": "Kõrs"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Pilli"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Paille"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Cochán"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Slamčica"
+        },
+        {
+          "language": "is-IS",
+          "value": "Sogrör"
+        },
+        {
+          "language": "it-IT",
+          "value": "Cannuccia"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Түтікше"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Šiaudelis"
+        },
+        {
+          "language": "lv-LV",
+          "value": "Salmiņš"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Rietje"
+        },
+        {
+          "language": "no-NO",
+          "value": "Sugerør"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Słomka lecznicza"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Palhinha"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Pai"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Трубочка"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Trubička"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Slamica"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Kashtë"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Slamčica"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Sugrör"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Pipet"
+        }
+      ]
+    },
+    {
+      "code": "30065000",
+      "display": "Strip",
+      "definition": "Multidose container consisting of two layers, usually provided with perforations, suited for containing single doses of solid or semi-solid preparations. Blisters are excluded.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Strip"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Лента"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Strip"
+        },
+        {
+          "language": "da-DK",
+          "value": "Strip"
+        },
+        {
+          "language": "de-DE",
+          "value": "Folienstreifen"
+        },
+        {
+          "language": "el-GR",
+          "value": "Ταινία"
+        },
+        {
+          "language": "es-ES",
+          "value": "Tira"
+        },
+        {
+          "language": "et-EE",
+          "value": "ribapakend"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Repäisypakkaus"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Film thermosoudé"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Stiall"
+        },
+        {
+          "language": "hr-HR",
+          "value": "Strip"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Fóliacsík"
+        },
+        {
+          "language": "is-IS",
+          "value": "Strimill"
+        },
+        {
+          "language": "it-IT",
+          "value": "Strip"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Жолақ"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Dvisluoksnė juostelė"
+        },
+        {
+          "language": "lv-LV",
+          "value": "plāksnīte"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Лента"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Strixxa"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Strip"
+        },
+        {
+          "language": "no-NO",
+          "value": "Strip"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Blister miękki"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Fita termossoldada"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Folie termosudată"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Стрип"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Pásové balenie"
+        },
+        {
+          "language": "sl-SI",
+          "value": "Dvojni trak"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Shirit"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Strip"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Strip"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Şerit"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Стрип"
+        },
+        {
+          "language": "zh-CN",
+          "value": "铝塑条"
+        }
+      ]
+    },
+    {
+      "code": "30066000",
+      "display": "Tablet container",
+      "definition": "Container without a neck and with a flat bottom, suited for tablets, capsules, etc., which can be re-closed well. Tablet tube is excluded.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Tablet container"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Опаковка за таблетки"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Obal na tablety"
+        },
+        {
+          "language": "da-DK",
+          "value": "Tabletbeholder"
+        },
+        {
+          "language": "de-DE",
+          "value": "Tablettenbehältnis"
+        },
+        {
+          "language": "el-GR",
+          "value": "Περιέκτης δισκίων"
+        },
+        {
+          "language": "es-ES",
+          "value": "Envase de comprimidos"
+        },
+        {
+          "language": "et-EE",
+          "value": "Tabletipurk"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Tablettipurkki"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Pilulier"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Coimeádán táibléad"
+        },
+        {
+          "language": "hr-HR",
+          "value": "spremnik za tablete"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Tablettatartály"
+        },
+        {
+          "language": "is-IS",
+          "value": "Töfluílát"
+        },
+        {
+          "language": "it-IT",
+          "value": "Contenitore per compresse"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Таблеткалық контейнер"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Tablečių talpyklė"
+        },
+        {
+          "language": "lv-LV",
+          "value": "tablešu konteiners"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Контеjнер за таблети"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Kontenitur tal-pilloli"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Tablettencontainer"
+        },
+        {
+          "language": "no-NO",
+          "value": "Tablettbeholder"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Pojemnik do tabletek"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Recipiente para comprimidos"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Flacon pentru comprimate"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Контейнер для таблеток"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Obal na tablety"
+        },
+        {
+          "language": "sl-SI",
+          "value": "vsebnik za tablete"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Enë për tableta"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Kontejner za tablete"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Tablettburk"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Tablet kabı"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Контейнер для таблеток"
+        },
+        {
+          "language": "zh-CN",
+          "value": "药片容器"
+        }
+      ]
+    },
+    {
+      "code": "30067000",
+      "display": "Tube",
+      "definition": "Container for semi-solid pharmaceutical forms, usually multidose, consisting of collapsible material intended to release the contents via a nozzle by squeezing the package.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Tube"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Туба"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Tuba"
+        },
+        {
+          "language": "da-DK",
+          "value": "Tube"
+        },
+        {
+          "language": "de-DE",
+          "value": "Tube"
+        },
+        {
+          "language": "el-GR",
+          "value": "Σωληνάριο"
+        },
+        {
+          "language": "es-ES",
+          "value": "Tubo"
+        },
+        {
+          "language": "et-EE",
+          "value": "tuub"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Tuubi"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Tube"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Tiúb"
+        },
+        {
+          "language": "hr-HR",
+          "value": "tuba"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Tubus"
+        },
+        {
+          "language": "is-IS",
+          "value": "Túpa"
+        },
+        {
+          "language": "it-IT",
+          "value": "Tubo"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Түтікше"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Tūbelė"
+        },
+        {
+          "language": "lv-LV",
+          "value": "tūba"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Туба"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Tubu"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Tube"
+        },
+        {
+          "language": "no-NO",
+          "value": "Tube"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Tuba"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Bisnaga"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Tub"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Туба"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Tuba"
+        },
+        {
+          "language": "sl-SI",
+          "value": "tuba"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Gyp"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Tuba"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Tub"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Tüp"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Туба"
+        },
+        {
+          "language": "zh-CN",
+          "value": "管"
+        }
+      ]
+    },
+    {
+      "code": "30069000",
+      "display": "Vial",
+      "definition": "Small container for parenteral medicinal products, with a stopper and overseal; the contents are removed after piercing the stopper. Single-dose and multidose uses are included.",
+      "designation": [
+        {
+          "language": "en",
+          "value": "Vial"
+        },
+        {
+          "language": "bg-BG",
+          "value": "Флакон"
+        },
+        {
+          "language": "cs-CZ",
+          "value": "Injekční lahvička"
+        },
+        {
+          "language": "da-DK",
+          "value": "Hætteglas"
+        },
+        {
+          "language": "de-DE",
+          "value": "Durchstechflasche"
+        },
+        {
+          "language": "el-GR",
+          "value": "Φιαλίδιο"
+        },
+        {
+          "language": "es-ES",
+          "value": "Vial"
+        },
+        {
+          "language": "et-EE",
+          "value": "viaal"
+        },
+        {
+          "language": "fi-FI",
+          "value": "Injektiopullo/lääkepullo"
+        },
+        {
+          "language": "fr-FR",
+          "value": "Flacon"
+        },
+        {
+          "language": "ga-EU",
+          "value": "Fial"
+        },
+        {
+          "language": "hr-HR",
+          "value": "bočica"
+        },
+        {
+          "language": "hu-HU",
+          "value": "Injekciós üveg"
+        },
+        {
+          "language": "is-IS",
+          "value": "Hettuglas"
+        },
+        {
+          "language": "it-IT",
+          "value": "Flaconcino"
+        },
+        {
+          "language": "kk-KZ",
+          "value": "Құты"
+        },
+        {
+          "language": "lt-LT",
+          "value": "Flakonas"
+        },
+        {
+          "language": "lv-LV",
+          "value": "flakons"
+        },
+        {
+          "language": "mk-MK",
+          "value": "Виjала"
+        },
+        {
+          "language": "mt-MT",
+          "value": "Kunjett"
+        },
+        {
+          "language": "nl-NL",
+          "value": "Injectieflacon"
+        },
+        {
+          "language": "no-NO",
+          "value": "Hetteglass"
+        },
+        {
+          "language": "pl-PL",
+          "value": "Fiolka"
+        },
+        {
+          "language": "pt-PT",
+          "value": "Frasco para injetáveis"
+        },
+        {
+          "language": "ro-RO",
+          "value": "Flacon"
+        },
+        {
+          "language": "ru-RU",
+          "value": "Флакон"
+        },
+        {
+          "language": "sk-SK",
+          "value": "Injekčná liekovka"
+        },
+        {
+          "language": "sl-SI",
+          "value": "viala"
+        },
+        {
+          "language": "sq-AL",
+          "value": "Shishkë, flakon"
+        },
+        {
+          "language": "sr-RS",
+          "value": "Bočica"
+        },
+        {
+          "language": "sv-SE",
+          "value": "Injektionsflaska"
+        },
+        {
+          "language": "tr-TR",
+          "value": "Flakon"
+        },
+        {
+          "language": "uk-UA",
+          "value": "Флакон"
+        },
+        {
+          "language": "zh-CN",
+          "value": "小瓶"
+        }
+      ]
+    }
+  ],
+  "hierarchyMeaning": "is-a",
+  "count": 45
+}
