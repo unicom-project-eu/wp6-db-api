@@ -82,12 +82,10 @@ public class SubstanceResourceProvider implements IResourceProvider {
         Specification<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> specification = Specification
                 .where(tenantId != null ? IngredientSpecifications.isCountryEqualTo(tenantId) : null)
                 .and(code != null ? IngredientSpecifications.isSubstanceCodeEqualTo(code.getValue()) : null)
-                .and(codeReference != null ? IngredientSpecifications.isSubstanceCodeEqualTo(codeReference.getIdPart()) : null)
-                .and(substanceReference != null ? IngredientSpecifications.isSubstanceCodeEqualTo(substanceReference.getIdPart()) : null);
-
+                .and(codeReference != null ? IngredientSpecifications.isSubstanceCodeEqualTo(codeReference.getIdPart()) : null);
         return new IBundleProvider() {
 
-            final boolean shouldReturnEmptyResult = Stream.of(category, expiry, identifier, quantity, status).filter(bp -> bp != null).count() > 0;
+            final boolean shouldReturnEmptyResult = Stream.of(category, expiry, identifier, quantity, status, substanceReference).filter(bp -> bp != null).count() > 0;
 
             @Override
             public Integer size() {
