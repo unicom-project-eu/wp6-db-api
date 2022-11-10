@@ -208,6 +208,12 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
             Reference ingredientReference = new Reference(SubstanceResourceProvider.substanceFromEntity(ingredient));
             definitionalIngredientComponent.setItem(new CodeableReference(ingredientReference));
             definitionalComponent.addIngredient(definitionalIngredientComponent);
+
+            // extension with a reference to Ingredient
+            definitionalIngredientComponent.getExtension().add(new Extension(
+                "http://unicom.datawizard.com/fhir/glob/Extension/medicationknowledge-ingredient",
+                new Reference(IngredientResourceProvider.ingredientFromEntity(ingredient))
+            ));
         });
 
         // definitional > doseForm
