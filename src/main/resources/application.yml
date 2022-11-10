@@ -16,3 +16,8 @@ spring:
 
   liquibase:
     change-log: 'classpath:db/changelog/changelog-root.yml'
+
+server:
+  tomcat:
+    remote-ip-header: x-forwarded-for
+    protocol-header: x-forwarded-proto`
