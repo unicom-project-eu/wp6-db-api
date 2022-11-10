@@ -30,7 +30,7 @@ services:
     volumes:
       - es_data:/usr/share/elasticsearch/data
     ports:
-      - "127.0.0.1:9200:9200"
+      - "127.0.0.1:${ELASTICSEARCH_PORT:-9200}:9200"
 
 volumes:
   postgres:
