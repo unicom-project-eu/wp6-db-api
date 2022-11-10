@@ -10,5 +10,8 @@ public class UnicomWebMvcConfiguration implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/schemas/**")
                 .addResourceLocations("classpath:/public/schemas/");
+
+        registry.addResourceHandler("/swagger-ui/**")
+                .addResourceLocations("classpath:/public/swagger-ui/");
     }
 }
