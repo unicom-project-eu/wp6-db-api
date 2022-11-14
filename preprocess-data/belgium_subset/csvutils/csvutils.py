@@ -1,6 +1,24 @@
 import json
 import string
+import difflib
 
+class ConflictException(Exception):
+    def __init__(self, key, old, new):
+        self.key = key
+        self.old = old
+        self.new = new
+
+        differ = difflib.Differ()
+        diff = '\n'.join(differ.compare(f'{old}'.split('\n'), f'{new}'.split('\n')))
+
+        message =  '\n------------------------------\n'
+        message += f'CONFLICT for key {key}\n'
+        message += f'diff:\n{diff}'
+        message += '\n------------------------------\n'
+
+        self.message = message
+        super().__init__(message)
+    pass
 
 class AttributeInfo:
     def __init__(self, is_key=False, set_value=lambda x: None, is_hidden=False):
@@ -42,15 +60,7 @@ def csv_mapping(**attributes):
             key = self.get_key()
             if key in instances_dict:
                 if instances_dict[key] != self:
-                    print(
-                            '------------------------------\n'
-                        +   'CONFLICT\n'
-                        +   f'key: {key}\n'
-                        +   f'old: {instances_dict[key]}\n\n'
-                        +   f'new: {self}\n'
-                        +   '------------------------------\n'
-                    )
-                    raise Exception(f'Conflicting values for key {key}')
+                    raise ConflictException(key=key, old=instances_dict[key], new=self)
             instances_dict[key] = self
             pass
         cls.__init__ = new_init
