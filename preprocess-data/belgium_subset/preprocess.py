@@ -1,6 +1,8 @@
 from collections import defaultdict
 import numpy as np
 import pandas as pd
+import sys
+import argparse
 
 from csvutils.csvutils import *
 
@@ -135,11 +137,52 @@ class PackagedMedicinalProduct:
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-c', '--color', action='store_true', help='If true the ouput will contain ANSI colors')
+    args = parser.parse_args()
+
     df = pd.read_csv(ORIGINA_PATH, keep_default_na=False, dtype=str)
     df = df.replace(r'^\s*$', None, regex=True)
+    df = df.replace(r'^NULL$', None, regex=True)
+
+    # notes for Robert
+    # 1. multiple columns with name 'packSize'; 'packSize' should be an integer, not '20 x 100 ml', or 'ml'
+    # > set wrong values of 'packSize' to None
+    df['packSize'] = df['packSize'].replace(r'[^0-9]+', None, regex=True)
+
+    # 2. '?' inside columns 'referenceStrengthConcentrationNumeratorValue' and 'referenceStrengthConcentrationDenominatorValue'
+    # > replace '?' with None
+    df['referenceStrengthConcentrationNumeratorValue'] = df['referenceStrengthConcentrationNumeratorValue'].replace(r'\?', None, regex=True)
+    df['referenceStrengthConcentrationDenominatorValue'] = df['referenceStrengthConcentrationDenominatorValue'].replace(r'\?', None, regex=True)
+
+    # 3. '#REF!' inside column 'strengthPresentationNumeratorValue'
+    # > replace '#REF!' with None
+    df['strengthPresentationNumeratorValue'] = df['strengthPresentationNumeratorValue'].replace(r'\#REF\!', None, regex=True)
+
+    # 4. 'pcId' column is missing
+    # > add empty column for 'pcId'
+    df['pcId'] = None
+
+    # 5. column called 'medicinalProductFullName' instead of 'fullName'
+    # > rename column
+    df['fullName'] = df['medicinalProductFullName'] 
+     
+    # 6. column called 'atcCode' instead of 'atcCodes'
+    # > rename column
+    df['atcCodes'] = df['atcCode']
+
+    # 7. typo in 'authorisedPharrmaceuticalDoseForm'
+    # > fix typo
+    df['authorizedPharmaceuticalDoseForm'] = df['authorisedPharrmaceuticalDoseForm']
+
+    # 8. many rows with 'medicinalProductPrimaryKey' empty
+    # > ignore those rows
+    df = df[df['medicinalProductPrimaryKey'] == None]
+
+
     df = df.astype(dtype={
-        'packSize': int,
-        'packageItemQuantity': int,
+        'packSize': 'Int64',
+        'packageItemQuantity': 'Int64',
         'manufacturedItemQuantity': float,
         'referenceStrengthConcentrationNumeratorValue': float,
         'referenceStrengthConcentrationDenominatorValue': float,
@@ -155,9 +198,17 @@ if __name__ == '__main__':
     df['country'] = df['country'].str.lower()
 
     packages_list = []
-
+    conflic_list = []
     for index, x in df.iterrows():
-        packages_list.append(PackagedMedicinalProduct(x))
+        try:
+            packages_list.append(PackagedMedicinalProduct(x))
+        except ConflictException as e:
+            if e.key != (None,):
+                print(e.get_message(color=args.color), file=sys.stderr)
+                conflic_list.append(e)
         pass
+    
+    if len(conflic_list) > 0:
+        print(f'found {len(conflic_list)} conflicts', file=sys.stderr)
 
     print(packages_list)

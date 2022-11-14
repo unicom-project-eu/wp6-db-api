@@ -1,23 +1,43 @@
 import json
 import string
 import difflib
+from colorama import Fore, Style
 
 class ConflictException(Exception):
     def __init__(self, key, old, new):
         self.key = key
         self.old = old
-        self.new = new
+        self.new = new       
+
+        self.message = self.get_message()
+        super().__init__(self.message)
+    
+    def get_message(self, color=False):
+        def set_color(s):
+            if not color:
+                return s
+            if len(s) == 0:
+                return ''
+            c = s[0]
+            pre = ''
+            if (c == '+'):
+                pre = Fore.GREEN
+            elif (c == '-'):
+                pre = Fore.RED
+            elif (c == '?'):
+                pre = f'{Fore.WHITE}{Style.BRIGHT}'
+            else:
+                return s
+            return f'{pre}{s}{Fore.RESET}{Style.RESET_ALL}'
 
         differ = difflib.Differ()
-        diff = '\n'.join(differ.compare(f'{old}'.split('\n'), f'{new}'.split('\n')))
+        diff = '\n'.join([set_color(s) for s in differ.compare(f'{self.old}'.split('\n'), f'{self.new}'.split('\n'))])
 
         message =  '\n------------------------------\n'
-        message += f'CONFLICT for key {key}\n'
+        message += f'CONFLICT for key {self.key}\n'
         message += f'diff:\n{diff}'
         message += '\n------------------------------\n'
-
-        self.message = message
-        super().__init__(message)
+        return message
     pass
 
 class AttributeInfo:
