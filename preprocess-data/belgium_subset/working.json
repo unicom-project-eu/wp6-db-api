@@ -1,0 +1,2147 @@
+[{
+    "pcId": null,
+    "packSize": 100,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 100,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 100.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 13.87,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 10.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipin AB tabl. 10 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 30,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 30,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 30.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 13.87,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 10.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipin AB tabl. 10 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 100,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 100,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 100.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 13.87,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 10.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipin Sandoz (Impexeco) tabl. (deelb.) Besilaat 10 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 100,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 100,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 100.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 13.87,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 10.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipin Sandoz tabl. (deelb.) Besilaat 10 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 100,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 100,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 100.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 13.87,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 10.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipin Sandoz tabl. (deelb.) Besilaat 10 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 30,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 30,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 30.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 13.87,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 10.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipin Sandoz tabl. (deelb.) Besilaat 10 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 100,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 100,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 100.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 13.87,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 10.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipine EG (PIP) tabl. (deelb.) Besilate 10 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 100,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 100,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 100.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 13.87,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 10.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipine EG tabl. (deelb.) Besilate 10 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 30,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 30,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 30.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 13.87,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 10.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipine EG tabl. (deelb.) Besilate 10 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 100,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 100,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 100.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 13.87,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 10.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipine Mylan tabl. (deelb.) Besilate 10 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 100,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 100,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 100.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 13.87,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 10.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipine Teva tabl. (deelb.) 10 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 30,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 30,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 30.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 13.87,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 10.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipine Teva tabl. (deelb.) 10 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 100,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 100,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10210000",
+            "unitOfPresentation": "15012000",
+            "manufacturedItemQuantity": 100.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 13.87,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 10.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlor harde caps. 10 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10210000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10210000",
+        "unitOfPresentation": "15012000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 30,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 30,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10210000",
+            "unitOfPresentation": "15012000",
+            "manufacturedItemQuantity": 30.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 13.87,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 10.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlor harde caps. 10 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10210000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10210000",
+        "unitOfPresentation": "15012000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 30,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 30,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10210000",
+            "unitOfPresentation": "15012000",
+            "manufacturedItemQuantity": 30.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 13.87,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 10.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlor harde caps. 10 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10210000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10210000",
+        "unitOfPresentation": "15012000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 28,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 28,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 28.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipin AB tabl. 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 98,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 98,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 98.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipin AB tabl. 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 100,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 100,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 100.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipin Sandoz (Impexeco) tabl. (deelb.) Besilaat 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 100,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 100,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 100.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipin Sandoz tabl. (deelb.) Besilaat 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 100,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 100,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 100.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipin Sandoz tabl. (deelb.) Besilaat 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 30,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 30,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 30.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipin Sandoz tabl. (deelb.) Besilaat 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 60,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 60,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 60.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipin Sandoz tabl. (deelb.) Besilaat 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 28,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 28,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 28.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipine EG tabl. Besilate 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 98,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 98,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 98.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipine EG tabl. Besilate 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 100,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 100,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 100.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipine Mylan tabl. (deelb.) Besilate 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 30,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 30,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 30.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipine Mylan tabl. (deelb.) Besilate 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 28,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 28,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 28.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipine Teva tabl. (deelb.) 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 56,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 56,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 56.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipine Teva tabl. (deelb.) 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 98,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 98,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10219000",
+            "unitOfPresentation": "15054000",
+            "manufacturedItemQuantity": 98.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlodipine Teva tabl. (deelb.) 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10219000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10219000",
+        "unitOfPresentation": "15054000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 28,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 28,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10210000",
+            "unitOfPresentation": "15012000",
+            "manufacturedItemQuantity": 28.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlor harde caps. 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10210000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10210000",
+        "unitOfPresentation": "15012000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 30,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 30,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10210000",
+            "unitOfPresentation": "15012000",
+            "manufacturedItemQuantity": 30.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlor harde caps. 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10210000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10210000",
+        "unitOfPresentation": "15012000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 56,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 56,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10210000",
+            "unitOfPresentation": "15012000",
+            "manufacturedItemQuantity": 56.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlor harde caps. 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10210000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10210000",
+        "unitOfPresentation": "15012000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }, {
+    "pcId": null,
+    "packSize": 98,
+    "packageItems": [
+      {
+        "type": null,
+        "packageItemQuantity": 98,
+        "manufacturedItems": [
+          {
+            "manufacturedDoseForm": "10210000",
+            "unitOfPresentation": "15012000",
+            "manufacturedItemQuantity": 98.0,
+            "volumeUnit": null,
+            "ingredients": [
+              {
+                "role": "100000072072",
+                "substance": {
+                  "substanceCode": "100000090079"
+                },
+                "referenceStrength": {
+                  "concentrationNumeratorValue": 6.93,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": null,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                },
+                "strength": {
+                  "concentrationNumeratorValue": null,
+                  "concentrationDenominatorValue": null,
+                  "concentrationNumeratorUnit": null,
+                  "concentrationDenominatorUnit": null,
+                  "presentationNumeratorValue": 5.0,
+                  "presentationDenominatorValue": null,
+                  "presentationNumeratorUnit": null,
+                  "presentationDenominatorUnit": null
+                }
+              }
+            ]
+          }
+        ],
+        "parentPackageItem": null,
+        "childrenPackageItems": []
+      }
+    ],
+    "medicinalProduct": {
+      "mpId": null,
+      "fullName": "Amlor harde caps. 5 mg",
+      "atcCodes": [
+        "C08CA01"
+      ],
+      "authorizedPharmaceuticalDoseForm": "10210000",
+      "marketingAuthorizationHolderCode": null,
+      "marketingAuthorizationHolderLabel": null,
+      "country": "bel",
+      "pharmaceuticalProduct": {
+        "administrableDoseForm": "10210000",
+        "unitOfPresentation": "15012000",
+        "routesOfAdministration": [
+          "20053000"
+        ]
+      }
+    }
+  }]
+  
