@@ -1,7 +1,7 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-package "IDMP Datamodel" as idmpDatamodel <<frame>> {
+package "IDMP Datamodel restricted to the MAL" as idmpDatamodel <<frame>> {
     entity Strength {
         * id: Integer <<generated>>
         --
