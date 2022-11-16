@@ -40,9 +40,11 @@ public class PackageItem {
     private PackageItem parentPackageItem;
 
     @OneToMany(mappedBy = "parentPackageItem")
+    @ToString.Exclude
     private Set<PackageItem> childrenPackageItems;
 
     @OneToMany(mappedBy = "packageItem")
+    @ToString.Exclude
     private Set<ManufacturedItem> manufacturedItems;
 
 }
