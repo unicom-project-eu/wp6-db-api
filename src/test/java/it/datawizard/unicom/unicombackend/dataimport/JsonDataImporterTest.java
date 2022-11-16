@@ -1,8 +1,11 @@
 package it.datawizard.unicom.unicombackend.dataimport;
 
 import it.datawizard.unicom.unicombackend.UnicomApplication;
+import it.datawizard.unicom.unicombackend.dataimport.exception.DataImportInvalidCodeException;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
+import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmDoseForm;
 import it.datawizard.unicom.unicombackend.jpa.repository.MedicinalProductRepository;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -125,5 +128,21 @@ class JsonDataImporterTest {
             .parseDataJsonString(packagedMedicinalProductJsonString);
 
         jsonDataImporter.saveParsedPackagedMedicinalProducts(packagedMedicinalProducts);
+    }
+
+    @Test
+    void testDataImportInvalidCodeException() throws Exception {
+        ArrayList<PackagedMedicinalProduct> packagedMedicinalProducts = jsonDataImporter
+                .parseDataJsonString(packagedMedicinalProductJsonString);
+
+        // forge wrong edqm dose form
+        EdqmDoseForm wrongCodeDoseForm = new EdqmDoseForm();
+        wrongCodeDoseForm.setCode("this code is clearly wrong");
+        packagedMedicinalProducts.get(0).getMedicinalProduct().getPharmaceuticalProduct()
+                .setAdministrableDoseForm(wrongCodeDoseForm);
+
+        Assert.assertThrows(DataImportInvalidCodeException.class, () -> {
+            jsonDataImporter.saveParsedPackagedMedicinalProducts(packagedMedicinalProducts);
+        });
     }
 }

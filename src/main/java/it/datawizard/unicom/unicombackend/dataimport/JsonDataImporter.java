@@ -3,8 +3,13 @@ package it.datawizard.unicom.unicombackend.dataimport;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import it.datawizard.unicom.unicombackend.dataimport.exception.DataImportException;
+import it.datawizard.unicom.unicombackend.dataimport.exception.DataImportInvalidCodeException;
+import it.datawizard.unicom.unicombackend.dataimport.exception.DataImportSaveException;
 import it.datawizard.unicom.unicombackend.jpa.entity.*;
+import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmConcept;
 import it.datawizard.unicom.unicombackend.jpa.repository.*;
+import it.datawizard.unicom.unicombackend.jpa.repository.edqm.EdqmConceptRepository;
 import it.datawizard.unicom.unicombackend.jpa.repository.edqm.EdqmDoseFormRepository;
 import it.datawizard.unicom.unicombackend.jpa.repository.edqm.EdqmRouteOfAdministrationRepository;
 import it.datawizard.unicom.unicombackend.jpa.repository.edqm.EdqmUnitOfPresentationRepository;
@@ -65,8 +70,15 @@ public class JsonDataImporter {
                 .readValue(jsonData, new TypeReference<>() {});
     }
 
+    private <T extends EdqmConcept> T getEdqmConceptOrThrow(T concept, EdqmConceptRepository<T> repository)
+            throws DataImportInvalidCodeException {
+        String code = concept.getCode();
+        return repository.findById(code)
+                .orElseThrow(() -> new DataImportInvalidCodeException(code, concept.getClass()));
+    }
+
     @Transactional(rollbackFor = {DataImportSaveException.class})
-    protected void saveParsedPackagedMedicinalProducts(ArrayList<PackagedMedicinalProduct> packagedMedicinalProducts) throws DataImportSaveException {
+    protected void saveParsedPackagedMedicinalProducts(ArrayList<PackagedMedicinalProduct> packagedMedicinalProducts) {
         for (PackagedMedicinalProduct packagedMedicinalProduct : packagedMedicinalProducts) {
             try {
                 // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct
@@ -76,24 +88,24 @@ public class JsonDataImporter {
                 pharmaceuticalProduct = pharmaceuticalProductRepository.save(pharmaceuticalProduct);
 
                 // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct > administrableDoseForm
-                if (pharmaceuticalProduct.getAdministrableDoseForm() != null)
+                if (pharmaceuticalProduct.getAdministrableDoseForm() != null) {
                     pharmaceuticalProduct.setAdministrableDoseForm(
-                            edqmDoseFormRepository.findById(pharmaceuticalProduct.getAdministrableDoseForm().getCode())
-                                    .orElseThrow()
-                    );
+                            getEdqmConceptOrThrow(pharmaceuticalProduct.getAdministrableDoseForm(),
+                                    edqmDoseFormRepository));
+                }
 
                 // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct > unitOfPresentation
-                if (pharmaceuticalProduct.getUnitOfPresentation() != null)
+                if (pharmaceuticalProduct.getUnitOfPresentation() != null) {
                     pharmaceuticalProduct.setUnitOfPresentation(
-                            edqmUnitOfPresentationRepository.findById(pharmaceuticalProduct.getUnitOfPresentation().getCode())
-                                    .orElseThrow()
-                    );
+                            getEdqmConceptOrThrow(pharmaceuticalProduct.getUnitOfPresentation(),
+                                    edqmUnitOfPresentationRepository));
+                }
 
                 // PackagedMedicinalProduct > MedicinalProduct > PharmaceuticalProduct > routesOfAdministration
                 pharmaceuticalProduct.setRoutesOfAdministration(
                         pharmaceuticalProduct.getRoutesOfAdministration().stream().map(
-                                edqmRouteOfAdministration -> edqmRouteOfAdministrationRepository
-                                        .findById(edqmRouteOfAdministration.getCode()).orElseThrow()
+                                edqmRouteOfAdministration -> getEdqmConceptOrThrow(edqmRouteOfAdministration,
+                                        edqmRouteOfAdministrationRepository)
                         ).collect(Collectors.toSet())
                 );
 
@@ -106,8 +118,8 @@ public class JsonDataImporter {
                 // PackagedMedicinalProduct > MedicinalProduct > authorizedPharmaceuticalDoseForm
                 if (medicinalProduct.getAuthorizedPharmaceuticalDoseForm() != null)
                     medicinalProduct.setAuthorizedPharmaceuticalDoseForm(
-                            edqmDoseFormRepository.findById(medicinalProduct.getAuthorizedPharmaceuticalDoseForm().getCode())
-                                    .orElseThrow()
+                            getEdqmConceptOrThrow(medicinalProduct.getAuthorizedPharmaceuticalDoseForm(),
+                                    edqmDoseFormRepository)
                     );
 
                 medicinalProductRepository.save(medicinalProduct);
@@ -132,7 +144,11 @@ public class JsonDataImporter {
                     packageItem.setPackagedMedicinalProduct(packagedMedicinalProduct);
                     packageItemRepository.save(packageItem);
                 }
-            } catch (Exception e) {
+            }
+            catch (DataImportException e) {
+                throw e;
+            }
+            catch (Exception e) {
                 throw new DataImportSaveException(e, packagedMedicinalProduct);
             }
         }
@@ -144,42 +160,45 @@ public class JsonDataImporter {
 
         // ManufacturedItem
         packageItem.getManufacturedItems().forEach(manufacturedItem -> {
-            // packageItem
-            manufacturedItem.setPackageItem(packageItem);
+            try {
+                // packageItem
+                manufacturedItem.setPackageItem(packageItem);
 
-            // manufacturedDoseForm
-            if (manufacturedItem.getManufacturedDoseForm() != null)
-                manufacturedItem.setManufacturedDoseForm(
-                        edqmDoseFormRepository.findById(manufacturedItem.getManufacturedDoseForm().getCode())
-                                .orElseThrow()
-                );
+                // manufacturedDoseForm
+                if (manufacturedItem.getManufacturedDoseForm() != null) {
+                    manufacturedItem.setManufacturedDoseForm(
+                            getEdqmConceptOrThrow(manufacturedItem.getManufacturedDoseForm(),
+                                    edqmDoseFormRepository));
+                }
 
-            // unitOfPresentation
-            if (manufacturedItem.getUnitOfPresentation() != null)
-                manufacturedItem.setUnitOfPresentation(
-                        edqmUnitOfPresentationRepository.findById(manufacturedItem.getUnitOfPresentation().getCode())
-                                .orElseThrow()
-                );
+                // unitOfPresentation
+                if (manufacturedItem.getUnitOfPresentation() != null)
+                    manufacturedItem.setUnitOfPresentation(
+                            getEdqmConceptOrThrow(manufacturedItem.getUnitOfPresentation(),
+                                    edqmUnitOfPresentationRepository));
 
-            manufacturedItemRepository.save(manufacturedItem);
+                manufacturedItemRepository.save(manufacturedItem);
 
-            // ManufacturedItem > ingredients
-            for (Ingredient ingredient :  manufacturedItem.getIngredients()) {
-                // referenceStrength
-                Strength referenceStrength = strengthRepository.save(ingredient.getReferenceStrength());
-                ingredient.setReferenceStrength(referenceStrength);
+                // ManufacturedItem > ingredients
+                for (Ingredient ingredient : manufacturedItem.getIngredients()) {
+                    // referenceStrength
+                    Strength referenceStrength = strengthRepository.save(ingredient.getReferenceStrength());
+                    ingredient.setReferenceStrength(referenceStrength);
 
-                // strength
-                Strength strength = strengthRepository.save(ingredient.getStrength());
-                ingredient.setStrength(strength);
+                    // strength
+                    Strength strength = strengthRepository.save(ingredient.getStrength());
+                    ingredient.setStrength(strength);
 
-                // substance
-                ingredient.setSubstance(
-                        substanceRepository.findById(ingredient.getSubstance().getSubstanceCode()).orElseThrow()
-                );
+                    // substance
+                    ingredient.setSubstance(
+                            substanceRepository.findById(ingredient.getSubstance().getSubstanceCode()).orElseThrow()
+                    );
 
-                ingredient.setManufacturedItem(manufacturedItem);
-                ingredientRepository.save(ingredient);
+                    ingredient.setManufacturedItem(manufacturedItem);
+                    ingredientRepository.save(ingredient);
+                }
+            } catch (DataImportInvalidCodeException e) {
+                throw new RuntimeException(e);
             }
         });
 

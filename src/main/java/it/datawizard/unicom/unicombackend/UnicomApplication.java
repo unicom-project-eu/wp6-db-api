@@ -1,6 +1,6 @@
 package it.datawizard.unicom.unicombackend;
 
-import it.datawizard.unicom.unicombackend.dataimport.DataImportSaveException;
+import it.datawizard.unicom.unicombackend.dataimport.exception.DataImportSaveException;
 import it.datawizard.unicom.unicombackend.dataimport.JsonDataImporter;
 import it.datawizard.unicom.unicombackend.fhir.UnicomFHIRServlet;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
