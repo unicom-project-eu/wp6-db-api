@@ -1,0 +1,7781 @@
+------------------------------
+CONFLICT for key ('302',)
+diff:
+  {
+    "mpId": "BEL 100000091786 Sandoz film-coated tablet 20mg/",
+    "fullName": "simvastatine Sandoz filmomh. tabl. (deelb.) 20 mg",
+-   "atcCodes": [
++   "atcCodes": [],
+?                ++
+
+-     "C10AA01"
+-   ],
+    "authorizedPharmaceuticalDoseForm": "10221000",
+    "marketingAuthorizationHolderCode": "1563",
+    "marketingAuthorizationHolderLabel": "Sandoz",
+    "country": "bel",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10221000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('300',)
+diff:
+  {
+    "mpId": "BEL 100000091786 Mylan film-coated tablet 20mg/",
+    "fullName": "simvastatinee Mylan filmomh. tabl. (deelb.) 20 mg",
+-   "atcCodes": [],
+?                --
+
++   "atcCodes": [
++     "C10AA01"
++   ],
+    "authorizedPharmaceuticalDoseForm": "10221000",
+    "marketingAuthorizationHolderCode": "1561",
+    "marketingAuthorizationHolderLabel": "Mylan",
+    "country": "bel",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10221000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('300',)
+diff:
+  {
+    "mpId": "BEL 100000091786 Mylan film-coated tablet 20mg/",
+    "fullName": "simvastatinee Mylan filmomh. tabl. (deelb.) 20 mg",
+-   "atcCodes": [],
+?                --
+
++   "atcCodes": [
++     "C10AA01"
++   ],
+    "authorizedPharmaceuticalDoseForm": "10221000",
+    "marketingAuthorizationHolderCode": "1561",
+    "marketingAuthorizationHolderLabel": "Mylan",
+    "country": "bel",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10221000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('311',)
+diff:
+  {
+    "mpId": "BEL 100000091786 Sandoz film-coated tablet 40mg/",
+    "fullName": "simvastatine Sandoz filmomh. tabl. (deelb.) 40 mg",
+-   "atcCodes": [
++   "atcCodes": [],
+?                ++
+
+-     "C10AA01"
+-   ],
+    "authorizedPharmaceuticalDoseForm": "10221000",
+    "marketingAuthorizationHolderCode": "1572",
+    "marketingAuthorizationHolderLabel": "Sandoz",
+    "country": "bel",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10221000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('307',)
+diff:
+  {
+    "mpId": "BEL 100000091786 EG film-coated tablet 40mg/",
+    "fullName": "simvastatinee EG filmomh. tabl. (deelb.) 40 mg",
+-   "atcCodes": [
++   "atcCodes": [],
+?                ++
+
+-     "C10AA01"
+-   ],
+    "authorizedPharmaceuticalDoseForm": "10221000",
+    "marketingAuthorizationHolderCode": "1568",
+    "marketingAuthorizationHolderLabel": "EG",
+    "country": "bel",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10221000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('309',)
+diff:
+  {
+    "mpId": "BEL 100000091786 Mylan film-coated tablet 40mg/",
+    "fullName": "simvastatinee Mylan filmomh. tabl. (deelb.) 40 mg",
+-   "atcCodes": [],
+?                --
+
++   "atcCodes": [
++     "C10AA01"
++   ],
+    "authorizedPharmaceuticalDoseForm": "10221000",
+    "marketingAuthorizationHolderCode": "1570",
+    "marketingAuthorizationHolderLabel": "Mylan",
+    "country": "bel",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10221000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('309',)
+diff:
+  {
+    "mpId": "BEL 100000091786 Mylan film-coated tablet 40mg/",
+    "fullName": "simvastatinee Mylan filmomh. tabl. (deelb.) 40 mg",
+-   "atcCodes": [],
+?                --
+
++   "atcCodes": [
++     "C10AA01"
++   ],
+    "authorizedPharmaceuticalDoseForm": "10221000",
+    "marketingAuthorizationHolderCode": "1570",
+    "marketingAuthorizationHolderLabel": "Mylan",
+    "country": "bel",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10221000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate tablet 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate tablet 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate tablet 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate tablet 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate tablet 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate tablet 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate capsule, hard 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10210000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate tablet 5mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('amlodipine besylate tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine tablet 200mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine prolonged-release tablet 200mg/',)
+diff:
+  {
+-   "administrableDoseForm": "10227000",
+?                                 ^
+
++   "administrableDoseForm": "10226000",
+?                                 ^
+
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 20mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 40mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50158',)
+diff:
+  {
+    "mpId": "FIN amlodipine Accord Healthcare B.V. tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                         ^^
+
++   "authorizedPharmaceuticalDoseForm": "11210000",
+?                                         ^     +
+
+    "marketingAuthorizationHolderCode": "34720",
+    "marketingAuthorizationHolderLabel": "Accord Healthcare B.V.",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50158',)
+diff:
+  {
+    "mpId": "FIN amlodipine Accord Healthcare B.V. tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34720",
+    "marketingAuthorizationHolderLabel": "Accord Healthcare B.V.",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50158',)
+diff:
+  {
+    "mpId": "FIN amlodipine Accord Healthcare B.V. tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34720",
+    "marketingAuthorizationHolderLabel": "Accord Healthcare B.V.",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50158',)
+diff:
+  {
+    "mpId": "FIN amlodipine Accord Healthcare B.V. tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                          --
+
++   "authorizedPharmaceuticalDoseForm": "10106000",
+?                                           ++
+
+    "marketingAuthorizationHolderCode": "34720",
+    "marketingAuthorizationHolderLabel": "Accord Healthcare B.V.",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50158',)
+diff:
+  {
+    "mpId": "FIN amlodipine Accord Healthcare B.V. tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                          --
+
++   "authorizedPharmaceuticalDoseForm": "10106000",
+?                                           ++
+
+    "marketingAuthorizationHolderCode": "34720",
+    "marketingAuthorizationHolderLabel": "Accord Healthcare B.V.",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50160',)
+diff:
+  {
+    "mpId": "FIN amlodipine Accord Healthcare B.V. tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34721",
+    "marketingAuthorizationHolderLabel": "Accord Healthcare B.V.",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('36552',)
+diff:
+  {
+    "mpId": "FIN amlodipine Vitabalans Oy tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "28261",
+    "marketingAuthorizationHolderLabel": "Vitabalans Oy",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('26262',)
+diff:
+  {
+    "mpId": "FIN amlodipine KRKA Sverige AB tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                          ^^^
+
++   "authorizedPharmaceuticalDoseForm": "10503000",
+?                                          ^^^
+
+    "marketingAuthorizationHolderCode": "22173",
+    "marketingAuthorizationHolderLabel": "KRKA Sverige AB",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('26262',)
+diff:
+  {
+    "mpId": "FIN amlodipine KRKA Sverige AB tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                          ^^^
+
++   "authorizedPharmaceuticalDoseForm": "10503000",
+?                                          ^^^
+
+    "marketingAuthorizationHolderCode": "22173",
+    "marketingAuthorizationHolderLabel": "KRKA Sverige AB",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('26262',)
+diff:
+  {
+    "mpId": "FIN amlodipine KRKA Sverige AB tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                          ^^^
+
++   "authorizedPharmaceuticalDoseForm": "10503000",
+?                                          ^^^
+
+    "marketingAuthorizationHolderCode": "22173",
+    "marketingAuthorizationHolderLabel": "KRKA Sverige AB",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('26262',)
+diff:
+  {
+    "mpId": "FIN amlodipine KRKA Sverige AB tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                          ^^^
+
++   "authorizedPharmaceuticalDoseForm": "10503000",
+?                                          ^^^
+
+    "marketingAuthorizationHolderCode": "22173",
+    "marketingAuthorizationHolderLabel": "KRKA Sverige AB",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('26262',)
+diff:
+  {
+    "mpId": "FIN amlodipine KRKA Sverige AB tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                          ^^^
+
++   "authorizedPharmaceuticalDoseForm": "10503000",
+?                                          ^^^
+
+    "marketingAuthorizationHolderCode": "22173",
+    "marketingAuthorizationHolderLabel": "KRKA Sverige AB",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('26262',)
+diff:
+  {
+    "mpId": "FIN amlodipine KRKA Sverige AB tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           -
+
++   "authorizedPharmaceuticalDoseForm": "10214000",
+?                                            +
+
+    "marketingAuthorizationHolderCode": "22173",
+    "marketingAuthorizationHolderLabel": "KRKA Sverige AB",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('26266',)
+diff:
+  {
+    "mpId": "FIN amlodipine KRKA Sverige AB tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10214000",
+?                                            ^
+
++   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                            ^
+
+    "marketingAuthorizationHolderCode": "22174",
+    "marketingAuthorizationHolderLabel": "KRKA Sverige AB",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('26266',)
+diff:
+  {
+    "mpId": "FIN amlodipine KRKA Sverige AB tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10214000",
+?                                            -
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           +
+
+    "marketingAuthorizationHolderCode": "22174",
+    "marketingAuthorizationHolderLabel": "KRKA Sverige AB",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('26266',)
+diff:
+  {
+    "mpId": "FIN amlodipine KRKA Sverige AB tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10214000",
+?                                            ^
+
++   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                            ^
+
+    "marketingAuthorizationHolderCode": "22174",
+    "marketingAuthorizationHolderLabel": "KRKA Sverige AB",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('26266',)
+diff:
+  {
+    "mpId": "FIN amlodipine KRKA Sverige AB tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10214000",
+?                                            -
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           +
+
+    "marketingAuthorizationHolderCode": "22174",
+    "marketingAuthorizationHolderLabel": "KRKA Sverige AB",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('26266',)
+diff:
+  {
+    "mpId": "FIN amlodipine KRKA Sverige AB tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10214000",
+?                                            -
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           +
+
+    "marketingAuthorizationHolderCode": "22174",
+    "marketingAuthorizationHolderLabel": "KRKA Sverige AB",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('26266',)
+diff:
+  {
+    "mpId": "FIN amlodipine KRKA Sverige AB tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10214000",
+?                                            -
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           +
+
+    "marketingAuthorizationHolderCode": "22174",
+    "marketingAuthorizationHolderLabel": "KRKA Sverige AB",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('26266',)
+diff:
+  {
+    "mpId": "FIN amlodipine KRKA Sverige AB tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10214000",
+?                                            -
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           +
+
+    "marketingAuthorizationHolderCode": "22174",
+    "marketingAuthorizationHolderLabel": "KRKA Sverige AB",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('26266',)
+diff:
+  {
+    "mpId": "FIN amlodipine KRKA Sverige AB tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10214000",
+?                                            ^
+
++   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                            ^
+
+    "marketingAuthorizationHolderCode": "22174",
+    "marketingAuthorizationHolderLabel": "KRKA Sverige AB",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                          - ^
+
++   "authorizedPharmaceuticalDoseForm": "10106000",
+?                                           ^^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                          - ^
+
++   "authorizedPharmaceuticalDoseForm": "10106000",
+?                                           ^^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                          - ^
+
++   "authorizedPharmaceuticalDoseForm": "10106000",
+?                                           ^^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                          - ^
+
++   "authorizedPharmaceuticalDoseForm": "10106000",
+?                                           ^^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                          - ^
+
++   "authorizedPharmaceuticalDoseForm": "10106000",
+?                                           ^^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                          - ^
+
++   "authorizedPharmaceuticalDoseForm": "10106000",
+?                                           ^^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                          - ^
+
++   "authorizedPharmaceuticalDoseForm": "10106000",
+?                                           ^^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                          - ^
+
++   "authorizedPharmaceuticalDoseForm": "10106000",
+?                                           ^^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                          - ^
+
++   "authorizedPharmaceuticalDoseForm": "10106000",
+?                                           ^^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                         ^  ^
+
++   "authorizedPharmaceuticalDoseForm": "11210000",
+?                                         ^  ^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                         ^  ^
+
++   "authorizedPharmaceuticalDoseForm": "11210000",
+?                                         ^  ^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                         ^  ^
+
++   "authorizedPharmaceuticalDoseForm": "11210000",
+?                                         ^  ^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                          - ^
+
++   "authorizedPharmaceuticalDoseForm": "10106000",
+?                                           ^^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                          - ^
+
++   "authorizedPharmaceuticalDoseForm": "10106000",
+?                                           ^^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                          - ^
+
++   "authorizedPharmaceuticalDoseForm": "10106000",
+?                                           ^^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50436',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 5mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34869",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('50438',)
+diff:
+  {
+    "mpId": "FIN amlodipine Orion Corporation tablet 10mg/",
+    "fullName": null,
+    "atcCodes": [
+      "C08CA01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10211000",
+?                                           ^
+
++   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                           ^
+
+    "marketingAuthorizationHolderCode": "34868",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10219000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine prolonged-release tablet 200mg/',)
+diff:
+  {
+-   "administrableDoseForm": "10227000",
+?                                 ^
+
++   "administrableDoseForm": "10226000",
+?                                 ^
+
+    "unitOfPresentation": null,
+    "routesOfAdministration": [
+      "20053000"
+    ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine prolonged-release tablet 200mg/',)
+diff:
+  {
+-   "administrableDoseForm": "10227000",
+?                                 ^
+
++   "administrableDoseForm": "10226000",
+?                                 ^
+
+    "unitOfPresentation": null,
+    "routesOfAdministration": [
+      "20053000"
+    ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine prolonged-release tablet 400mg/',)
+diff:
+  {
+    "administrableDoseForm": "10226000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine prolonged-release tablet 400mg/',)
+diff:
+  {
+    "administrableDoseForm": "10226000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('ibuprofen film-coated tablet 400mg/',)
+diff:
+  {
+-   "administrableDoseForm": "10221000",
+?                                ^
+
++   "administrableDoseForm": "10211000",
+?                                ^
+
+    "unitOfPresentation": null,
+    "routesOfAdministration": [
+      "20053000"
+    ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('51112',)
+diff:
+  {
+-   "mpId": "FIN Ibuprofen Orion Corporation gel 50mg/50g",
+?                                                     ^
+
++   "mpId": "FIN Ibuprofen Orion Corporation gel 50mg/100g",
+?                                                     ^^
+
+    "fullName": null,
+    "atcCodes": [
+      "M02AA13"
+    ],
+    "authorizedPharmaceuticalDoseForm": "10221000",
+    "marketingAuthorizationHolderCode": "35245",
+    "marketingAuthorizationHolderLabel": "Orion Corporation",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10503000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": []
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('55919',)
+diff:
+  {
+    "mpId": "FIN Ibuprofen Zentiva, k.s. film-coated tablet 400mg/",
+    "fullName": null,
+    "atcCodes": [
+      "M01AE01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                       ^^^^^^^^^^
+
++   "authorizedPharmaceuticalDoseForm": null,
+?                                       ^^^^
+
+    "marketingAuthorizationHolderCode": "37736",
+    "marketingAuthorizationHolderLabel": "Zentiva, k.s.",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10221000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('55919',)
+diff:
+  {
+    "mpId": "FIN Ibuprofen Zentiva, k.s. film-coated tablet 400mg/",
+    "fullName": null,
+    "atcCodes": [
+      "M01AE01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                       ^^^^^^^^^^
+
++   "authorizedPharmaceuticalDoseForm": null,
+?                                       ^^^^
+
+    "marketingAuthorizationHolderCode": "37736",
+    "marketingAuthorizationHolderLabel": "Zentiva, k.s.",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10221000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('55919',)
+diff:
+  {
+    "mpId": "FIN Ibuprofen Zentiva, k.s. film-coated tablet 400mg/",
+    "fullName": null,
+    "atcCodes": [
+      "M01AE01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                       ^^^^^^^^^^
+
++   "authorizedPharmaceuticalDoseForm": null,
+?                                       ^^^^
+
+    "marketingAuthorizationHolderCode": "37736",
+    "marketingAuthorizationHolderLabel": "Zentiva, k.s.",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10221000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('55919',)
+diff:
+  {
+    "mpId": "FIN Ibuprofen Zentiva, k.s. film-coated tablet 400mg/",
+    "fullName": null,
+    "atcCodes": [
+      "M01AE01"
+    ],
+-   "authorizedPharmaceuticalDoseForm": "10221000",
+?                                       ^^^^^^^^^^
+
++   "authorizedPharmaceuticalDoseForm": null,
+?                                       ^^^^
+
+    "marketingAuthorizationHolderCode": "37736",
+    "marketingAuthorizationHolderLabel": "Zentiva, k.s.",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "10221000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20053000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('48581',)
+diff:
+  {
+-   "mpId": "FIN Ibuprofen B. Braun Melsungen AG solution for infusion 400mg/5mL",
+?                                                                              ^
+
++   "mpId": "FIN Ibuprofen B. Braun Melsungen AG solution for infusion 400mg/5ml",
+?                                                                              ^
+
+    "fullName": null,
+    "atcCodes": [
+      "M01AE01"
+    ],
+    "authorizedPharmaceuticalDoseForm": null,
+    "marketingAuthorizationHolderCode": "33914",
+    "marketingAuthorizationHolderLabel": "B. Braun Melsungen AG",
+    "country": "fin",
+    "pharmaceuticalProduct": {
+      "administrableDoseForm": "11210000",
+      "unitOfPresentation": null,
+      "routesOfAdministration": [
+        "20045000"
+      ]
+    }
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('referenceStrength-ibuprofen oral suspension 100mg/5mL',)
+diff:
+  {
+-   "concentrationNumeratorValue": 100.0,
+?                                  ^^
+
++   "concentrationNumeratorValue": 20.0,
+?                                  ^
+
+    "concentrationDenominatorValue": 5.0,
+    "concentrationNumeratorUnit": null,
+    "concentrationDenominatorUnit": null,
+-   "presentationNumeratorValue": null,
+?                                 ^^^^
+
++   "presentationNumeratorValue": 20.0,
+?                                 ^^^^
+
+    "presentationDenominatorValue": null,
+    "presentationNumeratorUnit": null,
+    "presentationDenominatorUnit": null
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('referenceStrength-ibuprofen oral suspension 100mg/5mL',)
+diff:
+  {
+-   "concentrationNumeratorValue": 100.0,
+?                                  ^^
+
++   "concentrationNumeratorValue": 20.0,
+?                                  ^
+
+    "concentrationDenominatorValue": 5.0,
+    "concentrationNumeratorUnit": null,
+    "concentrationDenominatorUnit": null,
+-   "presentationNumeratorValue": null,
+?                                 ^^^^
+
++   "presentationNumeratorValue": 20.0,
+?                                 ^^^^
+
+    "presentationDenominatorValue": null,
+    "presentationNumeratorUnit": null,
+    "presentationDenominatorUnit": null
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('referenceStrength-ibuprofen oral suspension 100mg/5mL',)
+diff:
+  {
+-   "concentrationNumeratorValue": 100.0,
+?                                  ^^
+
++   "concentrationNumeratorValue": 20.0,
+?                                  ^
+
+    "concentrationDenominatorValue": 5.0,
+    "concentrationNumeratorUnit": null,
+    "concentrationDenominatorUnit": null,
+-   "presentationNumeratorValue": null,
+?                                 ^^^^
+
++   "presentationNumeratorValue": 20.0,
+?                                 ^^^^
+
+    "presentationDenominatorValue": null,
+    "presentationNumeratorUnit": null,
+    "presentationDenominatorUnit": null
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('referenceStrength-ibuprofen film-coated tablet 400mg/',)
+diff:
+  {
+    "concentrationNumeratorValue": null,
+-   "concentrationDenominatorValue": null,
+?                                    ^^^^
+
++   "concentrationDenominatorValue": 5.0,
+?                                    ^^^
+
+    "concentrationNumeratorUnit": null,
+    "concentrationDenominatorUnit": null,
+    "presentationNumeratorValue": 400.0,
+    "presentationDenominatorValue": null,
+    "presentationNumeratorUnit": null,
+    "presentationDenominatorUnit": null
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('simvastatine film-coated tablet 10mg/',)
+diff:
+  {
+    "administrableDoseForm": "10221000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": []
+?                              -
+
++   "routesOfAdministration": [
++     "20053000"
++   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('9876544',)
+diff:
+  {
+    "manufacturedDoseForm": "100000073664",
+    "unitOfPresentation": null,
+    "manufacturedItemQuantity": null,
+    "volumeUnit": null,
+    "ingredients": [
+      {
+        "role": "100000072072",
+        "substance": {
+          "substanceCode": "100000090079"
+        },
+        "referenceStrength": {
+          "concentrationNumeratorValue": null,
+          "concentrationDenominatorValue": null,
+          "concentrationNumeratorUnit": null,
+          "concentrationDenominatorUnit": null,
+-         "presentationNumeratorValue": 100.0,
+?                                       ^^
+
++         "presentationNumeratorValue": 50.0,
+?                                       ^
+
+          "presentationDenominatorValue": null,
+          "presentationNumeratorUnit": null,
+          "presentationDenominatorUnit": null
+        },
+        "strength": {
+          "concentrationNumeratorValue": null,
+          "concentrationDenominatorValue": null,
+          "concentrationNumeratorUnit": null,
+          "concentrationDenominatorUnit": null,
+          "presentationNumeratorValue": null,
+          "presentationDenominatorValue": null,
+          "presentationNumeratorUnit": null,
+          "presentationDenominatorUnit": null
+        }
+      }
+    ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('9876544',)
+diff:
+  {
+    "manufacturedDoseForm": "100000073664",
+    "unitOfPresentation": null,
+    "manufacturedItemQuantity": null,
+    "volumeUnit": null,
+    "ingredients": [
+      {
+        "role": "100000072072",
+        "substance": {
+          "substanceCode": "100000090079"
+        },
+        "referenceStrength": {
+          "concentrationNumeratorValue": null,
+          "concentrationDenominatorValue": null,
+          "concentrationNumeratorUnit": null,
+          "concentrationDenominatorUnit": null,
+-         "presentationNumeratorValue": 100.0,
+?                                       ^^
+
++         "presentationNumeratorValue": 50.0,
+?                                       ^
+
+          "presentationDenominatorValue": null,
+          "presentationNumeratorUnit": null,
+          "presentationDenominatorUnit": null
+        },
+        "strength": {
+          "concentrationNumeratorValue": null,
+          "concentrationDenominatorValue": null,
+          "concentrationNumeratorUnit": null,
+          "concentrationDenominatorUnit": null,
+          "presentationNumeratorValue": null,
+          "presentationDenominatorValue": null,
+          "presentationNumeratorUnit": null,
+          "presentationDenominatorUnit": null
+        }
+      }
+    ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('9876544',)
+diff:
+  {
+    "manufacturedDoseForm": "100000073664",
+    "unitOfPresentation": null,
+    "manufacturedItemQuantity": null,
+    "volumeUnit": null,
+    "ingredients": [
+      {
+        "role": "100000072072",
+        "substance": {
+          "substanceCode": "100000090079"
+        },
+        "referenceStrength": {
+          "concentrationNumeratorValue": null,
+          "concentrationDenominatorValue": null,
+          "concentrationNumeratorUnit": null,
+          "concentrationDenominatorUnit": null,
+-         "presentationNumeratorValue": 100.0,
+?                                       ^^
+
++         "presentationNumeratorValue": 50.0,
+?                                       ^
+
+          "presentationDenominatorValue": null,
+          "presentationNumeratorUnit": null,
+          "presentationDenominatorUnit": null
+        },
+        "strength": {
+          "concentrationNumeratorValue": null,
+          "concentrationDenominatorValue": null,
+          "concentrationNumeratorUnit": null,
+          "concentrationDenominatorUnit": null,
+          "presentationNumeratorValue": null,
+          "presentationDenominatorValue": null,
+          "presentationNumeratorUnit": null,
+          "presentationDenominatorUnit": null
+        }
+      }
+    ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine tablet 100mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine prolonged-release tablet 200mg/',)
+diff:
+  {
+-   "administrableDoseForm": "10227000",
+?                                 ^
+
++   "administrableDoseForm": "10226000",
+?                                 ^
+
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine prolonged-release tablet 200mg/',)
+diff:
+  {
+-   "administrableDoseForm": "10227000",
+?                                 ^
+
++   "administrableDoseForm": "10226000",
+?                                 ^
+
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine tablet 200mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine prolonged-release tablet 200mg/',)
+diff:
+  {
+-   "administrableDoseForm": "10227000",
+?                                 ^
+
++   "administrableDoseForm": "10226000",
+?                                 ^
+
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine tablet 100mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine tablet 200mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine suppository 250mg/',)
+diff:
+  {
+    "administrableDoseForm": "11013000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20061000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine tablet 200mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine tablet 200mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine tablet 200mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine tablet 200mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine tablet 200mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine tablet 200mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+
+------------------------------
+CONFLICT for key ('carbamazepine tablet 200mg/',)
+diff:
+  {
+    "administrableDoseForm": "10219000",
+    "unitOfPresentation": null,
+-   "routesOfAdministration": [
++   "routesOfAdministration": []
+?                              +
+
+-     "20053000"
+-   ]
+  }
+------------------------------
+
+found 422 conflicts

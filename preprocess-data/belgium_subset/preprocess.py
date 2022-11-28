@@ -8,6 +8,12 @@ from csvutils.csvutils import *
 
 ORIGINA_PATH = 'original.csv'
 
+def int_or_none(int_obj):
+    try:
+        return int(int_obj)
+    except:
+        return None
+
 @csv_mapping(
     primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['primaryKey']),
     concentrationNumeratorValue=AttributeInfo(set_value=lambda x: x['concentrationNumeratorValue']),
@@ -111,7 +117,7 @@ class ManufacturedItem:
     # (we assume only one PackageItem per MedicinalProdctPacakge)
     primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['packagedMedicinalProductPrimaryKey']),
     type=AttributeInfo(set_value=lambda x: x['packageItemType']),
-    packageItemQuantity=AttributeInfo(set_value=lambda x: x['packageItemQuantity']),
+    packageItemQuantity=AttributeInfo(set_value=lambda x: int_or_none(x['packageItemQuantity'])),
     manufacturedItems=AttributeInfo(set_value=lambda x: [
         # we assume there is only one ManufacturedItem
         ManufacturedItem(x),
@@ -125,7 +131,7 @@ class PackageItem():
 @csv_mapping(
     primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda x: x['packagedMedicinalProductPrimaryKey']),
     pcId=AttributeInfo(set_value=lambda x: x['pcId']),
-    packSize=AttributeInfo(set_value=lambda x: x['packSize']),
+    packSize=AttributeInfo(set_value=lambda x: int_or_none(x['packSize'])),
     packageItems=AttributeInfo(set_value=lambda x: [
         # we assume there is only one PackageItem
         PackageItem(x),
@@ -145,40 +151,25 @@ if __name__ == '__main__':
     df = df.replace(r'^\s*$', None, regex=True)
     df = df.replace(r'^NULL$', None, regex=True)
 
-    # notes for Robert
-    # 1. multiple columns with name 'packSize'; 'packSize' should be an integer, not '20 x 100 ml', or 'ml'
+    # Notes for Robert
+    # 1. Column named 'FullName' instead of 'fullName'
+    # > rename column
+
+    # 2. 'mL' inside column 'referenceStrengthPresentationDenominatorValue
+    # > replace with None
+    df['referenceStrengthPresentationDenominatorValue'] = df['referenceStrengthPresentationDenominatorValue'].replace('mL', None)
+
+    # 3. 'packSize' should be an integer, not '20 x 100 ml', or 'ml'
     # > set wrong values of 'packSize' to None
     df['packSize'] = df['packSize'].replace(r'[^0-9]+', None, regex=True)
-
-    # 2. '?' inside columns 'referenceStrengthConcentrationNumeratorValue' and 'referenceStrengthConcentrationDenominatorValue'
-    # > replace '?' with None
-    df['referenceStrengthConcentrationNumeratorValue'] = df['referenceStrengthConcentrationNumeratorValue'].replace(r'\?', None, regex=True)
-    df['referenceStrengthConcentrationDenominatorValue'] = df['referenceStrengthConcentrationDenominatorValue'].replace(r'\?', None, regex=True)
-
-    # 3. '#REF!' inside column 'strengthPresentationNumeratorValue'
-    # > replace '#REF!' with None
-    df['strengthPresentationNumeratorValue'] = df['strengthPresentationNumeratorValue'].replace(r'\#REF\!', None, regex=True)
 
     # 4. 'pcId' column is missing
     # > add empty column for 'pcId'
     df['pcId'] = None
 
-    # 5. column called 'medicinalProductFullName' instead of 'fullName'
-    # > rename column
-    df['fullName'] = df['medicinalProductFullName'] 
-     
-    # 6. column called 'atcCode' instead of 'atcCodes'
-    # > rename column
-    df['atcCodes'] = df['atcCode']
-
-    # 7. typo in 'authorisedPharrmaceuticalDoseForm'
+    # 7. typo: 'authorisedPharmaceuticalDoseForm' instead of 'authorizedPharmaceuticalDoseForm'
     # > fix typo
-    df['authorizedPharmaceuticalDoseForm'] = df['authorisedPharrmaceuticalDoseForm']
-
-    # 8. many rows with 'medicinalProductPrimaryKey' empty
-    # > ignore those rows
-    df = df[df['medicinalProductPrimaryKey'] == None]
-
+    df['authorizedPharmaceuticalDoseForm'] = df['authorisedPharmaceuticalDoseForm']
 
     df = df.astype(dtype={
         'packSize': 'Int64',
