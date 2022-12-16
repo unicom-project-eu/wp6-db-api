@@ -1,0 +1,43 @@
+@startuml
+skinparam actorStyle awesome
+
+actor User as user
+
+participant "User Facing App" as user_app
+
+participant "Healthcare Provider App" as provider_app
+ 
+actor "Healthcare Provider" as provider
+
+participant "UNICOM BACKEND" as backend
+
+group Smart Substitution
+    activate user
+    user -> user_app : Selects drug
+        activate user_app
+            user_app -> user_app : Generate QR of selected drug
+            user_app -> provider_app : User shows QR
+
+            activate provider_app
+                provider_app -> backend : Call substitution component
+
+                activate backend
+                    backend --> provider_app : Return list of candidate substitute drugs
+                deactivate backend
+
+                provider_app -> provider : Ask to chose substitute drug
+                activate provider
+                    provider --> provider_app : Select best substitute drug
+                deactivate provider
+
+                provider_app -> provider_app : Generate QR of substitute drug
+                provider_app --> user_app : Healthcare provider shows QR
+            deactivate provider_app
+
+            user_app -> user_app : Save substitute of selected drug
+            user_app --> user : Show substitue drug to the user
+        deactivate user_app
+    deactivate user
+end
+
+@enduml
