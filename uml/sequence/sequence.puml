@@ -16,7 +16,29 @@ box "Unicom Backend"
     database "T6.1 IDMP Database" as db
 end box
 
-group Smart Substitution
+group Use case - Find drug by name
+    activate user
+        user -> user_app : Start typing "asp"
+        
+        activate user_app
+            user_app -> suggest : Call suggest component
+
+            activate suggest
+                suggest -> db : Search for products that start with "asp"
+
+                activate db
+                    db --> suggest : Products that start with "asp" and their IDs: [('Aspirina', id1), ('Aspiroska', id2)]
+                deactivate db
+
+                suggest --> user_app : [('Aspirina', id1), ('Aspiroska', id2)]
+            deactivate suggest
+
+        user_app --> user : Show suggestions 
+        deactivate user_app
+    deactivate user
+end
+
+group Use case - Smart Substitution
     activate user
     user -> user_app : Selects drug
         activate user_app
