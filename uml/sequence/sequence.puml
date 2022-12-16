@@ -9,7 +9,12 @@ participant "Healthcare Provider App" as provider_app
  
 actor "Healthcare Provider" as provider
 
-participant "UNICOM BACKEND" as backend
+box "Unicom Backend"
+    participant "Suggest" as suggest
+    participant "Substitution" as substitution
+    participant "T6.1 FHIR Server" as fhir
+    database "T6.1 IDMP Database" as db
+end box
 
 group Smart Substitution
     activate user
@@ -19,11 +24,24 @@ group Smart Substitution
             user_app -> provider_app : User shows QR
 
             activate provider_app
-                provider_app -> backend : Call substitution component
+                provider_app -> substitution : Call substitution component
+                                
+                activate substitution
+                    substitution -> fhir : Make some calls (TBD)
 
-                activate backend
-                    backend --> provider_app : Return list of candidate substitute drugs
-                deactivate backend
+                    activate fhir
+                        fhir -> db : Do queries
+                        activate db
+                            db --> fhir : Return IDMP data
+                        deactivate db
+
+                        fhir -> fhir : Encapsulate IDMP data in FHIR resources
+
+                        fhir --> substitution : Return resources
+                    deactivate fhir
+
+                    substitution --> provider_app : Return list of candidate substitute drugs
+                deactivate substitution
 
                 provider_app -> provider : Ask to chose substitute drug
                 activate provider
