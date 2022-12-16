@@ -54,13 +54,14 @@ group Use case - Smart Substitution
                     substitution -> fhir : Make some calls (TBD)
 
                     activate fhir
-                        fhir -> db : Do queries
-                        activate db
-                            db --> fhir : Return IDMP data
-                        deactivate db
-
-                        fhir -> fhir : Encapsulate IDMP data in FHIR resources
-
+                        group Encapsulate IDMP data in FHIR
+                            fhir -> db : Do queries
+                            activate db
+                                db --> fhir : Return IDMP data
+                            deactivate db
+                        
+                            fhir -> fhir : Encapsulate IDMP data in FHIR resources
+                        end
                         fhir --> substitution : Return resources
                     deactivate fhir
 
@@ -75,6 +76,14 @@ group Use case - Smart Substitution
                 provider_app -> provider_app : Generate QR of substitute drug
                 provider_app --> user_app : Healthcare provider shows QR
             deactivate provider_app
+
+            user_app -> user_app : Scan QR to obtain MpId
+            
+            user_app -> fhir : Get IDMP data by MpId
+            activate fhir
+                ref over fhir, db : Encapsulate IMPD data in FHIR resources
+                fhir --> user_app
+            deactivate fhir 
 
             user_app -> user_app : Save substitute of selected drug
             user_app --> user : Show substitue drug to the user
