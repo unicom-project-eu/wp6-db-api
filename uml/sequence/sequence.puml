@@ -40,12 +40,14 @@ end
 
 group Use case - Smart Substitution
     activate user
-    user -> user_app : Selects drug
+    ref over user, user_app : Find drug by name 
+    user -> user_app : Select drug
         activate user_app
             user_app -> user_app : Generate QR of selected drug
             user_app -> provider_app : User shows QR
 
             activate provider_app
+                provider_app -> provider_app : Scan QR to obtain MpId
                 provider_app -> substitution : Call substitution component
                                 
                 activate substitution
