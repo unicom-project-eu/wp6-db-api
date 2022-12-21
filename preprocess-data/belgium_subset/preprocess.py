@@ -195,7 +195,7 @@ if __name__ == '__main__':
             packages_list.append(PackagedMedicinalProduct(x))
         except ConflictException as e:
             if e.key != (None,):
-                print(e.get_message(color=args.color), file=sys.stderr)
+                print(f"row {index}: {e.get_message(color=args.color)}", file=sys.stderr)
                 conflic_list.append(e)
         pass
     
