@@ -67,7 +67,7 @@ public class SubstanceResourceProvider implements IResourceProvider {
             RequestDetails requestDetails,
             @OptionalParam(name = Substance.SP_CATEGORY) StringParam category,
             @OptionalParam(name = Substance.SP_CODE) StringParam code,
-//            @OptionalParam(name = Substance.SP_CODE_REFERENCE) ReferenceParam codeReference,
+            @OptionalParam(name = Substance.SP_CONTAINER_IDENTIFIER) StringParam containerIdentifier,
             @OptionalParam(name = Substance.SP_EXPIRY) DateParam expiry,
             @OptionalParam(name = Substance.SP_IDENTIFIER) StringParam identifier,
             @OptionalParam(name = Substance.SP_QUANTITY)QuantityParam quantity,
@@ -82,7 +82,6 @@ public class SubstanceResourceProvider implements IResourceProvider {
         Specification<it.datawizard.unicom.unicombackend.jpa.entity.Ingredient> specification = Specification
                 .where(tenantId != null ? IngredientSpecifications.isCountryEqualTo(tenantId) : null)
                 .and(code != null ? IngredientSpecifications.isSubstanceCodeEqualTo(code.getValue()) : null);
-//                .and(codeReference != null ? IngredientSpecifications.isSubstanceCodeEqualTo(codeReference.getIdPart()) : null);
         return new IBundleProvider() {
 
             final boolean shouldReturnEmptyResult = Stream.of(category, expiry, identifier, quantity, status, substanceReference).filter(bp -> bp != null).count() > 0;
@@ -132,18 +131,20 @@ public class SubstanceResourceProvider implements IResourceProvider {
     public static Substance substanceFromEntity(Ingredient ingredient)  {
         Substance substanceResource = new Substance();
 
-        //Id
+        //Idx
         substanceResource.setId(ingredient.getId().toString());
 
-        //Instance
+        //Instance //TODO: setInstance
 //        substanceResource.setInstance(true);
 
         //Code
-        CodeableReference substanceDefinitionCodeableReference = new CodeableReference();
-        Reference reference = new Reference();
-        reference.setResource(SubstanceDefinitionResourceProvider.substanceDefinitionFromEntity(ingredient.getSubstance()));
-        substanceDefinitionCodeableReference.setReference(reference);
-//        substanceResource.setCode(substanceDefinitionCodeableReference);
+        CodeableConcept substanceCodeCodeableConcept = new CodeableConcept();
+        substanceCodeCodeableConcept.addCoding(
+                "https://spor.ema.europa.eu/v2/SubstanceDefinition",//TODO: check link
+                ingredient.getSubstance().getSubstanceCode(),
+                ingredient.getSubstance().getSubstanceName()
+        );
+        substanceResource.setCode(substanceCodeCodeableConcept);
 
         return substanceResource;
     }

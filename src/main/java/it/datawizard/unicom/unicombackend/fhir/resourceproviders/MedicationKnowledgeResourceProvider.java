@@ -12,9 +12,12 @@ import ca.uhn.fhir.rest.param.ReferenceParam;
 import ca.uhn.fhir.rest.param.StringParam;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.exceptions.InvalidRequestException;
+import com.github.mustachejava.Code;
 import it.datawizard.unicom.unicombackend.jpa.entity.AtcCode;
+import it.datawizard.unicom.unicombackend.jpa.entity.Ingredient;
 import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
+import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmPackageItemType;
 import it.datawizard.unicom.unicombackend.jpa.repository.MedicinalProductRepository;
 import it.datawizard.unicom.unicombackend.jpa.repository.PackagedMedicinalProductRepository;
 import it.datawizard.unicom.unicombackend.jpa.specification.MedicinalProductSpecifications;
@@ -35,10 +38,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionTemplate;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Stream;
 
 @Component
@@ -88,8 +88,7 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
             @OptionalParam(name = MedicationKnowledge.SP_CLASSIFICATION) StringParam classification,
             @OptionalParam(name = MedicationKnowledge.SP_CLASSIFICATION_TYPE) StringParam classificationType,
             @OptionalParam(name = MedicationKnowledge.SP_INGREDIENT_CODE) StringParam ingredientCode
-            //relatedMedicationKnowledge, productType, preparationInstruction, intendedRoute, administratorGuidelines,
-            // medicineClassification, packaging, drugCharacteristic, regulatory, kinetics
+
             ) {
         final String tenantId = requestDetails.getTenantId();
         final InstantType searchTime = InstantType.withCurrentTime();
@@ -175,44 +174,39 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
         medicationKnowledgeMedicineClassificationComponent.setType(medicinalProductDefinition.getType());
 
         // packaging
-//        List<MedicationKnowledge.MedicationKnowledgePackagingComponent> packagingComponents =
-//                entityMedicinalProduct.getPackagedMedicinalProducts().stream().map(entityPackagedMedicinalProduct -> {
-//                    MedicationKnowledge.MedicationKnowledgePackagingComponent packagingComponent =
-//                            new MedicationKnowledge.MedicationKnowledgePackagingComponent();
-//
-//                    packagingComponent.setPackagedProduct(new Reference(PackagedProductDefinitionResourceProvider
-//                            .packagedProductDefinitionFromEntity(entityPackagedMedicinalProduct)));
-//
-//                    return packagingComponent;
-//                }).toList();
-//        medicationKnowledge.setPackaging(packagingComponents);
+        MedicationKnowledge.MedicationKnowledgePackagingComponent packagingComponent =
+                new MedicationKnowledge.MedicationKnowledgePackagingComponent();
+        CodeableConcept packagingTypeCodeableConcept = new CodeableConcept();
+        EdqmPackageItemType edqmPackageItemType =
+                entityMedicinalProduct.getPackagedMedicinalProducts().iterator().next().getPackageItems()
+                .iterator().next().getType();
+        packagingTypeCodeableConcept.addCoding(
+                "https://spor.ema.europa.eu/v1/lists/100000073346",//TODO: check link
+                edqmPackageItemType.getCode(),
+                edqmPackageItemType.getTerm()
+        );
 
-//        // definitional
-//        final MedicationKnowledge.MedicationKnowledgeDefinitionalComponent definitionalComponent
-//                = new MedicationKnowledge.MedicationKnowledgeDefinitionalComponent();
-//        medicationKnowledge.setDefinitional(definitionalComponent);
-//
-//        // definitional > definition
-//        List<Reference> definitions = new ArrayList<>();
-//        definitions.add(new Reference(medicinalProductDefinition));
-//        definitionalComponent.setDefinition(definitions);
+        packagingComponent.setType(packagingTypeCodeableConcept);
+        packagingComponent.setQuantity(null);
 
-        // definitional > ingredient
-//        entityMedicinalProduct.getAllIngredients().forEach(ingredient -> {
-//            MedicationKnowledge.MedicationKnowledgeDefinitionalIngredientComponent definitionalIngredientComponent
-//                    = new MedicationKnowledge.MedicationKnowledgeDefinitionalIngredientComponent();
-//            Reference ingredientReference = new Reference(SubstanceResourceProvider.substanceFromEntity(ingredient));
-//            definitionalIngredientComponent.setItem(new CodeableReference(ingredientReference));
-//            definitionalComponent.addIngredient(definitionalIngredientComponent);
-//
-//            // extension with a reference to Ingredient
-//            definitionalIngredientComponent.getExtension().add(new Extension(
-//                "http://unicom.datawizard.com/fhir/glob/Extension/medicationknowledge-ingredient",
-//                new Reference(IngredientResourceProvider.ingredientFromEntity(ingredient))
-//            ));
-//        });
+        medicationKnowledge.setPackaging(packagingComponent);
 
-        // definitional > doseForm
+
+        // ingredient
+        List<MedicationKnowledge.MedicationKnowledgeIngredientComponent> ingredients = new ArrayList<>();
+        entityMedicinalProduct.getAllIngredients().forEach(ingredient -> {
+            MedicationKnowledge.MedicationKnowledgeIngredientComponent ingredientComponent
+                    = new MedicationKnowledge.MedicationKnowledgeIngredientComponent();
+
+            Reference ingredientReference = new Reference(SubstanceResourceProvider.substanceFromEntity(ingredient));
+            ingredientComponent.setItem(ingredientReference);
+
+            ingredients.add(ingredientComponent);
+        });
+
+        medicationKnowledge.setIngredient(ingredients);
+
+        // doseForm
         CodeableConcept doseFormCodeableConcept = new CodeableConcept();
         doseFormCodeableConcept.addCoding(
                     "https://spor.ema.europa.eu/v1/lists/200000000004",
@@ -221,16 +215,19 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
                 );
         medicationKnowledge.setDoseForm(doseFormCodeableConcept);
 
-        // definitional > intendedRoute
-//        entityMedicinalProduct.getPharmaceuticalProduct().getRoutesOfAdministration()
-//                .forEach(edqmRouteOfAdministration -> {
-//                definitionalComponent.addIntendedRoute().addCoding(
-//                            "https://spor.ema.europa.eu/v1/lists/100000073345",
-//                            edqmRouteOfAdministration.getCode(),
-//                            edqmRouteOfAdministration.getTerm()
-//                        );
-//        });
-
+        // intendedRoute
+        List<CodeableConcept> intendedRoutes = new LinkedList<>();
+        entityMedicinalProduct.getPharmaceuticalProduct().getRoutesOfAdministration()
+                .forEach(edqmRouteOfAdministration -> {
+                    CodeableConcept intendedRouteCodebleConcept = new CodeableConcept();
+                    intendedRouteCodebleConcept.addCoding(
+                            "https://spor.ema.europa.eu/v1/lists/100000073345",
+                            edqmRouteOfAdministration.getCode(),
+                            edqmRouteOfAdministration.getTerm()
+                        );
+                    intendedRoutes.add(intendedRouteCodebleConcept);
+        });
+        medicationKnowledge.setIntendedRoute(intendedRoutes);
 
         return medicationKnowledge;
     }
