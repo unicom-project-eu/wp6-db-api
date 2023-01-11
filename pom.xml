@@ -16,7 +16,7 @@
 
 	<properties>
 		<java.version>17</java.version>
-		<hapifhir_version>6.1.3</hapifhir_version>
+		<hapifhir_version>6.2.4</hapifhir_version>
 	</properties>
 
 	<dependencies>
@@ -79,7 +79,7 @@
 		<!-- At least one "structures" JAR must also be included -->
 		<dependency>
 			<groupId>ca.uhn.hapi.fhir</groupId>
-			<artifactId>hapi-fhir-structures-r5</artifactId>
+			<artifactId>hapi-fhir-structures-r4b</artifactId>
 			<version>${hapifhir_version}</version>
 		</dependency>
 

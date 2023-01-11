@@ -14,7 +14,7 @@ import it.datawizard.unicom.unicombackend.jpa.entity.PackagedMedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.entity.edqm.EdqmPackageItemType;
 import it.datawizard.unicom.unicombackend.jpa.repository.PackagedMedicinalProductRepository;
 import org.hl7.fhir.instance.model.api.IBaseResource;
-import org.hl7.fhir.r5.model.*;
+import org.hl7.fhir.r4b.model.*;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

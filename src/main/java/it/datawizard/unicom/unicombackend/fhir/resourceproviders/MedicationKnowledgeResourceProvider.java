@@ -20,7 +20,7 @@ import it.datawizard.unicom.unicombackend.jpa.repository.PackagedMedicinalProduc
 import it.datawizard.unicom.unicombackend.jpa.specification.MedicinalProductSpecifications;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.instance.model.api.IPrimitiveType;
-import org.hl7.fhir.r5.model.*;
+import org.hl7.fhir.r4b.model.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.Logger;
@@ -75,22 +75,21 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
     public IBundleProvider
     findResources(
             RequestDetails requestDetails,
-            @OptionalParam(name = MedicationKnowledge.SP_CLASSIFICATION) StringParam classification,
-            @OptionalParam(name = MedicationKnowledge.SP_CLASSIFICATION_TYPE) StringParam classificationType,
             @OptionalParam(name = MedicationKnowledge.SP_CODE) StringParam code,
-            @OptionalParam(name = MedicationKnowledge.SP_IDENTIFIER) StringParam identifier,
+            @OptionalParam(name = MedicationKnowledge.SP_STATUS) StringParam status,
+            @OptionalParam(name = MedicationKnowledge.SP_MANUFACTURER) StringParam manufacturer,
             @OptionalParam(name = MedicationKnowledge.SP_DOSEFORM) StringParam authorizedPharmaceuticalDoseForm,
-            @OptionalParam(name = MedicationKnowledge.SP_INGREDIENT) ReferenceParam ingredientReference,
-            @OptionalParam(name = MedicationKnowledge.SP_INGREDIENT_CODE) StringParam ingredientCode,
-            @OptionalParam(name = MedicationKnowledge.SP_MONITORING_PROGRAM_NAME) StringParam monitoringProgramName,
-            @OptionalParam(name = MedicationKnowledge.SP_MONITORING_PROGRAM_NAME) StringParam monitoringProgramType,
             @OptionalParam(name = MedicationKnowledge.SP_MONOGRAPH) ReferenceParam monographReference,
             @OptionalParam(name = MedicationKnowledge.SP_MONOGRAPH_TYPE) StringParam monographType,
-            @OptionalParam(name = MedicationKnowledge.SP_PACKAGING_COST) QuantityParam packagingCost,
-            @OptionalParam(name = MedicationKnowledge.SP_PACKAGING_COST_CONCEPT) StringParam packagingCostConcept,
-            @OptionalParam(name = MedicationKnowledge.SP_PRODUCT_TYPE) StringParam productType,
+            @OptionalParam(name = MedicationKnowledge.SP_INGREDIENT) ReferenceParam ingredientReference,
             @OptionalParam(name = MedicationKnowledge.SP_SOURCE_COST) StringParam sourceCost,
-            @OptionalParam(name = MedicationKnowledge.SP_STATUS) StringParam status
+            @OptionalParam(name = MedicationKnowledge.SP_MONITORING_PROGRAM_NAME) StringParam monitoringProgramName,
+            @OptionalParam(name = MedicationKnowledge.SP_MONITORING_PROGRAM_TYPE) StringParam monitoringProgramType,
+            @OptionalParam(name = MedicationKnowledge.SP_CLASSIFICATION) StringParam classification,
+            @OptionalParam(name = MedicationKnowledge.SP_CLASSIFICATION_TYPE) StringParam classificationType,
+            @OptionalParam(name = MedicationKnowledge.SP_INGREDIENT_CODE) StringParam ingredientCode
+            //relatedMedicationKnowledge, productType, preparationInstruction, intendedRoute, administratorGuidelines,
+            // medicineClassification, packaging, drugCharacteristic, regulatory, kinetics
             ) {
         final String tenantId = requestDetails.getTenantId();
         final InstantType searchTime = InstantType.withCurrentTime();
@@ -109,14 +108,11 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
             final boolean shouldReturnEmptyResult =
                     Stream.of(
                             code,
-                            identifier,
+                            manufacturer,
                             monitoringProgramName,
                             monitoringProgramType,
                             monographReference,
                             monographType,
-                            packagingCost,
-                            packagingCostConcept,
-                            productType,
                             sourceCost,
                             status).filter(bp -> bp != null).count() > 0
                     || (classificationType != null && !classificationType.getValue().equals("200000025916"));
@@ -179,42 +175,42 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
         medicationKnowledgeMedicineClassificationComponent.setType(medicinalProductDefinition.getType());
 
         // packaging
-        List<MedicationKnowledge.MedicationKnowledgePackagingComponent> packagingComponents =
-                entityMedicinalProduct.getPackagedMedicinalProducts().stream().map(entityPackagedMedicinalProduct -> {
-                    MedicationKnowledge.MedicationKnowledgePackagingComponent packagingComponent =
-                            new MedicationKnowledge.MedicationKnowledgePackagingComponent();
+//        List<MedicationKnowledge.MedicationKnowledgePackagingComponent> packagingComponents =
+//                entityMedicinalProduct.getPackagedMedicinalProducts().stream().map(entityPackagedMedicinalProduct -> {
+//                    MedicationKnowledge.MedicationKnowledgePackagingComponent packagingComponent =
+//                            new MedicationKnowledge.MedicationKnowledgePackagingComponent();
+//
+//                    packagingComponent.setPackagedProduct(new Reference(PackagedProductDefinitionResourceProvider
+//                            .packagedProductDefinitionFromEntity(entityPackagedMedicinalProduct)));
+//
+//                    return packagingComponent;
+//                }).toList();
+//        medicationKnowledge.setPackaging(packagingComponents);
 
-                    packagingComponent.setPackagedProduct(new Reference(PackagedProductDefinitionResourceProvider
-                            .packagedProductDefinitionFromEntity(entityPackagedMedicinalProduct)));
-
-                    return packagingComponent;
-                }).toList();
-        medicationKnowledge.setPackaging(packagingComponents);
-
-        // definitional
-        final MedicationKnowledge.MedicationKnowledgeDefinitionalComponent definitionalComponent
-                = new MedicationKnowledge.MedicationKnowledgeDefinitionalComponent();
-        medicationKnowledge.setDefinitional(definitionalComponent);
-
-        // definitional > definition
-        List<Reference> definitions = new ArrayList<>();
-        definitions.add(new Reference(medicinalProductDefinition));
-        definitionalComponent.setDefinition(definitions);
+//        // definitional
+//        final MedicationKnowledge.MedicationKnowledgeDefinitionalComponent definitionalComponent
+//                = new MedicationKnowledge.MedicationKnowledgeDefinitionalComponent();
+//        medicationKnowledge.setDefinitional(definitionalComponent);
+//
+//        // definitional > definition
+//        List<Reference> definitions = new ArrayList<>();
+//        definitions.add(new Reference(medicinalProductDefinition));
+//        definitionalComponent.setDefinition(definitions);
 
         // definitional > ingredient
-        entityMedicinalProduct.getAllIngredients().forEach(ingredient -> {
-            MedicationKnowledge.MedicationKnowledgeDefinitionalIngredientComponent definitionalIngredientComponent
-                    = new MedicationKnowledge.MedicationKnowledgeDefinitionalIngredientComponent();
-            Reference ingredientReference = new Reference(SubstanceResourceProvider.substanceFromEntity(ingredient));
-            definitionalIngredientComponent.setItem(new CodeableReference(ingredientReference));
-            definitionalComponent.addIngredient(definitionalIngredientComponent);
-
-            // extension with a reference to Ingredient
-            definitionalIngredientComponent.getExtension().add(new Extension(
-                "http://unicom.datawizard.com/fhir/glob/Extension/medicationknowledge-ingredient",
-                new Reference(IngredientResourceProvider.ingredientFromEntity(ingredient))
-            ));
-        });
+//        entityMedicinalProduct.getAllIngredients().forEach(ingredient -> {
+//            MedicationKnowledge.MedicationKnowledgeDefinitionalIngredientComponent definitionalIngredientComponent
+//                    = new MedicationKnowledge.MedicationKnowledgeDefinitionalIngredientComponent();
+//            Reference ingredientReference = new Reference(SubstanceResourceProvider.substanceFromEntity(ingredient));
+//            definitionalIngredientComponent.setItem(new CodeableReference(ingredientReference));
+//            definitionalComponent.addIngredient(definitionalIngredientComponent);
+//
+//            // extension with a reference to Ingredient
+//            definitionalIngredientComponent.getExtension().add(new Extension(
+//                "http://unicom.datawizard.com/fhir/glob/Extension/medicationknowledge-ingredient",
+//                new Reference(IngredientResourceProvider.ingredientFromEntity(ingredient))
+//            ));
+//        });
 
         // definitional > doseForm
         CodeableConcept doseFormCodeableConcept = new CodeableConcept();
@@ -223,22 +219,22 @@ public class MedicationKnowledgeResourceProvider implements IResourceProvider {
                     entityMedicinalProduct.getAuthorizedPharmaceuticalDoseForm().getCode(),
                     entityMedicinalProduct.getAuthorizedPharmaceuticalDoseForm().getTerm()
                 );
-        definitionalComponent.setDoseForm(doseFormCodeableConcept);
+        medicationKnowledge.setDoseForm(doseFormCodeableConcept);
 
         // definitional > intendedRoute
-        entityMedicinalProduct.getPharmaceuticalProduct().getRoutesOfAdministration()
-                .forEach(edqmRouteOfAdministration -> {
-                definitionalComponent.addIntendedRoute().addCoding(
-                            "https://spor.ema.europa.eu/v1/lists/100000073345",
-                            edqmRouteOfAdministration.getCode(),
-                            edqmRouteOfAdministration.getTerm()
-                        );
-        });
+//        entityMedicinalProduct.getPharmaceuticalProduct().getRoutesOfAdministration()
+//                .forEach(edqmRouteOfAdministration -> {
+//                definitionalComponent.addIntendedRoute().addCoding(
+//                            "https://spor.ema.europa.eu/v1/lists/100000073345",
+//                            edqmRouteOfAdministration.getCode(),
+//                            edqmRouteOfAdministration.getTerm()
+//                        );
+//        });
 
 
         return medicationKnowledge;
     }
-    
+
     private void handleReferenceParamsExceptions(ReferenceParam ingredientReference, ReferenceParam monographReference) {
         if (ingredientReference != null && ingredientReference.hasResourceType()) {
             String ingredientReferenceResourceType = ingredientReference.getResourceType();

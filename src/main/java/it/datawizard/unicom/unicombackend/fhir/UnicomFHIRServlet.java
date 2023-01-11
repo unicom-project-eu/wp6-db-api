@@ -2,6 +2,7 @@ package it.datawizard.unicom.unicombackend.fhir;
 
 
 import ca.uhn.fhir.context.FhirContext;
+import ca.uhn.fhir.rest.openapi.OpenApiInterceptor;
 import ca.uhn.fhir.rest.server.FifoMemoryPagingProvider;
 import ca.uhn.fhir.rest.server.IResourceProvider;
 import ca.uhn.fhir.rest.server.RestfulServer;
@@ -32,12 +33,12 @@ public class UnicomFHIRServlet extends RestfulServer {
     final private ManufacturedItemDefinitionResourceProvider manufacturedItemDefinitionResourceProvider;
     final private ConformanceResourcesPlainProvider conformanceResourcesPlainProvider;
 
-    final private UnicomOpenApiInterceptor unicomOpenApiInterceptor;
+    final private OpenApiInterceptor unicomOpenApiInterceptor;
 
     @Autowired
-    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, UnicomOpenApiInterceptor unicomOpenApiInterceptor, UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy, FhirContext fhirContext, IngredientResourceProvider ingredientResourceProvider, SubstanceDefinitionResourceProvider substanceDefinitionResourceProvider, SubstanceResourceProvider substanceResourceProvider, AdministrableProductDefinitionResourceProvider administrableProductDefinitionResourceProvider, MedicinalProductDefinitionResourceProvider medicinalProductDefinitionResourceProvider, PackagedProductDefinitionResourceProvider packagedProductDefinitionResourceProvider, ManufacturedItemDefinitionResourceProvider manufacturedItemDefinitionResourceProvider, ConformanceResourcesPlainProvider conformanceResourcesPlainProvider) {
+    public UnicomFHIRServlet(MedicationKnowledgeResourceProvider medicationKnowledgeResourceProvider, OpenApiInterceptor openApiInterceptor, UnicomTenantIdentificationStrategy unicomTenantIdentificationStrategy, FhirContext fhirContext, IngredientResourceProvider ingredientResourceProvider, SubstanceDefinitionResourceProvider substanceDefinitionResourceProvider, SubstanceResourceProvider substanceResourceProvider, AdministrableProductDefinitionResourceProvider administrableProductDefinitionResourceProvider, MedicinalProductDefinitionResourceProvider medicinalProductDefinitionResourceProvider, PackagedProductDefinitionResourceProvider packagedProductDefinitionResourceProvider, ManufacturedItemDefinitionResourceProvider manufacturedItemDefinitionResourceProvider, ConformanceResourcesPlainProvider conformanceResourcesPlainProvider) {
         this.medicationKnowledgeResourceProvider = medicationKnowledgeResourceProvider;
-        this.unicomOpenApiInterceptor = unicomOpenApiInterceptor;
+        this.unicomOpenApiInterceptor = openApiInterceptor;
         this.unicomTenantIdentificationStrategy = unicomTenantIdentificationStrategy;
         this.fhirContext = fhirContext;
         this.ingredientResourceProvider = ingredientResourceProvider;

@@ -5,7 +5,7 @@ import ca.uhn.fhir.rest.annotation.Search;
 import ca.uhn.fhir.util.BundleBuilder;
 import it.datawizard.unicom.unicombackend.fhir.StaticFHIRResourcesLoader;
 import org.hl7.fhir.instance.model.api.IBase;
-import org.hl7.fhir.r5.model.*;
+import org.hl7.fhir.r4b.model.*;
 import org.springframework.stereotype.Component;
 
 @Component

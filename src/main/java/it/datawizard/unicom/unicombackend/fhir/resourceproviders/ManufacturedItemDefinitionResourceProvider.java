@@ -12,7 +12,7 @@ import it.datawizard.unicom.unicombackend.jpa.entity.ManufacturedItem;
 import it.datawizard.unicom.unicombackend.jpa.repository.ManufacturedItemRepository;
 import it.datawizard.unicom.unicombackend.jpa.specification.ManufacturedItemSpecifications;
 import org.hl7.fhir.instance.model.api.IBaseResource;
-import org.hl7.fhir.r5.model.*;
+import org.hl7.fhir.r4b.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

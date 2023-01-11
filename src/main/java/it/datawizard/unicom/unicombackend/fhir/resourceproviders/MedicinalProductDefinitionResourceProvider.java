@@ -10,7 +10,7 @@ import it.datawizard.unicom.unicombackend.jpa.entity.MedicinalProduct;
 import it.datawizard.unicom.unicombackend.jpa.repository.MedicinalProductRepository;
 import it.datawizard.unicom.unicombackend.jpa.specification.MedicinalProductSpecifications;
 import org.hl7.fhir.instance.model.api.IBaseResource;
-import org.hl7.fhir.r5.model.*;
+import org.hl7.fhir.r4b.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

@@ -2,6 +2,7 @@ package it.datawizard.unicom.unicombackend.fhir;
 
 import ca.uhn.fhir.context.FhirContext;
 import ca.uhn.fhir.context.FhirVersionEnum;
+import ca.uhn.fhir.rest.openapi.OpenApiInterceptor;
 import it.datawizard.unicom.unicombackend.fhir.tenants.TenantDescriptor;
 import it.datawizard.unicom.unicombackend.fhir.tenants.TenantEnum;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +14,7 @@ import java.util.LinkedHashMap;
 public class UnicomFHIRServerConfiguration {
     @Bean
     FhirContext getFhirContext() {
-        FhirContext context = FhirContext.forR5();
+        FhirContext context = FhirContext.forR4B();
         return context;
     }
 
@@ -27,4 +28,11 @@ public class UnicomFHIRServerConfiguration {
 
         return tenantDescriptors;
     }
+
+    @Bean
+    OpenApiInterceptor openApiInterceptor() {
+        return new OpenApiInterceptor();
+    }
+
+
 }

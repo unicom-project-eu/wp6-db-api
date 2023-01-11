@@ -14,7 +14,7 @@ import it.datawizard.unicom.unicombackend.jpa.entity.PackageItem;
 import it.datawizard.unicom.unicombackend.jpa.repository.IngredientRepository;
 import it.datawizard.unicom.unicombackend.jpa.specification.IngredientSpecifications;
 import org.hl7.fhir.instance.model.api.IBaseResource;
-import org.hl7.fhir.r5.model.*;
+import org.hl7.fhir.r4b.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

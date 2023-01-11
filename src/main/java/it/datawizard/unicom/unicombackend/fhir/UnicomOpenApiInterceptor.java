@@ -61,11 +61,11 @@ import it.datawizard.unicom.unicombackend.fhir.tenants.TenantDescriptor;
 import it.datawizard.unicom.unicombackend.fhir.tenants.TenantEnum;
 import org.apache.commons.io.IOUtils;
 import org.hl7.fhir.convertors.factory.VersionConvertorFactory_30_40;
-import org.hl7.fhir.convertors.factory.VersionConvertorFactory_40_50;
+import org.hl7.fhir.convertors.factory.VersionConvertorFactory_43_50;
 import org.hl7.fhir.instance.model.api.IBaseConformance;
 import org.hl7.fhir.instance.model.api.IBaseResource;
 import org.hl7.fhir.instance.model.api.IPrimitiveType;
-import org.hl7.fhir.r4.model.*;
+import org.hl7.fhir.r4b.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -316,7 +316,7 @@ public class UnicomOpenApiInterceptor {
         context.setVariable("BANNER_IMAGE_URL", getBannerImage());
         context.setVariable("OPENAPI_DOCS", baseUrl + "/api-docs");
         context.setVariable("FHIR_VERSION", cs.getFhirVersion().toCode());
-        context.setVariable("FHIR_VERSION_CODENAME", FhirVersionEnum.R5);
+        context.setVariable("FHIR_VERSION_CODENAME", FhirVersionEnum.R4B);
 
         String copyright = cs.getCopyright();
         if (isNotBlank(copyright)) {
@@ -715,7 +715,7 @@ public class UnicomOpenApiInterceptor {
             for (OperationDefinition.OperationDefinitionParameterComponent nextSearchParam : theOperationDefinition.getParameter()) {
                 Parameters.ParametersParameterComponent param = exampleRequestBody.addParameter();
                 param.setName(nextSearchParam.getName());
-                String paramType = nextSearchParam.getType();
+                String paramType = nextSearchParam.getType().toString();
                 switch (defaultString(paramType)) {
                     case "uri":
                     case "url":
@@ -723,19 +723,19 @@ public class UnicomOpenApiInterceptor {
                     case "string": {
                         IPrimitiveType<?> type = (IPrimitiveType<?>) FHIR_CONTEXT_CANONICAL.getElementDefinition(paramType).newInstance();
                         type.setValueAsString("example");
-                        param.setValue((Type) type);
+                        param.setValue((DataType) type);
                         break;
                     }
                     case "integer": {
                         IPrimitiveType<?> type = (IPrimitiveType<?>) FHIR_CONTEXT_CANONICAL.getElementDefinition(paramType).newInstance();
                         type.setValueAsString("0");
-                        param.setValue((Type) type);
+                        param.setValue((DataType) type);
                         break;
                     }
                     case "boolean": {
                         IPrimitiveType<?> type = (IPrimitiveType<?>) FHIR_CONTEXT_CANONICAL.getElementDefinition(paramType).newInstance();
                         type.setValueAsString("false");
-                        param.setValue((Type) type);
+                        param.setValue((DataType) type);
                         break;
                     }
                     case "CodeableConcept": {
@@ -947,8 +947,8 @@ public class UnicomOpenApiInterceptor {
         IBaseResource canonical;
         if (theNonCanonical instanceof org.hl7.fhir.dstu3.model.Resource) {
             canonical = VersionConvertorFactory_30_40.convertResource((org.hl7.fhir.dstu3.model.Resource) theNonCanonical);
-        } else if (theNonCanonical instanceof org.hl7.fhir.r5.model.Resource) {
-            canonical = VersionConvertorFactory_40_50.convertResource((org.hl7.fhir.r5.model.Resource) theNonCanonical);
+//        } else if (theNonCanonical instanceof org.hl7.fhir.r4b.model.Resource) {
+//            canonical = VersionConvertorFactory_43_50.convertResource((org.hl7.fhir.r4b.model.Resource) theNonCanonical);
         } else {
             canonical = theNonCanonical;
         }
