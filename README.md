@@ -24,18 +24,18 @@ To generate the json you need a csv file formatted according to https://docs.goo
 
 Just install the requirements in preprocess-data/beglium_subset, copy the csv file in preprocess-data/belgium_subset and launch
 ```
-cd /preprocess-data/belgium_subset
-python3 preprocess.py -c > myjson.json
+cd /preprocess-data/script
+python3 preprocess.py path/to/file.csv -c > path/to/myjson.json
 ```
 This will save the json file to myjson.json. If the csv has error the script will print them in stderr.
 If you want to save the errors in a file just launch
 ```
-python3 preprocess.py > myjson.json 2> conflicts.json
+python3 preprocess.py path/to/file.csv > path/to/myjson.json 2> path/to/conflicts.json
 ```
 This will save the json file to myjson.json and the errors in conflicts.json
 
 #### DEVELOPMENT DATA IMPORT
-Launch
+Launch[myjson.json](..%2F..%2F..%2F..%2F..%2FScaricati%2Fmyjson.json)
 ```java -jar target/unicom-backend.jar -i path/to/myjson.json```
 
 #### PRODUCTION DATA IMPORT
