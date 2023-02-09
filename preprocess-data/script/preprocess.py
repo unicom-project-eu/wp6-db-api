@@ -84,6 +84,7 @@ class PharmaceuticalProduct:
 @csv_mapping(
     primaryKey=AttributeInfo(is_key=True, is_hidden=True, set_value=lambda _x: _x['medicinalProductPrimaryKey']),
     mpId=AttributeInfo(set_value=lambda _x: _x['mpId']),
+    #mpId=AttributeInfo(set_value=lambda _x: _x['mpIdLabel']),
     fullName=AttributeInfo(set_value=lambda _x: _x['fullName']),
     atcCodes=AttributeInfo(set_value=lambda _x: comma_separated_str_to_list(_x['atcCodes'])),
     authorizedPharmaceuticalDoseForm=AttributeInfo(set_value=lambda _x: _x['authorizedPharmaceuticalDoseForm']),
@@ -150,7 +151,7 @@ if __name__ == '__main__':
     parser.add_argument('-c', '--color', action='store_true', help='If true the ouput will contain ANSI colors')
     args = parser.parse_args()
 
-    df = pd.read_csv(args.input_file, keep_default_na=False, dtype=str)
+    df = pd.read_csv(args.input_file, keep_default_na=False, dtype=str, sep=";")
     df = df.replace(r'^\s*$', None, regex=True)
     df = df.replace(r'^NULL$', None, regex=True)
 
@@ -168,11 +169,11 @@ if __name__ == '__main__':
 
     # 4. 'pcId' column is missing
     # > add empty column for 'pcId'
-    df['pcId'] = None
+    #df['pcId'] = None
 
     # 7. typo: 'authorisedPharmaceuticalDoseForm' instead of 'authorizedPharmaceuticalDoseForm'
     # > fix typo
-    df['authorizedPharmaceuticalDoseForm'] = df['authorisedPharmaceuticalDoseForm']
+    #df['authorizedPharmaceuticalDoseForm'] = df['authorisedPharmaceuticalDoseForm']
 
     df = df.astype(dtype={
         'packSize': 'Int64',
